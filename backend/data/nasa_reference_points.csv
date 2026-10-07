@@ -1,0 +1,57 @@
+source,table,binder,regolith,simulant,regolith_wt_target,regolith_wt_actual,orientation,temperature_c,property,value,std,unit,note
+NTRS 20230015024,Table 4,PLA,lunar_highlands,LHS-1,80,74.5,0°,23,tensile_strength,15.2,0.3,MPa,Independent lab; 3D-printed; actual ratio from Table 2 (TGA 75 / ash 74)
+NTRS 20230015024,Table 4,PLA,lunar_highlands,LHS-1,80,74.5,90°,23,tensile_strength,9.3,0.3,MPa,Independent lab; 3D-printed
+NTRS 20230015024,Table 4,PLA,lunar_highlands,LHS-1,80,74.5,0°,23,elastic_modulus,7.0,0.4,GPa,Tensile modulus
+NTRS 20230015024,Table 4,PLA,lunar_highlands,LHS-1,80,74.5,90°,23,elastic_modulus,5.0,1.0,GPa,Tensile modulus
+NTRS 20230015024,Table 4,PLA,lunar_highlands,LHS-1,80,74.5,0°,23,compressive_strength,50.0,2.0,MPa,Independent lab
+NTRS 20230015024,Table 4,PLA,lunar_highlands,LHS-1,80,74.5,90°,23,compressive_strength,46.3,0.2,MPa,Independent lab
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,70,61.5,0°,23,tensile_strength,10.92,,MPa,SpaceFactory tests; actual ratio from Table 2 (TGA 61 / ash 62)
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,70,61.5,90°,23,tensile_strength,14.19,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,70,61.5,0°,23,compressive_strength,43.83,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,70,61.5,90°,23,compressive_strength,48.85,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,80,70,0°,23,tensile_strength,10.85,,MPa,SpaceFactory tests; actual ratio from Table 2 (TGA 70)
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,80,70,90°,23,tensile_strength,14.63,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,80,70,0°,23,compressive_strength,46.05,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,80,70,90°,23,compressive_strength,47.88,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,85,78,0°,23,tensile_strength,5.18,,MPa,SpaceFactory tests; actual ratio from Table 2 (TGA 78 / ash 78)
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,85,78,90°,23,tensile_strength,11.40,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,85,78,0°,23,compressive_strength,43.40,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 3,PLA,lunar_mare,BP-1,85,78,90°,23,compressive_strength,44.85,,MPa,SpaceFactory tests
+NTRS 20230015024,Table 8,PLA,none,,0,0,,-196,tensile_strength,87.0,,MPa,Unfilled printed PLA at 77 K (Appendix Table 8)
+NTRS 20230015024,Table 8,PLA,none,,0,0,,23,tensile_strength,41.6,,MPa,Unfilled printed PLA at room temperature (Appendix Table 8)
+NTRS 20260007758,Slide 17,PHB,none,,0,0,,23,tensile_strength,29.4,,MPa,NASA Glenn; neat plant-based PHB; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_mare,LMS-1,20,20,,23,tensile_strength,21.0,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_mare,LMS-1,40,40,,23,tensile_strength,20.1,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_mare,LMS-1,60,60,,23,tensile_strength,15.5,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_mare,LMS-1,80,80,,23,tensile_strength,16.6,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_highlands,LSP-2,20,20,,23,tensile_strength,23.8,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_highlands,LSP-2,40,40,,23,tensile_strength,16.5,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_highlands,LSP-2,60,60,,23,tensile_strength,22.2,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_highlands,LSP-2,80,80,,23,tensile_strength,17.1,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,martian,MGS-1,20,20,,23,tensile_strength,22.6,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,martian,MGS-1,40,40,,23,tensile_strength,23.2,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,martian,MGS-1,60,60,,23,tensile_strength,20.5,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,martian,MGS-1,80,80,,23,tensile_strength,19.1,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,martian,JEZ-1,40,40,,23,tensile_strength,18.0,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 17,PHB,lunar_highlands,LHS-1,40,40,,23,tensile_strength,19.6,,MPa,NASA Glenn; injection molded; read from bar chart (approx. ±0.5 MPa)
+NTRS 20260007758,Slide 9,PHB,none,,0,0,,23,decomposition_temp,281.7,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,martian,JEZ-1,20,20,,23,decomposition_temp,268.8,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,martian,JEZ-1,40,40,,23,decomposition_temp,265.8,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,martian,JEZ-1,60,60,,23,decomposition_temp,261.2,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,martian,JEZ-1,80,80,,23,decomposition_temp,260.0,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_highlands,LHS-1,20,20,,23,decomposition_temp,280.0,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_highlands,LHS-1,40,40,,23,decomposition_temp,282.2,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_highlands,LHS-1,60,60,,23,decomposition_temp,275.0,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_highlands,LHS-1,80,80,,23,decomposition_temp,276.2,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_mare,LMS-1,20,20,,23,decomposition_temp,281.2,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_mare,LMS-1,40,40,,23,decomposition_temp,278.8,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_mare,LMS-1,60,60,,23,decomposition_temp,275.2,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_mare,LMS-1,80,80,,23,decomposition_temp,271.8,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_highlands,LSP-2,20,20,,23,decomposition_temp,282.7,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_highlands,LSP-2,40,40,,23,decomposition_temp,282.3,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_highlands,LSP-2,60,60,,23,decomposition_temp,279.4,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,lunar_highlands,LSP-2,80,80,,23,decomposition_temp,281.2,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,martian,MGS-1,20,20,,23,decomposition_temp,270.5,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,martian,MGS-1,40,40,,23,decomposition_temp,269.0,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,martian,MGS-1,60,60,,23,decomposition_temp,261.9,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)
+NTRS 20260007758,Slide 9,PHB,martian,MGS-1,80,80,,23,decomposition_temp,263.9,,°C,NASA Glenn; DSC/TGA decomposition temperature; read from scatter chart (approx. ±1 °C)

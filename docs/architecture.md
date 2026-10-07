@@ -1,48 +1,79 @@
 # Architecture
 
+[← Back to README](../README.md)
+
+## Overview
+
 ```mermaid
-flowchart LR
-    subgraph Browser
-        UI[React UI<br/>sliders · cards · comparison]
-        V[three.js<br/>microstructure view]
-        C[Chart.js<br/>comparison chart]
+flowchart TB
+    subgraph Python["backend/ (Python)"]
+        REF[(nasa_reference_points.csv<br/>56 NASA measurements)]
+        PHYS[utils/materials.py<br/>physics model, NASA-calibrated]
+        GEN[data/generate_dataset.py]
+        CSV[(regolith_composites.csv<br/>6,000 synthetic mixes)]
+        FEAT[utils/data_processor.py<br/>physics-informed features]
+        RF[models/property_model.py<br/>Random Forest]
+        EXP[scripts/export_frontend.py]
+        API[main.py<br/>FastAPI]
+        NTRSC[services/ntrs.py]
     end
 
-    subgraph API[FastAPI backend]
-        R[Routes<br/>/api/predict · /api/compare<br/>/api/model · /api/options]
-        P[Pydantic validation]
-        M[PropertyModel<br/>Random Forest]
+    subgraph Browser["frontend/ (React, runs on GitHub Pages)"]
+        GENF[(src/generated/<br/>forest · catalog · fixtures · NTRS snapshot)]
+        ENG[src/lib/engine<br/>forest · physics · optimizer · mission]
+        UI[Components<br/>simulator · optimizer · compare · impact · science · research]
     end
 
-    D[(regolith_composites.csv<br/>synthetic dataset)]
-    G[generate_dataset.py<br/>physics heuristics]
+    NTRS[(NASA NTRS API)]
 
-    UI -- JSON over /api --> R
-    R --> P --> M
-    G --> D
-    D -- trained at startup --> M
-    UI --> V
-    UI --> C
+    REF -. calibrates .-> PHYS
+    PHYS --> GEN --> CSV --> RF
+    FEAT --> RF
+    RF --> EXP --> GENF --> ENG --> UI
+    RF --> API
+    NTRS --> NTRSC --> API
+    NTRS --> EXP
+    API -. optional live search .-> UI
 ```
-
-## Request flow
-
-1. The user changes a slider or option. The UI waits 200 ms (debounce), cancels any request still in
-   flight, and sends one `POST /api/compare` with two items: the current mix and the same polymer
-   with 0 % regolith. The second item powers the "vs pure polymer" deltas.
-2. FastAPI validates the body with Pydantic: regolith 0–50 wt%, temperature −180 to 150 °C, and known
-   polymer and regolith names only. Anything else gets a 422.
-3. `PropertyModel.predict` encodes the features, asks every tree for a prediction, and returns the
-   mean and the spread across trees.
-4. The response adds units, the filler volume fraction, and whether the mix survives the surface's
-   maximum temperature.
 
 ## Design decisions
 
-- **No pickled model in the repo.** The model trains from the CSV at startup in about a second. That
-  keeps the repository reviewable and avoids unpickling files from disk.
-- **One encoder for training and serving** (`utils/data_processor.py`), so features can't drift
-  between the two.
-- **Localhost by default.** The dev servers bind to `127.0.0.1`; CORS origins come from the
-  `ALLOWED_ORIGINS` environment variable when the frontend is hosted elsewhere.
-- **three.js is lazy-loaded**, so the controls and predictions render before the 3D bundle arrives.
+**The model runs in the browser.** GitHub Pages only serves static files, so the trained forest is exported to JSON
+(28 trees, about 580 KB gzipped) and evaluated by `frontend/src/lib/engine/forest.js`. Every prediction is instant and
+works offline once loaded. The FastAPI backend serves the same model for scripts, notebooks and live NTRS search.
+
+**One model, two runtimes, a parity test.** `physics.js` mirrors `materials.py` and `data_processor.py` line for line.
+The export writes 60 random mixes with Python's predictions to `parity_fixtures.json`, and `npm test` fails if the
+browser differs by more than 0.1%. Thresholds are compared the way scikit-learn does (`float32(x) <= threshold`).
+
+**Hybrid ML + physics.** The forest learns composition → room-temperature properties as log-ratios to the pure binder.
+Temperature is applied afterwards with explicit physics. Without this split, temperature (a 2–10× effect) swamped the
+subtler effects of soil type and grain size, and the forest ignored them. See [science_model.md](science_model.md).
+
+**Physics-informed features.** Volume fractions, grain bond, porosity, grain stiffness and theoretical density are
+cheap, deterministic functions of the inputs. Feeding them to the forest lets a small model capture second-order
+effects.
+
+**No pickles.** The model trains from the CSV in about a second, so the repository holds no opaque binaries and nothing
+is unpickled from disk.
+
+**NASA research on a static site.** NTRS sends no CORS headers, so browsers can't query it directly. The build step
+snapshots related reports into `ntrs_snapshot.json`. When the backend runs, the research panel switches to live search
+through `/api/research`.
+
+## Request flow (simulator)
+
+1. A control changes the composition (state lives in `App.jsx` and is mirrored to the URL for sharing).
+2. `engine.predict()` encodes features, walks 28 trees, maps each leaf back to real units, applies temperature factors
+   per tree, then returns the mean and spread.
+3. Panels re-render: readouts with deltas versus the pure binder, the composition donut, "fit for use" checks (each use
+   evaluated at its own temperatures), 3D view, micrograph and curves.
+
+## Security notes
+
+- The NTRS proxy has a fixed host and path. Only the URL-encoded query is caller-controlled, and it is validated (2–100
+  chars, safe character set). Responses are size-capped, time-limited and cached, upstream calls are rate-limited, and
+  upstream errors are never echoed to clients.
+- Inputs are validated with Pydantic (ranges, total filler ≤ 85 wt%, known materials only).
+- Dev servers bind to `127.0.0.1`; CORS origins come from `ALLOWED_ORIGINS`.
+- CI actions are pinned to commit SHAs.

@@ -1,19 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-accent="highlands">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Design biopolymer + regolith composites for lunar and Martian construction and predict their properties in real time." />
-    <meta name="theme-color" content="#0a0e16" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#f5f6fa" media="(prefers-color-scheme: light)" />
+    <meta name="description" content="Design NASA-style bioplastic + regolith composites for the Moon and Mars and predict their properties in real time. NASA Space Apps 2026, team Dreams of X." />
+    <meta name="theme-color" content="#060a11" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f3f5fa" media="(prefers-color-scheme: light)" />
+    <meta property="og:title" content="Moon-Material Simulator" />
+    <meta property="og:description" content="Design building materials from moon dust and NASA's bacteria-grown bioplastic, then see how they hold up." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      try {
+        var t = localStorage.getItem('mms-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
     <title>Moon-Material Simulator</title>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>This simulator runs its model in your browser, so it needs JavaScript.</noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
