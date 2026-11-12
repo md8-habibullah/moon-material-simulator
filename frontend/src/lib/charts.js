@@ -7,12 +7,13 @@ import {
   Legend,
   LinearScale,
   LineElement,
+  LogarithmicScale,
   PointElement,
   RadialLinearScale,
   Tooltip,
 } from 'chart.js';
 
-ChartJS.register(ArcElement, BarElement, CategoryScale, Filler, Legend, LinearScale, LineElement, PointElement, RadialLinearScale, Tooltip);
+ChartJS.register(ArcElement, BarElement, CategoryScale, Filler, Legend, LinearScale, LineElement, LogarithmicScale, PointElement, RadialLinearScale, Tooltip);
 
 const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

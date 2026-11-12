@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import forestUrl from '../../generated/forest.json?url';
 import catalog from '../../generated/catalog.json';
+import evidenceGrid from '../../generated/evidence_grid.json';
 import { createEngine } from './forest.js';
 
 let pending = null;
@@ -12,7 +13,7 @@ function loadEngine() {
         if (!res.ok) throw new Error(`Model download failed (${res.status})`);
         return res.json();
       })
-      .then((forest) => createEngine(forest, catalog))
+      .then((forest) => createEngine(forest, catalog, evidenceGrid))
       .catch((err) => {
         pending = null; // allow a retry
         throw err;

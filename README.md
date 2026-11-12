@@ -40,15 +40,19 @@ An interactive simulator for designing these composites, which runs entirely in 
 
 | Step | What you do | What happens |
 | --- | --- | --- |
-| **Design** | Pick a binder (NASA's bacterial PHB, PLA, PEEK or LDPE) and a soil (lunar highlands, lunar mare, Martian); set regolith %, basalt fibre %, grain size and operating temperature. | A Random Forest predicts **8 properties** live, each with an uncertainty band: tensile, stiffness, compressive, flexibility, max service temperature, decomposition temperature, density and thermal conductivity. |
+| **Design** | Pick a binder (NASA's bacterial PHB, PLA, PEEK, LDPE, PEI or PPSU), a soil (lunar highlands, lunar mare, Martian) and how the part is made (filament or pellet printing, injection molding, hot pressing, pressed + sintered brick); set regolith % (up to 92.5), basalt fibre %, grain size and operating temperature. | A physics model, corrected by machine learning on **real lab measurements**, predicts **8 properties** live with uncertainty bands. Every value says whether it is lab-backed or a physics estimate, and one click shows the real measurements behind it, down to the table cell in the paper. |
 | **Test** | Look at the 3D microstructure, a polarised-light view styled after NASA's micrographs, and property-vs-loading curves with NASA's measured points on top. | Every mix is checked against six real uses (wrench, bracket, chair, lunar wall panel, Mars shelter block and thruster nozzle) at the temperatures each one must survive. |
-| **Optimize** | Choose a use. | The optimizer tests about 2,400 compositions and ranks the passing ones, most locally sourced first. It says honestly when nothing works: no plastic survives a thruster nozzle. |
+| **Optimize** | Choose a use. | The optimizer tests about 5,000 compositions (every binder, with each process it has lab data for) and ranks the passing ones, most locally sourced first. It says honestly when nothing works: no plastic survives a thruster nozzle. |
 | **Plan** | Compare up to four formulas; estimate mission impact. | Radar chart, winners per property and CSV export, plus launch mass and cost avoided by printing parts on site. |
 
-## Built on NASA data
+## Built on real, audited data
 
-The model is calibrated and checked against **56 NASA measurements** from two NASA studies, and every
-binder property comes from a NASA table. Full details are in [docs/data_sources.md](docs/data_sources.md).
+We transcribed **1,470 values from 11 sources** (5 NASA reports and 6 peer-reviewed or preprint studies). Each one
+is tied to its page, table, row and column, and our **Evidence Auditor** re-found every one in its source PDF. It
+reports 0 transcription errors. It also documents 181 problems inside the papers themselves, such as swapped 0°/90°
+values, MPa written for GPa, and an impossible −273 °C glass transition. The original 56 NASA calibration points
+all passed an independent re-read. Details: [docs/evidence.md](docs/evidence.md) and
+[docs/data_sources.md](docs/data_sources.md).
 
 | NASA source | What we used |
 | --- | --- |
@@ -58,31 +62,51 @@ binder property comes from a NASA table. Full details are in [docs/data_sources.
 | [NTRS 20230015024: Gelino et al., NASA Kennedy, 2023](https://ntrs.nasa.gov/citations/20230015024) | Binder properties at room temperature and 77 K (Appendix Table 8); 18 measured 3D-printed LHS-1/BP-1 + PLA results (Tables 2–4) |
 | [NASA Technical Reports Server API](https://ntrs.nasa.gov) | A searchable index of related NASA reports inside the app (live when the backend runs; a snapshot on the hosted site) |
 
-**Accuracy.** On held-out data the forest scores R² 0.989–0.9997 for all eight properties. Against NASA's
-measurements, the mean error is **6%** for NASA Glenn's PHB data and **17%** for NASA Kennedy's printed PLA data.
-Most of that is the spread between 0° and 90° print directions, which the model averages. See
+**Accuracy, tested on real data the model never saw.** We used 152 first-hand measurements from 7 studies to
+predict untested mixes:
+
+| Property | Physics alone | With the lab-data correction |
+| --- | --- | --- |
+| Compressive strength | 230% | **34%** |
+| Stiffness | 65% | **19%** |
+| Density | 16% | **5%** |
+| Thermal conductivity | 32% | **7%** |
+| Tensile strength | 19% | **18%** |
+
+The ± bands are calibrated so 90% of held-out mixes fall inside them. Leaving a whole study out is harder: a
+manufacturing route seen in only one study can't be learned from the others. We report that too. See
 [docs/science_model.md](docs/science_model.md).
 
-**Honest limits.** The training set is synthetic: physics-based composite models fitted to those NASA points. Use the
-numbers to explore trends and shortlist mixes, not as qualified design values.
+**Honest limits.** 152 measurements is a small, patchy dataset: each study tested one binder and one process. Where
+there is no lab data near a mix, the app says "Physics estimate". Use the numbers to explore trends and shortlist
+mixes, not as qualified design values.
 
 ## How it works
 
 ```mermaid
 flowchart LR
-    NASA[(NASA measurements<br/>Glenn PHB + Kennedy PLA)] -->|calibrate| PHYS[Physics model<br/>backend/utils/materials.py]
-    PHYS -->|6,000 synthetic mixes| RF[Random Forest<br/>scikit-learn]
+    PDF[(11 papers and NASA reports)] -->|transcribed with page/cell anchors| EV[Evidence dataset<br/>1,470 values]
+    PDF --> AUD[Evidence Auditor<br/>re-finds every value]
+    EV --> AUD
+    NASA[(NASA measurements)] -->|calibrate| PHYS[Physics model<br/>backend/utils/materials.py]
+    PHYS -->|9,000 synthetic mixes| RF[Random Forest<br/>physics emulator]
+    EV -->|152 lab measurements| GP[Gaussian process<br/>evidence correction]
+    PHYS --> GP
     RF -->|export JSON| WEB[Browser engine<br/>React + three.js]
+    GP -->|correction grid| WEB
+    AUD -->|verdicts + PDF crops| WEB
     RF --> API[FastAPI<br/>optional, local]
+    GP --> API
     NTRS[(NASA NTRS API)] --> API
     NTRS -->|snapshot at deploy| WEB
 ```
 
 1. **Physics-informed features.** The mix is turned into volume fractions, grain bond, porosity and density, computed
    identically in Python and JavaScript.
-2. **Random Forest.** 28 trees predict room-temperature properties as ratios to the pure binder. The spread between
-   trees is the ± band.
-3. **Temperature physics.** NASA's measured 77 K ratios on the cold side; softening around the predicted service
+2. **Random Forest (physics emulator).** 28 trees reproduce the calibrated physics model so it runs in the browser.
+3. **Evidence correction.** A Gaussian process learns how far real coupons sit from the physics, per binder and
+   process. Near lab data the prediction follows the data; far from it, it falls back to physics with a wider ±.
+4. **Temperature physics.** NASA's measured 77 K ratios on the cold side; softening around the predicted service
    temperature on the hot side.
 
 The hosted site runs the exported forest in your browser, and a parity test checks it against Python on 60 random
@@ -108,11 +132,14 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 To change the science and retrain:
 
 ```bash
+python research/download_sources.py  # fetch the source PDFs (not in git) and check their hashes
 cd backend
-python -m data.generate_dataset      # rebuild the synthetic training set
-python -m scripts.export_frontend    # retrain, export the model + catalog + NTRS snapshot for the browser
-pytest                               # 39 tests: API, science vs NASA data, export parity
-cd ../frontend && npm test           # browser engine matches Python; optimizer; mission maths
+python -m evidence.build             # merge research/extraction/*.csv into data/evidence/measurements.csv
+python -m evidence.audit             # re-check every value against its PDF -> research/audit/
+python -m data.generate_dataset      # rebuild the synthetic physics training set
+python -m scripts.export_frontend    # retrain forest + evidence GP, export model, evidence and catalog
+pytest                               # 64 tests: API, science, evidence auditor, evidence model, export parity
+cd ../frontend && npm test           # browser engine matches Python; evidence correction; optimizer; mission maths
 ```
 
 ## Documentation
@@ -120,7 +147,8 @@ cd ../frontend && npm test           # browser engine matches Python; optimizer;
 | Document | What's in it |
 | --- | --- |
 | [Architecture](docs/architecture.md) | Components, data flow, design decisions |
-| [Science model](docs/science_model.md) | Every equation, the NASA calibration and its residuals, limitations |
+| [Science model](docs/science_model.md) | Every equation, the NASA calibration, the evidence correction and its validation, limitations |
+| [Evidence pipeline and auditor](docs/evidence.md) | Sources, transcription rules, how the auditor checks every value, what it found |
 | [Data dictionary](docs/data_dictionary.md) | Inputs, outputs, ranges and dataset columns |
 | [NASA data sources](docs/data_sources.md) | Each NASA source and exactly how it is used |
 | [API reference](docs/api.md) | FastAPI endpoints with examples |
@@ -132,7 +160,8 @@ cd ../frontend && npm test           # browser engine matches Python; optimizer;
 | Layer | Tools |
 | --- | --- |
 | Frontend | React 19, Vite 8, three.js, Chart.js, lucide icons |
-| In-browser ML | Exported scikit-learn Random Forest (custom JS evaluator) |
+| In-browser ML | Exported scikit-learn Random Forest (custom JS evaluator) + Gaussian-process correction grid |
+| Evidence | PyMuPDF (PDF auditing and crops), SciPy (GP fitting) |
 | Backend | Python 3, FastAPI, Pydantic |
 | Science and ML | scikit-learn, NumPy, pandas |
 | Hosting and CI | GitHub Pages, GitHub Actions |
@@ -141,7 +170,15 @@ cd ../frontend && npm test           # browser engine matches Python; optimizer;
 
 ```text
 moon-material-simulator/
+├── research/
+│   ├── sources.csv                 # 13 sources: citation, licence, PDF link, SHA-256
+│   ├── EXTRACTION_SPEC.md          # How values are transcribed (page/table/row/column anchors)
+│   ├── extraction/                 # One CSV + issues log per source
+│   ├── audit/                      # Auditor output: comments CSV, HTML report, index
+│   └── legacy/                     # The team's earlier automatic extraction (used as a coverage check)
 ├── backend/
+│   ├── evidence/                   # Evidence build + auditor (PyMuPDF)
+│   ├── models/evidence_model.py    # Gaussian-process correction on real measurements, with validation
 │   ├── main.py                     # FastAPI app: predict, compare, catalog, validation, NTRS search
 │   ├── utils/materials.py          # Material catalogue + physics model (NASA-calibrated)
 │   ├── utils/applications.py       # Uses the optimizer designs for (wrench, panel, nozzle...)

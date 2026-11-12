@@ -1,5 +1,5 @@
 import { useId, useState } from 'react';
-import { Check, Leaf, Link2, Moon, Orbit, Plus, RotateCcw, Sprout } from 'lucide-react';
+import { Check, FlaskConical, Leaf, Link2, Moon, Orbit, Plus, RotateCcw, Sprout } from 'lucide-react';
 import SliderControl from '../SliderControl';
 import catalog, { DEFAULT_COMPOSITION, LOADING_ZONES, TEMPERATURE_PRESETS, maxFiberFor } from '../../lib/catalog';
 import { compositionUrl } from '../../lib/url-state';
@@ -40,6 +40,7 @@ function OptionCards({ legend, name, value, options, onChange, columns }) {
 export default function ControlsPanel({ composition, onChange, onSave, canSave, saveLabel }) {
   const nameBinder = useId();
   const nameRegolith = useId();
+  const nameProcess = useId();
   const [copied, setCopied] = useState(false);
   const set = (patch) => onChange((c) => ({ ...c, ...patch }));
   const fiberMax = maxFiberFor(composition.regolith_wt);
@@ -65,6 +66,13 @@ export default function ControlsPanel({ composition, onChange, onSave, canSave, 
       b.biodegradable && { label: 'Biodegradable', icon: Leaf },
     ].filter(Boolean),
   }));
+  const tested = new Set(catalog.binder_processes?.[composition.binder] ?? []);
+  const processes = Object.entries(catalog.processes).map(([value, pr]) => ({
+    value,
+    label: pr.label,
+    note: pr.summary,
+    tags: tested.has(value) ? [{ label: `Lab data · ${catalog.binders[composition.binder].label}`, icon: FlaskConical }] : [],
+  }));
   const regoliths = Object.entries(catalog.regoliths).map(([value, r]) => ({
     value,
     label: r.label,
@@ -85,8 +93,24 @@ export default function ControlsPanel({ composition, onChange, onSave, canSave, 
         </button>
       </div>
 
-      <OptionCards legend="Binder" name={nameBinder} value={composition.binder} options={binders} columns={2} onChange={(binder) => set({ binder })} />
+      <OptionCards
+        legend="Binder"
+        name={nameBinder}
+        value={composition.binder}
+        options={binders}
+        columns={2}
+        onChange={(binder) => set({ binder, process: catalog.default_process[binder] })}
+      />
       <OptionCards legend="Regolith" name={nameRegolith} value={composition.regolith} options={regoliths} columns={3} onChange={(regolith) => set({ regolith })} />
+
+      <OptionCards
+        legend="How it's made"
+        name={nameProcess}
+        value={composition.process}
+        options={processes}
+        columns={2}
+        onChange={(process) => set({ process })}
+      />
 
       <p className="group-label">Simulation parameters</p>
       <SliderControl
@@ -95,6 +119,7 @@ export default function ControlsPanel({ composition, onChange, onSave, canSave, 
         onChange={setRegolithWt}
         min={catalog.ranges.regolith_wt[0]}
         max={catalog.ranges.regolith_wt[1]}
+        step={0.5}
         unit="wt%"
         zones={LOADING_ZONES}
       />

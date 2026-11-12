@@ -49,10 +49,10 @@ def test_defaults_fill_optional_fields(client):
 @pytest.mark.parametrize(
     "patch",
     [
-        {"regolith_wt": 81},
+        {"regolith_wt": 93},  # over the 92.5 wt% maximum
         {"regolith_wt": -1},
         {"fiber_wt": 16},
-        {"regolith_wt": 80, "fiber_wt": 10},  # over the 85 wt% total filler limit
+        {"regolith_wt": 90, "fiber_wt": 10},  # over the 95 wt% total filler limit
         {"particle_size": 5},
         {"regolith": "venus"},
         {"binder": "ABS"},

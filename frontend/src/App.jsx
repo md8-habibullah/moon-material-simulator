@@ -18,7 +18,7 @@ import { useThemePreference } from './lib/theme';
 import { readComposition, writeComposition } from './lib/url-state';
 import './lib/charts';
 
-const sameMix = (a, b) => ['binder', 'regolith', 'regolith_wt', 'fiber_wt', 'particle_size', 'temperature'].every((k) => a[k] === b[k]);
+const sameMix = (a, b) => ['binder', 'process', 'regolith', 'regolith_wt', 'fiber_wt', 'particle_size', 'temperature'].every((k) => a[k] === b[k]);
 
 function Section({ id, kicker, title, lede, children }) {
   return (
@@ -119,7 +119,7 @@ export default function App() {
           id="optimize"
           kicker="Optimize"
           title="Find the best mix for the job"
-          lede="Pick a use. The optimizer tests about 2,400 compositions against its requirements and ranks the ones that pass, most locally sourced first."
+          lede="Pick a use. The optimizer tests about 5,000 compositions (every binder, with each way of making it that has lab data) against its requirements and ranks the ones that pass, most locally sourced first."
         >
           <EngineGate engine={engine} error={error} retry={retry}>
             {(eng) => <Optimizer engine={eng} onApply={load} />}

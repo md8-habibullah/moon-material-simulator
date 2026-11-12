@@ -123,7 +123,70 @@ BINDERS = {
         "cryo_modulus_ratio": 5.0,  # estimate (blank in the NASA table)
         "cryo_elongation_ratio": 2.0 / 445.0,
     },
+    # High-performance amorphous thermoplastics that tolerate very high regolith loadings when hot-pressed.
+    # Composite data: Storozhuk et al. 2026 (S008), 50-92.5 wt% lunar simulant, hot-pressed.
+    "PEI": {
+        "label": "PEI",
+        "name": "Polyetherimide",
+        "summary": "Tough high-temperature plastic. Hot-pressed with up to 92.5% lunar soil in 2026 tests.",
+        "biodegradable": False,
+        "made_on_site": False,
+        "density": 1.31,  # S008, measured (neat, hot-pressed)
+        "tensile_strength": 69.0,  # S003 Table 8 (Ultem 9085, FFF)
+        "elastic_modulus": 2.15,  # S003 Table 8
+        "compressive_strength": 150.0,  # S008, measured neat
+        "elongation_at_break": 6.0,  # estimate (S003 Table 8's 70% looks mis-assigned; datasheets give ~6%)
+        "thermal_conductivity": 0.22,  # S008, measured neat
+        "heat_deflection_temp": 169.0,  # S003 Table 8
+        "glass_transition": 247.1,  # S008 Table 3 (modified PEI)
+        "melting_point": 257.0,  # amorphous: softening cap set at Tg + 10 °C
+        "decomposition_temp": 510.2,  # S008 Table 3, T5%
+        "filler_affinity": 0.9,  # estimate (polar backbone wets oxide grains)
+        "tensile_plateau": 0.35,  # estimate
+        "tensile_knee": 0.15,  # estimate
+        "fe_sensitivity": 0.1,
+        "hdt_gain": 20.0,  # amorphous: little crystal nucleation
+        "cryo_strength_ratio": 101.0 / 69.0,  # S003 Table 8 (77 K / RT)
+        "cryo_modulus_ratio": 7.48 / 2.15,
+        "cryo_elongation_ratio": 0.25,  # estimate
+    },
+    "PPSU": {
+        "label": "PPSU",
+        "name": "Polyphenylsulfone",
+        "summary": "Very tough sulfone plastic. Hot-pressed with up to 90% lunar soil in 2026 tests.",
+        "biodegradable": False,
+        "made_on_site": False,
+        "density": 1.29,  # S008, measured
+        "tensile_strength": 70.0,  # S008 intro cites 60-90 MPa; mid-range estimate
+        "elastic_modulus": 2.3,  # S008 (compressive modulus 2.3 GPa; cited tensile 2.0-2.5)
+        "compressive_strength": 93.0,  # S008, measured neat
+        "elongation_at_break": 60.0,  # estimate (typical datasheet)
+        "thermal_conductivity": 0.35,  # S008, measured neat
+        "heat_deflection_temp": 207.0,  # estimate (typical datasheet)
+        "glass_transition": 219.1,  # S008 Table 3
+        "melting_point": 229.0,  # amorphous: softening cap at Tg + 10 °C
+        "decomposition_temp": 483.1,  # S008 Table 3, T5%
+        "filler_affinity": 0.9,  # estimate
+        "tensile_plateau": 0.35,  # estimate
+        "tensile_knee": 0.15,  # estimate
+        "fe_sensitivity": 0.1,
+        "hdt_gain": 20.0,
+        "cryo_strength_ratio": 101.0 / 69.0,  # estimate: PEI's measured ratio
+        "cryo_modulus_ratio": 7.48 / 2.15,  # estimate: PEI's measured ratio
+        "cryo_elongation_ratio": 0.25,  # estimate
+    },
 }
+
+# How the part is made. Real coupons differ a lot by process (see data/evidence), so the evidence
+# model learns a separate correction per process. `sources` are the studies behind each one.
+PROCESSES = {
+    "fff": {"label": "Filament printing", "summary": "Desktop-style 3D printing from a regolith-filled filament.", "sources": ["S001", "S002", "S007"]},
+    "pellet": {"label": "Pellet printing", "summary": "Large-format printing straight from compounded pellets, as NASA Kennedy did.", "sources": ["S003"]},
+    "molded": {"label": "Injection molding", "summary": "Melt injected into a mold, as NASA Glenn made its PHB coupons.", "sources": ["S006", "S011"]},
+    "hot_pressed": {"label": "Hot pressing", "summary": "Powder blend pressed while molten: dense blocks with very little binder.", "sources": ["S008"]},
+    "sintered": {"label": "Pressed + sintered brick", "summary": "Cold-compacted powder, then heated: simple bricks, 5-15% binder.", "sources": ["S004"]},
+}
+DEFAULT_PROCESS = {"PHB": "molded", "PLA": "pellet", "PEEK": "sintered", "LDPE": "fff", "PEI": "hot_pressed", "PPSU": "hot_pressed"}
 
 REGOLITHS = {
     "lunar_highlands": {
@@ -197,12 +260,12 @@ ENVIRONMENTS = {
 }
 
 RANGES = {
-    "regolith_wt": (0.0, 80.0),
+    "regolith_wt": (0.0, 92.5),  # S008 hot-pressed PEI up to 92.5 wt%; NASA Glenn PHB to 80 wt%
     "fiber_wt": (0.0, 15.0),
     "particle_size": (10.0, 150.0),
     "temperature": (-200.0, 150.0),
 }
-MAX_TOTAL_FILLER_WT = 85.0
+MAX_TOTAL_FILLER_WT = 95.0
 
 # Model constants, fitted against the NASA PLA composite measurements in
 # data/nasa_reference_points.csv (see docs/science_model.md for the fit and its residuals).

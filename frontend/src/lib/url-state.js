@@ -1,7 +1,8 @@
 // Keep the current mix in the URL so a design can be shared as a link.
 import catalog, { DEFAULT_COMPOSITION, maxFiberFor } from './catalog.js';
 
-const PARAMS = { b: 'binder', r: 'regolith', w: 'regolith_wt', f: 'fiber_wt', d: 'particle_size', t: 'temperature' };
+const PARAMS = { b: 'binder', p: 'process', r: 'regolith', w: 'regolith_wt', f: 'fiber_wt', d: 'particle_size', t: 'temperature' };
+const TEXT_PARAMS = new Set(['binder', 'process', 'regolith']);
 
 const clamp = (value, [lo, hi]) => Math.min(hi, Math.max(lo, value));
 
@@ -10,10 +11,11 @@ export function readComposition() {
   const c = { ...DEFAULT_COMPOSITION };
   if (catalog.binders[params.get('b')]) c.binder = params.get('b');
   if (catalog.regoliths[params.get('r')]) c.regolith = params.get('r');
+  c.process = catalog.processes[params.get('p')] ? params.get('p') : catalog.default_process[c.binder];
   for (const [short, key] of Object.entries(PARAMS)) {
-    if (key === 'binder' || key === 'regolith') continue;
+    if (TEXT_PARAMS.has(key)) continue;
     const n = Number(params.get(short));
-    if (params.has(short) && Number.isFinite(n)) c[key] = clamp(Math.round(n), catalog.ranges[key]);
+    if (params.has(short) && Number.isFinite(n)) c[key] = clamp(Math.round(n * 2) / 2, catalog.ranges[key]);
   }
   c.fiber_wt = Math.min(c.fiber_wt, maxFiberFor(c.regolith_wt));
   return c;

@@ -25,3 +25,7 @@ Thumbs.db
 # Local AI-tool config / sandbox placeholders
 .claude/
 .mcp.json
+
+# Research PDFs: large, and some are third-party. Re-download with research/download_sources.py
+research/pdfs/
+research/audit/_cache/

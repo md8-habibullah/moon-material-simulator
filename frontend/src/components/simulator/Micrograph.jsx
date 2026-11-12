@@ -36,7 +36,8 @@ function draw(ctx, { regolith, regolith_wt: wt, particle_size: size, binder }) {
     ring: 7 + rand() * 6,
   }));
   const [dark, light, warm] = TINTS[regolith];
-  const crystalline = binder === 'LDPE' ? 0.75 : binder === 'PLA' ? 0.55 : 1;
+  // Amorphous PEI and PPSU form no spherulites; PLA and LDPE fewer than PHB.
+  const crystalline = binder === 'LDPE' ? 0.75 : binder === 'PLA' ? 0.55 : binder === 'PEI' || binder === 'PPSU' ? 0.08 : 1;
   const img = ctx.createImageData(W, H);
 
   for (let y = 0; y < H; y += 1) {

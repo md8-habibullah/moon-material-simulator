@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import catalog from '../../lib/catalog';
 import { volumeFractions } from '../../lib/engine/physics';
 
-const MATRIX_COLORS = { PHB: 0xf1d9a7, PLA: 0x9fd4ff, PEEK: 0xd9b27a, LDPE: 0xe6eef4 };
+const MATRIX_COLORS = { PHB: 0xf1d9a7, PLA: 0x9fd4ff, PEEK: 0xd9b27a, LDPE: 0xe6eef4, PEI: 0xe0a24a, PPSU: 0xc9b98f };
 const MAX_GRAINS = 900;
 const MAX_FIBRES = 140;
 const FULL_FRACTION = 0.62; // ~80 wt% regolith fills the whole grain budget

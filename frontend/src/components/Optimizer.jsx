@@ -21,7 +21,7 @@ export default function Optimizer({ engine, onApply }) {
 
   useEffect(() => {
     setState((s) => ({ ...s, status: 'running' }));
-    // Let the "searching" state paint before the ~2,400-mix search runs.
+    // Let the "searching" state paint before the ~5,000-mix search (binders × processes × mixes) runs.
     const timer = setTimeout(() => {
       const binders = localOnly ? Object.keys(catalog.binders).filter((b) => catalog.binders[b].made_on_site) : undefined;
       setState({ status: 'done', result: optimize(engine, catalog, app, { binders }) });
@@ -86,10 +86,10 @@ export default function Optimizer({ engine, onApply }) {
             </p>
             <ol className="ranked">
               {result.feasible.map((c, i) => (
-                <li key={describeMix(c.composition) + i}>
+                <li key={describeMix(c.composition, { withProcess: true }) + i}>
                   <span className="rank">{i + 1}</span>
                   <div className="ranked-main">
-                    <strong>{describeMix(c.composition)}</strong>
+                    <strong>{describeMix(c.composition, { withProcess: true })}</strong>
                     <small>
                       {c.composition.particle_size} µm grains · {Math.round(c.inSitu * 100)}% local · tightest margin +{(c.margin * 100).toFixed(0)}% on{' '}
                       {PROPERTY[c.worst.key].label.toLowerCase()}
@@ -124,8 +124,8 @@ export default function Optimizer({ engine, onApply }) {
                 <p className="group-label">Closest misses</p>
                 <ul className="nearest">
                   {result.nearest.map((c) => (
-                    <li key={describeMix(c.composition)}>
-                      <span>{describeMix(c.composition)}</span>
+                    <li key={describeMix(c.composition, { withProcess: true })}>
+                      <span>{describeMix(c.composition, { withProcess: true })}</span>
                       <small>
                         {PROPERTY[c.worst.key].label}: {formatValue(c.worst.value, c.worst.key)} {catalog.units[c.worst.key]} (needs{' '}
                         {c.worst.kind === 'min' ? '≥' : '≤'} {c.worst.limit})

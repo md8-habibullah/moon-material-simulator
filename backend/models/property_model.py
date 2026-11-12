@@ -19,7 +19,9 @@ from sklearn.model_selection import train_test_split
 
 from config import DATA_PATH, RANDOM_SEED
 from utils.data_processor import FEATURE_COLUMNS, TARGET_COLUMNS, encode_frame, encode_rows
-from utils.materials import binder_baseline, temperature_factors
+from models.evidence_model import interpolate
+from utils.data_processor import physics_features
+from utils.materials import DEFAULT_PROCESS, binder_baseline, temperature_factors
 
 FOREST_PARAMS = {"n_estimators": 28, "max_depth": 12, "min_samples_leaf": 5, "random_state": RANDOM_SEED, "n_jobs": -1}
 
@@ -36,6 +38,7 @@ class PropertyModel:
     z_std: np.ndarray
     metrics: dict = field(default_factory=dict)
     training_rows: int = 0
+    evidence_grid: dict | None = None  # from EvidenceModel.export_grid(); None = physics only
 
     @classmethod
     def train(cls, data_path=DATA_PATH) -> "PropertyModel":
@@ -66,22 +69,43 @@ class PropertyModel:
         z = np.stack([tree.predict(X) for tree in self.forest.estimators_])
         return np.exp(z * self.z_std + self.z_mean) * base
 
+    def evidence(self, row: dict) -> dict:
+        """Per-target evidence correction (log mean, log std) and how much data sits near this mix."""
+        out = {}
+        if not self.evidence_grid:
+            return out
+        phys = physics_features(row["regolith_wt"], row["fiber_wt"], row["particle_size"], row["binder"], row["regolith"])
+        phi = phys["phi_regolith"] + phys["phi_fiber"]
+        process = row.get("process") or DEFAULT_PROCESS[row["binder"]]
+        for t in TARGET_COLUMNS:
+            mean, std, same, binder_n = interpolate(self.evidence_grid, t, row["binder"], process, phi)
+            out[t] = {"mean": mean, "std": std, "same": same, "binder": binder_n}
+        return out
+
     def predict_many(self, rows: list[dict]) -> list[dict]:
-        """Rows need binder, regolith, regolith_wt, fiber_wt, particle_size and temperature."""
+        """Rows need binder, regolith, regolith_wt, fiber_wt, particle_size, temperature (and optionally process)."""
         per_tree = self._room_temperature(encode_rows(rows), _baselines(r["binder"] for r in rows))
         hdt_col = TARGET_COLUMNS.index("max_service_temp")
+        evidence = [self.evidence(row) for row in rows]
         for j, row in enumerate(rows):
+            if evidence[j]:
+                per_tree[:, j, :] *= np.exp([evidence[j][t]["mean"] for t in TARGET_COLUMNS])
             for k in range(per_tree.shape[0]):
                 factors = temperature_factors(row["binder"], per_tree[k, j, hdt_col], row["temperature"])
                 per_tree[k, j] *= [factors[t] for t in TARGET_COLUMNS]
         mean, std = per_tree.mean(axis=0), per_tree.std(axis=0)
-        return [
-            {
+        out = []
+        for j in range(len(rows)):
+            unc = {}
+            for i, t in enumerate(TARGET_COLUMNS):
+                ev_sd = evidence[j][t]["std"] if evidence[j] else 0.0
+                unc[t] = round(float(np.sqrt(std[j, i] ** 2 + (mean[j, i] * (np.exp(ev_sd) - 1)) ** 2)), 4)
+            out.append({
                 "properties": {t: round(float(mean[j, i]), 4) for i, t in enumerate(TARGET_COLUMNS)},
-                "uncertainty": {t: round(float(std[j, i]), 4) for i, t in enumerate(TARGET_COLUMNS)},
-            }
-            for j in range(len(rows))
-        ]
+                "uncertainty": unc,
+                "evidence": {t: {"same": e["same"], "binder": e["binder"]} for t, e in evidence[j].items()},
+            })
+        return out
 
     def feature_importance(self) -> dict:
         return {name: round(float(v), 4) for name, v in zip(FEATURE_COLUMNS, self.forest.feature_importances_)}

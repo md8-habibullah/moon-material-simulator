@@ -154,20 +154,46 @@ export default function ModelInsight() {
 
         <div className="card">
           <div className="card-head compact">
-            <h3>Hold-out accuracy</h3>
+            <h3>Accuracy on real lab data</h3>
           </div>
-          <p className="card-sub">R² on {Math.round(catalog.model.training_rows / 4).toLocaleString()} mixes the forest never saw. 1.00 is perfect.</p>
-          <ul className="r2-list">
-            {Object.entries(metrics).map(([k, m]) => (
-              <li key={k}>
-                <span>{PROPERTY[k].label}</span>
-                <span className="bar">
-                  <i style={{ width: `${Math.max(0, (m.r2 - 0.9) / 0.1) * 100}%` }} />
-                </span>
-                <strong>{m.r2.toFixed(3)}</strong>
-              </li>
-            ))}
-          </ul>
+          <p className="card-sub">
+            Average error when predicting measurements the model never saw. <em>Untested mix</em>: a new composition of a material
+            system that has been tested. <em>New study</em>: a whole lab left out, the hardest test.
+          </p>
+          <div className="table-scroll">
+            <table className="accuracy-table">
+              <thead>
+                <tr>
+                  <th scope="col">Property</th>
+                  <th scope="col">n</th>
+                  <th scope="col">Physics alone</th>
+                  <th scope="col">+ lab data</th>
+                  <th scope="col">New study</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(catalog.evidence ?? {}).map(([k, e]) => {
+                  const mix = e.validation?.new_mix;
+                  const study = e.validation?.new_study;
+                  const pct = (v) => (v == null ? '–' : v < 0.1 ? `${(v * 100).toFixed(1)}%` : `${Math.round(v * 100)}%`);
+                  return (
+                    <tr key={k}>
+                      <th scope="row">{PROPERTY[k].label}</th>
+                      <td>{e.n_train}</td>
+                      <td>{pct(mix?.physics_mape)}</td>
+                      <td className={mix && mix.hybrid_mape < mix.physics_mape ? 'better' : ''}>{pct(mix?.hybrid_mape)}</td>
+                      <td>{pct(study?.hybrid_mape)}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="card-sub">
+            Emulator check: the browser forest reproduces the physics model with R² ≥{' '}
+            {Math.min(...Object.values(metrics).map((m) => m.r2)).toFixed(2)} on {Math.round(catalog.model.training_rows / 4).toLocaleString()} held-out
+            synthetic mixes. That shows the copy is faithful, not that the physics is right; the table above is the real test.
+          </p>
           <div className="card-head compact spaced">
             <h3>What drives the predictions</h3>
           </div>

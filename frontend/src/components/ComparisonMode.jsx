@@ -9,9 +9,9 @@ export const MAX_COMPARE = 4;
 const LETTERS = ['A', 'B', 'C', 'D'];
 
 function toCsv(rows) {
-  const header = ['formula', 'binder', 'regolith', 'regolith_wt', 'fiber_wt', 'particle_size_um', 'temperature_c', 'in_situ_pct', ...PROPERTIES.map((p) => `${p.key} (${catalog.units[p.key]})`)];
+  const header = ['formula', 'binder', 'process', 'regolith', 'regolith_wt', 'fiber_wt', 'particle_size_um', 'temperature_c', 'in_situ_pct', ...PROPERTIES.map((p) => `${p.key} (${catalog.units[p.key]})`)];
   const lines = rows.map(({ letter, item, result }) =>
-    [letter, item.binder, item.regolith, item.regolith_wt, item.fiber_wt, item.particle_size, item.temperature, Math.round(result.in_situ_fraction * 100), ...PROPERTIES.map((p) => result.properties[p.key].toFixed(4))].join(','),
+    [letter, item.binder, item.process ?? catalog.default_process[item.binder], item.regolith, item.regolith_wt, item.fiber_wt, item.particle_size, item.temperature, Math.round(result.in_situ_fraction * 100), ...PROPERTIES.map((p) => result.properties[p.key].toFixed(4))].join(','),
   );
   return [header.join(','), ...lines].join('\n');
 }

@@ -49,10 +49,12 @@ export const TEMPERATURE_PRESETS = [
 export const LOADING_ZONES = [
   { label: 'Tools', from: 5, to: 20 },
   { label: 'Structures', from: 45, to: 80 },
+  { label: 'Bricks', from: 85, to: 92.5 },
 ];
 
 export const DEFAULT_COMPOSITION = {
   binder: 'PHB',
+  process: 'molded',
   regolith: 'lunar_highlands',
   regolith_wt: 30,
   fiber_wt: 0,
@@ -74,10 +76,15 @@ export function formatValue(value, key) {
   return value.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
 }
 
-export function describeMix(c) {
+export function processOf(c) {
+  return c.process && catalog.processes[c.process] ? c.process : catalog.default_process[c.binder];
+}
+
+export function describeMix(c, { withProcess = false } = {}) {
   const parts = [`${c.regolith_wt}% ${catalog.regoliths[c.regolith].label}`];
   if (c.fiber_wt > 0) parts.push(`${c.fiber_wt}% fibre`);
-  return `${parts.join(' + ')} in ${catalog.binders[c.binder].label}`;
+  const mix = `${parts.join(' + ')} in ${catalog.binders[c.binder].label}`;
+  return withProcess ? `${mix}, ${catalog.processes[processOf(c)].label.toLowerCase()}` : mix;
 }
 
 export function maxFiberFor(regolithWt) {

@@ -15,10 +15,13 @@ from datetime import date
 
 from config import BASE_DIR, DATA_PATH, RANDOM_SEED
 from data.generate_dataset import generate
+from evidence.audit import load_sources
+from models.evidence_model import EvidenceModel
 from models.property_model import PropertyModel
+from scripts.export_evidence import export as export_evidence
 from services import ntrs
 from services.catalog import build_catalog
-from utils.materials import BINDERS, MAX_TOTAL_FILLER_WT, RANGES, REGOLITHS
+from utils.materials import BINDERS, MAX_TOTAL_FILLER_WT, PROCESSES, RANGES, REGOLITHS
 
 OUT_DIR = BASE_DIR.parent / "frontend" / "src" / "generated"
 SNAPSHOT_QUERIES = [
@@ -52,6 +55,7 @@ def parity_rows(n: int = 60) -> list[dict]:
                 "fiber_wt": fiber_wt,
                 "particle_size": round(rng.uniform(*RANGES["particle_size"]), 1),
                 "temperature": round(rng.uniform(*RANGES["temperature"]), 1),
+                "process": rng.choice(list(PROCESSES)),
             }
         )
     return rows
@@ -79,7 +83,14 @@ def main() -> None:
 
     model = PropertyModel.train()
     print(f"Trained on {model.training_rows} rows; hold-out R² " + ", ".join(f"{k}={v['r2']}" for k, v in model.metrics.items()))
+    evidence = EvidenceModel.train()
+    model.evidence_grid = evidence.export_grid()
+    for target, v in evidence.validation.items():
+        mix, study = v.get("new_mix") or {}, v.get("new_study") or {}
+        print(f"  evidence {target}: n={len(evidence.training[target])}, new-mix MAPE {mix.get('physics_mape')} -> {mix.get('hybrid_mape')}, new-study {study.get('physics_mape')} -> {study.get('hybrid_mape')}")
     write("forest.json", model.export())
+    write("evidence_grid.json", {"phi": model.evidence_grid["phi"], "targets": {t: {"table": v["table"]} for t, v in model.evidence_grid["targets"].items()}})
+    write("evidence_points.json", export_evidence(evidence, load_sources()))
     write("catalog.json", build_catalog(model))
     rows = parity_rows()
     write("parity_fixtures.json", [{"input": r, **p} for r, p in zip(rows, model.predict_many(rows))])

@@ -1,5 +1,7 @@
-import { useMemo } from 'react';
-import { Armchair, BrickWall, CircleCheck, CircleX, Flame, PanelsTopLeft, SquareStack, Wrench } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { Armchair, BrickWall, CircleCheck, CircleX, FlaskConical, Flame, PanelsTopLeft, Sigma, SquareStack, Wrench } from 'lucide-react';
+import EvidenceDrawer from './EvidenceDrawer';
+import { supportLevel } from '../../lib/engine/evidence';
 import catalog, { PROPERTIES, PROPERTY, formatValue } from '../../lib/catalog';
 import { evaluate } from '../../lib/engine/optimizer';
 import { porosity, volumeFractions } from '../../lib/engine/physics';
@@ -59,7 +61,14 @@ function CompositionDonut({ composition }) {
   );
 }
 
+const SUPPORT = {
+  measured: { label: 'Lab-backed', icon: FlaskConical },
+  related: { label: 'Related data', icon: FlaskConical },
+  physics: { label: 'Physics estimate', icon: Sigma },
+};
+
 export default function OutputPanel({ engine, composition, result, baseline }) {
+  const [evidenceFor, setEvidenceFor] = useState(null);
   const fits = useMemo(
     () => catalog.applications.map((app) => ({ app, ...evaluate(engine, app, composition) })),
     [engine, composition],
@@ -73,9 +82,9 @@ export default function OutputPanel({ engine, composition, result, baseline }) {
           <p className="kicker">Results</p>
           <h2 id="output-title">Simulation output</h2>
         </div>
-        <span className="chip chip-accent" title={`Random Forest with ${engine.treeCount} trees, running in your browser`}>
+        <span className="chip chip-accent" title={`Physics emulated by a ${engine.treeCount}-tree Random Forest, corrected by a Gaussian process trained on real lab measurements; all in your browser`}>
           <span className="pulse" aria-hidden="true" />
-          Live · {engine.treeCount} trees
+          Live · physics + lab data
         </span>
       </div>
 
@@ -103,6 +112,15 @@ export default function OutputPanel({ engine, composition, result, baseline }) {
             </p>
             <p className="property-meta">± {formatValue(result.uncertainty[p.key], p.key)}</p>
             <Delta value={result.properties[p.key]} base={baseline?.properties[p.key]} better={p.better} />
+            {(() => {
+              const level = supportLevel(result.evidence?.[p.key] ?? { same: 0, binder: 0 });
+              const S = SUPPORT[level];
+              return (
+                <button type="button" className={`support-chip support-${level}`} onClick={() => setEvidenceFor(p.key)} aria-label={`${S.label}: see the lab evidence for ${p.label}`}>
+                  <S.icon size={11} aria-hidden="true" /> {S.label}
+                </button>
+              );
+            })()}
           </article>
         ))}
       </div>
@@ -126,6 +144,8 @@ export default function OutputPanel({ engine, composition, result, baseline }) {
           })}
         </ul>
       </div>
+
+      <EvidenceDrawer propertyKey={evidenceFor} composition={composition} result={result} onClose={() => setEvidenceFor(null)} />
 
       <div className="oxides">
         <p className="group-label">

@@ -3,11 +3,13 @@ import catalog, { VIDEO_URL } from '../lib/catalog';
 
 export default function Hero() {
   const article = catalog.sources.find((s) => s.id === 'nasa-glenn-2026');
-  const r2 = Object.values(catalog.model.holdout_metrics).map((m) => m.r2);
+  const evidence = Object.values(catalog.evidence ?? {});
+  const measured = evidence.reduce((n, e) => n + e.n_train, 0);
+  const studies = new Set(evidence.flatMap((e) => e.sources)).size;
   const stats = [
     { value: '8', label: 'properties predicted live' },
-    { value: String(catalog.validation.length), label: 'NASA measurements checked' },
-    { value: `≥ ${Math.min(...r2).toFixed(2)}`, label: 'hold-out R²' },
+    { value: String(measured), label: 'lab measurements the model learns from' },
+    { value: String(studies), label: 'studies, every value traced to its page' },
     { value: '0 kg', label: 'binder shipped, if grown on site' },
   ];
 
@@ -23,9 +25,9 @@ export default function Hero() {
           Design a building material from <span className="gradient-text">moon dust</span>, then see how it holds up.
         </h1>
         <p className="lede">
-          Mix NASA’s bioplastic (or PLA, PEEK, LDPE) with lunar or Martian regolith. A Random Forest calibrated on NASA measurements
-          predicts strength, stiffness, heat limits and more in real time, then finds the best mix for a wrench, a bracket or a wall
-          panel.
+          Mix NASA’s bioplastic (or PLA, PEEK, LDPE, PEI, PPSU) with lunar or Martian regolith and choose how to make it. A physics
+          model, corrected by machine learning on real lab measurements, predicts strength, stiffness, heat limits and more in real time,
+          shows the lab data behind every number, then finds the best mix for a wrench, a bracket or a wall panel.
         </p>
         <div className="hero-actions">
           <a href="#simulator" className="button button-primary">

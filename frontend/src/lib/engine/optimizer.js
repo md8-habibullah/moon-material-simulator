@@ -1,6 +1,6 @@
 // "Design → test → optimize": search the composition space for mixes that meet a use's needs.
 
-const WT_STEPS = Array.from({ length: 17 }, (_, i) => i * 5); // 0..80 wt%
+const WT_STEPS = [...Array.from({ length: 19 }, (_, i) => i * 5), 92.5]; // 0..90 wt%, plus 92.5
 const FIBER_STEPS = [0, 5, 10, 15];
 const SIZE_STEPS = [25, 60, 120];
 
@@ -24,25 +24,32 @@ export function evaluate(engine, application, composition) {
   return { pass: worst.slack >= 0, margin: worst.slack, worst, checks };
 }
 
+// The processes worth trying for a binder: its default plus every process with real data for it.
+export function processesFor(catalog, binder) {
+  return [...new Set([catalog.default_process[binder], ...(catalog.binder_processes?.[binder] ?? [])])];
+}
+
 export function optimize(engine, catalog, application, { binders = Object.keys(catalog.binders), limit = 5 } = {}) {
   const maxFiller = catalog.physics.max_total_filler_wt;
   const best = new Map(); // one entry per binder/regolith/wt, keeping its best fibre and grain size
   let evaluated = 0;
 
   for (const binder of binders) {
-    for (const regolith of regolithsFor(catalog, application.body)) {
-      for (const regolithWt of WT_STEPS) {
-        for (const fiberWt of FIBER_STEPS) {
-          if (regolithWt + fiberWt > maxFiller) continue;
-          for (const particleSize of SIZE_STEPS) {
-            const composition = { binder, regolith, regolith_wt: regolithWt, fiber_wt: fiberWt, particle_size: particleSize };
-            const result = evaluate(engine, application, composition);
-            evaluated += 1;
-            const inSitu = engine.predict({ ...composition, temperature: 23 }).in_situ_fraction;
-            const candidate = { composition, inSitu, ...result };
-            const key = `${binder}|${regolith}|${regolithWt}`;
-            const current = best.get(key);
-            if (!current || rank(candidate, current) < 0) best.set(key, candidate);
+    for (const process of processesFor(catalog, binder)) {
+      for (const regolith of regolithsFor(catalog, application.body)) {
+        for (const regolithWt of WT_STEPS) {
+          for (const fiberWt of FIBER_STEPS) {
+            if (regolithWt + fiberWt > maxFiller) continue;
+            for (const particleSize of SIZE_STEPS) {
+              const composition = { binder, process, regolith, regolith_wt: regolithWt, fiber_wt: fiberWt, particle_size: particleSize };
+              const result = evaluate(engine, application, composition);
+              evaluated += 1;
+              const inSitu = engine.predict({ ...composition, temperature: 23 }).in_situ_fraction;
+              const candidate = { composition, inSitu, ...result };
+              const key = `${binder}|${process}|${regolith}|${regolithWt}`;
+              const current = best.get(key);
+              if (!current || rank(candidate, current) < 0) best.set(key, candidate);
+            }
           }
         }
       }

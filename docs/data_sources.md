@@ -65,8 +65,23 @@ regolith-polymer composites for lunar infrastructure.
   panel.
 - With the backend running, `/api/research` searches NTRS live.
 
+## 7. Peer-reviewed and preprint studies (evidence dataset)
+
+Beyond the NASA sources above, the evidence correction learns from these. Every value is traced to its page and
+audited ([evidence.md](evidence.md); the full registry is [`research/sources.csv`](../research/sources.csv)):
+
+- Li et al. 2020, *Polymers* 12:1724 (PLA + CLRS-1, filament printing). CC BY 4.0
+- Alexander-Roy et al. 2025, *Polymers* 17:2685 (basalt moon dust PLA, NASA Glenn co-authors). CC BY 4.0
+- Torre et al. 2025, *Applied Sciences* 15:679 (regolith-rich PEEK bricks). CC BY 4.0
+- Moazen et al. 2025, *Acta Astronautica* 237:409-420 (LDPE + LMS-1D, filament printing). CC BY 4.0
+- Storozhuk et al. 2026, *Polymers* 18:2371 (PPSU/PEI + 50-92.5 wt% lunar simulant, hot-pressed). CC BY 4.0
+- Preprint 202606.1562 (2026, FEM of regolith-filled PEEK; simulation only). CC BY 4.0
+- NASA NTRS 20030020808 (polyethylene/regolith compression and radiation shielding, 2003)
+
+Cropped images of these papers appear in the app's evidence drawer under their licences, with attribution.
+
 ## Not NASA data (and labelled as such)
 
-- **Synthetic training set:** generated from the calibrated physics model.
+- **Synthetic training set:** generated from the calibrated physics model, used only to train the browser emulator.
 - **Approximate oxide compositions** of the three soil types, typical published simulant values, rounded.
 - **Estimates:** compressive strength, thermal conductivity and density of binders; PEEK/LDPE composite constants.

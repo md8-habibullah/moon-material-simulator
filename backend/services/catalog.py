@@ -14,6 +14,16 @@ from utils.applications import APPLICATIONS
 from utils.data_processor import FEATURE_COLUMNS, TARGET_COLUMNS, UNITS
 
 NASA_POINTS_PATH = BASE_DIR / "data" / "nasa_reference_points.csv"
+SOURCES_PATH = BASE_DIR.parent / "research" / "sources.csv"
+
+
+def evidence_sources() -> dict:
+    """The research registry (research/sources.csv), keyed by source id, for citations in the app."""
+    if not SOURCES_PATH.exists():
+        return {}
+    with open(SOURCES_PATH, newline="", encoding="utf-8") as fh:
+        keep = ("title", "authors", "year", "venue", "doi", "url", "ntrs_id", "licence", "type", "binders", "fillers")
+        return {r["source_id"]: {k: r[k] for k in keep} for r in csv.DictReader(fh)}
 
 NASA_SOURCES = [
     {
@@ -99,6 +109,8 @@ def nasa_validation(model: PropertyModel) -> list[dict]:
             "fiber_wt": 0.0,
             "particle_size": m.SIZE_REF_UM,
             "temperature": float(p["temperature_c"]),
+            # NASA Glenn injection-molded its PHB coupons; NASA Kennedy printed PLA from pellets.
+            "process": "molded" if p["binder"] == "PHB" else "pellet" if p["binder"] == "PLA" else None,
         }
         for p in points
     ]
@@ -129,9 +141,40 @@ def nasa_validation(model: PropertyModel) -> list[dict]:
     return out
 
 
+def evidence_summary(model: PropertyModel) -> dict:
+    """What the evidence correction was trained on and how well it predicts held-out data."""
+    grid = model.evidence_grid or {"targets": {}}
+    return {
+        target: {
+            "property": t["property"],
+            "n_train": t["n_train"],
+            "sources": t["sources"],
+            "calibration": t["calibration"],
+            "validation": t["validation"],
+            "hyper": t["hyper"],
+        }
+        for target, t in grid["targets"].items()
+    }
+
+
+def binder_processes(model: PropertyModel) -> dict:
+    """For each binder, the processes it has real measurements for (any property)."""
+    grid = model.evidence_grid or {"targets": {}}
+    out = {b: set() for b in m.BINDERS}
+    for t in grid["targets"].values():
+        for key, cell in t["table"].items():
+            binder, process = key.split("|")
+            if any(cell["same"]):
+                out[binder].add(process)
+    return {b: sorted(v) for b, v in out.items()}
+
+
 def build_catalog(model: PropertyModel) -> dict:
     return {
         "binders": m.BINDERS,
+        "processes": m.PROCESSES,
+        "default_process": m.DEFAULT_PROCESS,
+        "binder_processes": binder_processes(model),
         "regoliths": m.REGOLITHS,
         "fiber": m.FIBER,
         "environments": m.ENVIRONMENTS,
@@ -150,5 +193,7 @@ def build_catalog(model: PropertyModel) -> dict:
             "feature_importance": model.feature_importance(),
         },
         "validation": nasa_validation(model),
+        "evidence": evidence_summary(model),
+        "evidence_sources": evidence_sources(),
         "sources": NASA_SOURCES,
     }

@@ -2,18 +2,23 @@
 
 [← Back to README](../README.md) · Code: [`backend/utils/materials.py`](../backend/utils/materials.py)
 
-The simulator predicts eight properties of a printed or molded **binder + regolith (+ basalt fibre)** composite. It
-combines a physics model calibrated on NASA measurements, a Random Forest trained on that model, and explicit
-temperature physics.
+The simulator predicts eight properties of a printed, molded or pressed **binder + regolith (+ basalt fibre)**
+composite. It combines four parts:
+
+1. A physics model calibrated on NASA measurements (sections 2-3).
+2. A Random Forest that copies that model so it runs in the browser (section 4).
+3. A Gaussian-process **evidence correction** learned from 152 real lab measurements in 7 studies (section 5).
+4. Explicit temperature physics (section 6).
 
 ## 1. Inputs
 
 | Input | Range | Notes |
 | --- | --- | --- |
-| Binder | PHB, PLA, PEEK, LDPE | PHB is NASA Glenn's bacterial bioplastic (poly(3-hydroxybutyrate)) |
+| Binder | PHB, PLA, PEEK, LDPE, PEI, PPSU | PHB is NASA Glenn's bacterial bioplastic (poly(3-hydroxybutyrate)); PEI/PPSU baselines from S008 and S003 Table 8 |
+| Process | filament printing, pellet printing, injection molding, hot pressing, pressed + sintered brick | Default per binder: the route its lab data used |
 | Regolith | lunar highlands, lunar mare, Martian | LHS-1/LSP-2-type, LMS-1/BP-1-type, MGS-1/JEZ-1-type simulants |
-| Regolith content | 0–80 wt% | NASA Glenn processed PHB up to 80 wt% |
-| Basalt fibre | 0–15 wt% | regolith + fibre ≤ 85 wt% |
+| Regolith content | 0–92.5 wt% | NASA Glenn processed PHB up to 80 wt%; S008 hot-pressed PEI up to 92.5 wt% |
+| Basalt fibre | 0–15 wt% | regolith + fibre ≤ 95 wt% |
 | Median grain size | 10–150 µm | |
 | Operating temperature | −200 to 150 °C | 77 K = −196 °C |
 
@@ -73,29 +78,80 @@ NASA Glenn's measurements say otherwise:
 
 The model follows the data.
 
-## 4. Machine learning
+## 4. Physics emulator (Random Forest)
 
-- **Dataset:** 6,000 random mixes from the physics model at 23 °C, with 0.4–5% Gaussian scatter.
+The forest's job is to make the physics model fast and portable (it runs in the browser). It adds no new
+knowledge; section 5 is where real data comes in.
+
+- **Dataset:** 9,000 random mixes from the physics model at 23 °C (6 binders, 0–92.5 wt%), with 0.4–5% Gaussian scatter.
 - **Features:** raw inputs, physics-informed features (volume fractions, bond, bond × volume, porosity, grain
   stiffness, density estimate), and binder/soil one-hots.
 - **Targets:** log(property / pure-binder property), standardized. Learning ratios stops the binder's scale from
   dominating.
 - **Model:** `RandomForestRegressor(n_estimators=28, max_depth=12, min_samples_leaf=5)`, one multi-output forest.
 - **Uncertainty:** the standard deviation across trees after mapping each tree's output back to real units.
-- **Hold-out R² (1,200 mixes):** 0.989 (tensile) to 0.9997 (decomposition temperature).
-- **Against NASA (56 points, per print direction):** 6.0% mean error on Glenn PHB, 17.3% on Kennedy PLA.
+- **Emulator fidelity (R² on 1,800 held-out synthetic mixes):** 0.981 (conductivity) to 0.9996 (decomposition
+  temperature). This shows the forest copies the physics faithfully. It says nothing about whether the physics is
+  right; section 5 tests that against real data.
 
-## 5. Temperature physics (applied per tree)
+## 5. Evidence correction (Gaussian process on real measurements)
+
+Code: [`backend/models/evidence_model.py`](../backend/models/evidence_model.py) · Data: [evidence pipeline](evidence.md)
+
+Real coupons depart from the physics because of how they were made, how well the binder wets the grains, and lab
+scatter. For each property with enough data we learn that departure in log space:
+
+    log(measured) = log(physics(x)) + δ(φ, binder, process) + noise,      δ ~ GP(0, k)
+
+    k = r(φ,φ')·[ s_all² + s_binder²·same binder + s_process²·same process + s_pair²·same binder and process ]
+
+Here r is a squared-exponential kernel on the filler volume fraction φ. Effects can be shared across everything,
+per binder, per process or per binder-process pair, and the marginal likelihood decides how much of each.
+Hyperpriors are centred on the size of the property's own corrections. Each point's noise is a fitted floor plus
+its reported standard deviation. Far from any data δ → 0, so the prediction returns to physics and its ± grows.
+The ± bands are widened by a calibration factor until 90% of held-out mixes fall inside them.
+
+**Training data:** first-hand, experimental, room-temperature measurements of the predicted properties. Excluded:
+cited values, duplicates between NASA decks, vacuum-cured bricks, low-confidence chart readings, and composites
+whose filler content isn't stated. That leaves 152 values from S001, S003, S004, S006, S007, S008 and S011.
+
+**Validation: average error on measurements the model never saw**
+
+| Property | n | Sources | Physics alone | + lab data (untested mix) | New study left out | ± calibration |
+| --- | --- | --- | --- | --- | --- | --- |
+| Tensile strength | 35 | S001, S003, S006/S011, S007 | 19% | 18% | 19% | ×1.02 |
+| Stiffness | 8 | S003, S007 | 65% | 19% | 53% | ×1.00 |
+| Compressive strength | 36 | S003, S004, S008 | 230% | 34% | 78% | ×1.06 |
+| Density | 25 | S003, S008 | 16% | 5% | 11% | ×1.02 |
+| Thermal conductivity | 14 | S008 | 32% | 7% | n/a (one study) | ×1.22 |
+| Decomposition temperature | 34 | S001, S006/S011 | 1.1% | 1.3% | 1.3% | ×1.09 |
+
+- *Untested mix* (leave-one-mix-out): each tested mix (study × binder × process × filler level) is predicted
+  without its own data. This is how the simulator is used.
+- *New study* (leave-one-study-out): a whole lab is left out, the hardest test. A process that only one study used
+  (S004's cold-compacted, sintered PEEK bricks) can't be predicted from the others. That is why compressive
+  strength stays at 78%. The website marks such predictions "Physics estimate" or "Related data".
+- Decomposition temperature gains nothing because the physics was already fitted to the same NASA Glenn points.
+
+**In the browser** the GP is exported as a table over φ = 0…0.9 for every binder × process
+(`evidence_grid.json`). Python and JavaScript interpolate the same table, and a parity test checks them on 60
+random mixes. Per tree, the forest's room-temperature output is multiplied by exp(δ) before the temperature
+physics. The final ± combines the tree spread with the GP's.
+
+## 6. Temperature physics (applied per tree)
 
 - **Cold:** linear interpolation between 1.0 at 23 °C and NASA's 77 K ratio (log-linear for elongation).
 - **Hot:** strength and stiffness × σ((T_service − T)/12) normalized at 23 °C; elongation rises as the matrix softens.
 
-## 6. Limitations
+## 7. Limitations
 
-- The training data are synthetic. The model interpolates the calibrated physics; it has not learned from thousands
-  of coupons.
-- PHB compressive strength, conductivity and density, and every PEEK/LDPE composite value, are estimates without NASA
-  composite data.
+- Real data are sparse: 152 measurements, and each study used one binder and one process. The evidence model
+  interpolates well within a tested material system and transfers only partly to a new one (see the new-study
+  column).
+- Where a chip says "Physics estimate" there are no lab data near that mix. Examples are PHB compressive strength
+  and conductivity, PEEK tensile, and every flexibility and max-service-temperature value.
+- Simulants are not real regolith (no agglutinates or nanophase iron), and S008's VI-75 simulant is far richer in
+  SiO₂ than lunar soil.
 - Print anisotropy (0° vs 90°) is averaged; real parts vary more.
 - No radiation, UV, vacuum outgassing or long-term creep effects yet. NASA's MISSE-23/24 and LESTR results will
   inform these.

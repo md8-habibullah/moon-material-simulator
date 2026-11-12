@@ -11,7 +11,7 @@ import pandas as pd
 from config import DATA_PATH, RANDOM_SEED
 from utils.materials import BINDERS, MAX_TOTAL_FILLER_WT, RANGES, REGOLITHS, room_temperature_properties
 
-N_SAMPLES = 6000
+N_SAMPLES = 9000  # 6 binders × 3 soils over 0-92.5 wt%
 # Coupon-to-coupon scatter for printed composites (NASA's 0°/90° results differ by far more).
 NOISE = {
     "tensile_strength": 0.03,

@@ -13,10 +13,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, model_validator
 
 from config import ALLOWED_ORIGINS, MAX_COMPARE_ITEMS
+from models.evidence_model import EvidenceModel
 from models.property_model import PropertyModel
 from services import ntrs
 from services.catalog import build_catalog
-from utils.materials import MAX_TOTAL_FILLER_WT, RANGES, in_situ_fraction
+from utils.materials import DEFAULT_PROCESS, MAX_TOTAL_FILLER_WT, RANGES, in_situ_fraction
 
 log = logging.getLogger("moon-material-api")
 state: dict = {}
@@ -25,6 +26,7 @@ state: dict = {}
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     model = PropertyModel.train()
+    model.evidence_grid = EvidenceModel.train().export_grid()
     state["model"] = model
     state["catalog"] = build_catalog(model)
     yield
@@ -36,15 +38,18 @@ app.add_middleware(CORSMiddleware, allow_origins=ALLOWED_ORIGINS, allow_methods=
 
 
 class Composition(BaseModel):
-    binder: Literal["PHB", "PLA", "PEEK", "LDPE"] = "PHB"
+    binder: Literal["PHB", "PLA", "PEEK", "LDPE", "PEI", "PPSU"] = "PHB"
     regolith: Literal["lunar_highlands", "lunar_mare", "martian"]
     regolith_wt: float = Field(ge=RANGES["regolith_wt"][0], le=RANGES["regolith_wt"][1], description="Regolith, weight %")
     fiber_wt: float = Field(0, ge=RANGES["fiber_wt"][0], le=RANGES["fiber_wt"][1], description="Basalt fibre, weight %")
     particle_size: float = Field(60, ge=RANGES["particle_size"][0], le=RANGES["particle_size"][1], description="Median grain size, µm")
     temperature: float = Field(23, ge=RANGES["temperature"][0], le=RANGES["temperature"][1], description="Operating temperature, °C")
+    process: Literal["fff", "pellet", "molded", "hot_pressed", "sintered"] | None = Field(None, description="How the part is made; default depends on the binder")
 
     @model_validator(mode="after")
     def total_filler(self):
+        if self.process is None:
+            self.process = DEFAULT_PROCESS[self.binder]
         if self.regolith_wt + self.fiber_wt > MAX_TOTAL_FILLER_WT:
             raise ValueError(f"regolith_wt + fiber_wt must not exceed {MAX_TOTAL_FILLER_WT}")
         return self
