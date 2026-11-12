@@ -156,6 +156,7 @@ cd ../frontend && npm test           # browser engine matches Python; evidence c
 | [API reference](docs/api.md) | FastAPI endpoints with examples |
 | [Deployment](docs/deployment.md) | GitHub Pages setup and the CI pipeline |
 | [Demo script](docs/demo_script.md) | A 90-second walkthrough for judges |
+| [240-second video script](video/README.md) | The Space Apps "240 Seconds of Glory" video: second-by-second script, voice-over, shot list, assets and style guide |
 
 ## Tech stack
 
