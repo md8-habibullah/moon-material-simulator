@@ -1,0 +1,144 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+</style>
+  <div id="root" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="41.400">
+
+<img id="s5-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:0.7" alt="">
+<div id="s5-a" class="clip grp" data-start="0.000" data-duration="8.360" style="">
+  <div class="abs kick red" style="left:192px;top:200px">Physics alone · compressive strength · real samples</div>
+  <div id="s5-230" class="abs h0 red" style="left:180px;top:260px;font-size:300px">0%</div>
+  <div class="abs h3" style="left:192px;top:610px">average error before learning from lab data</div></div>
+<div id="s5-pipe" class="clip grp" data-start="8.310" data-duration="8.330" style="">
+  <div class="abs kick" style="left:192px;top:200px">How the prediction is made</div>
+  <div id="s5-n0" class="abs panel" style="left:192px;top:300px;width:350px;height:380px;padding:28px">
+          <div class="kick" style="color:#8f9cb2">Step 1</div>
+          <div class="h3" style="margin-top:10px">Physics</div><div class="body" style="font-size:28px;margin-top:12px">composite equations, temperature effects</div></div><div id="s5-l0" class="abs" style="left:542px;top:488px;width:42px;height:4px;background:#7fe3ff;box-shadow:0 0 12px #7fe3ff;transform-origin:left center"></div><div id="s5-n1" class="abs panel" style="left:584px;top:300px;width:350px;height:380px;padding:28px">
+          <div class="kick" style="color:#8f9cb2">Step 2</div>
+          <div class="h3" style="margin-top:10px">Fast emulator</div><div class="body" style="font-size:28px;margin-top:12px">28-tree random forest, runs in your browser</div></div><div id="s5-l1" class="abs" style="left:934px;top:488px;width:42px;height:4px;background:#7fe3ff;box-shadow:0 0 12px #7fe3ff;transform-origin:left center"></div><div id="s5-n2" class="abs panel" style="left:976px;top:300px;width:350px;height:380px;padding:28px">
+          <div class="kick" style="color:#8f9cb2">Step 3</div>
+          <div class="h3" style="margin-top:10px">Learned correction</div><div class="body" style="font-size:28px;margin-top:12px">Gaussian process trained on <b id='s5-152' class='cyan'>0</b> real measurements, 7 studies</div></div><div id="s5-l2" class="abs" style="left:1326px;top:488px;width:42px;height:4px;background:#7fe3ff;box-shadow:0 0 12px #7fe3ff;transform-origin:left center"></div><div id="s5-n3" class="abs panel" style="left:1368px;top:300px;width:350px;height:380px;padding:28px">
+          <div class="kick" style="color:#8f9cb2">Step 4</div>
+          <div class="h3" style="margin-top:10px">Prediction</div><div class="body" style="font-size:28px;margin-top:12px">value + likely range + link to the evidence</div></div></div>
+<div id="s5-bars" class="clip grp" data-start="16.590" data-duration="14.340" style="">
+  <div class="abs kick" style="left:192px;top:130px">Average error on mixes the model never saw</div>
+  <div class="abs src" style="left:680px;top:200px"><span style="color:#aab4c4">■ physics alone</span>   <span class="cyan">■ + learned from lab data</span></div>
+  <div class="abs h3" style="left:192px;top:280px;width:470px;font-size:38px">Compressive strength</div>
+          <div class="abs" style="left:680px;top:278px;width:860px;height:30px;border-radius:8px;background:#4b5566"></div>
+          <div id="s5-b0" class="abs" style="left:680px;top:316px;width:127px;height:30px;border-radius:8px;background:#7fe3ff;box-shadow:0 0 18px rgba(127,227,255,.6);transform-origin:left center"></div>
+          <div id="s5-v0" class="abs mono h3" style="left:1560px;top:284px;font-size:40px"><span class="muted">230%</span> → <span class="cyan">34%</span></div><div class="abs h3" style="left:192px;top:415px;width:470px;font-size:38px">Stiffness</div>
+          <div class="abs" style="left:680px;top:413px;width:860px;height:30px;border-radius:8px;background:#4b5566"></div>
+          <div id="s5-b1" class="abs" style="left:680px;top:451px;width:251px;height:30px;border-radius:8px;background:#7fe3ff;box-shadow:0 0 18px rgba(127,227,255,.6);transform-origin:left center"></div>
+          <div id="s5-v1" class="abs mono h3" style="left:1560px;top:419px;font-size:40px"><span class="muted">65%</span> → <span class="cyan">19%</span></div><div class="abs h3" style="left:192px;top:550px;width:470px;font-size:38px">Density</div>
+          <div class="abs" style="left:680px;top:548px;width:860px;height:30px;border-radius:8px;background:#4b5566"></div>
+          <div id="s5-b2" class="abs" style="left:680px;top:586px;width:269px;height:30px;border-radius:8px;background:#7fe3ff;box-shadow:0 0 18px rgba(127,227,255,.6);transform-origin:left center"></div>
+          <div id="s5-v2" class="abs mono h3" style="left:1560px;top:554px;font-size:40px"><span class="muted">16%</span> → <span class="cyan">5%</span></div><div class="abs h3" style="left:192px;top:685px;width:470px;font-size:38px">Thermal conductivity</div>
+          <div class="abs" style="left:680px;top:683px;width:860px;height:30px;border-radius:8px;background:#4b5566"></div>
+          <div id="s5-b3" class="abs" style="left:680px;top:721px;width:188px;height:30px;border-radius:8px;background:#7fe3ff;box-shadow:0 0 18px rgba(127,227,255,.6);transform-origin:left center"></div>
+          <div id="s5-v3" class="abs mono h3" style="left:1560px;top:689px;font-size:40px"><span class="muted">32%</span> → <span class="cyan">7%</span></div>
+  <div id="s5-honest" class="abs panel" style="left:560px;top:300px;width:800px;padding:40px 46px;border-color:#ffb547;box-shadow:0 0 60px rgba(255,181,71,.35)">
+    <div class="kick amber">A study it has never seen</div>
+    <div class="h0 amber" style="font-size:170px;margin-top:6px">78%</div>
+    <div class="h3">compressive-strength error. Harder, and we say so.</div></div></div>
+<div id="s5-ev" class="clip grp" data-start="30.880" data-duration="10.520" style="">
+  <div class="abs kick" style="left:192px;top:112px">Every prediction links to its evidence</div>
+  <div id="s5-evimg" class="abs" style="left:192px;top:170px;width:560px;height:745px;border-radius:14px;overflow:hidden;border:1px solid rgba(127,227,255,.35)">
+    <img src="assets/screens/hi_evidence_119.png" style="width:560px;display:block" alt="Evidence drawer: 119 MPa measured, S008 Figure 11"></div>
+  <div class="abs" style="left:860px;top:220px">
+    <div class="kick cyan">Predicted</div><div id="s5-117" class="h0 cyan">0 <span style="font-size:60px">MPa</span></div></div>
+  <div class="abs" style="left:860px;top:500px">
+    <div class="kick green">Measured in the paper</div><div id="s5-119" class="h0 green">0 <span style="font-size:60px">MPa</span></div>
+    <div class="src" style="margin-top:14px">Storozhuk et al. 2026 · Polymers · Figure 11 · PEI + 80% lunar simulant, hot-pressed</div></div></div>
+
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+function countU(sel, from, to, at, dur) { const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12 }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out', onUpdate: () => { const el = q(sel);
+    if (el) el.innerHTML = Math.round(o.v) + ' <span style="font-size:60px">MPa</span>'; } }, at); }
+tl.fromTo('#s5-bg', { x: 0 }, { x: -70, duration: 41.400, ease: 'none' }, 0);
+land('#s5-a .kick', 0.15);
+count('#s5-230', 0, 230, 6.390, 1.2, (v) => fmtInt(v) + '%');
+land('#s5-a .h3', 6.490);
+land('#s5-pipe .kick', 8.410);
+tl.fromTo('#s5-pipe .panel', { opacity: 0, y: 40, filter: 'blur(6px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.6, stagger: 0.35, ease: 'expo.out' }, 8.510);
+tl.fromTo('#s5-pipe [id^=s5-l]', { scaleX: 0 }, { scaleX: 1, duration: 0.3, stagger: 0.35, ease: 'power2.out' }, 8.860);
+tl.fromTo('#s5-n2', { borderColor: 'rgba(127,227,255,.28)' }, { borderColor: '#7fe3ff', boxShadow: '0 0 60px rgba(127,227,255,.6)', scale: 1.05, duration: 0.4, ease: 'expo.out' }, 9.980);
+count('#s5-152', 0, 152, 12.540, 1.0, fmtInt);
+land('#s5-bars .kick', 16.690); land('#s5-bars .src', 16.990);
+const rowsAt = [19.280, 22.960, 24.970, 26.070];
+rowsAt.forEach((at, i) => {
+  tl.fromTo('#s5-b' + i, { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: 'expo.out' }, at);
+  tl.fromTo('#s5-v' + i, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: 'expo.out' }, at + 0.15);
+});
+tl.fromTo('#s5-honest', { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'expo.out' }, 27.260);
+land('#s5-ev .kick', 30.980);
+land('#s5-evimg', 31.130, { x: -50, y: 0 });
+countU('#s5-117', 0, 117, 34.400, 0.9);
+countU('#s5-119', 0, 119, 39.090, 0.9);
+land('#s5-ev .src', 31.880);
+
+window.__timelines["s5"] = tl;
+  </script>
+</template>

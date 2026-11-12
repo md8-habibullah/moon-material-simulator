@@ -1,0 +1,350 @@
+[
+  {
+    "text": "Every",
+    "start": 0.11,
+    "end": 0.35,
+    "id": "w0"
+  },
+  {
+    "text": "kilogram",
+    "start": 0.43,
+    "end": 0.99,
+    "id": "w1"
+  },
+  {
+    "text": "made",
+    "start": 0.99,
+    "end": 1.29,
+    "id": "w2"
+  },
+  {
+    "text": "on",
+    "start": 1.29,
+    "end": 1.44,
+    "id": "w3"
+  },
+  {
+    "text": "the",
+    "start": 1.44,
+    "end": 1.67,
+    "id": "w4"
+  },
+  {
+    "text": "moon",
+    "start": 1.67,
+    "end": 1.99,
+    "id": "w5"
+  },
+  {
+    "text": "is",
+    "start": 1.99,
+    "end": 2.17,
+    "id": "w6"
+  },
+  {
+    "text": "a",
+    "start": 2.17,
+    "end": 2.25,
+    "id": "w7"
+  },
+  {
+    "text": "kilogram",
+    "start": 2.25,
+    "end": 2.96,
+    "id": "w8"
+  },
+  {
+    "text": "we",
+    "start": 2.96,
+    "end": 3.12,
+    "id": "w9"
+  },
+  {
+    "text": "don't",
+    "start": 3.12,
+    "end": 3.44,
+    "id": "w10"
+  },
+  {
+    "text": "have",
+    "start": 3.54,
+    "end": 3.86,
+    "id": "w11"
+  },
+  {
+    "text": "to",
+    "start": 3.86,
+    "end": 3.89,
+    "id": "w12"
+  },
+  {
+    "text": "launch.",
+    "start": 4.05,
+    "end": 4.58,
+    "id": "w13"
+  },
+  {
+    "text": "Our",
+    "start": 4.69,
+    "end": 4.8,
+    "id": "w14"
+  },
+  {
+    "text": "simulator",
+    "start": 4.83,
+    "end": 5.51,
+    "id": "w15"
+  },
+  {
+    "text": "helps",
+    "start": 5.51,
+    "end": 5.9,
+    "id": "w16"
+  },
+  {
+    "text": "engineers",
+    "start": 5.9,
+    "end": 6.59,
+    "id": "w17"
+  },
+  {
+    "text": "choose",
+    "start": 6.59,
+    "end": 7.1,
+    "id": "w18"
+  },
+  {
+    "text": "the",
+    "start": 7.1,
+    "end": 7.32,
+    "id": "w19"
+  },
+  {
+    "text": "right",
+    "start": 7.32,
+    "end": 7.7,
+    "id": "w20"
+  },
+  {
+    "text": "mix",
+    "start": 7.7,
+    "end": 7.94,
+    "id": "w21"
+  },
+  {
+    "text": "before",
+    "start": 7.94,
+    "end": 8.28,
+    "id": "w22"
+  },
+  {
+    "text": "a",
+    "start": 8.28,
+    "end": 8.36,
+    "id": "w23"
+  },
+  {
+    "text": "single",
+    "start": 8.36,
+    "end": 8.75,
+    "id": "w24"
+  },
+  {
+    "text": "sample",
+    "start": 9.38,
+    "end": 9.42,
+    "id": "w25"
+  },
+  {
+    "text": "is",
+    "start": 9.42,
+    "end": 9.54,
+    "id": "w26"
+  },
+  {
+    "text": "printed",
+    "start": 9.54,
+    "end": 10.42,
+    "id": "w27"
+  },
+  {
+    "text": "and",
+    "start": 10.53,
+    "end": 10.64,
+    "id": "w28"
+  },
+  {
+    "text": "shows",
+    "start": 10.67,
+    "end": 11.06,
+    "id": "w29"
+  },
+  {
+    "text": "which",
+    "start": 11.06,
+    "end": 11.45,
+    "id": "w30"
+  },
+  {
+    "text": "real",
+    "start": 11.45,
+    "end": 11.78,
+    "id": "w31"
+  },
+  {
+    "text": "measurement",
+    "start": 11.78,
+    "end": 12.65,
+    "id": "w32"
+  },
+  {
+    "text": "backs",
+    "start": 12.65,
+    "end": 13.05,
+    "id": "w33"
+  },
+  {
+    "text": "every",
+    "start": 13.05,
+    "end": 13.45,
+    "id": "w34"
+  },
+  {
+    "text": "answer.",
+    "start": 13.45,
+    "end": 14.18,
+    "id": "w35"
+  },
+  {
+    "text": "The",
+    "start": 14.29,
+    "end": 14.42,
+    "id": "w36"
+  },
+  {
+    "text": "same",
+    "start": 14.44,
+    "end": 14.76,
+    "id": "w37"
+  },
+  {
+    "text": "method",
+    "start": 14.76,
+    "end": 15.26,
+    "id": "w38"
+  },
+  {
+    "text": "works",
+    "start": 15.26,
+    "end": 15.68,
+    "id": "w39"
+  },
+  {
+    "text": "for",
+    "start": 15.68,
+    "end": 15.93,
+    "id": "w40"
+  },
+  {
+    "text": "Mars",
+    "start": 15.93,
+    "end": 16.3,
+    "id": "w41"
+  },
+  {
+    "text": "and",
+    "start": 16.3,
+    "end": 16.48,
+    "id": "w42"
+  },
+  {
+    "text": "for",
+    "start": 16.56,
+    "end": 16.8,
+    "id": "w43"
+  },
+  {
+    "text": "any",
+    "start": 16.8,
+    "end": 17.05,
+    "id": "w44"
+  },
+  {
+    "text": "material",
+    "start": 17.05,
+    "end": 17.72,
+    "id": "w45"
+  },
+  {
+    "text": "where",
+    "start": 17.74,
+    "end": 18.07,
+    "id": "w46"
+  },
+  {
+    "text": "data",
+    "start": 18.23,
+    "end": 18.36,
+    "id": "w47"
+  },
+  {
+    "text": "is",
+    "start": 18.48,
+    "end": 18.66,
+    "id": "w48"
+  },
+  {
+    "text": "scarce.",
+    "start": 18.99,
+    "end": 19.48,
+    "id": "w49"
+  },
+  {
+    "text": "We",
+    "start": 19.59,
+    "end": 19.7,
+    "id": "w50"
+  },
+  {
+    "text": "are",
+    "start": 19.74,
+    "end": 20.08,
+    "id": "w51"
+  },
+  {
+    "text": "dreams",
+    "start": 20.08,
+    "end": 20.8,
+    "id": "w52"
+  },
+  {
+    "text": "of",
+    "start": 20.8,
+    "end": 21.04,
+    "id": "w53"
+  },
+  {
+    "text": "X.",
+    "start": 21.04,
+    "end": 21.49,
+    "id": "w54"
+  },
+  {
+    "text": "Try",
+    "start": 21.58,
+    "end": 21.78,
+    "id": "w55"
+  },
+  {
+    "text": "it",
+    "start": 21.86,
+    "end": 21.96,
+    "id": "w56"
+  },
+  {
+    "text": "yourself.",
+    "start": 21.96,
+    "end": 22.9,
+    "id": "w57"
+  }
+]

@@ -1,0 +1,296 @@
+[
+  {
+    "text": "In",
+    "start": 0.16,
+    "end": 0.24,
+    "id": "w0"
+  },
+  {
+    "text": "2026,",
+    "start": 0.24,
+    "end": 1.78,
+    "id": "w1"
+  },
+  {
+    "text": "NASA",
+    "start": 2.16,
+    "end": 2.38,
+    "id": "w2"
+  },
+  {
+    "text": "Glenn",
+    "start": 2.38,
+    "end": 3,
+    "id": "w3"
+  },
+  {
+    "text": "grew",
+    "start": 3,
+    "end": 3.31,
+    "id": "w4"
+  },
+  {
+    "text": "a",
+    "start": 3.4,
+    "end": 3.41,
+    "id": "w5"
+  },
+  {
+    "text": "plastic",
+    "start": 3.49,
+    "end": 4.09,
+    "id": "w6"
+  },
+  {
+    "text": "inside",
+    "start": 4.09,
+    "end": 4.64,
+    "id": "w7"
+  },
+  {
+    "text": "bacteria",
+    "start": 4.64,
+    "end": 5.4,
+    "id": "w8"
+  },
+  {
+    "text": "and",
+    "start": 5.4,
+    "end": 5.59,
+    "id": "w9"
+  },
+  {
+    "text": "mixed",
+    "start": 5.59,
+    "end": 5.89,
+    "id": "w10"
+  },
+  {
+    "text": "it",
+    "start": 5.96,
+    "end": 6.07,
+    "id": "w11"
+  },
+  {
+    "text": "with",
+    "start": 6.13,
+    "end": 6.35,
+    "id": "w12"
+  },
+  {
+    "text": "simulated",
+    "start": 6.35,
+    "end": 6.96,
+    "id": "w13"
+  },
+  {
+    "text": "moon",
+    "start": 6.96,
+    "end": 7.44,
+    "id": "w14"
+  },
+  {
+    "text": "and",
+    "start": 7.44,
+    "end": 7.68,
+    "id": "w15"
+  },
+  {
+    "text": "Mars",
+    "start": 7.68,
+    "end": 8.17,
+    "id": "w16"
+  },
+  {
+    "text": "dust,",
+    "start": 8.24,
+    "end": 8.42,
+    "id": "w17"
+  },
+  {
+    "text": "a",
+    "start": 8.42,
+    "end": 8.85,
+    "id": "w18"
+  },
+  {
+    "text": "material",
+    "start": 8.85,
+    "end": 9.28,
+    "id": "w19"
+  },
+  {
+    "text": "that",
+    "start": 9.28,
+    "end": 9.59,
+    "id": "w20"
+  },
+  {
+    "text": "could",
+    "start": 9.59,
+    "end": 10.02,
+    "id": "w21"
+  },
+  {
+    "text": "be",
+    "start": 10.02,
+    "end": 10.18,
+    "id": "w22"
+  },
+  {
+    "text": "made",
+    "start": 10.25,
+    "end": 10.53,
+    "id": "w23"
+  },
+  {
+    "text": "on",
+    "start": 10.53,
+    "end": 10.7,
+    "id": "w24"
+  },
+  {
+    "text": "site.",
+    "start": 10.7,
+    "end": 11.36,
+    "id": "w25"
+  },
+  {
+    "text": "But",
+    "start": 11.36,
+    "end": 11.66,
+    "id": "w26"
+  },
+  {
+    "text": "which",
+    "start": 11.66,
+    "end": 12.16,
+    "id": "w27"
+  },
+  {
+    "text": "mix?",
+    "start": 12.16,
+    "end": 12.8,
+    "id": "w28"
+  },
+  {
+    "text": "How",
+    "start": 12.8,
+    "end": 13.17,
+    "id": "w29"
+  },
+  {
+    "text": "much",
+    "start": 13.17,
+    "end": 13.67,
+    "id": "w30"
+  },
+  {
+    "text": "dust",
+    "start": 13.67,
+    "end": 14.17,
+    "id": "w31"
+  },
+  {
+    "text": "which",
+    "start": 14.17,
+    "end": 14.8,
+    "id": "w32"
+  },
+  {
+    "text": "dust",
+    "start": 14.8,
+    "end": 15.35,
+    "id": "w33"
+  },
+  {
+    "text": "and",
+    "start": 15.52,
+    "end": 15.57,
+    "id": "w34"
+  },
+  {
+    "text": "is",
+    "start": 15.57,
+    "end": 15.71,
+    "id": "w35"
+  },
+  {
+    "text": "it",
+    "start": 15.71,
+    "end": 15.85,
+    "id": "w36"
+  },
+  {
+    "text": "strong",
+    "start": 15.85,
+    "end": 16.27,
+    "id": "w37"
+  },
+  {
+    "text": "enough",
+    "start": 16.27,
+    "end": 16.69,
+    "id": "w38"
+  },
+  {
+    "text": "for",
+    "start": 16.69,
+    "end": 16.9,
+    "id": "w39"
+  },
+  {
+    "text": "a",
+    "start": 16.9,
+    "end": 16.94,
+    "id": "w40"
+  },
+  {
+    "text": "wrench?",
+    "start": 17.03,
+    "end": 17.6,
+    "id": "w41"
+  },
+  {
+    "text": "You",
+    "start": 17.6,
+    "end": 17.81,
+    "id": "w42"
+  },
+  {
+    "text": "can't",
+    "start": 17.81,
+    "end": 18.16,
+    "id": "w43"
+  },
+  {
+    "text": "test",
+    "start": 18.16,
+    "end": 18.4,
+    "id": "w44"
+  },
+  {
+    "text": "every",
+    "start": 18.43,
+    "end": 18.77,
+    "id": "w45"
+  },
+  {
+    "text": "combination",
+    "start": 18.85,
+    "end": 19.56,
+    "id": "w46"
+  },
+  {
+    "text": "on",
+    "start": 19.56,
+    "end": 19.7,
+    "id": "w47"
+  },
+  {
+    "text": "Earth.",
+    "start": 19.7,
+    "end": 20.2,
+    "id": "w48"
+  }
+]

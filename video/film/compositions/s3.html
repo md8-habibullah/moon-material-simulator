@@ -1,0 +1,116 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+</style>
+  <div id="root" data-composition-id="s3" data-width="1920" data-height="1080" data-duration="22.620">
+
+<img id="s3-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:1.0" alt="">
+<div id="s3-title" class="clip grp" data-start="0.000" data-duration="4.930" style="">
+  <div id="s3-logo" class="abs" style="left:870px;top:150px;width:180px;height:180px;border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 0 50px rgba(127,227,255,.35)">
+    <img src="assets/brand/dreams-of-x-logo.jpeg" style="width:100%;height:100%;object-fit:contain" alt="Dreams of X logo"></div>
+  <div id="s3-name" class="abs h1" style="left:0;width:1920px;top:400px;text-align:center;font-size:118px"><span class="w">M</span><span class="w">O</span><span class="w">O</span><span class="w">N</span><span class="w">-</span><span class="w">M</span><span class="w">A</span><span class="w">T</span><span class="w">E</span><span class="w">R</span><span class="w">I</span><span class="w">A</span><span class="w">L</span><span class="w"> </span><span class="w">S</span><span class="w">I</span><span class="w">M</span><span class="w">U</span><span class="w">L</span><span class="w">A</span><span class="w">T</span><span class="w">O</span><span class="w">R</span></div>
+  <div id="s3-scan" class="abs" style="left:0;top:385px;width:220px;height:150px;background:linear-gradient(90deg,transparent,rgba(127,227,255,.55),transparent);mix-blend-mode:screen"></div>
+  <div id="s3-sub" class="abs body" style="left:0;width:1920px;top:560px;text-align:center">by <b class="cyan">Dreams of X</b> · built for NASA Space Apps 2026</div></div>
+<div id="s3-hero" class="clip grp" data-start="4.880" data-duration="1.800" style=""><div id="s3-hz" class="abs" style="left:0;top:0;width:1920px;height:1080px;transform-origin:202px 819px"><img src="assets/screens/hero.png" style="width:1920px;height:1080px" alt="Simulator home page"></div></div>
+<img id="s3-simstill" class="clip abs" src="assets/screens/simulator.png" data-start="6.630" data-duration="12.210" style="left:0;top:0;width:1920px;height:1080px" alt="">
+<div id="s3-ui-wrap" class="vw" style=""><video id="s3-ui" class="clip" src="assets/clips/u03_design.mp4" muted playsinline data-start="6.630" data-duration="12.210" data-media-start="0.000" data-playback-rate="0.781"></video></div>
+<div id="s3-hud" class="clip grp" data-start="6.630" data-duration="12.210" style=""><div class="tag" style="left:auto;right:96px"><i></i>Real app · drag the slider, every number updates</div></div>
+<div id="s3-iso" class="clip grp" data-start="11.830" data-duration="7.310" style="">
+  <div id="s3-dim" class="abs" style="left:0;top:0;width:1920px;height:1080px;background:rgba(2,4,10,.62)"></div>
+  <div id="s3-grid" class="abs" style="left:1210px;top:140px;width:500px;height:780px;border-radius:16px;overflow:hidden;
+     border:1.5px solid rgba(127,227,255,.6);box-shadow:0 0 60px rgba(127,227,255,.35),0 40px 90px -30px #000">
+    <img src="assets/screens/hi_property_grid.png" style="width:500px;height:780px;object-fit:cover;object-position:top" alt="Results panel close-up"></div>
+  <div id="s3-c1" class="abs chip cyan" style="left:760px;top:170px">8 properties · live</div>
+  <div id="s3-c2" class="abs chip orange" style="left:760px;top:330px">Likely range</div>
+  <div id="s3-c3" class="abs chip green" style="left:690px;top:490px">Lab-backed or physics estimate</div></div>
+<div id="s3-print-wrap" class="vw" style=""><video id="s3-print" class="clip" src="assets/clips/c02_print.mp4" muted playsinline data-start="18.790" data-duration="3.830" data-media-start="0.200"></video></div>
+<div id="s3-end" class="clip grp" data-start="18.940" data-duration="3.680" style="">
+  <div class="abs" style="left:192px;top:700px">
+    <div class="h2">Runs in any <span class="cyan">browser</span>. Open source.</div>
+    <div class="src" style="margin-top:14px">github.com/md8-habibullah/moon-material-simulator</div></div></div>
+
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+tl.fromTo('#s3-bg', { x: 0 }, { x: -70, duration: 22.620, ease: 'none' }, 0);
+land('#s3-logo', 0.1, { scale: 0.7, y: 0 });
+tl.fromTo('#s3-name .w', { opacity: 0.0, filter: 'blur(10px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.2, stagger: 0.045, ease: 'power2.out' }, 2.590);
+tl.fromTo('#s3-scan', { x: -260 }, { x: 1960, duration: 1.0, ease: 'power2.inOut' }, 3.590);
+land('#s3-sub', 2.790);
+tl.fromTo('#s3-hz', { scale: 1 }, { scale: 1.08, duration: 1.1, ease: 'power2.inOut' }, 4.880);
+tl.to('#s3-hz', { scale: 7, duration: 0.55, ease: 'power3.in' }, 6.080);
+tl.fromTo('#s3-ui-wrap', { scale: 1.25, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: 'expo.out' }, 6.630);
+land('#s3-hud .tag', 6.930);
+tl.to('#s3-ui-wrap', { x: -330, scale: 0.86, duration: 0.8, ease: 'power2.inOut' }, 11.830);
+tl.fromTo('#s3-dim', { opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'power2.out' }, 11.880);
+land('#s3-grid', 12.130, { x: 80, y: 0 });
+land('#s3-c1', 12.030, { x: -40, y: 0 });
+land('#s3-c2', 13.500, { x: -40, y: 0 });
+land('#s3-c3', 16.610, { x: -40, y: 0 });
+tl.fromTo('#s3-print-wrap', { clipPath: 'circle(0% at 70% 50%)' }, { clipPath: 'circle(80% at 70% 50%)', duration: 0.6, ease: 'power2.out' }, 18.790);
+land('#s3-end .h2', 19.040);
+land('#s3-end .src', 19.840);
+
+window.__timelines["s3"] = tl;
+  </script>
+</template>

@@ -1,0 +1,102 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+</style>
+  <div id="root" data-composition-id="s6b" data-width="1920" data-height="1080" data-duration="18.827">
+<div id="s6b-all" class="abs" style="left:0;top:0;width:1920px;height:1080px">
+<div id="s6b-v1-wrap" class="vw" style=""><video id="s6b-v1" class="clip" src="assets/clips/u05_optimizer.mp4" muted playsinline data-start="0.000" data-duration="6.120" data-media-start="0.000" data-playback-rate="1.144"></video></div>
+<div id="s6b-hud" class="clip grp" data-start="0.000" data-duration="6.120" style=""><div class="tag" style="left:auto;right:96px"><i></i>Real app · optimizer · wrench</div></div>
+<div id="s6b-cnt" class="clip grp" data-start="3.300" data-duration="2.820" style=""><div id="s6b-ro0" class="readout" style="left:1180px;top:640px;width:600px">
+      <div class="lbl">Mixes tested</div><div class="big cyan" style="margin-top:10px"><span id="s6b-n">0</span></div>
+      <div class="h3 muted" style="font-size:34px;margin-top:10px">every binder × process × soil × loading</div></div></div>
+<div id="s6b-rank" class="clip grp" data-start="6.070" data-duration="6.370" style="">
+  <div id="s6b-rk" class="abs" style="left:260px;top:150px;width:1400px;border-radius:14px;overflow:hidden;border:1px solid rgba(127,227,255,.35);box-shadow:0 40px 90px -30px #000">
+    <img src="assets/screens/hi_ranked.png" style="width:1400px;display:block" alt="Optimizer ranking: #1 45% lunar highlands + 15% basalt fibre in Bio-PHB">
+    <div id="s6b-hl" class="abs" style="left:0;top:0;width:1400px;height:186px;border:4px solid #2fd39b;border-radius:12px;box-shadow:0 0 40px rgba(47,211,155,.6)"></div></div>
+  <div id="s6b-local" class="abs chip green" style="left:260px;top:930px;font-size:30px">100% local · 45% dust + 15% basalt fibre</div></div>
+<div id="s6b-v2-wrap" class="vw" style=""><video id="s6b-v2" class="clip" src="assets/clips/c06_winner.mp4" muted playsinline data-start="12.390" data-duration="6.437" data-media-start="2.900"></video></div>
+<div id="s6b-hud2" class="clip grp" data-start="12.390" data-duration="6.437" style=""><div class="brk" id="s6b-b1" style="left:60px;top:60px;border-left-width:3px;border-top-width:3px"></div><div class="brk" id="s6b-b2" style="right:60px;top:60px;border-right-width:3px;border-top-width:3px"></div><div class="brk" id="s6b-b3" style="left:60px;bottom:60px;border-left-width:3px;border-bottom-width:3px"></div><div class="brk" id="s6b-b4" style="right:60px;bottom:60px;border-right-width:3px;border-bottom-width:3px"></div><div class="tag"><i></i>Real app footage · the optimizer&#39;s wrench</div></div>
+<div id="s6b-r" class="clip grp" data-start="13.590" data-duration="5.237" style=""><div id="s6b-ro1" class="readout" style="left:1180px;top:560px;width:600px">
+      <div class="lbl">Safety factor · design load held</div><div class="big green" style="margin-top:10px">1.71×</div>
+      <div class="h3 green" style="font-size:34px;margin-top:10px"><span id="s6b-bend">bends before it breaks</span></div></div></div>
+</div>
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+
+land('#s6b-hud .tag', 0.25);
+land('#s6b-ro0', 3.350, { x: 60, y: 0 });
+count('#s6b-n', 0, 4662, 3.400, 1.3, fmtInt);
+tl.fromTo('#s6b-rk', { opacity: 0, scale: 1.06, filter: 'blur(10px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }, 6.120);
+tl.fromTo('#s6b-hl', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 6.620);
+land('#s6b-local', 8.850, { scale: 0.8, y: 0 });
+tl.fromTo('#s6b-v2-wrap', { clipPath: 'inset(0% 50% 0% 50%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.5, ease: 'power3.out' }, 12.390);
+tl.fromTo('#s6b-hud2 .brk', { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.05 }, 12.590);
+land('#s6b-hud2 .tag', 12.690);
+land('#s6b-ro1', 13.690, { x: 60, y: 0 });
+tl.fromTo('#s6b-bend', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 16.650);
+tl.fromTo('#s6b-all', { x: 0, filter: 'blur(0px)' }, { x: -160, filter: 'blur(14px)', duration: 0.22, ease: 'power3.in' }, 18.607);
+
+window.__timelines["s6b"] = tl;
+  </script>
+</template>

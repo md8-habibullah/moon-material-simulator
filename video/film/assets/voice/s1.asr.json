@@ -1,0 +1,182 @@
+[
+  {
+    "text": "On",
+    "start": 0.14,
+    "end": 0.19,
+    "id": "w0"
+  },
+  {
+    "text": "the",
+    "start": 0.19,
+    "end": 0.48,
+    "id": "w1"
+  },
+  {
+    "text": "moon,",
+    "start": 0.48,
+    "end": 0.9,
+    "id": "w2"
+  },
+  {
+    "text": "a",
+    "start": 0.9,
+    "end": 1.22,
+    "id": "w3"
+  },
+  {
+    "text": "broken",
+    "start": 1.22,
+    "end": 1.73,
+    "id": "w4"
+  },
+  {
+    "text": "wrench",
+    "start": 1.73,
+    "end": 2.31,
+    "id": "w5"
+  },
+  {
+    "text": "is",
+    "start": 2.31,
+    "end": 2.5,
+    "id": "w6"
+  },
+  {
+    "text": "not",
+    "start": 2.5,
+    "end": 2.79,
+    "id": "w7"
+  },
+  {
+    "text": "a",
+    "start": 2.79,
+    "end": 2.84,
+    "id": "w8"
+  },
+  {
+    "text": "small",
+    "start": 2.88,
+    "end": 3.37,
+    "id": "w9"
+  },
+  {
+    "text": "problem.",
+    "start": 3.37,
+    "end": 4.42,
+    "id": "w10"
+  },
+  {
+    "text": "The",
+    "start": 4.56,
+    "end": 4.72,
+    "id": "w11"
+  },
+  {
+    "text": "next",
+    "start": 4.72,
+    "end": 5.12,
+    "id": "w12"
+  },
+  {
+    "text": "one",
+    "start": 5.12,
+    "end": 5.3,
+    "id": "w13"
+  },
+  {
+    "text": "is",
+    "start": 5.3,
+    "end": 5.64,
+    "id": "w14"
+  },
+  {
+    "text": "384,000",
+    "start": 5.64,
+    "end": 7.57,
+    "id": "w15"
+  },
+  {
+    "text": "kilometers",
+    "start": 7.65,
+    "end": 8.12,
+    "id": "w16"
+  },
+  {
+    "text": "away,",
+    "start": 8.88,
+    "end": 9.12,
+    "id": "w17"
+  },
+  {
+    "text": "and",
+    "start": 9.26,
+    "end": 9.34,
+    "id": "w18"
+  },
+  {
+    "text": "sending",
+    "start": 9.34,
+    "end": 9.85,
+    "id": "w19"
+  },
+  {
+    "text": "it",
+    "start": 9.85,
+    "end": 9.95,
+    "id": "w20"
+  },
+  {
+    "text": "can",
+    "start": 9.98,
+    "end": 10.02,
+    "id": "w21"
+  },
+  {
+    "text": "cost",
+    "start": 10.34,
+    "end": 10.46,
+    "id": "w22"
+  },
+  {
+    "text": "up",
+    "start": 10.5,
+    "end": 10.68,
+    "id": "w23"
+  },
+  {
+    "text": "to",
+    "start": 10.68,
+    "end": 10.87,
+    "id": "w24"
+  },
+  {
+    "text": "a",
+    "start": 10.87,
+    "end": 10.94,
+    "id": "w25"
+  },
+  {
+    "text": "million",
+    "start": 10.94,
+    "end": 11.42,
+    "id": "w26"
+  },
+  {
+    "text": "dollars",
+    "start": 11.42,
+    "end": 11.92,
+    "id": "w27"
+  },
+  {
+    "text": "per",
+    "start": 11.92,
+    "end": 12.14,
+    "id": "w28"
+  },
+  {
+    "text": "kilogram.",
+    "start": 12.14,
+    "end": 12.9,
+    "id": "w29"
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "text": "So",
+    "start": 0.14,
+    "end": 0.21,
+    "id": "w0"
+  },
+  {
+    "text": "we",
+    "start": 0.21,
+    "end": 0.41,
+    "id": "w1"
+  },
+  {
+    "text": "ask",
+    "start": 0.42,
+    "end": 0.73,
+    "id": "w2"
+  },
+  {
+    "text": "the",
+    "start": 0.73,
+    "end": 1.02,
+    "id": "w3"
+  },
+  {
+    "text": "optimizer.",
+    "start": 1.05,
+    "end": 2.24,
+    "id": "w4"
+  },
+  {
+    "text": "It",
+    "start": 2.38,
+    "end": 2.39,
+    "id": "w5"
+  },
+  {
+    "text": "tests",
+    "start": 2.39,
+    "end": 2.78,
+    "id": "w6"
+  },
+  {
+    "text": "nearly",
+    "start": 2.78,
+    "end": 3.25,
+    "id": "w7"
+  },
+  {
+    "text": "5,000",
+    "start": 3.25,
+    "end": 4.02,
+    "id": "w8"
+  },
+  {
+    "text": "mixes",
+    "start": 4.63,
+    "end": 4.71,
+    "id": "w9"
+  },
+  {
+    "text": "and",
+    "start": 4.78,
+    "end": 4.96,
+    "id": "w10"
+  },
+  {
+    "text": "finds",
+    "start": 4.96,
+    "end": 5.32,
+    "id": "w11"
+  },
+  {
+    "text": "one",
+    "start": 5.32,
+    "end": 5.47,
+    "id": "w12"
+  },
+  {
+    "text": "made",
+    "start": 5.66,
+    "end": 5.92,
+    "id": "w13"
+  },
+  {
+    "text": "entirely",
+    "start": 5.92,
+    "end": 6.64,
+    "id": "w14"
+  },
+  {
+    "text": "from",
+    "start": 6.64,
+    "end": 7.06,
+    "id": "w15"
+  },
+  {
+    "text": "local",
+    "start": 7.06,
+    "end": 7.59,
+    "id": "w16"
+  },
+  {
+    "text": "resources.",
+    "start": 7.59,
+    "end": 8.56,
+    "id": "w17"
+  },
+  {
+    "text": "45%",
+    "start": 8.7,
+    "end": 9.56,
+    "id": "w18"
+  },
+  {
+    "text": "dust",
+    "start": 9.56,
+    "end": 10.14,
+    "id": "w19"
+  },
+  {
+    "text": "and",
+    "start": 10.14,
+    "end": 10.38,
+    "id": "w20"
+  },
+  {
+    "text": "15%",
+    "start": 10.95,
+    "end": 11.57,
+    "id": "w21"
+  },
+  {
+    "text": "basalt",
+    "start": 11.57,
+    "end": 12.29,
+    "id": "w22"
+  },
+  {
+    "text": "fiber.",
+    "start": 12.44,
+    "end": 13.2,
+    "id": "w23"
+  },
+  {
+    "text": "Safety",
+    "start": 13.34,
+    "end": 13.96,
+    "id": "w24"
+  },
+  {
+    "text": "Factor",
+    "start": 13.96,
+    "end": 14.72,
+    "id": "w25"
+  },
+  {
+    "text": "1.",
+    "start": 14.72,
+    "end": 15.12,
+    "id": "w26"
+  },
+  {
+    "text": "7.",
+    "start": 15.26,
+    "end": 16.04,
+    "id": "w27"
+  },
+  {
+    "text": "And",
+    "start": 16.04,
+    "end": 16.25,
+    "id": "w28"
+  },
+  {
+    "text": "it",
+    "start": 16.25,
+    "end": 16.31,
+    "id": "w29"
+  },
+  {
+    "text": "bends",
+    "start": 16.4,
+    "end": 16.74,
+    "id": "w30"
+  },
+  {
+    "text": "before",
+    "start": 16.74,
+    "end": 16.94,
+    "id": "w31"
+  },
+  {
+    "text": "it",
+    "start": 17.21,
+    "end": 17.32,
+    "id": "w32"
+  },
+  {
+    "text": "breaks.",
+    "start": 17.51,
+    "end": 17.99,
+    "id": "w33"
+  }
+]

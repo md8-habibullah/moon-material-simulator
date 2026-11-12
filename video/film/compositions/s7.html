@@ -1,0 +1,117 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+</style>
+  <div id="root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="28.505">
+
+<img id="s7-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:1.0" alt="">
+<div id="s7-moonwrap" class="abs" style="left:880px;top:40px;width:1000px;height:1000px;-webkit-mask-image:radial-gradient(circle closest-side, #000 98.5%, transparent 100%);mask-image:radial-gradient(circle closest-side, #000 98.5%, transparent 100%)">
+<video id="s7-moon" class="clip" src="assets/clips/moon_spin.mp4" muted playsinline data-start="0" data-duration="19.640" data-media-start="0" style="width:1000px;height:1000px"></video></div>
+<div id="s7-a" class="clip grp" data-start="0.000" data-duration="5.810" style="">
+  <div class="abs" style="left:192px;top:330px;width:760px">
+    <div id="s7-l1" class="h1">Every kilogram made on the <span class="cyan">Moon</span></div>
+    <div id="s7-l2" class="h1" style="margin-top:6px">is one we don't <span class="orange">launch.</span></div></div></div>
+<div id="s7-in" class="clip abs" data-start="0" data-duration="0.6" style="left:0;top:0;width:1920px;height:1080px;background:#000"></div>
+<div id="s7-b" class="clip grp" data-start="5.760" data-duration="13.880" style="">
+  <div id="s7-base" class="abs" style="left:192px;top:200px;width:880px;height:495px;border-radius:16px;overflow:hidden;border:1px solid rgba(127,227,255,.3)">
+    <img src="assets/nasa/moon-base-artists-concept.jpg" style="width:100%;height:100%;object-fit:cover" alt="NASA artist's concept of a Moon base"></div>
+  <div class="abs src" style="left:192px;top:705px">Concept: NASA</div>
+  <div id="s7-mars" class="abs panel" style="left:192px;top:760px;width:880px;padding:20px 26px">
+    <div class="h3" style="font-size:36px">Same method: <span class="orange">Mars</span>, and any material where data is scarce.</div></div></div>
+<div id="s7-end" class="clip grp" data-start="19.640" data-duration="8.865" style="">
+  <div class="abs" style="left:192px;top:150px;width:980px">
+    <div id="s7-logo" style="width:120px;height:120px;border-radius:22px;overflow:hidden;background:#fff;margin-bottom:28px">
+      <img src="assets/brand/dreams-of-x-logo.jpeg" style="width:100%;height:100%;object-fit:contain" alt="Dreams of X"></div>
+    <div class="h1" style="font-size:88px">Moon-Material<br>Simulator</div>
+    <div class="body" style="margin-top:18px">Try it yourself:</div>
+    <div class="h3 cyan mono" style="font-size:30px;margin-top:8px;white-space:nowrap">md8-habibullah.github.io/moon-material-simulator</div>
+    <div class="src" style="margin-top:14px">github.com/md8-habibullah/moon-material-simulator</div>
+    <div style="display:flex;gap:26px;align-items:center;margin-top:30px">
+      <img id="s7-qr" src="assets/brand/qr_live_app.png" style="width:190px;height:190px;border-radius:12px" alt="QR code to the live app">
+      <div class="src" data-layout-ignore style="width:620px;font-size:21px;line-height:1.5">Images: NASA (Glenn, LRO / SVS).<br>Data: NASA NTRS reports and peer-reviewed studies (CC BY 4.0).<br>Open source.</div></div></div>
+  <div class="abs" style="left:1220px;top:200px">
+    <div class="kick" style="margin-bottom:26px">Team Dreams of X</div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Mahdin Islam Mukim</div><div class="src" style="color:#7fe3ff">Team Lead</div></div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Yousuf Abdullah</div><div class="src" style="color:#7fe3ff">Data Scientist</div></div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Md. Habibullah Sharif</div><div class="src" style="color:#7fe3ff">Systems Architect</div></div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Maliha Sanjana</div><div class="src" style="color:#7fe3ff">UI/UX Designer</div></div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Lamisa Yeasmin Nakia</div><div class="src" style="color:#7fe3ff">Research & Storytelling Lead</div></div></div></div>
+
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+tl.fromTo('#s7-bg', { x: 0 }, { x: -70, duration: 28.505, ease: 'none' }, 0);
+tl.fromTo('#s7-in', { opacity: 1 }, { opacity: 0, duration: 0.5, ease: 'power2.out' }, 0);
+tl.fromTo('#s7-moonwrap', { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4, ease: 'expo.out' }, 0);
+tl.to('#s7-moonwrap', { x: 200, opacity: 0, duration: 0.5, ease: 'power3.in' }, 19.140);
+land('#s7-l1', 0.4);
+land('#s7-l2', 1.1);
+land('#s7-base', 5.860, { x: -60, y: 0 });
+land('#s7-b .src', 6.360);
+land('#s7-mars', 15.510);
+land('#s7-logo', 19.740, { scale: 0.6, y: 0 });
+tl.fromTo('#s7-end .h1', { opacity: 0, filter: 'blur(10px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }, 19.890);
+tl.fromTo('#s7-end .s7-m', { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: 'expo.out' }, 19.940);
+land('#s7-end .body', 21.830);
+land('#s7-end .h3.cyan', 22.030);
+land('#s7-end .src', 22.330);
+land('#s7-qr', 22.530, { scale: 0.7, y: 0 });
+
+window.__timelines["s7"] = tl;
+  </script>
+</template>

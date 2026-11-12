@@ -1,0 +1,123 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+</style>
+  <div id="root" data-composition-id="s1" data-width="1920" data-height="1080" data-duration="13.728">
+
+<img id="s1-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:1.0" alt="">
+<div id="s1-v-wrap" class="vw" style="transform-origin:34% 46%"><video id="s1-v" class="clip" src="assets/clips/c01_wrench_break.mp4" muted playsinline data-start="0.000" data-duration="5.010" data-media-start="5.280"></video></div>
+<div id="s1-flash" class="clip grp" data-start="1.800" data-duration="0.500" style="background:radial-gradient(circle at 34% 46%, rgba(255,240,220,.95), rgba(255,107,107,.55) 30%, transparent 70%);opacity:0"></div>
+<div id="s1-hud" class="clip grp" data-start="0.000" data-duration="5.010" style=""><div class="brk" id="s1-b1" style="left:60px;top:60px;border-left-width:3px;border-top-width:3px"></div><div class="brk" id="s1-b2" style="right:60px;top:60px;border-right-width:3px;border-top-width:3px"></div><div class="brk" id="s1-b3" style="left:60px;bottom:60px;border-left-width:3px;border-bottom-width:3px"></div><div class="brk" id="s1-b4" style="right:60px;bottom:60px;border-right-width:3px;border-bottom-width:3px"></div><div class="tag"><i></i>Real app footage · part test · PHB + 38% lunar dust</div></div>
+<div id="s1-l1" class="clip grp" data-start="2.170" data-duration="2.790" style=""><div class="abs h1" style="left:192px;top:790px;text-shadow:0 6px 34px #000,0 0 12px #000"><span class="w ">One </span><span class="w ">broken </span><span class="w orange">wrench.</span></div></div>
+<div id="s1-dist" class="clip grp" data-start="4.710" data-duration="6.260" style="">
+  <img id="s1-moon" class="abs" src="assets/nasa/moon_disc.png" style="left:1030px;top:110px;width:760px;height:760px" alt="The Moon">
+  <div id="s1-earth" class="abs" style="left:250px;top:700px;width:64px;height:64px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #9fd8ff, #2a6fd6 55%, #0b2a66);box-shadow:0 0 40px rgba(90,170,255,.8)"></div>
+  <div class="abs kick" style="left:205px;top:790px">Earth</div>
+  <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <path id="s1-arc" d="M 282 732 Q 760 160 1250 470" fill="none" stroke="#7fe3ff" stroke-width="4"
+      stroke-dasharray="14 12" pathLength="1000" stroke-dashoffset="1000" style="filter:drop-shadow(0 0 8px #7fe3ff)"/>
+  </svg>
+  <div id="s1-pod" class="abs" style="left:0;top:0;width:22px;height:22px;border-radius:50%;background:#ff9a4d;box-shadow:0 0 24px #ff9a4d"></div>
+  <div class="abs" style="left:520px;top:250px;text-align:center">
+    <div id="s1-km" class="h1 mono cyan">0 km</div>
+    <div class="kick" style="color:#8f9cb2;margin-top:8px">from Earth to the Moon</div>
+  </div></div>
+<div id="s1-dip" class="clip abs" data-start="13.478" data-duration="0.25" style="left:0;top:0;width:1920px;height:1080px;background:#000;opacity:0"></div>
+<div id="s1-money" class="clip grp" data-start="10.970" data-duration="2.758" style="">
+  <img class="abs" src="assets/nasa/moon_disc.png" style="left:1180px;top:200px;width:700px;height:700px;opacity:.35" alt="">
+  <div class="abs" style="left:192px;top:250px">
+    <div class="kick orange">Resupply from Earth · up to</div>
+    <div id="s1-usd" class="h0 orange" style="margin-top:14px;text-shadow:0 0 24px rgba(255,154,77,.35)">$0</div>
+    <div class="h3" style="margin-top:18px">per kilogram, to send one spare part</div>
+    <div class="src" style="margin-top:34px">NASA Glenn Research Center · NTRS 20260007758</div>
+  </div></div>
+
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+tl.fromTo('#s1-bg', { x: 0 }, { x: -70, duration: 13.728, ease: 'none' }, 0);
+tl.fromTo('#s1-v-wrap', { scale: 1.0 }, { scale: 1.16, duration: 0.45, ease: 'expo.out' }, 1.820);
+tl.fromTo('#s1-v-wrap', { x: 0 }, { keyframes: [{ x: -18 }, { x: 14 }, { x: -9 }, { x: 5 }, { x: 0 }], duration: 0.36, ease: 'none' }, 1.820);
+tl.fromTo('#s1-flash', { opacity: 0 }, { keyframes: [{ opacity: 0.85, duration: 0.06 }, { opacity: 0, duration: 0.4 }] }, 1.800);
+tl.fromTo('#s1-hud .brk', { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.5, stagger: 0.05, ease: 'expo.out' }, 0.1);
+land('#s1-hud .tag', 0.25);
+words('#s1-l1', 2.220, 0.09);
+out('#s1-l1', 4.610);
+land('#s1-moon', 4.760, { scale: 0.86, y: 0 });
+land('#s1-earth', 4.910, { scale: 0.4, y: 0 });
+tl.fromTo('#s1-arc', { attr: { 'stroke-dashoffset': 1000 } }, { attr: { 'stroke-dashoffset': 0 }, duration: 1.6, ease: 'power2.inOut' }, 5.110);
+const pod = { p: 0 };
+tl.fromTo(pod, { p: 0 }, { p: 1, duration: 1.6, ease: 'power2.inOut', onUpdate: () => {
+  const t = pod.p, x = (1-t)*(1-t)*282 + 2*(1-t)*t*760 + t*t*1250, y = (1-t)*(1-t)*732 + 2*(1-t)*t*160 + t*t*470;
+  gsap.set('#s1-pod', { x: x - 11, y: y - 11 }); } }, 5.110);
+count('#s1-km', 0, 384400, 5.210, 1.5, (v) => fmtInt(v) + ' km');
+land('#s1-money .kick', 11.020);
+count('#s1-usd', 0, 1000000, 11.120, 1.3, (v) => '$' + fmtInt(v));
+land('#s1-money .h3', 11.470);
+land('#s1-money .src', 11.820);
+tl.fromTo('#s1-dip', { opacity: 0 }, { opacity: 1, duration: 0.2, ease: 'power2.in' }, 13.508);
+
+window.__timelines["s1"] = tl;
+  </script>
+</template>

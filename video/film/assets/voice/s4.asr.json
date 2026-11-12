@@ -1,0 +1,452 @@
+[
+  {
+    "text": "Our",
+    "start": 0.04,
+    "end": 0.19,
+    "id": "w0"
+  },
+  {
+    "text": "science",
+    "start": 0.26,
+    "end": 0.7,
+    "id": "w1"
+  },
+  {
+    "text": "stands",
+    "start": 0.7,
+    "end": 1.12,
+    "id": "w2"
+  },
+  {
+    "text": "on",
+    "start": 1.12,
+    "end": 1.21,
+    "id": "w3"
+  },
+  {
+    "text": "NASA-owned",
+    "start": 1.27,
+    "end": 1.95,
+    "id": "w4"
+  },
+  {
+    "text": "data.",
+    "start": 1.95,
+    "end": 2.46,
+    "id": "w5"
+  },
+  {
+    "text": "NASA",
+    "start": 2.5,
+    "end": 2.77,
+    "id": "w6"
+  },
+  {
+    "text": "Glens'",
+    "start": 2.77,
+    "end": 3.22,
+    "id": "w7"
+  },
+  {
+    "text": "2026",
+    "start": 3.22,
+    "end": 4.16,
+    "id": "w8"
+  },
+  {
+    "text": "bacterial",
+    "start": 4.16,
+    "end": 4.44,
+    "id": "w9"
+  },
+  {
+    "text": "plastic",
+    "start": 4.92,
+    "end": 5.48,
+    "id": "w10"
+  },
+  {
+    "text": "reports,",
+    "start": 5.48,
+    "end": 6.4,
+    "id": "w11"
+  },
+  {
+    "text": "NASA",
+    "start": 6.44,
+    "end": 6.59,
+    "id": "w12"
+  },
+  {
+    "text": "Kennedy's",
+    "start": 6.66,
+    "end": 7.19,
+    "id": "w13"
+  },
+  {
+    "text": "regolith",
+    "start": 7.19,
+    "end": 7.67,
+    "id": "w14"
+  },
+  {
+    "text": "printing",
+    "start": 7.68,
+    "end": 8.16,
+    "id": "w15"
+  },
+  {
+    "text": "studies,",
+    "start": 8.16,
+    "end": 8.64,
+    "id": "w16"
+  },
+  {
+    "text": "and",
+    "start": 8.68,
+    "end": 8.83,
+    "id": "w17"
+  },
+  {
+    "text": "a",
+    "start": 8.9,
+    "end": 8.92,
+    "id": "w18"
+  },
+  {
+    "text": "2003",
+    "start": 8.92,
+    "end": 9.78,
+    "id": "w19"
+  },
+  {
+    "text": "NASA",
+    "start": 9.78,
+    "end": 10.05,
+    "id": "w20"
+  },
+  {
+    "text": "report",
+    "start": 10.05,
+    "end": 10.5,
+    "id": "w21"
+  },
+  {
+    "text": "on",
+    "start": 10.5,
+    "end": 10.62,
+    "id": "w22"
+  },
+  {
+    "text": "polyethylene",
+    "start": 10.91,
+    "end": 11.43,
+    "id": "w23"
+  },
+  {
+    "text": "and",
+    "start": 11.43,
+    "end": 11.69,
+    "id": "w24"
+  },
+  {
+    "text": "regolith,",
+    "start": 11.69,
+    "end": 12.38,
+    "id": "w25"
+  },
+  {
+    "text": "plus",
+    "start": 12.42,
+    "end": 12.67,
+    "id": "w26"
+  },
+  {
+    "text": "peer-reviewed",
+    "start": 12.67,
+    "end": 13.59,
+    "id": "w27"
+  },
+  {
+    "text": "papers.",
+    "start": 13.65,
+    "end": 14.28,
+    "id": "w28"
+  },
+  {
+    "text": "We",
+    "start": 14.34,
+    "end": 14.47,
+    "id": "w29"
+  },
+  {
+    "text": "transcribed",
+    "start": 14.47,
+    "end": 15.39,
+    "id": "w30"
+  },
+  {
+    "text": "one,",
+    "start": 15.39,
+    "end": 15.8,
+    "id": "w31"
+  },
+  {
+    "text": "470",
+    "start": 15.8,
+    "end": 16.27,
+    "id": "w32"
+  },
+  {
+    "text": "measured",
+    "start": 16.76,
+    "end": 17.23,
+    "id": "w33"
+  },
+  {
+    "text": "values,",
+    "start": 17.23,
+    "end": 17.78,
+    "id": "w34"
+  },
+  {
+    "text": "each",
+    "start": 17.82,
+    "end": 18.12,
+    "id": "w35"
+  },
+  {
+    "text": "tied",
+    "start": 18.12,
+    "end": 18.42,
+    "id": "w36"
+  },
+  {
+    "text": "to",
+    "start": 18.46,
+    "end": 18.63,
+    "id": "w37"
+  },
+  {
+    "text": "its",
+    "start": 18.63,
+    "end": 18.88,
+    "id": "w38"
+  },
+  {
+    "text": "page,",
+    "start": 18.88,
+    "end": 19.4,
+    "id": "w39"
+  },
+  {
+    "text": "table,",
+    "start": 19.4,
+    "end": 20.04,
+    "id": "w40"
+  },
+  {
+    "text": "row,",
+    "start": 20.24,
+    "end": 20.42,
+    "id": "w41"
+  },
+  {
+    "text": "and",
+    "start": 20.52,
+    "end": 20.76,
+    "id": "w42"
+  },
+  {
+    "text": "column.",
+    "start": 20.76,
+    "end": 21.59,
+    "id": "w43"
+  },
+  {
+    "text": "Then",
+    "start": 21.66,
+    "end": 21.81,
+    "id": "w44"
+  },
+  {
+    "text": "we",
+    "start": 21.88,
+    "end": 21.98,
+    "id": "w45"
+  },
+  {
+    "text": "built",
+    "start": 21.98,
+    "end": 22.26,
+    "id": "w46"
+  },
+  {
+    "text": "an",
+    "start": 22.3,
+    "end": 22.39,
+    "id": "w47"
+  },
+  {
+    "text": "auditor",
+    "start": 22.39,
+    "end": 22.82,
+    "id": "w48"
+  },
+  {
+    "text": "that",
+    "start": 22.82,
+    "end": 23.03,
+    "id": "w49"
+  },
+  {
+    "text": "finds",
+    "start": 23.04,
+    "end": 23.32,
+    "id": "w50"
+  },
+  {
+    "text": "every",
+    "start": 23.32,
+    "end": 23.59,
+    "id": "w51"
+  },
+  {
+    "text": "number",
+    "start": 23.59,
+    "end": 23.61,
+    "id": "w52"
+  },
+  {
+    "text": "again",
+    "start": 24.08,
+    "end": 24.26,
+    "id": "w53"
+  },
+  {
+    "text": "in",
+    "start": 24.3,
+    "end": 24.45,
+    "id": "w54"
+  },
+  {
+    "text": "the",
+    "start": 24.52,
+    "end": 24.77,
+    "id": "w55"
+  },
+  {
+    "text": "original",
+    "start": 24.88,
+    "end": 25.62,
+    "id": "w56"
+  },
+  {
+    "text": "PDF.",
+    "start": 25.67,
+    "end": 26.23,
+    "id": "w57"
+  },
+  {
+    "text": "It",
+    "start": 26.34,
+    "end": 26.46,
+    "id": "w58"
+  },
+  {
+    "text": "never",
+    "start": 26.46,
+    "end": 26.81,
+    "id": "w59"
+  },
+  {
+    "text": "edits",
+    "start": 26.92,
+    "end": 27.24,
+    "id": "w60"
+  },
+  {
+    "text": "data.",
+    "start": 27.24,
+    "end": 27.82,
+    "id": "w61"
+  },
+  {
+    "text": "It",
+    "start": 27.86,
+    "end": 27.98,
+    "id": "w62"
+  },
+  {
+    "text": "only",
+    "start": 27.98,
+    "end": 28.31,
+    "id": "w63"
+  },
+  {
+    "text": "comments",
+    "start": 28.31,
+    "end": 28.97,
+    "id": "w64"
+  },
+  {
+    "text": "zero",
+    "start": 28.97,
+    "end": 29.3,
+    "id": "w65"
+  },
+  {
+    "text": "transcription",
+    "start": 29.3,
+    "end": 30.38,
+    "id": "w66"
+  },
+  {
+    "text": "errors",
+    "start": 30.38,
+    "end": 30.9,
+    "id": "w67"
+  },
+  {
+    "text": "and",
+    "start": 30.94,
+    "end": 31.09,
+    "id": "w68"
+  },
+  {
+    "text": "181",
+    "start": 31.16,
+    "end": 31.86,
+    "id": "w69"
+  },
+  {
+    "text": "problems",
+    "start": 31.86,
+    "end": 32.5,
+    "id": "w70"
+  },
+  {
+    "text": "inside",
+    "start": 32.5,
+    "end": 32.87,
+    "id": "w71"
+  },
+  {
+    "text": "the",
+    "start": 32.87,
+    "end": 33.36,
+    "id": "w72"
+  },
+  {
+    "text": "papers",
+    "start": 33.36,
+    "end": 33.7,
+    "id": "w73"
+  },
+  {
+    "text": "themselves.",
+    "start": 33.7,
+    "end": 34.71,
+    "id": "w74"
+  }
+]

@@ -1,0 +1,99 @@
+{
+ "total": 223.381,
+ "starts": {
+  "s1": 0.0,
+  "s2": 13.728,
+  "s3": 35.051,
+  "s4": 57.671,
+  "s5": 93.181,
+  "s6a": 134.581,
+  "s6b": 160.639,
+  "s6c": 179.466,
+  "s7": 194.876
+ },
+ "scenes": {
+  "s1": 13.728,
+  "s2": 21.323,
+  "s3": 22.62,
+  "s4": 35.51,
+  "s5": 41.4,
+  "s6a": 26.059,
+  "s6b": 18.827,
+  "s6c": 15.41,
+  "s7": 28.505
+ },
+ "voice": {
+  "s1": true,
+  "s2": true,
+  "s3": true,
+  "s4": true,
+  "s5": true,
+  "s6a": true,
+  "s6b": true,
+  "s6c": true,
+  "s7": true
+ },
+ "cues": {
+  "s1": {
+   "crack": 1.82,
+   "whoosh_dist": 4.66,
+   "pop_usd": 12.370000000000001
+  },
+  "s2": {
+   "whoosh_which": 11.56,
+   "pop_cnt": 19.15
+  },
+  "s3": {
+   "whoosh_zoom": 6.13,
+   "click_hero": 5.9799999999999995,
+   "pop_c1": 12.43,
+   "pop_c2": 14.0,
+   "pop_c3": 17.51,
+   "whoosh_print": 18.74
+  },
+  "s4": {
+   "whoosh_page": 14.59,
+   "whoosh_audit": 22.229999999999997,
+   "pop_stamp": 26.86,
+   "pop_zero": 29.32,
+   "pop_181": 32.510000000000005,
+   "pop_56": 32.160000000000004,
+   "whoosh_out": 35.21000000000001
+  },
+  "s5": {
+   "pop_230": 7.590000000000001,
+   "whoosh_pipe": 8.31,
+   "pop_gp": 9.98,
+   "whoosh_bars": 16.59,
+   "pop_honest": 27.310000000000002,
+   "whoosh_ev": 30.88,
+   "pop_117": 35.3,
+   "pop_119": 39.99
+  },
+  "s6a": {
+   "crack_habitat": 14.84,
+   "whoosh_noon": 16.67,
+   "whoosh_night": 20.029999999999998,
+   "crack_night": 24.24
+  },
+  "s6b": {
+   "pop_cnt": 4.6,
+   "whoosh_rank": 6.02,
+   "pop_local": 9.05,
+   "impact_held": 13.74,
+   "riser_held": 13.74,
+   "crack_winner": 16.09,
+   "whoosh_out": 18.576667
+  },
+  "s6c": {
+   "pop_stamp": 3.05,
+   "whoosh_kit": 6.23,
+   "pop_kg": 10.709999999999999,
+   "pop_usd": 14.07
+  },
+  "s7": {
+   "whoosh_base": 5.760000000000001,
+   "impact_end": 19.89
+  }
+ }
+}

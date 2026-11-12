@@ -1,0 +1,96 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+</style>
+  <div id="root" data-composition-id="s6a" data-width="1920" data-height="1080" data-duration="26.059">
+
+<div id="s6a-v1-wrap" class="vw" style=""><video id="s6a-v1" class="clip" src="assets/clips/c01_wrench_break.mp4" muted playsinline data-start="0.000" data-duration="16.770" data-media-start="0.000"></video></div>
+<div id="s6a-v2-wrap" class="vw" style=""><video id="s6a-v2" class="clip" src="assets/clips/c04_noon_night.mp4" muted playsinline data-start="16.720" data-duration="3.360" data-media-start="0.500"></video></div>
+<div id="s6a-v3-wrap" class="vw" style=""><video id="s6a-v3" class="clip" src="assets/clips/c04_noon_night.mp4" muted playsinline data-start="20.080" data-duration="5.979" data-media-start="5.200" data-playback-rate="2.163"></video></div>
+<div id="s6a-hud" class="clip grp" data-start="0.000" data-duration="26.059" style=""><div class="brk" id="s6a-b1" style="left:60px;top:60px;border-left-width:3px;border-top-width:3px"></div><div class="brk" id="s6a-b2" style="right:60px;top:60px;border-right-width:3px;border-top-width:3px"></div><div class="brk" id="s6a-b3" style="left:60px;bottom:60px;border-left-width:3px;border-bottom-width:3px"></div><div class="brk" id="s6a-b4" style="right:60px;bottom:60px;border-right-width:3px;border-bottom-width:3px"></div><div class="tag"><i></i>Real app footage · part test · beam theory on the model&#39;s predictions</div></div>
+<div id="s6a-r1" class="clip grp" data-start="11.420" data-duration="5.300" style=""><div id="s6a-ro1" class="readout" style="left:1180px;top:560px;width:600px">
+      <div class="lbl">Inside the habitat · 20 °C</div><div class="big red" style="margin-top:10px">0.98×</div>
+      <div class="h3 h3" style="font-size:34px;margin-top:10px">breaks at 71 N · needs 72 N</div></div></div>
+<div id="s6a-r2" class="clip grp" data-start="16.770" data-duration="3.310" style=""><div id="s6a-ro2" class="readout" style="left:1180px;top:560px;width:600px">
+      <div class="lbl">Lunar noon · +127 °C</div><div class="big amber" style="margin-top:10px">0.16×</div>
+      <div class="h3 muted" style="font-size:34px;margin-top:10px">softens</div></div></div>
+<div id="s6a-r3" class="clip grp" data-start="20.180" data-duration="5.879" style=""><div id="s6a-ro3" class="readout" style="left:1180px;top:560px;width:600px">
+      <div class="lbl">Lunar night · −173 °C</div><div class="big green" style="margin-top:10px">1.83×</div>
+      <div class="h3 muted" style="font-size:34px;margin-top:10px"><span id="s6a-brittle" class="amber">but brittle: it snaps</span></div></div></div>
+
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+
+tl.fromTo('#s6a-v1-wrap', { clipPath: 'circle(0% at 50% 50%)' }, { clipPath: 'circle(75% at 50% 50%)', duration: 0.55, ease: 'power2.out' }, 0);
+tl.fromTo('#s6a-hud .brk', { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.05 }, 0.2);
+land('#s6a-hud .tag', 0.3);
+land('#s6a-ro1', 11.470, { x: 60, y: 0 });
+land('#s6a-ro2', 16.820, { x: 60, y: 0 });
+land('#s6a-ro3', 20.230, { x: 60, y: 0 });
+tl.fromTo('#s6a-brittle', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 23.040);
+tl.fromTo('#s6a-v3-wrap', { x: 0 }, { keyframes: [{ x: -14 }, { x: 10 }, { x: -6 }, { x: 0 }], duration: 0.3, ease: 'none' }, 24.240);
+
+window.__timelines["s6a"] = tl;
+  </script>
+</template>

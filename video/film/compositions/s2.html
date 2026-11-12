@@ -1,0 +1,131 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+</style>
+  <div id="root" data-composition-id="s2" data-width="1920" data-height="1080" data-duration="21.323">
+
+<img id="s2-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:1.0" alt="">
+<div id="s2-a" class="clip grp" data-start="0.000" data-duration="11.660" style="">
+  <div class="abs kick" style="left:192px;top:112px">NASA Glenn Research Center · September 2026</div>
+  <div class="abs h2" style="left:192px;top:150px;width:1540px"><span class="w ">A </span><span class="w ">plastic </span><span class="w ">grown </span><span class="w ">inside </span><span class="w ">bacteria, </span><span class="w cyan">+ simulated Moon & Mars dust</span></div>
+  <div id="s2-p1" class="abs panel" style="left:192px;top:300px;width:740px;height:520px;overflow:hidden">
+    <img id="s2-i1" src="assets/nasa/lsp-2-100x.jpg" style="width:100%;height:100%;object-fit:cover" alt="NASA Glenn microscope image, Moon dust composite">
+    <div class="abs chip" style="left:20px;bottom:20px;color:#e7edf7">Moon dust simulant · 100×</div></div>
+  <div id="s2-p2" class="abs panel" style="left:988px;top:300px;width:740px;height:520px;overflow:hidden">
+    <img id="s2-i2" src="assets/nasa/jez-1-100x.jpg" style="width:100%;height:100%;object-fit:cover" alt="NASA Glenn microscope image, Mars dust composite">
+    <div class="abs chip" style="left:20px;bottom:20px;color:#ffb38a">Mars dust simulant · 100×</div></div>
+  <div class="abs src" style="right:192px;top:832px">Microscope images: NASA</div>
+  <div id="s2-site" class="abs chip green" style="left:192px;top:832px">Could be made on site</div></div>
+<div id="s2-b" class="clip grp" data-start="11.610" data-duration="9.713" style="">
+  <div class="abs src" style="left:192px;top:112px" data-var-text="challenge">NASA Space Apps Challenge 2026</div>
+  <div id="s2-which" class="abs h0" style="left:192px;top:180px"><span class="w ">Which </span><span class="w orange">mix?</span></div>
+  <div class="abs panel" style="left:192px;top:430px;width:360px;height:150px;overflow:hidden">
+          <div class="kick" style="position:absolute;left:24px;top:8px;color:#8f9cb2">Binder</div>
+          <div style="position:absolute;left:24px;top:46px;width:320px;height:96px;overflow:hidden" data-layout-ignore>
+          <div id="s2-col0" class="h3" style="position:absolute;left:0;top:0;width:320px;font-size:40px"><div style="height:96px;line-height:96px;white-space:nowrap">PLA</div><div style="height:96px;line-height:96px;white-space:nowrap">PEEK</div><div style="height:96px;line-height:96px;white-space:nowrap">LDPE</div><div style="height:96px;line-height:96px;white-space:nowrap">PEI</div><div style="height:96px;line-height:96px;white-space:nowrap">PPSU</div><div style="height:96px;line-height:96px;white-space:nowrap">PLA</div><div style="height:96px;line-height:96px;white-space:nowrap">PEEK</div><div style="height:96px;line-height:96px;white-space:nowrap">PHB</div></div></div></div><div class="abs panel" style="left:584px;top:430px;width:360px;height:150px;overflow:hidden">
+          <div class="kick" style="position:absolute;left:24px;top:8px;color:#8f9cb2">Soil</div>
+          <div style="position:absolute;left:24px;top:46px;width:320px;height:96px;overflow:hidden" data-layout-ignore>
+          <div id="s2-col1" class="h3" style="position:absolute;left:0;top:0;width:320px;font-size:40px"><div style="height:96px;line-height:96px;white-space:nowrap">Lunar mare</div><div style="height:96px;line-height:96px;white-space:nowrap">Martian</div><div style="height:96px;line-height:96px;white-space:nowrap">Lunar mare</div><div style="height:96px;line-height:96px;white-space:nowrap">Martian</div><div style="height:96px;line-height:96px;white-space:nowrap">Lunar mare</div><div style="height:96px;line-height:96px;white-space:nowrap">Lunar highlands</div></div></div></div><div class="abs panel" style="left:976px;top:430px;width:360px;height:150px;overflow:hidden">
+          <div class="kick" style="position:absolute;left:24px;top:8px;color:#8f9cb2">Made by</div>
+          <div style="position:absolute;left:24px;top:46px;width:320px;height:96px;overflow:hidden" data-layout-ignore>
+          <div id="s2-col2" class="h3" style="position:absolute;left:0;top:0;width:320px;font-size:40px"><div style="height:96px;line-height:96px;white-space:nowrap">Filament</div><div style="height:96px;line-height:96px;white-space:nowrap">Pellet</div><div style="height:96px;line-height:96px;white-space:nowrap">Hot-pressed</div><div style="height:96px;line-height:96px;white-space:nowrap">Sintered</div><div style="height:96px;line-height:96px;white-space:nowrap">Filament</div><div style="height:96px;line-height:96px;white-space:nowrap">Molded</div></div></div></div><div class="abs panel" style="left:1368px;top:430px;width:360px;height:150px;overflow:hidden">
+          <div class="kick" style="position:absolute;left:24px;top:8px;color:#8f9cb2">Dust</div>
+          <div style="position:absolute;left:24px;top:46px;width:320px;height:96px;overflow:hidden" data-layout-ignore>
+          <div id="s2-col3" class="h3" style="position:absolute;left:0;top:0;width:320px;font-size:40px"><div style="height:96px;line-height:96px;white-space:nowrap">10%</div><div style="height:96px;line-height:96px;white-space:nowrap">60%</div><div style="height:96px;line-height:96px;white-space:nowrap">85%</div><div style="height:96px;line-height:96px;white-space:nowrap">25%</div><div style="height:96px;line-height:96px;white-space:nowrap">92.5%</div><div style="height:96px;line-height:96px;white-space:nowrap">50%</div><div style="height:96px;line-height:96px;white-space:nowrap">70%</div><div style="height:96px;line-height:96px;white-space:nowrap">38%</div></div></div></div>
+  <div id="s2-q" class="abs" style="left:192px;top:630px">
+    <span class="chip cyan" style="margin-right:18px">How much dust?</span>
+    <span class="chip cyan" style="margin-right:18px">Which dust?</span>
+    <span class="chip orange">Strong enough?</span></div>
+  <div id="s2-cnt" class="abs" style="left:192px;top:730px">
+    <span id="s2-n" class="h1 mono orange">0</span>
+    <span class="h3" style="margin-left:18px">possible mixes for one wrench. Too many to test on Earth.</span></div></div>
+<div id="s2-in" class="clip abs" data-start="0" data-duration="0.4" style="left:0;top:0;width:1920px;height:1080px;background:#000"></div>
+
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+tl.fromTo('#s2-bg', { x: 0 }, { x: -70, duration: 21.323, ease: 'none' }, 0);
+tl.fromTo('#s2-in', { opacity: 1 }, { opacity: 0, duration: 0.3, ease: 'power2.out' }, 0);
+land('#s2-a .kick', 0.2);
+words('#s2-a .h2', 2.510, 0.07);
+land('#s2-p1', 0.3, { x: -60, y: 0 });
+land('#s2-p2', 0.55, { x: 60, y: 0 });
+tl.fromTo('#s2-i1', { scale: 1.04 }, { scale: 1.16, duration: 11.710, ease: 'none' }, 0);
+tl.fromTo('#s2-i2', { scale: 1.16 }, { scale: 1.04, duration: 11.710, ease: 'none' }, 0);
+land('#s2-a .src', 3.410);
+land('#s2-site', 9.700, { scale: 0.8, y: 0 });
+tl.fromTo('#s2-which .w', { opacity: 0, scale: 1.4, filter: 'blur(10px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.35, stagger: 0.12, ease: 'expo.out' }, 11.710);
+land('#s2-b .src', 11.910);
+tl.fromTo('#s2-b .panel', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'expo.out' }, 12.010);
+tl.fromTo('#s2-col0', { y: 0 }, { y: -672, duration: 1.30, ease: 'power3.inOut' }, 12.210);
+tl.fromTo('#s2-col1', { y: 0 }, { y: -480, duration: 1.65, ease: 'power3.inOut' }, 12.210);
+tl.fromTo('#s2-col2', { y: 0 }, { y: -480, duration: 2.00, ease: 'power3.inOut' }, 12.210);
+tl.fromTo('#s2-col3', { y: 0 }, { y: -672, duration: 2.35, ease: 'power3.inOut' }, 12.210);
+
+tl.fromTo('#s2-q .chip', { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.45, stagger: 1.525, ease: 'expo.out' }, 13.150);
+land('#s2-cnt', 17.650);
+count('#s2-n', 0, 4662, 17.750, 1.4, fmtInt);
+
+window.__timelines["s2"] = tl;
+  </script>
+</template>

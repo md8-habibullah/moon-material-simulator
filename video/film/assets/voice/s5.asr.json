@@ -1,0 +1,524 @@
+[
+  {
+    "text": "Physics",
+    "start": 0.06,
+    "end": 0.51,
+    "id": "w0"
+  },
+  {
+    "text": "alone",
+    "start": 0.51,
+    "end": 0.87,
+    "id": "w1"
+  },
+  {
+    "text": "isn't",
+    "start": 0.87,
+    "end": 1.23,
+    "id": "w2"
+  },
+  {
+    "text": "enough.",
+    "start": 1.23,
+    "end": 1.92,
+    "id": "w3"
+  },
+  {
+    "text": "On",
+    "start": 1.98,
+    "end": 2.12,
+    "id": "w4"
+  },
+  {
+    "text": "real",
+    "start": 2.12,
+    "end": 2.52,
+    "id": "w5"
+  },
+  {
+    "text": "samples,",
+    "start": 2.52,
+    "end": 3.33,
+    "id": "w6"
+  },
+  {
+    "text": "its",
+    "start": 3.33,
+    "end": 3.36,
+    "id": "w7"
+  },
+  {
+    "text": "compressive",
+    "start": 3.36,
+    "end": 3.97,
+    "id": "w8"
+  },
+  {
+    "text": "strength",
+    "start": 3.97,
+    "end": 4.34,
+    "id": "w9"
+  },
+  {
+    "text": "predictions",
+    "start": 4.34,
+    "end": 4.89,
+    "id": "w10"
+  },
+  {
+    "text": "were",
+    "start": 5.02,
+    "end": 5.39,
+    "id": "w11"
+  },
+  {
+    "text": "off",
+    "start": 5.39,
+    "end": 5.71,
+    "id": "w12"
+  },
+  {
+    "text": "by",
+    "start": 5.71,
+    "end": 5.92,
+    "id": "w13"
+  },
+  {
+    "text": "up",
+    "start": 5.92,
+    "end": 6.13,
+    "id": "w14"
+  },
+  {
+    "text": "to",
+    "start": 6.13,
+    "end": 6.34,
+    "id": "w15"
+  },
+  {
+    "text": "230%.",
+    "start": 6.34,
+    "end": 7.76,
+    "id": "w16"
+  },
+  {
+    "text": "So",
+    "start": 7.82,
+    "end": 7.9,
+    "id": "w17"
+  },
+  {
+    "text": "we",
+    "start": 7.9,
+    "end": 8,
+    "id": "w18"
+  },
+  {
+    "text": "kept",
+    "start": 8.06,
+    "end": 8.33,
+    "id": "w19"
+  },
+  {
+    "text": "the",
+    "start": 8.33,
+    "end": 8.54,
+    "id": "w20"
+  },
+  {
+    "text": "physics",
+    "start": 8.54,
+    "end": 9.08,
+    "id": "w21"
+  },
+  {
+    "text": "and",
+    "start": 9.08,
+    "end": 9.18,
+    "id": "w22"
+  },
+  {
+    "text": "taught",
+    "start": 9.18,
+    "end": 9.26,
+    "id": "w23"
+  },
+  {
+    "text": "a",
+    "start": 9.47,
+    "end": 9.53,
+    "id": "w24"
+  },
+  {
+    "text": "Gaussian",
+    "start": 9.63,
+    "end": 9.96,
+    "id": "w25"
+  },
+  {
+    "text": "process",
+    "start": 9.96,
+    "end": 10.52,
+    "id": "w26"
+  },
+  {
+    "text": "its",
+    "start": 10.58,
+    "end": 10.77,
+    "id": "w27"
+  },
+  {
+    "text": "mistakes,",
+    "start": 10.82,
+    "end": 11.68,
+    "id": "w28"
+  },
+  {
+    "text": "using",
+    "start": 11.68,
+    "end": 11.94,
+    "id": "w29"
+  },
+  {
+    "text": "152",
+    "start": 12.49,
+    "end": 12.75,
+    "id": "w30"
+  },
+  {
+    "text": "real",
+    "start": 12.75,
+    "end": 13.05,
+    "id": "w31"
+  },
+  {
+    "text": "measurements",
+    "start": 13.05,
+    "end": 13.96,
+    "id": "w32"
+  },
+  {
+    "text": "from",
+    "start": 14.05,
+    "end": 14.24,
+    "id": "w33"
+  },
+  {
+    "text": "seven",
+    "start": 14.24,
+    "end": 14.53,
+    "id": "w34"
+  },
+  {
+    "text": "studies.",
+    "start": 14.61,
+    "end": 15.56,
+    "id": "w35"
+  },
+  {
+    "text": "On",
+    "start": 15.62,
+    "end": 15.73,
+    "id": "w36"
+  },
+  {
+    "text": "mixes",
+    "start": 15.73,
+    "end": 16.17,
+    "id": "w37"
+  },
+  {
+    "text": "it",
+    "start": 16.17,
+    "end": 16.34,
+    "id": "w38"
+  },
+  {
+    "text": "never",
+    "start": 16.34,
+    "end": 16.78,
+    "id": "w39"
+  },
+  {
+    "text": "saw,",
+    "start": 16.78,
+    "end": 17.09,
+    "id": "w40"
+  },
+  {
+    "text": "the",
+    "start": 17.09,
+    "end": 17.53,
+    "id": "w41"
+  },
+  {
+    "text": "error",
+    "start": 17.53,
+    "end": 17.68,
+    "id": "w42"
+  },
+  {
+    "text": "drops",
+    "start": 17.68,
+    "end": 17.98,
+    "id": "w43"
+  },
+  {
+    "text": "from",
+    "start": 18.06,
+    "end": 18.43,
+    "id": "w44"
+  },
+  {
+    "text": "230",
+    "start": 18.43,
+    "end": 19.32,
+    "id": "w45"
+  },
+  {
+    "text": "to",
+    "start": 19.32,
+    "end": 19.53,
+    "id": "w46"
+  },
+  {
+    "text": "34%",
+    "start": 19.53,
+    "end": 20.64,
+    "id": "w47"
+  },
+  {
+    "text": "for",
+    "start": 20.7,
+    "end": 20.86,
+    "id": "w48"
+  },
+  {
+    "text": "compressive",
+    "start": 20.86,
+    "end": 21.68,
+    "id": "w49"
+  },
+  {
+    "text": "strength,",
+    "start": 21.68,
+    "end": 22.43,
+    "id": "w50"
+  },
+  {
+    "text": "65",
+    "start": 22.61,
+    "end": 22.88,
+    "id": "w51"
+  },
+  {
+    "text": "to",
+    "start": 22.88,
+    "end": 23.03,
+    "id": "w52"
+  },
+  {
+    "text": "19",
+    "start": 23.03,
+    "end": 23.52,
+    "id": "w53"
+  },
+  {
+    "text": "for",
+    "start": 23.52,
+    "end": 23.62,
+    "id": "w54"
+  },
+  {
+    "text": "stiffness,",
+    "start": 23.94,
+    "end": 24.56,
+    "id": "w55"
+  },
+  {
+    "text": "16",
+    "start": 24.62,
+    "end": 25.12,
+    "id": "w56"
+  },
+  {
+    "text": "to",
+    "start": 25.12,
+    "end": 25.31,
+    "id": "w57"
+  },
+  {
+    "text": "5",
+    "start": 25.31,
+    "end": 25.59,
+    "id": "w58"
+  },
+  {
+    "text": "for",
+    "start": 25.59,
+    "end": 25.87,
+    "id": "w59"
+  },
+  {
+    "text": "density.",
+    "start": 25.87,
+    "end": 26.84,
+    "id": "w60"
+  },
+  {
+    "text": "A",
+    "start": 26.9,
+    "end": 26.91,
+    "id": "w61"
+  },
+  {
+    "text": "completely",
+    "start": 26.91,
+    "end": 27.61,
+    "id": "w62"
+  },
+  {
+    "text": "new",
+    "start": 27.61,
+    "end": 27.82,
+    "id": "w63"
+  },
+  {
+    "text": "study",
+    "start": 27.82,
+    "end": 28.17,
+    "id": "w64"
+  },
+  {
+    "text": "is",
+    "start": 28.17,
+    "end": 28.26,
+    "id": "w65"
+  },
+  {
+    "text": "harder.",
+    "start": 28.3,
+    "end": 28.96,
+    "id": "w66"
+  },
+  {
+    "text": "And",
+    "start": 29.02,
+    "end": 29.29,
+    "id": "w67"
+  },
+  {
+    "text": "we",
+    "start": 29.29,
+    "end": 29.51,
+    "id": "w68"
+  },
+  {
+    "text": "say",
+    "start": 29.51,
+    "end": 29.83,
+    "id": "w69"
+  },
+  {
+    "text": "so.",
+    "start": 29.84,
+    "end": 30.37,
+    "id": "w70"
+  },
+  {
+    "text": "And",
+    "start": 30.46,
+    "end": 30.63,
+    "id": "w71"
+  },
+  {
+    "text": "every",
+    "start": 30.63,
+    "end": 31.02,
+    "id": "w72"
+  },
+  {
+    "text": "prediction",
+    "start": 31.02,
+    "end": 31.79,
+    "id": "w73"
+  },
+  {
+    "text": "links",
+    "start": 31.79,
+    "end": 31.86,
+    "id": "w74"
+  },
+  {
+    "text": "to",
+    "start": 31.86,
+    "end": 32.37,
+    "id": "w75"
+  },
+  {
+    "text": "its",
+    "start": 32.37,
+    "end": 32.57,
+    "id": "w76"
+  },
+  {
+    "text": "evidence.",
+    "start": 32.57,
+    "end": 33.24,
+    "id": "w77"
+  },
+  {
+    "text": "This",
+    "start": 33.3,
+    "end": 33.68,
+    "id": "w78"
+  },
+  {
+    "text": "one",
+    "start": 33.68,
+    "end": 34.01,
+    "id": "w79"
+  },
+  {
+    "text": "says",
+    "start": 34.01,
+    "end": 34.45,
+    "id": "w80"
+  },
+  {
+    "text": "117",
+    "start": 34.45,
+    "end": 35.44,
+    "id": "w81"
+  },
+  {
+    "text": "megapascals.",
+    "start": 35.44,
+    "end": 37,
+    "id": "w82"
+  },
+  {
+    "text": "The",
+    "start": 37.06,
+    "end": 37.38,
+    "id": "w83"
+  },
+  {
+    "text": "paper",
+    "start": 37.38,
+    "end": 38.02,
+    "id": "w84"
+  },
+  {
+    "text": "measured",
+    "start": 38.02,
+    "end": 39.04,
+    "id": "w85"
+  },
+  {
+    "text": "119.",
+    "start": 39.04,
+    "end": 40.6,
+    "id": "w86"
+  }
+]

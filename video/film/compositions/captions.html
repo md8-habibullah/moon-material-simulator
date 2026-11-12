@@ -1,0 +1,196 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+
+#root { background: transparent; }
+.cap { position: absolute; left: 0; width: 1920px; top: 958px; text-align: center; }
+.cap span.box { display: inline-block; padding: 8px 22px 10px; border-radius: 12px; background: rgba(0,0,0,.42);
+  font-family: 'Space Grotesk', 'Inter', sans-serif; font-weight: 600; font-size: 44px; color: #f4f7fb; letter-spacing: -.005em; }
+</style>
+  <div id="root" data-composition-id="captions" data-width="1920" data-height="1080" data-duration="223.381">
+<div id="cap0" class="clip cap" data-start="0.440" data-duration="0.750"><span class="box">On the Moon,</span></div>
+<div id="cap1" class="clip cap" data-start="1.200" data-duration="1.880"><span class="box">a broken wrench is not</span></div>
+<div id="cap2" class="clip cap" data-start="3.090" data-duration="1.760"><span class="box">a small problem.</span></div>
+<div id="cap3" class="clip cap" data-start="4.860" data-duration="2.973"><span class="box">The next one is 384,000</span></div>
+<div id="cap4" class="clip cap" data-start="7.843" data-duration="1.707"><span class="box">kilometres away,</span></div>
+<div id="cap5" class="clip cap" data-start="9.560" data-duration="1.230"><span class="box">and sending it can cost</span></div>
+<div id="cap6" class="clip cap" data-start="10.800" data-duration="1.410"><span class="box">up to a million dollars</span></div>
+<div id="cap7" class="clip cap" data-start="12.220" data-duration="1.150"><span class="box">per kilogram.</span></div>
+<div id="cap8" class="clip cap" data-start="14.188" data-duration="1.790"><span class="box">In 2026,</span></div>
+<div id="cap9" class="clip cap" data-start="16.188" data-duration="1.920"><span class="box">NASA Glenn grew a plastic</span></div>
+<div id="cap10" class="clip cap" data-start="18.118" data-duration="2.030"><span class="box">inside bacteria and mixed it</span></div>
+<div id="cap11" class="clip cap" data-start="20.158" data-duration="2.100"><span class="box">with simulated Moon and Mars</span></div>
+<div id="cap12" class="clip cap" data-start="22.268" data-duration="1.770"><span class="box">dust: a material that could</span></div>
+<div id="cap13" class="clip cap" data-start="24.048" data-duration="1.330"><span class="box">be made on site.</span></div>
+<div id="cap14" class="clip cap" data-start="25.388" data-duration="1.430"><span class="box">But which mix?</span></div>
+<div id="cap15" class="clip cap" data-start="26.828" data-duration="1.360"><span class="box">How much dust,</span></div>
+<div id="cap16" class="clip cap" data-start="28.198" data-duration="1.340"><span class="box">which dust,</span></div>
+<div id="cap17" class="clip cap" data-start="29.548" data-duration="1.160"><span class="box">and is it strong enough</span></div>
+<div id="cap18" class="clip cap" data-start="30.718" data-duration="0.900"><span class="box">for a wrench?</span></div>
+<div id="cap19" class="clip cap" data-start="31.628" data-duration="1.950"><span class="box">You can't test every combination</span></div>
+<div id="cap20" class="clip cap" data-start="33.588" data-duration="0.810"><span class="box">on Earth.</span></div>
+<div id="cap21" class="clip cap" data-start="35.441" data-duration="1.280"><span class="box">For the NASA Space Apps</span></div>
+<div id="cap22" class="clip cap" data-start="36.731" data-duration="2.330"><span class="box">Challenge, we built the Moon-Material</span></div>
+<div id="cap23" class="clip cap" data-start="39.071" data-duration="1.920"><span class="box">Simulator. Pick a binder,</span></div>
+<div id="cap24" class="clip cap" data-start="41.001" data-duration="0.610"><span class="box">a soil,</span></div>
+<div id="cap25" class="clip cap" data-start="41.621" data-duration="1.340"><span class="box">and how the part is</span></div>
+<div id="cap26" class="clip cap" data-start="42.971" data-duration="1.410"><span class="box">made. Instantly,</span></div>
+<div id="cap27" class="clip cap" data-start="44.391" data-duration="1.510"><span class="box">a physics model corrected by</span></div>
+<div id="cap28" class="clip cap" data-start="45.911" data-duration="2.510"><span class="box">machine learning predicts eight properties,</span></div>
+<div id="cap29" class="clip cap" data-start="48.431" data-duration="1.560"><span class="box">shows how sure it is,</span></div>
+<div id="cap30" class="clip cap" data-start="50.001" data-duration="1.220"><span class="box">and tells you whether each</span></div>
+<div id="cap31" class="clip cap" data-start="51.231" data-duration="1.500"><span class="box">number is backed by real</span></div>
+<div id="cap32" class="clip cap" data-start="52.741" data-duration="1.290"><span class="box">lab data.</span></div>
+<div id="cap33" class="clip cap" data-start="54.041" data-duration="1.390"><span class="box">It runs in any browser,</span></div>
+<div id="cap34" class="clip cap" data-start="55.441" data-duration="1.900"><span class="box">and it's open source.</span></div>
+<div id="cap35" class="clip cap" data-start="58.011" data-duration="1.645"><span class="box">Our science stands on NASA's</span></div>
+<div id="cap36" class="clip cap" data-start="59.666" data-duration="0.795"><span class="box">own data:</span></div>
+<div id="cap37" class="clip cap" data-start="60.471" data-duration="3.930"><span class="box">NASA Glenn's 2026 bacterial-plastic reports,</span></div>
+<div id="cap38" class="clip cap" data-start="64.411" data-duration="2.230"><span class="box">NASA Kennedy's regolith-printing studies,</span></div>
+<div id="cap39" class="clip cap" data-start="66.651" data-duration="1.810"><span class="box">and a 2003 NASA report</span></div>
+<div id="cap40" class="clip cap" data-start="68.471" data-duration="1.910"><span class="box">on polyethylene and regolith,</span></div>
+<div id="cap41" class="clip cap" data-start="70.391" data-duration="1.910"><span class="box">plus peer-reviewed papers.</span></div>
+<div id="cap42" class="clip cap" data-start="72.311" data-duration="3.470"><span class="box">We transcribed 1,470 measured values,</span></div>
+<div id="cap43" class="clip cap" data-start="75.791" data-duration="1.570"><span class="box">each tied to its page,</span></div>
+<div id="cap44" class="clip cap" data-start="77.371" data-duration="2.250"><span class="box">table, row and column.</span></div>
+<div id="cap45" class="clip cap" data-start="79.631" data-duration="1.150"><span class="box">Then we built an auditor</span></div>
+<div id="cap46" class="clip cap" data-start="80.791" data-duration="1.470"><span class="box">that finds every number again</span></div>
+<div id="cap47" class="clip cap" data-start="82.271" data-duration="2.030"><span class="box">in the original PDF.</span></div>
+<div id="cap48" class="clip cap" data-start="84.311" data-duration="1.510"><span class="box">It never edits data;</span></div>
+<div id="cap49" class="clip cap" data-start="85.831" data-duration="1.100"><span class="box">it only comments.</span></div>
+<div id="cap50" class="clip cap" data-start="86.941" data-duration="1.960"><span class="box">Zero transcription errors,</span></div>
+<div id="cap51" class="clip cap" data-start="88.911" data-duration="2.410"><span class="box">and 181 problems inside the</span></div>
+<div id="cap52" class="clip cap" data-start="91.331" data-duration="1.520"><span class="box">papers themselves.</span></div>
+<div id="cap53" class="clip cap" data-start="93.541" data-duration="1.910"><span class="box">Physics alone isn't enough:</span></div>
+<div id="cap54" class="clip cap" data-start="95.461" data-duration="1.340"><span class="box">on real samples,</span></div>
+<div id="cap55" class="clip cap" data-start="96.811" data-duration="2.370"><span class="box">its compressive-strength predictions were off</span></div>
+<div id="cap56" class="clip cap" data-start="99.191" data-duration="2.100"><span class="box">by up to 230 percent.</span></div>
+<div id="cap57" class="clip cap" data-start="101.301" data-duration="1.250"><span class="box">So we kept the physics</span></div>
+<div id="cap58" class="clip cap" data-start="102.561" data-duration="1.490"><span class="box">and taught a Gaussian process</span></div>
+<div id="cap59" class="clip cap" data-start="104.061" data-duration="1.090"><span class="box">its mistakes,</span></div>
+<div id="cap60" class="clip cap" data-start="105.161" data-duration="2.550"><span class="box">using 152 real measurements from</span></div>
+<div id="cap61" class="clip cap" data-start="107.721" data-duration="1.370"><span class="box">seven studies.</span></div>
+<div id="cap62" class="clip cap" data-start="109.101" data-duration="1.460"><span class="box">On mixes it never saw,</span></div>
+<div id="cap63" class="clip cap" data-start="110.571" data-duration="2.220"><span class="box">the error drops from 230</span></div>
+<div id="cap64" class="clip cap" data-start="112.801" data-duration="2.350"><span class="box">to 34 percent for compressive</span></div>
+<div id="cap65" class="clip cap" data-start="115.161" data-duration="2.110"><span class="box">strength, 65 to 19 for</span></div>
+<div id="cap66" class="clip cap" data-start="117.421" data-duration="1.920"><span class="box">stiffness, 16 to 5 for</span></div>
+<div id="cap67" class="clip cap" data-start="119.351" data-duration="2.290"><span class="box">density. A completely new study</span></div>
+<div id="cap68" class="clip cap" data-start="121.651" data-duration="0.840"><span class="box">is harder,</span></div>
+<div id="cap69" class="clip cap" data-start="122.501" data-duration="1.430"><span class="box">and we say so.</span></div>
+<div id="cap70" class="clip cap" data-start="123.941" data-duration="1.900"><span class="box">And every prediction links to</span></div>
+<div id="cap71" class="clip cap" data-start="125.851" data-duration="0.920"><span class="box">its evidence:</span></div>
+<div id="cap72" class="clip cap" data-start="126.781" data-duration="3.750"><span class="box">this one says 117 megapascals.</span></div>
+<div id="cap73" class="clip cap" data-start="130.541" data-duration="3.710"><span class="box">The paper measured 119.</span></div>
+<div id="cap74" class="clip cap" data-start="134.951" data-duration="1.390"><span class="box">Back to our wrench:</span></div>
+<div id="cap75" class="clip cap" data-start="136.351" data-duration="2.520"><span class="box">bacterial plastic with 38 percent</span></div>
+<div id="cap76" class="clip cap" data-start="138.881" data-duration="2.180"><span class="box">lunar highlands dust.</span></div>
+<div id="cap77" class="clip cap" data-start="141.071" data-duration="1.630"><span class="box">The part test applies beam</span></div>
+<div id="cap78" class="clip cap" data-start="142.711" data-duration="2.650"><span class="box">theory to the model's predictions.</span></div>
+<div id="cap79" class="clip cap" data-start="145.371" data-duration="2.130"><span class="box">It breaks at 71 newtons,</span></div>
+<div id="cap80" class="clip cap" data-start="147.511" data-duration="1.670"><span class="box">just short of the 72</span></div>
+<div id="cap81" class="clip cap" data-start="149.191" data-duration="2.150"><span class="box">needed to tighten a bolt.</span></div>
+<div id="cap82" class="clip cap" data-start="151.351" data-duration="1.790"><span class="box">At lunar noon it softens</span></div>
+<div id="cap83" class="clip cap" data-start="153.151" data-duration="1.550"><span class="box">to a sixth of that.</span></div>
+<div id="cap84" class="clip cap" data-start="154.711" data-duration="1.710"><span class="box">At lunar night it's almost</span></div>
+<div id="cap85" class="clip cap" data-start="156.431" data-duration="0.960"><span class="box">twice as strong,</span></div>
+<div id="cap86" class="clip cap" data-start="157.401" data-duration="1.060"><span class="box">but brittle:</span></div>
+<div id="cap87" class="clip cap" data-start="158.471" data-duration="1.690"><span class="box">it snaps instead of bending.</span></div>
+<div id="cap88" class="clip cap" data-start="161.079" data-duration="2.230"><span class="box">So we ask the optimizer.</span></div>
+<div id="cap89" class="clip cap" data-start="163.319" data-duration="1.810"><span class="box">It tests nearly five thousand</span></div>
+<div id="cap90" class="clip cap" data-start="165.569" data-duration="1.280"><span class="box">mixes and finds one made</span></div>
+<div id="cap91" class="clip cap" data-start="166.859" data-duration="2.770"><span class="box">entirely from local resources:</span></div>
+<div id="cap92" class="clip cap" data-start="169.639" data-duration="2.860"><span class="box">45 percent dust and 15</span></div>
+<div id="cap93" class="clip cap" data-start="172.509" data-duration="1.760"><span class="box">percent basalt fibre.</span></div>
+<div id="cap94" class="clip cap" data-start="174.279" data-duration="2.690"><span class="box">Safety factor 1.7,</span></div>
+<div id="cap95" class="clip cap" data-start="176.979" data-duration="1.450"><span class="box">and it bends before it</span></div>
+<div id="cap96" class="clip cap" data-start="178.449" data-duration="0.650"><span class="box">breaks.</span></div>
+<div id="cap97" class="clip cap" data-start="179.926" data-duration="1.440"><span class="box">Ask it for a rocket</span></div>
+<div id="cap98" class="clip cap" data-start="181.376" data-duration="1.900"><span class="box">nozzle, and it honestly says</span></div>
+<div id="cap99" class="clip cap" data-start="183.286" data-duration="2.330"><span class="box">no plastic survives.</span></div>
+<div id="cap100" class="clip cap" data-start="185.626" data-duration="1.240"><span class="box">And a kit of 25</span></div>
+<div id="cap101" class="clip cap" data-start="186.876" data-duration="2.140"><span class="box">small parts printed on site</span></div>
+<div id="cap102" class="clip cap" data-start="189.026" data-duration="2.320"><span class="box">keeps 10 kilograms off the</span></div>
+<div id="cap103" class="clip cap" data-start="191.356" data-duration="0.900"><span class="box">launch pad:</span></div>
+<div id="cap104" class="clip cap" data-start="192.266" data-duration="2.280"><span class="box">up to 10 million dollars.</span></div>
+<div id="cap105" class="clip cap" data-start="195.286" data-duration="1.550"><span class="box">Every kilogram made on the</span></div>
+<div id="cap106" class="clip cap" data-start="196.846" data-duration="1.440"><span class="box">Moon is a kilogram we</span></div>
+<div id="cap107" class="clip cap" data-start="198.296" data-duration="1.560"><span class="box">don't have to launch.</span></div>
+<div id="cap108" class="clip cap" data-start="199.866" data-duration="2.400"><span class="box">Our simulator helps engineers choose</span></div>
+<div id="cap109" class="clip cap" data-start="202.276" data-duration="1.250"><span class="box">the right mix before a</span></div>
+<div id="cap110" class="clip cap" data-start="203.536" data-duration="2.160"><span class="box">single sample is printed,</span></div>
+<div id="cap111" class="clip cap" data-start="205.706" data-duration="2.110"><span class="box">and shows which real measurement</span></div>
+<div id="cap112" class="clip cap" data-start="207.826" data-duration="1.630"><span class="box">backs every answer.</span></div>
+<div id="cap113" class="clip cap" data-start="209.466" data-duration="1.630"><span class="box">The same method works for</span></div>
+<div id="cap114" class="clip cap" data-start="211.106" data-duration="1.800"><span class="box">Mars, and for any material</span></div>
+<div id="cap115" class="clip cap" data-start="212.916" data-duration="1.840"><span class="box">where data is scarce.</span></div>
+<div id="cap116" class="clip cap" data-start="214.766" data-duration="1.980"><span class="box">We are Dreams of X.</span></div>
+<div id="cap117" class="clip cap" data-start="216.756" data-duration="1.490"><span class="box">Try it yourself.</span></div>
+
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+
+window.__timelines["captions"] = tl;
+  </script>
+</template>
