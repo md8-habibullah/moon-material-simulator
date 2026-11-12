@@ -1,0 +1,21 @@
+﻿source_file,page,table_number,0,1,2,3,4,5,6,7,8,9,10,11,12
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,Material,,Target wt.%,,,"Actual wt.% Ratio,",,,Actual wt.%,,,Averaged % Deviation,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,,,Ratio,,,TGA,,,"Ratio, Ash",,,from Target,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,PLA pellet,0:100,,,-,,,0:100,,,0.0,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,CP-L01,0:100,,,-,,,0:100,,,0.0,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,BP-1,100:0,,,-,,,99:1,,,1.3,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,LHS-1,100:0,,,-,,,100:0,,,0.0,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,BP-1: PLA pellet,70:30,,,61:39,,,62:38,,,12.3,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,BP-1: PLA pellet,80:20,,,70:30,,,-,,,12.5,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,"BP-1: PLA: CP-L01
+pellet",80:18.5:1.5,,,72:28*,,,71:29*,,,8.7,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,LHS-1: PLA pellet,80:20,,,75:25,,,74:26,,,7.0,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,BP-1: PLA pellet,85:15,,,78:22,,,78:22,,,8.5,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,BP-1: PLA TVAC,70:30,,,-,,,62:38,,,11.8,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,BP-1: PLA TVAC,80:20,,,-,,,71:29,,,11.9,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,"BP-1: PLA: CP-L01
+TVAC",80:18.5:1.5,,,-,,,71:29*,,,9.7,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,BP-1: PLA TVAC,85:15,,,-,,,77:23,,,9.2,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,BP-1: PLA Ambient,80:20,,,-,,,70:30,,,12.1,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,LHS-1: PLA Ambient,80:20,,,-,,,75:25,,,5.7,,
+S003_STRIVES IEEE-Selection Production and Prop FINAL.pdf,9,1,PLA Ambient,0:100,,,-,,,0:100,,,0.0,,

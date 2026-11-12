@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/dreams-of-x-logo.jpeg" alt="Dreams of X logo" width="110" />
+  <a href="https://md8-habibullah.github.io/moon-material-simulator/"><img src="docs/assets/readme/banner.jpg" alt="Moon-Material Simulator: design a building material from moon dust and NASA's bacteria-grown plastic, then break it on screen before anyone prints it" width="100%" /></a>
 </p>
 
 <h1 align="center">Moon-Material Simulator</h1>
@@ -18,6 +18,12 @@
 <p align="center">
   <a href="https://github.com/md8-habibullah/moon-material-simulator/actions/workflows/deploy.yml"><img alt="Test and deploy" src="https://github.com/md8-habibullah/moon-material-simulator/actions/workflows/deploy.yml/badge.svg" /></a>
   <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
+  <img alt="Runs in the browser" src="https://img.shields.io/badge/runs_in-any_browser-5ee7ff.svg" />
+  <img alt="1,470 audited lab values" src="https://img.shields.io/badge/lab_values-1%2C470_audited-ff9a4d.svg" />
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/1Gtmq5XUytc"><img src="docs/assets/readme/video-thumbnail.jpg" alt="Watch the pitch video: a wrench made of moon-dust plastic breaks under load" width="720" /></a>
 </p>
 
 ---
@@ -34,6 +40,14 @@ The open question is which mix to make. With 10% regolith or 50%? Lunar or Marti
 wrench, or heat-resistant enough for a sunlit wall panel? You can't test every combination on Earth, and you can't
 afford to get it wrong on the Moon.
 
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/assets/readme/nasa-moon-dust-micrograph.jpg" alt="Polarised-light micrograph of bioplastic with Moon dust simulant, 100x" /><br /><sub><b>Moon dust simulant</b> in the bioplastic, 100×</sub></td>
+    <td align="center" width="50%"><img src="docs/assets/readme/nasa-mars-dust-micrograph.jpg" alt="Polarised-light micrograph of bioplastic with Mars dust simulant, 100x" /><br /><sub><b>Mars dust simulant</b> in the bioplastic, 100×</sub></td>
+  </tr>
+</table>
+<p align="center"><sub>Microscope images: NASA Glenn Research Center (public domain).</sub></p>
+
 ## What we built
 
 An interactive simulator for designing these composites, which runs entirely in the browser:
@@ -45,6 +59,37 @@ An interactive simulator for designing these composites, which runs entirely in 
 | **Optimize** | Choose a use. | The optimizer tests about 5,000 compositions (every binder, with each process it has lab data for) and ranks the passing ones, most locally sourced first. It says honestly when nothing works: no plastic survives a thruster nozzle. |
 | **Plan** | Compare up to four formulas; estimate mission impact. | Radar chart, winners per property and CSV export, plus launch mass and cost avoided by printing parts on site. |
 
+<p align="center">
+  <img src="docs/assets/readme/app-simulator.jpg" alt="The simulator: material selection, 3D microstructure and eight live property predictions" width="100%" /><br />
+  <sub><b>Design.</b> Pick the binder, soil, process and loading; eight properties update instantly, each marked lab-backed or physics estimate.</sub>
+</p>
+
+### Test it before you print it
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/assets/readme/print.gif" alt="The 3D sample printing layer by layer, regolith grains suspended in the binder" /><br /><sub><b>Print it.</b> The 3D sample builds layer by layer, grains at the real loading. Drag to orbit, scroll to zoom.</sub></td>
+    <td align="center" width="50%"><img src="docs/assets/readme/wrench-break.gif" alt="A wrench made of PHB and 38% lunar dust turns from blue to red under load and snaps" /><br /><sub><b>Break it.</b> PHB + 38% lunar dust: stress climbs from blue to red, and it snaps at 71 N, just short of the 72 N a bolt needs.</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/assets/readme/bracket.gif" alt="A shelf bracket bends under a hanging load and snaps at the wall" width="420" /><br /><sub><b>Shelf bracket.</b> Cantilever bending, σ = F·L/Z.</sub></td>
+    <td align="center"><img src="docs/assets/readme/brick.gif" alt="A shelter brick in a press changes colour with load and crumbles" width="420" /><br /><sub><b>Shelter brick.</b> Crushed under a 2 m wall plus 3 m of regolith shielding.</sub></td>
+  </tr>
+</table>
+
+### Let the optimizer find the mix
+
+<table>
+  <tr>
+    <td align="center" width="58%"><img src="docs/assets/readme/app-optimizer-wrench.jpg" alt="Optimizer ranking the best wrench mixes, most locally sourced first" /><br /><sub><b>Wrench:</b> about 5,000 mixes tested, ranked most locally sourced first.</sub></td>
+    <td align="center" width="42%"><img src="docs/assets/readme/app-optimizer-nozzle.jpg" alt="Optimizer reporting that no mix survives a thruster nozzle" /><br /><sub><b>Thruster nozzle:</b> it says no, honestly. No plastic survives 1,000 °C.</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/assets/readme/app-impact.jpg" alt="Mission impact calculator: launch mass and cost avoided" /><br /><sub><b>Mission impact:</b> launch mass and cost avoided by printing on site.</sub></td>
+    <td align="center"><img src="docs/assets/readme/film-parts.jpg" alt="Grid of 25 small printed parts" /><br /><sub>25 small parts printed on site keep 10 kg off the launch pad.</sub></td>
+  </tr>
+</table>
+
 ## Built on real, audited data
 
 We transcribed **1,470 values from 11 sources** (5 NASA reports and 6 peer-reviewed or preprint studies). Each one
@@ -53,6 +98,17 @@ reports 0 transcription errors. It also documents 181 problems inside the papers
 values, MPa written for GPa, and an impossible −273 °C glass transition. The original 56 NASA calibration points
 all passed an independent re-read. Details: [docs/evidence.md](docs/evidence.md) and
 [docs/data_sources.md](docs/data_sources.md).
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/assets/readme/film-audit.jpg" alt="Audit result: 0 transcription errors, 181 problems inside the papers, 56 of 56 NASA calibration points re-verified" /><br /><sub><b>Audit result.</b> Every value re-found in its PDF.</sub></td>
+    <td align="center" width="50%"><img src="docs/assets/readme/film-evidence.jpg" alt="Predicted 117 MPa next to 119 MPa measured in the paper, with the source figure" /><br /><sub><b>Every prediction links to its evidence.</b> Predicted 117 MPa; the paper measured 119.</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/assets/readme/app-evidence-drawer.jpg" alt="Evidence drawer listing the real measurements behind a prediction" /><br /><sub>The evidence drawer: the measurements behind a number, with paper, figure and confidence.</sub></td>
+    <td align="center"><img src="docs/assets/readme/app-audit-card.jpg" alt="Evidence Auditor highlighting a value inside a table of the source PDF" /><br /><sub>The Evidence Auditor marks the exact cell in the source PDF.</sub></td>
+  </tr>
+</table>
 
 | NASA source | What we used |
 | --- | --- |
@@ -72,6 +128,10 @@ predict untested mixes:
 | Density | 16% | **5%** |
 | Thermal conductivity | 32% | **7%** |
 | Tensile strength | 19% | **18%** |
+
+<p align="center">
+  <img src="docs/assets/readme/film-accuracy.jpg" alt="Bar chart: average error on mixes the model never saw, physics alone versus learned from lab data" width="760" />
+</p>
 
 The uncertainty is calibrated on held-out mixes (90% fall within its 90% band). The app shows the likely (about
 68%) range, worked out in log space because the errors are multiplicative, so a wide range reads "14.6–89.7 MPa"
@@ -113,6 +173,18 @@ flowchart LR
 
 The hosted site runs the exported forest in your browser, and a parity test checks it against Python on 60 random
 mixes. More in [docs/architecture.md](docs/architecture.md).
+
+<table>
+  <tr>
+    <td align="center" width="60%"><img src="docs/assets/readme/app-science.jpg" alt="Science section: how the model works and its accuracy on real lab data" /><br /><sub>Inside the app: how the model works, and how well.</sub></td>
+    <td align="center" width="40%"><img src="docs/assets/readme/app-curves.jpg" alt="Property curve versus regolith loading with its likely range and NASA measured points" /><br /><sub>Property vs loading, with the likely range and NASA's measured points.</sub></td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="docs/assets/readme/app-research.jpg" alt="Research section with the NASA sources and a searchable NASA Technical Reports Server index" width="100%" /><br />
+  <sub>The research behind it: every NASA source, plus a searchable NASA Technical Reports Server index.</sub>
+</p>
 
 ## Run it locally
 
@@ -178,7 +250,7 @@ moon-material-simulator/
 │   ├── EXTRACTION_SPEC.md          # How values are transcribed (page/table/row/column anchors)
 │   ├── extraction/                 # One CSV + issues log per source
 │   ├── audit/                      # Auditor output: comments CSV, HTML report, index
-│   └── legacy/                     # The team's earlier automatic extraction (used as a coverage check)
+│   └── legacy/                     # The team's first extraction pipeline (Yousuf Abdullah), used as a coverage check
 ├── backend/
 │   ├── evidence/                   # Evidence build + auditor (PyMuPDF)
 │   ├── models/evidence_model.py    # Gaussian-process correction on real measurements, with validation
@@ -197,8 +269,15 @@ moon-material-simulator/
 │   ├── src/generated/              # Model + catalog exported from Python
 │   └── test/                       # Node tests for the engine
 ├── docs/                           # Architecture, science, data, API, deployment, demo
+│   └── assets/readme/              # README banner, screenshots and GIFs
+├── video/                          # 240-second pitch film: script (README.md) and HyperFrames project
 └── .github/workflows/deploy.yml    # Test, build and publish to GitHub Pages
 ```
+
+<p align="center">
+  <img src="docs/assets/readme/nasa-moon-base-concept.jpg" alt="NASA concept art of a lunar base" width="100%" /><br />
+  <sub><i>Every kilogram made on the Moon is a kilogram we don't have to launch.</i> · Concept art: NASA</sub>
+</p>
 
 ## Team: Dreams of X
 
@@ -211,4 +290,5 @@ moon-material-simulator/
 ## License
 
 [MIT](LICENSE). NASA material is used as public-domain U.S. Government work and cited throughout. This project is not
-endorsed by NASA.
+endorsed by NASA. README images: app screenshots and recordings are from this project; microscope images and concept
+art are NASA's; the Moon in the banner is rendered from NASA LRO maps (SVS CGI Moon Kit).

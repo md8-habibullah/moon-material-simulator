@@ -11,7 +11,7 @@ story.
 | `extraction/S0xx.csv` | The transcribed values per source |
 | `extraction/S0xx_issues.md` | Problems found inside each paper (contradictions, unit slips, missing points) |
 | `audit/` | Evidence Auditor output: `audit_comments.csv`, `audit_report.html` (open it in a browser), `audit_index.json` |
-| `legacy/` | The team's earlier automatic extraction (`candidate_values_all.csv`, chart inventory, extractor GUI), used as a coverage check |
+| `legacy/` | The team's first automatic extraction (extractor GUI, 505 candidate values, chart inventory, 40 raw tables, source list), merged from Yousuf Abdullah's repository and used as a coverage check. See [legacy/README.md](legacy/README.md) |
 
 Rebuild everything from the `backend/` folder:
 
