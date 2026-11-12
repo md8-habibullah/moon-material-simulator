@@ -16,20 +16,23 @@ function Requirement({ name, rule }) {
 export default function Optimizer({ engine, onApply }) {
   const [appId, setAppId] = useState('wrench');
   const [localOnly, setLocalOnly] = useState(false);
-  const [state, setState] = useState({ status: 'running', result: null });
+  // Each result remembers the search it answers. Right after a click, React draws once with the
+  // new application before the new search starts; an old result must not be shown against it.
+  const [state, setState] = useState({ search: null, result: null });
   const app = catalog.applications.find((a) => a.id === appId);
+  const search = `${appId}|${localOnly}`;
 
   useEffect(() => {
-    setState((s) => ({ ...s, status: 'running' }));
     // Let the "searching" state paint before the ~5,000-mix search (binders × processes × mixes) runs.
     const timer = setTimeout(() => {
       const binders = localOnly ? Object.keys(catalog.binders).filter((b) => catalog.binders[b].made_on_site) : undefined;
-      setState({ status: 'done', result: optimize(engine, catalog, app, { binders }) });
+      setState({ search, result: optimize(engine, catalog, app, { binders }) });
     }, 30);
     return () => clearTimeout(timer);
-  }, [engine, app, localOnly]);
+  }, [engine, app, localOnly, search]);
 
-  const result = state.result;
+  const result = state.search === search ? state.result : null;
+  const running = result === null;
   const apply = (composition) => onApply({ ...composition, temperature: app.temps[app.temps.length - 1] });
 
   return (
@@ -57,7 +60,7 @@ export default function Optimizer({ engine, onApply }) {
         </label>
       </div>
 
-      <div className="card optimizer-results" aria-live="polite" aria-busy={state.status === 'running'}>
+      <div className="card optimizer-results" aria-live="polite" aria-busy={running}>
         <div className="card-head">
           <div>
             <p className="kicker">Step 3 · Optimize</p>
@@ -72,7 +75,7 @@ export default function Optimizer({ engine, onApply }) {
           <li className="tag tag-muted">at {app.temps.map((t) => `${t} °C`).join(' and ')}</li>
         </ul>
 
-        {!result || state.status === 'running' ? (
+        {running ? (
           <div className="skeleton-list" aria-label="Searching mixes">
             {[0, 1, 2].map((i) => (
               <div key={i} className="skeleton skeleton-row" />
@@ -96,7 +99,9 @@ export default function Optimizer({ engine, onApply }) {
                     </small>
                     <span className="ranked-values">
                       {Object.keys(app.requirements).map((k) => {
-                        const check = c.checks.filter((x) => x.key === k).reduce((a, b) => (b.slack < a.slack ? b : a));
+                        const checks = c.checks.filter((x) => x.key === k);
+                        if (checks.length === 0) return null;
+                        const check = checks.reduce((a, b) => (b.slack < a.slack ? b : a));
                         return (
                           <span key={k}>
                             {PROPERTY[k].short} <b>{formatValue(check.value, k)}</b> {catalog.units[k]}

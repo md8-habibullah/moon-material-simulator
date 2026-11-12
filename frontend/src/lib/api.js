@@ -8,6 +8,8 @@ async function request(path, options = {}) {
 }
 
 export async function apiAvailable(signal) {
+  // The static build (GitHub Pages) has no backend: don't probe and leave a 404 in the console.
+  if (import.meta.env.PROD && !import.meta.env.VITE_API_URL) return false;
   try {
     const health = await request('/health', { signal });
     return health.status === 'ok';

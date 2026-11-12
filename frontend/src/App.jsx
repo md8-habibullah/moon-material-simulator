@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { Component, useEffect, useMemo, useState } from 'react';
 import { RotateCcw } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -20,6 +20,32 @@ import './lib/charts';
 
 const sameMix = (a, b) => ['binder', 'process', 'regolith', 'regolith_wt', 'fiber_wt', 'particle_size', 'temperature'].every((k) => a[k] === b[k]);
 
+// If one section hits a bug, show a small notice there instead of blanking the whole page.
+class SectionBoundary extends Component {
+  state = { error: null };
+
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+
+  componentDidCatch(error, info) {
+    console.error('Section crashed:', error, info.componentStack);
+  }
+
+  render() {
+    if (!this.state.error) return this.props.children;
+    return (
+      <div className="card empty-state" role="alert">
+        <p>This part of the page hit a problem.</p>
+        <small>The rest of the simulator still works.</small>
+        <button type="button" className="button button-ghost button-small" onClick={() => this.setState({ error: null })}>
+          <RotateCcw size={14} aria-hidden="true" /> Try again
+        </button>
+      </div>
+    );
+  }
+}
+
 function Section({ id, kicker, title, lede, children }) {
   return (
     <section id={id} className="section" aria-labelledby={`${id}-title`}>
@@ -28,7 +54,7 @@ function Section({ id, kicker, title, lede, children }) {
         <h2 id={`${id}-title`}>{title}</h2>
         {lede && <p className="section-lede">{lede}</p>}
       </header>
-      {children}
+      <SectionBoundary>{children}</SectionBoundary>
     </section>
   );
 }

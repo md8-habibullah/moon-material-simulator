@@ -18,8 +18,27 @@ let ambient = null;
 let ambientWanted = false;
 let creak = null;
 
+// Browsers refuse (and warn about) an AudioContext made before the first click or key press.
+// Until then, wait for that gesture and start the drone from there if a 3D view wants it.
+let gestureArmed = false;
+function waitForGesture() {
+  if (gestureArmed) return;
+  gestureArmed = true;
+  const start = () => {
+    window.removeEventListener('pointerdown', start, true);
+    window.removeEventListener('keydown', start, true);
+    if (enabled && ambientWanted) startAmbient();
+  };
+  window.addEventListener('pointerdown', start, true);
+  window.addEventListener('keydown', start, true);
+}
+
 function audio() {
   if (!ctx) {
+    if (navigator.userActivation && !navigator.userActivation.hasBeenActive) {
+      waitForGesture();
+      return null;
+    }
     const Ctx = window.AudioContext || window.webkitAudioContext;
     if (!Ctx) return null;
     ctx = new Ctx();
