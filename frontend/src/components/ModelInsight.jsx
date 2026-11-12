@@ -28,7 +28,7 @@ const DATASETS = [
 
 const STEPS = [
   { icon: Atom, title: 'Physics-informed features', text: 'Volume fractions, grain bond, porosity and density are computed from the mix, the same way in Python and in your browser.' },
-  { icon: Cpu, title: 'Random Forest', text: `${catalog.model.params.n_estimators} decision trees predict room-temperature properties as ratios to the pure binder. Their spread is the ± band.` },
+  { icon: Cpu, title: 'Random Forest', text: `${catalog.model.params.n_estimators} decision trees predict room-temperature properties as ratios to the pure binder. Their spread, plus the error measured against real lab data, gives the likely range.` },
   { icon: Thermometer, title: 'Temperature physics', text: "NASA's measured 77 K ratios on the cold side; softening around the predicted service temperature on the hot side." },
 ];
 

@@ -31,6 +31,14 @@ def _baselines(binders) -> np.ndarray:
     return np.array([[binder_baseline(b)[t] for t in TARGET_COLUMNS] for b in binders])
 
 
+def log_range(value: float, tree_std: float, evidence_sd: float) -> list[float]:
+    """About-68% band in log space: the tree spread (as a relative error) combined with the evidence model's log sd."""
+    if value <= 0:
+        return [round(float(value - tree_std), 4), round(float(value + tree_std), 4)]
+    s = float(np.sqrt((tree_std / value) ** 2 + evidence_sd**2))
+    return [round(float(value * np.exp(-s)), 4), round(float(value * np.exp(s)), 4)]
+
+
 @dataclass
 class PropertyModel:
     forest: RandomForestRegressor
@@ -83,6 +91,9 @@ class PropertyModel:
         return out
 
     def predict_many(self, rows: list[dict]) -> list[dict]:
+        # "uncertainty" is a symmetric ± (kept for API compatibility). "range" is the honest band: the
+        # evidence error is multiplicative, so the band is [value / e^s, value * e^s] (about 68%) and
+        # never goes below zero.
         """Rows need binder, regolith, regolith_wt, fiber_wt, particle_size, temperature (and optionally process)."""
         per_tree = self._room_temperature(encode_rows(rows), _baselines(r["binder"] for r in rows))
         hdt_col = TARGET_COLUMNS.index("max_service_temp")
@@ -96,13 +107,16 @@ class PropertyModel:
         mean, std = per_tree.mean(axis=0), per_tree.std(axis=0)
         out = []
         for j in range(len(rows)):
-            unc = {}
+            unc, rng = {}, {}
             for i, t in enumerate(TARGET_COLUMNS):
                 ev_sd = evidence[j][t]["std"] if evidence[j] else 0.0
-                unc[t] = round(float(np.sqrt(std[j, i] ** 2 + (mean[j, i] * (np.exp(ev_sd) - 1)) ** 2)), 4)
+                m = mean[j, i]
+                unc[t] = round(float(np.sqrt(std[j, i] ** 2 + (m * (np.exp(ev_sd) - 1)) ** 2)), 4)
+                rng[t] = log_range(m, std[j, i], ev_sd)
             out.append({
                 "properties": {t: round(float(mean[j, i]), 4) for i, t in enumerate(TARGET_COLUMNS)},
                 "uncertainty": unc,
+                "range": rng,
                 "evidence": {t: {"same": e["same"], "binder": e["binder"]} for t, e in evidence[j].items()},
             })
         return out

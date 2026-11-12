@@ -136,7 +136,23 @@ whose filler content isn't stated. That leaves 152 values from S001, S003, S004,
 **In the browser** the GP is exported as a table over φ = 0…0.9 for every binder × process
 (`evidence_grid.json`). Python and JavaScript interpolate the same table, and a parity test checks them on 60
 random mixes. Per tree, the forest's room-temperature output is multiplied by exp(δ) before the temperature
-physics. The final ± combines the tree spread with the GP's.
+physics. The final uncertainty combines the tree spread with the GP's. The API returns both a symmetric
+`uncertainty` (kept for compatibility) and a `range`: value × e^(±s) with s = √((tree sd / value)² + GP sd²), about
+a 68% band. The app shows the range whenever it is wide, because the error is multiplicative and a ± would dip
+below zero.
+
+**Part test.** The 3D part test applies textbook formulas to the predicted properties at the chosen temperature
+(`frontend/src/lib/engine/parts.js`, unit-tested against hand calculations):
+
+| Part | Load case | Breaks when | Design load (assumed) |
+| --- | --- | --- | --- |
+| Wrench, 6 × 20 mm handle, 120 mm arm | Cantilever bending | σ = F·L / Z reaches tensile strength (Z = b h² / 6) | 10 N·m on an M6 bolt |
+| Shelf bracket, 30 × 8 mm arm, 100 mm long | Cantilever bending | as above | 20 kg in lunar gravity |
+| Shelter brick, 200 × 100 × 60 mm | Uniform compression | σ = F / A reaches compressive strength | 2 m of wall plus 3 m of regolith shielding above it |
+
+The breaking range scales with the strength range. Bending is drawn exaggerated so it is visible; deflection uses
+δ = F L³ / 3EI with the predicted stiffness. "Snaps" vs "bends first" follows elongation at break (below 2%). The
+stress picture uses beam theory (simplified around the wrench head), not finite elements.
 
 ## 6. Temperature physics (applied per tree)
 

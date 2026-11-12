@@ -9,7 +9,7 @@ A 90-second walkthrough. Every number below comes from the app.
    lunar highlands regolith to **10%**. Tensile strength is about 27 MPa and flexibility about 8%: strong with some
    give, which suits **tools**. The donut shows 100% of the part can be made from local resources.
 2. **Push to 50%.** Stiffness nearly doubles (about 7.6 GPa), density rises to about 1.7 g/cm³ and max service
-   temperature climbs to about 115 °C: dense and heat-resistant, which suits **structures**. Open *Property curves* to
+   temperature climbs to about 115 °C: dense and heat-resistant, which suits **structures**. Open *Curves* to
    see the trend and **NASA's own measurements** plotted on top.
 3. **Switch to Martian soil.** The 3D grains and micrograph turn rust-red, and the accent colour follows. Decomposition
    temperature drops by about 14 °C, which is exactly what NASA Glenn measured for iron-rich Martian simulants.

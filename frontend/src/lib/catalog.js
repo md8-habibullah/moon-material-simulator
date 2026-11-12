@@ -76,6 +76,14 @@ export function formatValue(value, key) {
   return value.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
 }
 
+// How sure the model is. Narrow bands read best as "± x"; wide ones are lopsided (the error is
+// multiplicative), so they are shown as the honest range, which never dips below zero.
+export function formatSpread(result, key) {
+  const [lo, hi] = result.range?.[key] ?? [];
+  if (lo === undefined || lo <= 0 || hi / lo <= 1.25) return `± ${formatValue(result.uncertainty[key], key)}`;
+  return `range ${formatValue(lo, key)}–${formatValue(hi, key)}`;
+}
+
 export function processOf(c) {
   return c.process && catalog.processes[c.process] ? c.process : catalog.default_process[c.binder];
 }

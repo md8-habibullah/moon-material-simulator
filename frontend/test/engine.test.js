@@ -19,6 +19,8 @@ test('matches Python predictions on 60 random mixes', () => {
     for (const t of engine.targets) {
       assert.ok(close(got.properties[t], f.properties[t]), `${t} ${JSON.stringify(f.input)}: ${got.properties[t]} vs ${f.properties[t]}`);
       assert.ok(close(got.uncertainty[t], f.uncertainty[t]), `${t} uncertainty`);
+      assert.ok(close(got.range[t][0], f.range[t][0]) && close(got.range[t][1], f.range[t][1]), `${t} range`);
+      assert.ok(got.range[t][0] <= got.properties[t] && got.properties[t] <= got.range[t][1], `${t} range brackets the value`);
       assert.deepEqual(got.evidence[t], f.evidence[t], `${t} evidence support`);
     }
   }
@@ -58,4 +60,28 @@ test('evidence correction moves predictions towards real measurements', () => {
   }
   // Mean relative error on the hot-pressed PEI/PPSU coupons must at least halve.
   assert.ok(corrected < 0.5 * physicsOnly, `corrected ${(corrected / points.length).toFixed(3)} vs physics ${(physicsOnly / points.length).toFixed(3)}`);
+});
+
+test('part load tests follow the beam and column formulas', async () => {
+  const { PARTS, mechanics, partTest } = await import('../src/lib/engine/parts.js');
+  const props = { tensile_strength: 30, compressive_strength: 40, elastic_modulus: 5, density: 2, elongation_at_break: 3 };
+  // Wrench handle: Z = b h² / 6 = 6 · 20² / 6 = 400 mm³, arm 120 mm → F = 30 · 400 / 120 = 100 N.
+  const w = mechanics(PARTS.wrench, props);
+  assert.ok(Math.abs(w.failLoad - 100) < 1e-9);
+  assert.ok(Math.abs(w.stressAt(w.failLoad) - 30) < 1e-9);
+  // Brick: 200 × 100 mm face at 40 MPa → 800 kN.
+  assert.ok(Math.abs(mechanics(PARTS.brick, props).failLoad - 800_000) < 1e-6);
+  // Brick design load: (2.0 g/cm³ × 2 m + 1.5 × 3 m) × 1000 × 1.62 Pa over 0.02 m².
+  assert.ok(Math.abs(PARTS.brick.designForce(PARTS.brick, props) - (2000 * 2 + 1500 * 3) * 1.62 * 0.02) < 1e-6);
+
+  const mix = { binder: 'PEEK', process: 'sintered', regolith: 'lunar_mare', regolith_wt: 50, fiber_wt: 0, particle_size: 50, temperature: 20 };
+  for (const part of Object.values(PARTS)) {
+    const t = partTest(engine, part, mix, 20);
+    assert.ok(t.failRange[0] <= t.failLoad && t.failLoad <= t.failRange[1], `${part.id} failure range brackets the estimate`);
+    assert.ok(t.designLoad > 0 && Number.isFinite(t.safetyFactor));
+  }
+  // Colder is stiffer and stronger for these polymers: the lunar-night wrench should not be weaker than at room temperature.
+  const warm = partTest(engine, PARTS.wrench, mix, 20);
+  const cold = partTest(engine, PARTS.wrench, mix, -173);
+  assert.ok(cold.strength >= warm.strength * 0.99);
 });

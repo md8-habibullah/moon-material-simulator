@@ -32,6 +32,9 @@ def test_predict_returns_all_properties(client):
     assert set(body["properties"]) == TARGETS
     assert set(body["uncertainty"]) == TARGETS
     assert all(v > 0 for v in body["properties"].values())
+    # The likely range brackets the value and, for positive quantities, never dips below zero.
+    for t, (lo, hi) in body["range"].items():
+        assert 0 < lo <= body["properties"][t] <= hi, t
     assert body["in_situ_fraction"] == 1.0  # regolith is local and PHB can be grown on site
 
 

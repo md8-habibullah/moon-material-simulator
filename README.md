@@ -41,7 +41,7 @@ An interactive simulator for designing these composites, which runs entirely in 
 | Step | What you do | What happens |
 | --- | --- | --- |
 | **Design** | Pick a binder (NASA's bacterial PHB, PLA, PEEK, LDPE, PEI or PPSU), a soil (lunar highlands, lunar mare, Martian) and how the part is made (filament or pellet printing, injection molding, hot pressing, pressed + sintered brick); set regolith % (up to 92.5), basalt fibre %, grain size and operating temperature. | A physics model, corrected by machine learning on **real lab measurements**, predicts **8 properties** live with uncertainty bands. Every value says whether it is lab-backed or a physics estimate, and one click shows the real measurements behind it, down to the table cell in the paper. |
-| **Test** | Look at the 3D microstructure, a polarised-light view styled after NASA's micrographs, and property-vs-loading curves with NASA's measured points on top. | Every mix is checked against six real uses (wrench, bracket, chair, lunar wall panel, Mars shelter block and thruster nozzle) at the temperatures each one must survive. |
+| **Test** | Fly around the 3D microstructure (drag, zoom, full screen) and watch it print layer by layer; load a wrench, a shelf bracket or a shelter brick until it breaks, in the habitat, at lunar noon or at lunar night; see a polarised-light view styled after NASA's micrographs and property-vs-loading curves with NASA's measured points on top. Optional sound. | The part test colours stress from beam and column formulas on the model's predicted strength and stiffness, and reports the breaking load, the safety factor against a stated design load, and whether the part bends or snaps. Every mix is also checked against six real uses (wrench, bracket, chair, lunar wall panel, Mars shelter block and thruster nozzle) at the temperatures each one must survive. |
 | **Optimize** | Choose a use. | The optimizer tests about 5,000 compositions (every binder, with each process it has lab data for) and ranks the passing ones, most locally sourced first. It says honestly when nothing works: no plastic survives a thruster nozzle. |
 | **Plan** | Compare up to four formulas; estimate mission impact. | Radar chart, winners per property and CSV export, plus launch mass and cost avoided by printing parts on site. |
 
@@ -73,7 +73,9 @@ predict untested mixes:
 | Thermal conductivity | 32% | **7%** |
 | Tensile strength | 19% | **18%** |
 
-The ± bands are calibrated so 90% of held-out mixes fall inside them. Leaving a whole study out is harder: a
+The uncertainty is calibrated on held-out mixes (90% fall within its 90% band). The app shows the likely (about
+68%) range, worked out in log space because the errors are multiplicative, so a wide range reads "14.6–89.7 MPa"
+instead of a ± that would dip below zero. Leaving a whole study out is harder: a
 manufacturing route seen in only one study can't be learned from the others. We report that too. See
 [docs/science_model.md](docs/science_model.md).
 

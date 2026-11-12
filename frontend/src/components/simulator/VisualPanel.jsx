@@ -1,5 +1,5 @@
 import { Suspense, lazy, useId, useState } from 'react';
-import { Box, ChartLine, Microscope } from 'lucide-react';
+import { Box, ChartLine, Hammer, Microscope } from 'lucide-react';
 import Micrograph from './Micrograph';
 import PropertyCurves from './PropertyCurves';
 import catalog from '../../lib/catalog';
@@ -7,11 +7,13 @@ import { volumeFractions } from '../../lib/engine/physics';
 
 // three.js is the heaviest dependency, so the 3D tab loads on demand.
 const ThreeDViewer = lazy(() => import('./ThreeDViewer'));
+const PartTest = lazy(() => import('./PartTest'));
 
 const TABS = [
-  { id: '3d', label: '3D structure', icon: Box },
-  { id: 'micro', label: 'Polarised light', icon: Microscope },
-  { id: 'curves', label: 'Property curves', icon: ChartLine },
+  { id: '3d', label: '3D sample', icon: Box },
+  { id: 'part', label: 'Part test', icon: Hammer },
+  { id: 'micro', label: 'Micrograph', icon: Microscope },
+  { id: 'curves', label: 'Curves', icon: ChartLine },
 ];
 
 export default function VisualPanel({ engine, composition }) {
@@ -51,6 +53,11 @@ export default function VisualPanel({ engine, composition }) {
         {tab === '3d' && (
           <Suspense fallback={<div className="viewer skeleton" aria-busy="true" />}>
             <ThreeDViewer composition={composition} />
+          </Suspense>
+        )}
+        {tab === 'part' && (
+          <Suspense fallback={<div className="viewer viewer-tall skeleton" aria-busy="true" />}>
+            <PartTest engine={engine} composition={composition} />
           </Suspense>
         )}
         {tab === 'micro' && <Micrograph composition={composition} />}

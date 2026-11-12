@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Armchair, BrickWall, CircleCheck, CircleX, FlaskConical, Flame, PanelsTopLeft, Sigma, SquareStack, Wrench } from 'lucide-react';
 import EvidenceDrawer from './EvidenceDrawer';
 import { supportLevel } from '../../lib/engine/evidence';
-import catalog, { PROPERTIES, PROPERTY, formatValue } from '../../lib/catalog';
+import catalog, { PROPERTIES, PROPERTY, formatSpread, formatValue } from '../../lib/catalog';
 import { evaluate } from '../../lib/engine/optimizer';
 import { porosity, volumeFractions } from '../../lib/engine/physics';
 
@@ -110,7 +110,9 @@ export default function OutputPanel({ engine, composition, result, baseline }) {
               {formatValue(result.properties[p.key], p.key)}
               <span className="unit">{catalog.units[p.key]}</span>
             </p>
-            <p className="property-meta">± {formatValue(result.uncertainty[p.key], p.key)}</p>
+            <p className="property-meta" title="About 68% likely range (model spread plus the error measured on real lab data)">
+              {formatSpread(result, p.key)}
+            </p>
             <Delta value={result.properties[p.key]} base={baseline?.properties[p.key]} better={p.better} />
             {(() => {
               const level = supportLevel(result.evidence?.[p.key] ?? { same: 0, binder: 0 });

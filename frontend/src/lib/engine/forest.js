@@ -2,6 +2,14 @@
 import { binderBaseline, encode, inSituFraction, physicsFeatures, temperatureFactors } from './physics.js';
 import { evidenceAt } from './evidence.js';
 
+// About-68% band in log space (mirrors log_range in property_model.py): the evidence error is
+// multiplicative, so the band is [value / e^s, value * e^s] and never goes below zero.
+export function logRange(value, treeStd, evidenceSd) {
+  if (value <= 0) return [value - treeStd, value + treeStd];
+  const s = Math.sqrt((treeStd / value) ** 2 + evidenceSd ** 2);
+  return [value * Math.exp(-s), value * Math.exp(s)];
+}
+
 export function createEngine(forest, catalog, evidenceGrid = null) {
   const targets = forest.targets;
   const nTargets = targets.length;
@@ -59,6 +67,7 @@ export function createEngine(forest, catalog, evidenceGrid = null) {
     }
     const properties = {};
     const uncertainty = {};
+    const range = {};
     const n = trees.length;
     targets.forEach((t, i) => {
       const m = sum[i] / n;
@@ -67,10 +76,12 @@ export function createEngine(forest, catalog, evidenceGrid = null) {
       const treeVar = Math.max(0, sumSq[i] / n - m * m);
       const ev = m * (Math.exp(evidence[t].std) - 1);
       uncertainty[t] = Math.sqrt(treeVar + ev * ev);
+      range[t] = logRange(m, Math.sqrt(treeVar), evidence[t].std);
     });
     return {
       properties,
       uncertainty,
+      range,
       evidence: Object.fromEntries(targets.map((t) => [t, { same: evidence[t].same, binder: evidence[t].binder }])),
       in_situ_fraction: inSituFraction(catalog, row.regolith_wt, row.fiber_wt, row.binder),
     };

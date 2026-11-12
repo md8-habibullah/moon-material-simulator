@@ -34,7 +34,7 @@ export default function PropertyCurves({ engine, composition }) {
     const maxWt = catalog.physics.max_total_filler_wt - composition.fiber_wt;
     return WT_STEPS.filter((w) => w <= maxWt).map((w) => {
       const r = engine.predict({ ...composition, regolith_wt: w });
-      return { x: w, y: r.properties[key], sd: r.uncertainty[key] };
+      return { x: w, y: r.properties[key], lo: r.range[key][0], hi: r.range[key][1] };
     });
   }, [engine, composition, key]);
 
@@ -49,8 +49,8 @@ export default function PropertyCurves({ engine, composition }) {
 
   const data = {
     datasets: [
-      { label: 'Upper band', data: curve.map((p) => ({ x: p.x, y: p.y + p.sd })), borderWidth: 0, pointRadius: 0, fill: '+1', backgroundColor: colors.accentSoft },
-      { label: 'Lower band', data: curve.map((p) => ({ x: p.x, y: Math.max(0, p.y - p.sd) })), borderWidth: 0, pointRadius: 0, fill: false },
+      { label: 'Upper band', data: curve.map((p) => ({ x: p.x, y: p.hi })), borderWidth: 0, pointRadius: 0, fill: '+1', backgroundColor: colors.accentSoft },
+      { label: 'Lower band', data: curve.map((p) => ({ x: p.x, y: p.lo })), borderWidth: 0, pointRadius: 0, fill: false },
       { label: 'Model', data: curve.map((p) => ({ x: p.x, y: p.y })), borderColor: colors.accent, borderWidth: 2.5, pointRadius: 0, tension: 0.3 },
       {
         label: 'NASA measured',
@@ -116,7 +116,7 @@ export default function PropertyCurves({ engine, composition }) {
       <div className="viewer-legend">
         <span>
           <i className="swatch line" style={{ background: colors.accent }} />
-          Model ± spread across trees, at {composition.temperature} °C
+          Model with its likely range (tree spread plus lab-data error), at {composition.temperature} °C
         </span>
         {nasa.length > 0 && (
           <span>

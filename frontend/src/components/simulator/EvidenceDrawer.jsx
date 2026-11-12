@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { BadgeCheck, ExternalLink, FileSearch, LineChart, ScanLine, X } from 'lucide-react';
 import points from '../../generated/evidence_points.json';
-import catalog, { PROPERTY, formatValue, processOf } from '../../lib/catalog';
+import catalog, { PROPERTY, formatSpread, formatValue, processOf } from '../../lib/catalog';
 import { physicsFeatures } from '../../lib/engine/physics';
 import { supportLevel } from '../../lib/engine/evidence';
 
@@ -82,7 +82,7 @@ export default function EvidenceDrawer({ propertyKey, composition, result, onClo
 
       <div className="evidence-summary">
         <p>
-          This mix predicts <strong>{formatValue(result.properties[propertyKey], propertyKey)} {unit}</strong> ± {formatValue(result.uncertainty[propertyKey], propertyKey)}{' '}
+          This mix predicts <strong>{formatValue(result.properties[propertyKey], propertyKey)} {unit}</strong> ({formatSpread(result, propertyKey)}){' '}
           at {composition.temperature} °C (filler {Math.round(phi * 100)}% by volume).
         </p>
         <p className={`support support-${level}`}>{SUPPORT_COPY[level]}</p>
