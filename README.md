@@ -312,7 +312,7 @@ moon-material-simulator/
 | **Yousuf Abdullah** | AI/ML Researcher · Data Scientist | Research and data analysis, the AI models, the dataset and the source papers. His first extraction pipeline lives in [`research/legacy/`](research/legacy/README.md). |
 | **Md. Habibullah Sharif** | Systems Architect | The architecture and the whole app: UI/UX, the 3D views and part tests, the simulator engine, the evidence pipeline and the backend |
 
-## License
+## License 
 
 [MIT](LICENSE). NASA material is used as public-domain U.S. Government work and cited throughout. This project is not
 endorsed by NASA. README images: app screenshots and recordings are from this project; microscope images and concept

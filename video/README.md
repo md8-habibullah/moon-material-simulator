@@ -11,7 +11,7 @@
 
 Team **Dreams of X** · NASA Space Apps Challenge 2026 · script v1, 2026-11-12
 
-This is the production script for both videos: **Video 2 (Local Judging)** is the master, and **Video 1
+This is the production script for both videos: **Video 2 (Local Judging)** is the master, and **Video 1 
 (Prescreening)** is a cut of it (section 5). It covers what is said, what is shown, which assets to record or make,
 who speaks, and how it is edited, second by second.
 
@@ -138,7 +138,7 @@ breathe. Edit to finish at **3:55–3:58**; never go over 4:00.
 
 ---
 
-## 3. Full script: Video 2 (Local Judging, master)
+## 3. Full script: Video 2 (Local Judging, master)   
 
 Each scene gives: **Visual** (what is on screen), **On-screen text**, **VO** (word count), **Sound**, **Assets**
 (IDs from section 6) and **Edit notes**.
@@ -638,7 +638,7 @@ speaks.
 | 14 Nov, evening | Rough cut of Video 2; check its length is ≤ 3:58 | Editor |
 | 15 Nov | Captions, music mix, loudness, Video 1 cut, export, upload; complete the project page and repository link | Editor, Mahdin |
 
-### Final checklist before upload
+### Final checklist before upload  
 
 - [ ] Both videos are 4:00 or shorter
 - [ ] Every number matches section 1, with no synthetic R²

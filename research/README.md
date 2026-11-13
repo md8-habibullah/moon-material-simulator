@@ -3,7 +3,7 @@
 Everything behind the simulator's "lab-backed" numbers. See [docs/evidence.md](../docs/evidence.md) for the full
 story.
 
-| Path | What it is |
+| Path | What it is |  
 | --- | --- |
 | `sources.csv` | The 13 sources: citation, licence, type, direct PDF link, SHA-256 of the file we transcribed |
 | `download_sources.py` | Downloads the PDFs into `pdfs/` (not committed) and checks their hashes |
