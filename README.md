@@ -287,7 +287,7 @@ moon-material-simulator/
 - **Maliha Sanjana** (UI/UX Designer)
 - **Lamisa Yeasmin Nakia** (Research & Storytelling Lead)
 
-## License
+## License 
 
 [MIT](LICENSE). NASA material is used as public-domain U.S. Government work and cited throughout. This project is not
 endorsed by NASA. README images: app screenshots and recordings are from this project; microscope images and concept
