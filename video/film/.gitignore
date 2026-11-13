@@ -2,3 +2,6 @@
 renders/
 snapshots/
 assets/audio/*.wav
+
+# Team photos: personal, kept out of the public repo (they appear in the rendered video only)
+assets/team/

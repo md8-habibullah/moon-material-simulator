@@ -36,7 +36,9 @@ function mixColor(composition) {
   return (ch(binder, 16) << 16) | (ch(binder, 8) << 8) | ch(binder, 0);
 }
 
-export default function PartTest({ engine, composition }) {
+let lastAppliedRequest = 0;
+
+export default function PartTest({ engine, composition, request }) {
   const wrapRef = useRef(null);
   const mountRef = useRef(null);
   const stageRef = useRef(null);
@@ -48,6 +50,14 @@ export default function PartTest({ engine, composition }) {
   const [envId, setEnvId] = useState('habitat');
   const [phase, setPhase] = useState('idle');
   const [designFlash, setDesignFlash] = useState(false);
+
+  // Opened from a story: switch to the part and place it asked for (once, so a later tab switch keeps the user's choice).
+  useEffect(() => {
+    if (!request || request.n === lastAppliedRequest) return;
+    lastAppliedRequest = request.n;
+    if (PARTS[request.part]) setPartId(request.part);
+    if (ENVIRONMENTS.some((e) => e.id === request.env)) setEnvId(request.env);
+  }, [request]);
 
   const part = PARTS[partId];
   const env = ENVIRONMENTS.find((e) => e.id === envId);

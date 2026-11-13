@@ -11,8 +11,10 @@ import ComparisonMode, { MAX_COMPARE } from './components/ComparisonMode';
 import MissionImpact from './components/MissionImpact';
 import ModelInsight from './components/ModelInsight';
 import ResearchPanel from './components/ResearchPanel';
+import RelicsSection from './components/relics/RelicsSection';
 import Footer from './components/Footer';
-import { ACCENT_BY_REGOLITH } from './lib/catalog';
+import { ACCENT_BY_REGOLITH, DEFAULT_COMPOSITION } from './lib/catalog';
+import { ENVIRONMENTS } from './lib/engine/parts';
 import { useEngine } from './lib/engine/load';
 import { useThemePreference } from './lib/theme';
 import { readComposition, writeComposition } from './lib/url-state';
@@ -88,6 +90,8 @@ export default function App() {
   const { engine, error, retry } = useEngine();
   const [composition, setComposition] = useState(readComposition);
   const [saved, setSaved] = useState([]);
+  // A story's "Try it" button opens the part test with that machine's part, place and local dust.
+  const [partRequest, setPartRequest] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => writeComposition(composition), 250);
@@ -111,6 +115,13 @@ export default function App() {
     document.getElementById('simulator')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const tryRelic = (relic) => {
+    const { part, env, regolith } = relic.tryIt;
+    const temperature = ENVIRONMENTS.find((e) => e.id === env).temperature;
+    setComposition({ ...DEFAULT_COMPOSITION, regolith, temperature });
+    setPartRequest({ part, env, from: relic.name, n: Date.now() });
+  };
+
   return (
     <>
       <a className="skip-link" href="#simulator">
@@ -119,6 +130,15 @@ export default function App() {
       <Navbar theme={theme} onTheme={setTheme} />
       <main className="container">
         <Hero />
+
+        <Section
+          id="stories"
+          kicker="NASA Space Apps 2026 · Abandoned but not Forgotten"
+          title="The machines NASA left behind"
+          lede="Eight machines still sit where they stopped, on the Moon and on Mars. Each one is a materials experiment that never ended. Spin the globe, pick a machine, hear its story, then try to rebuild its parts from local dust."
+        >
+          <RelicsSection onTry={tryRelic} />
+        </Section>
 
         <Section id="simulator" kicker="Design · Test" title="Simulator" lede="Every change re-runs the model instantly, right in your browser.">
           <EngineGate engine={engine} error={error} retry={retry}>
@@ -132,7 +152,7 @@ export default function App() {
                   saveLabel={isSaved ? 'Saved' : full ? `Compare is full (${MAX_COMPARE})` : 'Save to compare'}
                 />
                 <div className="center-column">
-                  <VisualPanel engine={eng} composition={composition} />
+                  <VisualPanel engine={eng} composition={composition} request={partRequest} />
                   <ProcessPipeline composition={composition} />
                 </div>
                 <OutputPanel engine={eng} composition={composition} result={result} baseline={baseline} />

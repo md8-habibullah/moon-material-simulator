@@ -41,14 +41,14 @@
 .tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
   margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
 </style>
-  <div id="root" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="41.400">
+  <div id="root" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="35.526">
 
 <img id="s5-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:0.7" alt="">
-<div id="s5-a" class="clip grp" data-start="0.000" data-duration="8.360" style="">
+<div id="s5-a" class="clip grp" data-start="0.000" data-duration="7.924" style="">
   <div class="abs kick red" style="left:192px;top:200px">Physics alone · compressive strength · real samples</div>
   <div id="s5-230" class="abs h0 red" style="left:180px;top:260px;font-size:300px">0%</div>
   <div class="abs h3" style="left:192px;top:610px">average error before learning from lab data</div></div>
-<div id="s5-pipe" class="clip grp" data-start="8.310" data-duration="8.330" style="">
+<div id="s5-pipe" class="clip grp" data-start="7.874" data-duration="7.248" style="">
   <div class="abs kick" style="left:192px;top:200px">How the prediction is made</div>
   <div id="s5-n0" class="abs panel" style="left:192px;top:300px;width:350px;height:380px;padding:28px">
           <div class="kick" style="color:#8f9cb2">Step 1</div>
@@ -59,7 +59,7 @@
           <div class="h3" style="margin-top:10px">Learned correction</div><div class="body" style="font-size:28px;margin-top:12px">Gaussian process trained on <b id='s5-152' class='cyan'>0</b> real measurements, 7 studies</div></div><div id="s5-l2" class="abs" style="left:1326px;top:488px;width:42px;height:4px;background:#7fe3ff;box-shadow:0 0 12px #7fe3ff;transform-origin:left center"></div><div id="s5-n3" class="abs panel" style="left:1368px;top:300px;width:350px;height:380px;padding:28px">
           <div class="kick" style="color:#8f9cb2">Step 4</div>
           <div class="h3" style="margin-top:10px">Prediction</div><div class="body" style="font-size:28px;margin-top:12px">value + likely range + link to the evidence</div></div></div>
-<div id="s5-bars" class="clip grp" data-start="16.590" data-duration="14.340" style="">
+<div id="s5-bars" class="clip grp" data-start="15.072" data-duration="12.577" style="">
   <div class="abs kick" style="left:192px;top:130px">Average error on mixes the model never saw</div>
   <div class="abs src" style="left:680px;top:200px"><span style="color:#aab4c4">■ physics alone</span>   <span class="cyan">■ + learned from lab data</span></div>
   <div class="abs h3" style="left:192px;top:280px;width:470px;font-size:38px">Compressive strength</div>
@@ -79,7 +79,7 @@
     <div class="kick amber">A study it has never seen</div>
     <div class="h0 amber" style="font-size:170px;margin-top:6px">78%</div>
     <div class="h3">compressive-strength error. Harder, and we say so.</div></div></div>
-<div id="s5-ev" class="clip grp" data-start="30.880" data-duration="10.520" style="">
+<div id="s5-ev" class="clip grp" data-start="27.599" data-duration="7.927" style="">
   <div class="abs kick" style="left:192px;top:112px">Every prediction links to its evidence</div>
   <div id="s5-evimg" class="abs" style="left:192px;top:170px;width:560px;height:745px;border-radius:14px;overflow:hidden;border:1px solid rgba(127,227,255,.35)">
     <img src="assets/screens/hi_evidence_119.png" style="width:560px;display:block" alt="Evidence drawer: 119 MPa measured, S008 Figure 11"></div>
@@ -117,27 +117,27 @@ function countU(sel, from, to, at, dur) { const o = { v: from };
   tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12 }, at);
   tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out', onUpdate: () => { const el = q(sel);
     if (el) el.innerHTML = Math.round(o.v) + ' <span style="font-size:60px">MPa</span>'; } }, at); }
-tl.fromTo('#s5-bg', { x: 0 }, { x: -70, duration: 41.400, ease: 'none' }, 0);
+tl.fromTo('#s5-bg', { x: 0 }, { x: -70, duration: 35.526, ease: 'none' }, 0);
 land('#s5-a .kick', 0.15);
-count('#s5-230', 0, 230, 6.390, 1.2, (v) => fmtInt(v) + '%');
-land('#s5-a .h3', 6.490);
-land('#s5-pipe .kick', 8.410);
-tl.fromTo('#s5-pipe .panel', { opacity: 0, y: 40, filter: 'blur(6px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.6, stagger: 0.35, ease: 'expo.out' }, 8.510);
-tl.fromTo('#s5-pipe [id^=s5-l]', { scaleX: 0 }, { scaleX: 1, duration: 0.3, stagger: 0.35, ease: 'power2.out' }, 8.860);
-tl.fromTo('#s5-n2', { borderColor: 'rgba(127,227,255,.28)' }, { borderColor: '#7fe3ff', boxShadow: '0 0 60px rgba(127,227,255,.6)', scale: 1.05, duration: 0.4, ease: 'expo.out' }, 9.980);
-count('#s5-152', 0, 152, 12.540, 1.0, fmtInt);
-land('#s5-bars .kick', 16.690); land('#s5-bars .src', 16.990);
-const rowsAt = [19.280, 22.960, 24.970, 26.070];
+count('#s5-230', 0, 230, 5.341, 1.2, (v) => fmtInt(v) + '%');
+land('#s5-a .h3', 5.441);
+land('#s5-pipe .kick', 7.974);
+tl.fromTo('#s5-pipe .panel', { opacity: 0, y: 40, filter: 'blur(6px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.6, stagger: 0.35, ease: 'expo.out' }, 8.074);
+tl.fromTo('#s5-pipe [id^=s5-l]', { scaleX: 0 }, { scaleX: 1, duration: 0.3, stagger: 0.35, ease: 'power2.out' }, 8.424);
+tl.fromTo('#s5-n2', { borderColor: 'rgba(127,227,255,.28)' }, { borderColor: '#7fe3ff', boxShadow: '0 0 60px rgba(127,227,255,.6)', scale: 1.05, duration: 0.4, ease: 'expo.out' }, 9.367);
+count('#s5-152', 0, 152, 11.645, 1.0, fmtInt);
+land('#s5-bars .kick', 15.172); land('#s5-bars .src', 15.472);
+const rowsAt = [17.614, 20.257, 23.009, 24.109];
 rowsAt.forEach((at, i) => {
   tl.fromTo('#s5-b' + i, { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: 'expo.out' }, at);
   tl.fromTo('#s5-v' + i, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: 'expo.out' }, at + 0.15);
 });
-tl.fromTo('#s5-honest', { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'expo.out' }, 27.260);
-land('#s5-ev .kick', 30.980);
-land('#s5-evimg', 31.130, { x: -50, y: 0 });
-countU('#s5-117', 0, 117, 34.400, 0.9);
-countU('#s5-119', 0, 119, 39.090, 0.9);
-land('#s5-ev .src', 31.880);
+tl.fromTo('#s5-honest', { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'expo.out' }, 24.785);
+land('#s5-ev .kick', 27.699);
+land('#s5-evimg', 27.849, { x: -50, y: 0 });
+countU('#s5-117', 0, 117, 30.144, 0.9);
+countU('#s5-119', 0, 119, 33.518, 0.9);
+land('#s5-ev .src', 28.599);
 
 window.__timelines["s5"] = tl;
   </script>

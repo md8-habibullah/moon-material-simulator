@@ -1,8 +1,7 @@
-import { ArrowRight, ExternalLink, Play } from 'lucide-react';
+import { ArrowRight, Play, Rocket } from 'lucide-react';
 import catalog, { VIDEO_URL } from '../lib/catalog';
 
 export default function Hero() {
-  const article = catalog.sources.find((s) => s.id === 'nasa-glenn-2026');
   const evidence = Object.values(catalog.evidence ?? {});
   const measured = evidence.reduce((n, e) => n + e.n_train, 0);
   const studies = new Set(evidence.flatMap((e) => e.sources)).size;
@@ -16,21 +15,24 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-copy">
-        <a className="eyebrow-link" href={article.url} target="_blank" rel="noreferrer">
+        <a className="eyebrow-link" href="#stories">
           <span className="dot" aria-hidden="true" />
-          Built on NASA Glenn’s 2026 bacteria-grown bioplastic
-          <ExternalLink size={13} aria-hidden="true" />
+          NASA Space Apps 2026 · Abandoned but not Forgotten
         </a>
         <h1>
-          Design a building material from <span className="gradient-text">moon dust</span>, then see how it holds up.
+          What NASA left behind teaches us to build from <span className="gradient-text">moon dust</span>.
         </h1>
         <p className="lede">
-          Mix NASA’s bioplastic (or PLA, PEEK, LDPE, PEI, PPSU) with lunar or Martian regolith and choose how to make it. A physics
-          model, corrected by machine learning on real lab measurements, predicts strength, stiffness, heat limits and more in real time,
-          shows the lab data behind every number, then finds the best mix for a wrench, a bracket or a wall panel.
+          Eight NASA machines still sit on the Moon and Mars. Hear their stories and what those worlds did to their materials. Then mix
+          NASA Glenn’s bacteria-grown bioplastic with lunar or Martian dust: a physics model, corrected by machine learning on real lab
+          measurements, predicts strength, stiffness and heat limits, shows the lab data behind every number, and breaks your part on
+          screen before anyone prints it.
         </p>
         <div className="hero-actions">
-          <a href="#simulator" className="button button-primary">
+          <a href="#stories" className="button button-primary">
+            <Rocket size={16} aria-hidden="true" /> Meet the machines
+          </a>
+          <a href="#simulator" className="button button-ghost">
             Start designing <ArrowRight size={16} aria-hidden="true" />
           </a>
           <a href={VIDEO_URL} className="button button-ghost" target="_blank" rel="noreferrer">

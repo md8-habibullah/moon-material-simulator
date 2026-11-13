@@ -1,4 +1,4 @@
-import { Suspense, lazy, useId, useState } from 'react';
+import { Suspense, lazy, useEffect, useId, useRef, useState } from 'react';
 import { Box, ChartLine, Hammer, Microscope } from 'lucide-react';
 import Micrograph from './Micrograph';
 import PropertyCurves from './PropertyCurves';
@@ -16,13 +16,22 @@ const TABS = [
   { id: 'curves', label: 'Curves', icon: ChartLine },
 ];
 
-export default function VisualPanel({ engine, composition }) {
+export default function VisualPanel({ engine, composition, request }) {
   const [tab, setTab] = useState('3d');
   const baseId = useId();
+  const cardRef = useRef(null);
+
+  // A story asked for a part test: open that tab and bring it into view.
+  useEffect(() => {
+    if (!request) return;
+    setTab('part');
+    const timer = setTimeout(() => cardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 60);
+    return () => clearTimeout(timer);
+  }, [request]);
   const [phiR, phiF] = volumeFractions(catalog, composition.regolith_wt, composition.fiber_wt, composition.binder, composition.regolith);
 
   return (
-    <section className="card visual-card" aria-labelledby={`${baseId}-title`}>
+    <section className="card visual-card" ref={cardRef} aria-labelledby={`${baseId}-title`}>
       <div className="card-head">
         <div>
           <p className="kicker">Step 2 · Test</p>
@@ -57,7 +66,7 @@ export default function VisualPanel({ engine, composition }) {
         )}
         {tab === 'part' && (
           <Suspense fallback={<div className="viewer viewer-tall skeleton" aria-busy="true" />}>
-            <PartTest engine={engine} composition={composition} />
+            <PartTest engine={engine} composition={composition} request={request} />
           </Suspense>
         )}
         {tab === 'micro' && <Micrograph composition={composition} />}

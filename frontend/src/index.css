@@ -2512,3 +2512,268 @@ td.winner {
     display: none;
   }
 }
+
+/* ---------- Stories: the machines NASA left behind (Space Apps 2026, Abandoned but not Forgotten) ---------- */
+.relics {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.relics-explorer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.relics-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.relics-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.relic-globe {
+  position: relative;
+  height: 440px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 50% 45%, rgb(var(--accent-rgb) / 0.12), transparent 60%),
+    #03060d;
+  cursor: grab;
+  touch-action: none;
+}
+.relic-globe:active {
+  cursor: grabbing;
+}
+.relic-globe canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.relic-pin {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  will-change: transform;
+}
+.relic-pin span {
+  position: absolute;
+  left: 14px;
+  top: -34px;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(6, 10, 17, 0.85);
+  border: 1px solid rgba(255, 162, 90, 0.65);
+  color: #ffdcc2;
+  font: 600 12px var(--font);
+}
+.relic-pin[data-flip] span {
+  left: auto;
+  right: 14px;
+}
+.relic-map-credit {
+  margin: 0;
+  font-size: 11.5px;
+  color: var(--faint);
+}
+.relic-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.relic-list button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+.relic-list button:hover {
+  border-color: var(--border-strong);
+}
+.relic-list button.active {
+  border-color: rgb(var(--accent-rgb) / 0.7);
+  background: rgb(var(--accent-rgb) / 0.08);
+}
+.relic-list strong {
+  font-size: 14px;
+}
+.relic-list small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.relic-story {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.relic-photo {
+  position: relative;
+  margin: 0;
+  background: #000;
+}
+.relic-photo > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.relic-photo > img.fit-contain {
+  object-fit: contain;
+}
+.relic-photo figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.relic-photo figcaption a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #dfe7f3;
+  font-size: 11px;
+  text-decoration: none;
+}
+.relic-thumbs {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  gap: 6px;
+}
+.relic-thumbs button {
+  width: 52px;
+  height: 40px;
+  padding: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: #000;
+  cursor: pointer;
+}
+.relic-thumbs button[aria-pressed='true'] {
+  border-color: var(--accent);
+}
+.relic-thumbs img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.relic-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px 20px;
+}
+.relic-body h3 {
+  margin: -4px 0 0;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+}
+.relic-place {
+  margin: -8px 0 0;
+  color: var(--muted);
+}
+.relic-beat h4,
+.relic-lesson h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: var(--accent);
+}
+.relic-beat p,
+.relic-lesson p {
+  margin: 0;
+  line-height: 1.55;
+}
+.relic-lesson {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgb(var(--accent-rgb) / 0.08);
+  border: 1px solid rgb(var(--accent-rgb) / 0.25);
+}
+.relic-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.relic-fact svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--warn);
+}
+.relic-try {
+  align-self: flex-start;
+  white-space: normal;
+  text-align: left;
+}
+.relic-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--faint);
+}
+.relic-sources a {
+  color: var(--muted);
+}
+.relic-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 1023px) {
+  .relics {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .relic-globe {
+    height: 340px;
+  }
+  .relic-list {
+    grid-template-columns: 1fr;
+  }
+}

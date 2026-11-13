@@ -1,28 +1,36 @@
 {
- "total": 223.381,
+ "total": 238.743,
  "starts": {
-  "s1": 0.0,
-  "s2": 13.728,
-  "s3": 35.051,
-  "s4": 57.671,
-  "s5": 93.181,
-  "s6a": 134.581,
-  "s6b": 160.639,
-  "s6c": 179.466,
-  "s7": 194.876
+  "r1": 0.0,
+  "r2": 17.693,
+  "s1": 37.802,
+  "s2": 48.576,
+  "s3": 65.62,
+  "s4": 87.911,
+  "s5": 116.843,
+  "s6a": 152.369,
+  "s6b": 171.224,
+  "s6c": 187.06,
+  "team": 199.924,
+  "s7": 217.664
  },
  "scenes": {
-  "s1": 13.728,
-  "s2": 21.323,
-  "s3": 22.62,
-  "s4": 35.51,
-  "s5": 41.4,
-  "s6a": 26.059,
-  "s6b": 18.827,
-  "s6c": 15.41,
-  "s7": 28.505
+  "r1": 17.693,
+  "r2": 20.108,
+  "s1": 10.774,
+  "s2": 17.044,
+  "s3": 22.291,
+  "s4": 28.932,
+  "s5": 35.526,
+  "s6a": 18.854,
+  "s6b": 15.836,
+  "s6c": 12.864,
+  "team": 17.74,
+  "s7": 21.079
  },
  "voice": {
+  "r1": true,
+  "r2": true,
   "s1": true,
   "s2": true,
   "s3": true,
@@ -31,69 +39,83 @@
   "s6a": true,
   "s6b": true,
   "s6c": true,
+  "team": true,
   "s7": true
  },
  "cues": {
+  "r1": {
+   "whoosh_cards": 3.989,
+   "pop_72": 10.477,
+   "whoosh_mars": 11.188
+  },
+  "r2": {
+   "pop_ok": 9.653,
+   "whoosh_fender": 11.524000000000001
+  },
   "s1": {
-   "crack": 1.82,
-   "whoosh_dist": 4.66,
-   "pop_usd": 12.370000000000001
+   "crack": 1.374,
+   "whoosh_dist": 3.266,
+   "pop_usd": 9.264000000000001
   },
   "s2": {
-   "whoosh_which": 11.56,
-   "pop_cnt": 19.15
+   "whoosh_which": 9.798,
+   "pop_cnt": 15.479
   },
   "s3": {
-   "whoosh_zoom": 6.13,
-   "click_hero": 5.9799999999999995,
-   "pop_c1": 12.43,
-   "pop_c2": 14.0,
-   "pop_c3": 17.51,
-   "whoosh_print": 18.74
+   "whoosh_zoom": 6.458000000000001,
+   "click_hero": 6.308000000000001,
+   "pop_c1": 12.382,
+   "pop_c2": 13.763,
+   "pop_c3": 17.212,
+   "whoosh_print": 18.367
   },
   "s4": {
-   "whoosh_page": 14.59,
-   "whoosh_audit": 22.229999999999997,
-   "pop_stamp": 26.86,
-   "pop_zero": 29.32,
-   "pop_181": 32.510000000000005,
-   "pop_56": 32.160000000000004,
-   "whoosh_out": 35.21000000000001
+   "whoosh_page": 11.647,
+   "whoosh_audit": 17.034,
+   "pop_stamp": 21.422,
+   "pop_zero": 23.02,
+   "pop_181": 25.878,
+   "pop_56": 25.528,
+   "whoosh_out": 28.632
   },
   "s5": {
-   "pop_230": 7.590000000000001,
-   "whoosh_pipe": 8.31,
-   "pop_gp": 9.98,
-   "whoosh_bars": 16.59,
-   "pop_honest": 27.310000000000002,
-   "whoosh_ev": 30.88,
-   "pop_117": 35.3,
-   "pop_119": 39.99
+   "pop_230": 6.541,
+   "whoosh_pipe": 7.8740000000000006,
+   "pop_gp": 9.367,
+   "whoosh_bars": 15.072000000000001,
+   "pop_honest": 24.835,
+   "whoosh_ev": 27.599,
+   "pop_117": 31.044,
+   "pop_119": 34.418
   },
   "s6a": {
-   "crack_habitat": 14.84,
-   "whoosh_noon": 16.67,
-   "whoosh_night": 20.029999999999998,
-   "crack_night": 24.24
+   "crack_habitat": 8.605,
+   "whoosh_noon": 10.227,
+   "whoosh_night": 13.107,
+   "crack_night": 17.094
   },
   "s6b": {
-   "pop_cnt": 4.6,
-   "whoosh_rank": 6.02,
-   "pop_local": 9.05,
-   "impact_held": 13.74,
-   "riser_held": 13.74,
-   "crack_winner": 16.09,
-   "whoosh_out": 18.576667
+   "pop_cnt": 3.947,
+   "whoosh_rank": 4.949,
+   "pop_local": 7.394,
+   "impact_held": 11.554,
+   "riser_held": 11.554,
+   "crack_winner": 13.904,
+   "whoosh_out": 15.586
   },
   "s6c": {
-   "pop_stamp": 3.05,
-   "whoosh_kit": 6.23,
-   "pop_kg": 10.709999999999999,
-   "pop_usd": 14.07
+   "pop_stamp": 2.173,
+   "whoosh_kit": 4.74,
+   "pop_kg": 8.697,
+   "pop_usd": 11.703
+  },
+  "team": {
+   "pop_two": 11.213,
+   "pop_hab": 14.336
   },
   "s7": {
-   "whoosh_base": 5.760000000000001,
-   "impact_end": 19.89
+   "whoosh_base": 5.912,
+   "impact_end": 15.275
   }
  }
 }

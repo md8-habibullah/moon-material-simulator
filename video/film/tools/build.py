@@ -13,15 +13,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 VO = json.loads((ROOT / "tools" / "vo.json").read_text())
-ORDER = ["s1", "s2", "s3", "s4", "s5", "s6a", "s6b", "s6c", "s7"]
-LEAD = 0.35          # seconds of picture before the first word of a scene
-TAIL = {"s7": 5.2}   # end card holds after the last word
-DEFAULT_TAIL = 0.45
+ORDER = ["r1", "r2", "s1", "s2", "s3", "s4", "s5", "s6a", "s6b", "s6c", "team", "s7"]
+LEAD = 0.30          # seconds of picture before the first word of a scene
+TAIL = {"s7": 4.2}   # end card holds after the last word
+DEFAULT_TAIL = 0.35
 EST_WPS = 2.35       # estimated words per second when no voice exists yet
 FPS = 30
 
-CHAPTERS = [("s1", "01", "The problem"), ("s3", "02", "The solution"), ("s4", "03", "NASA data"),
-            ("s5", "04", "The science"), ("s6a", "05", "Live demo"), ("s7", "06", "Impact")]
+CHAPTERS = [("r1", "01", "Left behind"), ("s1", "02", "The problem"), ("s3", "03", "The solution"), ("s4", "04", "NASA data"),
+            ("s5", "05", "The science"), ("s6a", "06", "Live demo"), ("team", "07", "The team"), ("s7", "08", "Impact")]
 
 
 # ---------------------------------------------------------------- timing -------------------------
@@ -230,6 +230,114 @@ def stars(sid, dur, opacity=1.0):
 
 # ---------------------------------------------------------------- scenes ----------------------------
 
+def r1():
+    """The machines NASA left behind: the app's Stories globe, then three of the machines, then Mars."""
+    v, sid = VOICES["r1"], "r1"
+    D = v.scene
+    t_lander, t_rovers, t_heli, t_72 = v.at("A lander from 1967"), v.at("Rovers parked"), v.at("A little helicopter"), v.at("72")
+    t_aband, t_each = v.at("They're abandoned"), v.at("each one still tells")
+    bg, bgjs = stars(sid, D)
+    cards = [("surveyor3", "Surveyor 3", "Moon · 1967", "-3"),
+             ("apollo15-rover", "Apollo 15 rover", "Moon · 1971", "2"),
+             ("ingenuity", "Ingenuity helicopter", "Mars · 2021", "-2")]
+    cards_html = ""
+    for i, (img, name, meta, rot) in enumerate(cards):
+        cards_html += f'''<div id="r1-k{i}" class="abs panel" style="left:{150 + i * 560}px;top:250px;width:520px;padding:14px;transform:rotate({rot}deg)">
+          <div style="width:492px;height:380px;border-radius:10px;overflow:hidden"><img src="assets/relics/{img}.jpg" style="width:100%;height:100%;object-fit:cover" alt="{name}, NASA photo"></div>
+          <div class="h3" style="font-size:36px;margin-top:14px">{name}</div><div class="src" style="color:#7fe3ff">{meta}</div></div>'''
+    body = f"""
+{bg}
+{video('r1-v1', 'assets/clips/c20_stories_moon.mp4', 0, t_lander - 0.05, 0.0)}
+{clip('r1-hud1', 0, t_lander - 0.05, brackets('r1') + '<div class="tag" style="left:auto;right:96px"><i></i>Real app · Stories · the machines NASA left behind</div>')}
+{clip('r1-cards', t_lander - 0.15, t_aband - t_lander + 0.1, f'''
+  <div class="abs kick" style="left:150px;top:150px">Abandoned, not forgotten · NASA photos</div>
+  {cards_html}
+  <div id="r1-72" class="abs" style="left:1270px;top:800px"><span id="r1-n" class="h2 mono orange">0</span><span class="h3" style="margin-left:14px">flights on Mars</span></div>''')}
+{video('r1-v2', 'assets/clips/c20_stories_mars.mp4', t_aband - 0.1, D - t_aband + 0.1, 0.0)}
+{clip('r1-title', t_aband - 0.1, D - t_aband + 0.1, '''
+  <div class="abs" style="left:0;top:600px;width:1920px;height:330px;background:linear-gradient(180deg,rgba(2,4,10,0),rgba(2,4,10,.88) 45%)"></div>
+  <div class="abs kick" style="left:150px;top:690px">NASA Space Apps 2026 · our challenge</div>
+  <div id="r1-t" class="abs h1" style="left:150px;top:735px"><span class="w">Abandoned, </span><span class="w">but </span><span class="w cyan">not </span><span class="w cyan">forgotten.</span></div>''')}
+"""
+    js = f"""{bgjs}
+tl.fromTo('#r1-v1-wrap', {{ opacity: 0, scale: 1.06 }}, {{ opacity: 1, scale: 1, duration: 0.9, ease: 'expo.out' }}, 0);
+tl.fromTo('#r1-hud1 .brk', {{ opacity: 0, scale: 1.3 }}, {{ opacity: 1, scale: 1, duration: 0.5, stagger: 0.05, ease: 'expo.out' }}, 0.2);
+land('#r1-hud1 .tag', 0.4);
+land('#r1-cards .kick', {t_lander - 0.1:.3f});
+land('#r1-k0', {t_lander:.3f}, {{ y: 60, scale: 0.9 }});
+land('#r1-k1', {t_rovers:.3f}, {{ y: 60, scale: 0.9 }});
+land('#r1-k2', {t_heli:.3f}, {{ y: 60, scale: 0.9 }});
+tl.fromTo('#r1-cards img', {{ scale: 1 }}, {{ scale: 1.08, duration: {t_aband - t_lander:.3f}, ease: 'none' }}, {t_lander:.3f});
+land('#r1-72', {t_72 - 0.3:.3f}, {{ x: 30, y: 0 }});
+count('#r1-n', 0, 72, {t_72 - 0.25:.3f}, 1.0, fmtInt);
+tl.fromTo('#r1-v2-wrap', {{ clipPath: 'circle(0% at 50% 45%)' }}, {{ clipPath: 'circle(80% at 50% 45%)', duration: 0.6, ease: 'power2.out' }}, {t_aband - 0.1:.3f});
+land('#r1-title .kick', {t_aband:.3f});
+words('#r1-t', {t_aband + 0.05:.3f}, 0.12);
+out('#r1-title .h1', {t_each + 1.6:.3f});
+out('#r1-title .kick', {t_each + 1.6:.3f});
+"""
+    cues = {"whoosh_cards": t_lander - 0.2, "pop_72": t_72 + 0.75, "whoosh_mars": t_aband - 0.2}
+    return scene_file(sid, D, "", body, js), cues
+
+
+def r2():
+    """What two of those machines taught us: Surveyor 3's parts survived; Apollo 17 fixed a fender with maps."""
+    v, sid = VOICES["r2"], "r2"
+    D = v.scene
+    t_31, t_failed, t_later, t_maps, t_up = (v.at("After 31 months"), v.at("nothing had seriously failed"), v.at("Later"),
+                                             v.at("maps and tape"), v.at("Up there"))
+    body = f"""
+{clip('r2-a', 0, t_later - 0.05, f'''
+  <div id="r2-ph" class="abs" style="left:0;top:0;width:1920px;height:1080px;overflow:hidden">
+    <img id="r2-img" src="assets/relics/surveyor3.jpg" style="position:absolute;left:640px;top:-200px;width:1280px;height:1280px;object-fit:cover" alt="Apollo 12 astronaut beside Surveyor 3"></div>
+  <div class="abs" style="left:0;top:0;width:1100px;height:1080px;background:linear-gradient(90deg,rgba(2,4,10,.96) 55%,rgba(2,4,10,0))"></div>
+  <div class="abs" style="left:150px;top:190px;width:820px">
+    <div class="kick">Apollo 12 · November 1969</div>
+    <div class="h2" style="margin-top:14px">{wspan("Astronauts visit")}<span class="w cyan">Surveyor 3</span></div>
+    <div id="r2-m" class="abs" style="left:0;top:270px;white-space:nowrap"><span id="r2-n" class="h0 mono cyan" style="font-size:150px">0</span><span class="h3" style="margin-left:18px">months on the Moon</span></div>
+    <div id="r2-ok" class="abs chip green" style="left:0;top:500px;font-size:32px">No serious failures</div>
+    <div id="r2-src" class="abs src" style="left:0;top:580px">NASA SP-284 · 1972</div></div>
+  <div class="abs src" style="right:96px;top:840px;background:rgba(2,4,10,.75);padding:4px 12px;border-radius:8px">Photo: NASA, AS12-48-7134</div>''')}
+{clip('r2-b', t_later - 0.1, t_up - t_later + 0.05, f'''
+  <div id="r2-fp" class="abs panel" style="left:960px;top:150px;width:780px;height:780px;overflow:hidden;padding:0">
+    <img id="r2-fimg" src="assets/relics/apollo17-fender.jpg" style="width:100%;height:100%;object-fit:cover" alt="Apollo 17 rover fender rebuilt from maps and clamps">
+    <div id="r2-ring" class="abs" style="left:150px;top:300px;width:330px;height:300px;border:4px solid #ff9a4d;border-radius:50%;box-shadow:0 0 30px rgba(255,154,77,.8)"></div></div>
+  <div class="abs" style="left:150px;top:220px;width:760px">
+    <div class="kick">Apollo 17 · December 1972</div>
+    <div class="h2" style="margin-top:14px">{wspan("A broken fender,")}<br>{wspan("fixed with", "")}<span class="w orange">maps and tape</span></div>
+    <div id="r2-chips" style="margin-top:40px">
+      <span class="chip orange" style="margin:0 12px 14px 0">Folded maps</span>
+      <span class="chip orange" style="margin:0 12px 14px 0">Tape</span>
+      <span class="chip orange" style="margin:0 12px 14px 0">Clamps</span></div></div>
+  <div class="abs src" style="left:960px;top:112px">Photo: NASA, AS17-137-20979</div>''')}
+{clip('r2-c', t_up - 0.1, D - t_up + 0.1, '''
+  <div class="abs" style="left:0;top:330px;width:1920px;text-align:center">
+    <div class="kick muted">Up there</div>
+    <div id="r2-none" class="h0" style="margin-top:20px">There are <span class="orange">no spare parts.</span></div></div>''')}
+<div id="r2-in" class="clip abs" data-start="0" data-duration="0.4" style="left:0;top:0;width:1920px;height:1080px;background:#000"></div>
+"""
+    js = f"""
+tl.fromTo('#r2-in', {{ opacity: 1 }}, {{ opacity: 0, duration: 0.35, ease: 'power2.out' }}, 0);
+tl.fromTo('#r2-img', {{ scale: 1.0, x: 0 }}, {{ scale: 1.12, x: -60, duration: {t_later:.3f}, ease: 'none' }}, 0);
+land('#r2-a .kick', 0.2);
+words('#r2-a .h2', 0.4, 0.1);
+land('#r2-m', {t_31 - 0.2:.3f});
+count('#r2-n', 0, 31, {t_31 - 0.1:.3f}, 1.0, fmtInt);
+tl.fromTo('#r2-ok', {{ opacity: 0, scale: 1.6, rotation: -3 }}, {{ opacity: 1, scale: 1, rotation: -3, duration: 0.3, ease: 'expo.out' }}, {t_failed:.3f});
+land('#r2-src', {t_failed + 0.4:.3f});
+land('#r2-fp', {t_later - 0.05:.3f}, {{ x: 80, y: 0 }});
+tl.fromTo('#r2-fimg', {{ scale: 1.15 }}, {{ scale: 1.0, duration: {t_up - t_later:.3f}, ease: 'power1.out' }}, {t_later:.3f});
+land('#r2-b .kick', {t_later:.3f});
+words('#r2-b .h2', {t_later + 0.2:.3f}, 0.08);
+tl.fromTo('#r2-ring', {{ opacity: 0, scale: 1.4 }}, {{ opacity: 1, scale: 1, duration: 0.45, ease: 'expo.out' }}, {t_maps - 0.2:.3f});
+tl.fromTo('#r2-chips .chip', {{ opacity: 0, x: -30 }}, {{ opacity: 1, x: 0, duration: 0.4, stagger: 0.18, ease: 'expo.out' }}, {t_maps:.3f});
+land('#r2-c .kick', {t_up:.3f});
+tl.fromTo('#r2-none', {{ opacity: 0, scale: 1.08, filter: 'blur(10px)' }}, {{ opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }}, {t_up + 0.1:.3f});
+"""
+    cues = {"pop_ok": t_failed + 0.1, "whoosh_fender": t_later - 0.2}
+    return scene_file(sid, D, "", body, js), cues
+
+
 def s1():
     v, sid = VOICES["s1"], "s1"
     D = v.scene
@@ -327,7 +435,7 @@ def s2():
   <div class="abs src" style="right:192px;top:832px">Microscope images: NASA</div>
   <div id="s2-site" class="abs chip green" style="left:192px;top:832px">Could be made on site</div>''')}
 {clip('s2-b', t_which - 0.1, D - t_which + 0.1, f'''
-  <div class="abs src" style="left:192px;top:112px" data-var-text="challenge">NASA Space Apps Challenge 2026</div>
+  <div class="abs src" style="left:192px;top:112px" data-var-text="challenge">NASA Space Apps 2026 · Abandoned but not Forgotten</div>
   <div id="s2-which" class="abs h0" style="left:192px;top:180px">{wspan("Which")}<span class="w orange">mix?</span></div>
   {slot_html}
   <div id="s2-q" class="abs" style="left:192px;top:630px">
@@ -358,8 +466,8 @@ land('#s2-b .src', {t_which + 0.2:.3f});
 tl.fromTo('#s2-b .panel', {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'expo.out' }}, {t_which + 0.3:.3f});
 {rolls}
 tl.fromTo('#s2-q .chip', {{ opacity: 0, scale: 0.8 }}, {{ opacity: 1, scale: 1, duration: 0.45, stagger: {(t_strong - t_much) / 2:.3f}, ease: 'expo.out' }}, {t_much:.3f});
-land('#s2-cnt', {t_cant - 0.3:.3f});
-count('#s2-n', 0, 4662, {t_cant - 0.2:.3f}, 1.4, fmtInt);
+land('#s2-cnt', {t_cant - 1.0:.3f});
+count('#s2-n', 0, 4662, {t_cant - 0.9:.3f}, 1.4, fmtInt);
 """
     cues = {"whoosh_which": t_which - 0.15, "pop_cnt": t_cant + 1.2}
     return scene_file(sid, D, "", body, js), cues
@@ -383,8 +491,8 @@ def s3():
     <img src="assets/brand/dreams-of-x-logo.jpeg" style="width:100%;height:100%;object-fit:contain" alt="Dreams of X logo"></div>
   <div id="s3-name" class="abs h1" style="left:0;width:1920px;top:400px;text-align:center;font-size:118px">{title}</div>
   <div id="s3-scan" class="abs" style="left:0;top:385px;width:220px;height:150px;background:linear-gradient(90deg,transparent,rgba(127,227,255,.55),transparent);mix-blend-mode:screen"></div>
-  <div id="s3-sub" class="abs body" style="left:0;width:1920px;top:560px;text-align:center">by <b class="cyan">Dreams of X</b> · built for NASA Space Apps 2026</div>''')}
-{clip('s3-hero', hero_start, hero_end - hero_start, '<div id="s3-hz" class="abs" style="left:0;top:0;width:1920px;height:1080px;transform-origin:202px 819px"><img src="assets/screens/hero.png" style="width:1920px;height:1080px" alt="Simulator home page"></div>')}
+  <div id="s3-sub" class="abs body" style="left:0;width:1920px;top:560px;text-align:center">by <b class="cyan">Dreams of X</b> · Abandoned but not Forgotten</div>''')}
+{clip('s3-hero', hero_start, hero_end - hero_start, '<div id="s3-hz" class="abs" style="left:0;top:0;width:1920px;height:1080px;transform-origin:530px 728px"><img src="assets/screens/hero.png" style="width:1920px;height:1080px" alt="Simulator home page"></div>')}
 <img id="s3-simstill" class="clip abs" src="assets/screens/simulator.png" data-start="{ui_start:.3f}" data-duration="{t_browser - 0.2 - ui_start:.3f}" style="left:0;top:0;width:1920px;height:1080px" alt="">
 {video('s3-ui', 'assets/clips/u03_design.mp4', ui_start, t_browser - 0.2 - ui_start, 0.0, rate)}
 {clip('s3-hud', ui_start, t_browser - 0.2 - ui_start, '<div class="tag" style="left:auto;right:96px"><i></i>Real app · drag the slider, every number updates</div>')}
@@ -406,7 +514,7 @@ def s3():
 land('#s3-logo', 0.1, {{ scale: 0.7, y: 0 }});
 tl.fromTo('#s3-name .w', {{ opacity: 0.0, filter: 'blur(10px)' }}, {{ opacity: 1, filter: 'blur(0px)', duration: 0.2, stagger: 0.045, ease: 'power2.out' }}, {max(0.4, t_name - 0.6):.3f});
 tl.fromTo('#s3-scan', {{ x: -260 }}, {{ x: 1960, duration: 1.0, ease: 'power2.inOut' }}, {t_name + 0.4:.3f});
-land('#s3-sub', {max(0.7, t_name - 0.4):.3f});
+land('#s3-sub', 0.5);
 tl.fromTo('#s3-hz', {{ scale: 1 }}, {{ scale: 1.08, duration: 1.1, ease: 'power2.inOut' }}, {hero_start:.3f});
 tl.to('#s3-hz', {{ scale: 7, duration: 0.55, ease: 'power3.in' }}, {hero_end - 0.6:.3f});
 tl.fromTo('#s3-ui-wrap', {{ scale: 1.25, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.5, ease: 'expo.out' }}, {ui_start:.3f});
@@ -498,7 +606,7 @@ count('#s4-n', 0, 1470, {t_trans + 0.2:.3f}, 1.5, fmtInt);
 land('#s4-page .kick', {t_trans:.3f}); land('#s4-page .h2', {t_trans + 0.5:.3f});
 tl.fromTo('#s4-pgz', {{ scale: 1 }}, {{ scale: 1.9, duration: 1.0, ease: 'power2.inOut' }}, {t_page - 0.3:.3f});
 tl.fromTo('#s4-box', {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3, ease: 'power2.out' }}, {t_page + 0.5:.3f});
-tl.fromTo('#s4-chips .chip', {{ opacity: 0, x: -30 }}, {{ opacity: 1, x: 0, duration: 0.45, stagger: 0.28, ease: 'expo.out' }}, {t_page:.3f});
+tl.fromTo('#s4-chips .chip', {{ opacity: 0, x: -30 }}, {{ opacity: 1, x: 0, duration: 0.45, stagger: 0.2, ease: 'expo.out' }}, {t_trans + 0.9:.3f});
 land('#s4-page .src', {t_trans + 1.2:.3f});
 land('#s4-audit .kick', {t_aud:.3f});
 land('#s4-stats', {t_aud + 0.1:.3f});
@@ -733,31 +841,83 @@ tl.fromTo('#s6c-flood', {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, ease: 'p
     return scene_file(sid, D, "", body, js), cues
 
 
+def team():
+    """Team Dreams of X: three members first, then the two who built most of it, larger and last."""
+    v, sid = VOICES["team"], "team"
+    D = v.scene
+    t_dox, t_mah, t_mal, t_lam = v.at("We're Dreams of X"), v.at("Mahdin"), v.at("Maliha"), v.at("Lamisa")
+    t_two, t_you, t_hab = v.at("And the two"), v.at("Yousuf"), v.at("Habibullah")
+    bg, bgjs = stars(sid, D, 0.8)
+    three = [("mahdin", "Mahdin Islam Mukim", "Team Lead"), ("maliha", "Maliha Sanjana", "UI/UX Designer"),
+             ("lamisa", "Lamisa Yeasmin Nakia", "Research &amp; Storytelling Lead")]
+    three_html = ""
+    for i, (img, name, role) in enumerate(three):
+        three_html += f'''<div id="tm-s{i}" class="abs panel" style="left:{260 + i * 500}px;top:250px;width:400px;padding:12px;text-align:center">
+          <div style="width:376px;height:376px;border-radius:12px;overflow:hidden"><img src="assets/team/{img}.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="{name}"></div>
+          <div class="h3" style="font-size:34px;margin-top:12px;white-space:nowrap">{name}</div><div class="src" style="color:#7fe3ff">{role}</div></div>'''
+    two = [("yousuf", "Yousuf Abdullah", "AI/ML Researcher · Data Scientist", "Research and data analysis, the AI models, the dataset and every source paper", "#7fe3ff"),
+           ("habibullah", "Md. Habibullah Sharif", "Systems Architect", "Architecture and the whole app: UI/UX, 3D, the simulator engine and the backend", "#ff9a4d")]
+    two_html = ""
+    for i, (img, name, role, did, col) in enumerate(two):
+        two_html += f'''<div id="tm-b{i}" class="abs panel" style="left:{150 + i * 830}px;top:360px;width:790px;height:330px;padding:16px;display:flex;gap:24px;border-color:{col};box-shadow:0 0 50px -10px {col}">
+          <div style="flex:none;width:298px;height:298px;border-radius:12px;overflow:hidden"><img src="assets/team/{img}.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="{name}"></div>
+          <div style="padding-top:10px"><div class="h3" style="font-size:40px">{name}</div>
+            <div class="src" style="color:{col};margin-top:6px">{role}</div>
+            <div class="body" style="font-size:28px;margin-top:16px">{did}</div></div></div>'''
+    row_html = "".join(f'''<div id="tm-r{i}" class="abs panel" style="left:{150 + i * 550}px;top:140px;width:520px;height:128px;padding:12px;display:flex;gap:18px;align-items:center">
+          <div style="flex:none;width:104px;height:104px;border-radius:10px;overflow:hidden"><img src="assets/team/{img}.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="{name}"></div>
+          <div><div class="h3" style="font-size:32px;white-space:nowrap">{name}</div><div class="src" style="color:#7fe3ff">{role}</div></div></div>'''
+                       for i, (img, name, role) in enumerate(three))
+    body = f"""
+{bg}
+<div id="tm-head" class="abs" style="left:150px;top:118px;display:flex;align-items:center;gap:22px">
+  <div id="tm-logo" style="width:84px;height:84px;border-radius:18px;overflow:hidden;background:#fff"><img src="assets/brand/dreams-of-x-logo.jpeg" style="width:100%;height:100%;object-fit:contain" alt="Dreams of X logo"></div>
+  <div id="tm-title" class="h2">Team <span class="cyan">Dreams of X</span></div></div>
+<div id="tm-three">{three_html}</div>
+<div id="tm-row">{row_html}</div>
+{two_html}
+"""
+    js = f"""{bgjs}
+land('#tm-logo', {max(0.1, t_dox - 0.2):.3f}, {{ scale: 0.6, y: 0 }});
+land('#tm-title', {max(0.2, t_dox - 0.1):.3f});
+land('#tm-s0', {t_mah - 0.15:.3f}, {{ y: 50 }});
+land('#tm-s1', {t_mal - 0.15:.3f}, {{ y: 50 }});
+land('#tm-s2', {t_lam - 0.15:.3f}, {{ y: 50 }});
+tl.to('#tm-three', {{ opacity: 0, y: -40, filter: 'blur(8px)', duration: 0.4, ease: 'power3.in' }}, {t_two - 0.2:.3f});
+tl.to('#tm-head', {{ opacity: 0, duration: 0.3 }}, {t_two - 0.2:.3f});
+tl.fromTo('#tm-row .panel', {{ opacity: 0, y: -30 }}, {{ opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'expo.out' }}, {t_two + 0.15:.3f});
+land('#tm-b0', {t_you - 0.2:.3f}, {{ y: 60, scale: 0.96 }});
+land('#tm-b1', {t_hab - 0.2:.3f}, {{ y: 60, scale: 0.96 }});
+"""
+    cues = {"pop_two": t_you, "pop_hab": t_hab}
+    return scene_file(sid, D, "", body, js), cues
+
+
 def s7():
     v, sid = VOICES["s7"], "s7"
     D = v.scene
-    t_eng, t_mars, t_dox, t_try = v.at("helps engineers"), v.at("works for Mars"), v.at("We are Dreams of X"), v.at("Try it yourself")
+    t_eng, t_mars, t_try = v.at("helps engineers"), v.at("works for Mars"), v.at("Try it yourself")
     bg, bgjs = stars(sid, D)
-    team = [("Mahdin Islam Mukim", "Team Lead"), ("Yousuf Abdullah", "Data Scientist"), ("Md. Habibullah Sharif", "Systems Architect"),
-            ("Maliha Sanjana", "UI/UX Designer"), ("Lamisa Yeasmin Nakia", "Research & Storytelling Lead")]
+    team = [("Mahdin Islam Mukim", "Team Lead"), ("Maliha Sanjana", "UI/UX Designer"), ("Lamisa Yeasmin Nakia", "Research &amp; Storytelling Lead"),
+            ("Yousuf Abdullah", "AI/ML Researcher · Data Scientist"), ("Md. Habibullah Sharif", "Systems Architect")]
     team_html = "".join(f'<div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">{n}</div>'
                         f'<div class="src" style="color:#7fe3ff">{r}</div></div>' for n, r in team)
-    end_at = t_dox - 0.3
+    end_at = t_try - 0.6
     body = f"""
 {bg}
 <div id="s7-moonwrap" class="abs" style="left:880px;top:40px;width:1000px;height:1000px;-webkit-mask-image:radial-gradient(circle closest-side, #000 98.5%, transparent 100%);mask-image:radial-gradient(circle closest-side, #000 98.5%, transparent 100%)">
 <video id="s7-moon" class="clip" src="assets/clips/moon_spin.mp4" muted playsinline data-start="0" data-duration="{end_at:.3f}" data-media-start="0" style="width:1000px;height:1000px"></video></div>
 {clip('s7-a', 0.0, t_eng - 0.05, '''
   <div class="abs" style="left:192px;top:330px;width:760px">
-    <div id="s7-l1" class="h1">Every kilogram made on the <span class="cyan">Moon</span></div>
-    <div id="s7-l2" class="h1" style="margin-top:6px">is one we don't <span class="orange">launch.</span></div></div>''')}
+    <div id="s7-l1" class="h1">The machines we <span class="cyan">left behind</span></div>
+    <div id="s7-l2" class="h1" style="margin-top:6px">teach us how to <span class="orange">build next.</span></div></div>''')}
 <div id="s7-in" class="clip abs" data-start="0" data-duration="0.6" style="left:0;top:0;width:1920px;height:1080px;background:#000"></div>
 {clip('s7-b', t_eng - 0.1, end_at - t_eng + 0.1, '''
   <div id="s7-base" class="abs" style="left:192px;top:200px;width:880px;height:495px;border-radius:16px;overflow:hidden;border:1px solid rgba(127,227,255,.3)">
     <img src="assets/nasa/moon-base-artists-concept.jpg" style="width:100%;height:100%;object-fit:cover" alt="NASA artist's concept of a Moon base"></div>
   <div class="abs src" style="left:192px;top:705px">Concept: NASA</div>
   <div id="s7-mars" class="abs panel" style="left:192px;top:760px;width:880px;padding:20px 26px">
-    <div class="h3" style="font-size:36px">Same method: <span class="orange">Mars</span>, and any material where data is scarce.</div></div>''')}
+    <div class="h3" style="font-size:36px">Same method works for <span class="orange">Mars</span>.</div></div>''')}
 {clip('s7-end', end_at, D - end_at, f'''
   <div class="abs" style="left:192px;top:150px;width:980px">
     <div id="s7-logo" style="width:120px;height:120px;border-radius:22px;overflow:hidden;background:#fff;margin-bottom:28px">
@@ -780,7 +940,7 @@ land('#s7-l1', 0.4);
 land('#s7-l2', 1.1);
 land('#s7-base', {t_eng:.3f}, {{ x: -60, y: 0 }});
 land('#s7-b .src', {t_eng + 0.5:.3f});
-land('#s7-mars', {t_mars - 0.1:.3f});
+land('#s7-mars', {min(t_mars - 0.1, t_eng + 3.0):.3f});
 land('#s7-logo', {end_at + 0.1:.3f}, {{ scale: 0.6, y: 0 }});
 tl.fromTo('#s7-end .h1', {{ opacity: 0, filter: 'blur(10px)' }}, {{ opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }}, {end_at + 0.25:.3f});
 tl.fromTo('#s7-end .s7-m', {{ opacity: 0, x: 40 }}, {{ opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: 'expo.out' }}, {end_at + 0.3:.3f});
@@ -793,7 +953,7 @@ land('#s7-qr', {t_try + 0.6:.3f}, {{ scale: 0.7, y: 0 }});
     return scene_file(sid, D, "", body, js), cues
 
 
-BUILDERS = {"s1": s1, "s2": s2, "s3": s3, "s4": s4, "s5": s5, "s6a": s6a, "s6b": s6b, "s6c": s6c, "s7": s7}
+BUILDERS = {"r1": r1, "r2": r2, "team": team, "s1": s1, "s2": s2, "s3": s3, "s4": s4, "s5": s5, "s6a": s6a, "s6b": s6b, "s6c": s6c, "s7": s7}
 
 
 # ---------------------------------------------------------------- HUD and captions -------------------
@@ -882,7 +1042,7 @@ def sound_tags(all_cues):
     tags = []
     music = ROOT / "assets" / "audio" / "music.mp3"
     if music.exists():
-        tags.append(f'<audio id="music" class="clip" src="assets/audio/music.mp3" data-start="0" data-duration="{TOTAL:.3f}" data-volume="0.14" data-fade-in="1.5" data-fade-out="3"></audio>')
+        tags.append(f'<audio id="music" class="clip" src="assets/audio/music.mp3" data-start="0" data-duration="{TOTAL:.3f}" data-volume="0.12" data-fade-in="1.5" data-fade-out="3"></audio>')
     for sid in ORDER:
         wav = ROOT / "assets" / "voice" / f"{sid}.wav"
         if wav.exists():
@@ -891,7 +1051,7 @@ def sound_tags(all_cues):
     takes = {}
     for f in sorted(sfx_dir.glob("*.mp3")) + sorted(sfx_dir.glob("*.wav")):
         takes.setdefault(f.stem.split("_")[0], []).append(f)
-    gains = {"crack": 0.85, "whoosh": 0.42, "pop": 0.38, "impact": 0.8, "click": 0.4, "riser": 0.5}
+    gains = {"crack": 0.75, "whoosh": 0.22, "pop": 0.2, "impact": 0.6, "click": 0.25, "riser": 0.3}
     # Where each file hits (seconds into it); the hit lands one frame after its picture.
     peaks = {"crack_a": 0.55, "crack_b": 1.95, "impact_a": 2.06, "pop_a": 0.12, "pop_b": 0.33,
              "whoosh_a": 0.16, "whoosh_b": 0.29, "riser_a": 9.95}
@@ -941,7 +1101,7 @@ def main():
                      f'data-duration="{TOTAL:.3f}" data-track-index="3" data-track-kind="captions" data-width="1920" data-height="1080" style="z-index:6"></div>')
     audio = sound_tags(all_cues)
     variables = json.dumps([{"id": "challenge", "type": "string", "label": "Challenge name",
-                             "default": "NASA Space Apps Challenge 2026"}])
+                             "default": "NASA Space Apps 2026 · Abandoned but not Forgotten"}])
     index = f"""<!doctype html>
 <html lang="en" data-composition-variables='{variables}'>
   <head>

@@ -1,3 +1,33 @@
+# Review: Moon-Material Simulator, 240 Seconds of Glory (v2, "Abandoned but not Forgotten")
+
+Length 238.7 s (3:58.7), 1920 × 1080, 30 fps. Output: `renders/moon-material-simulator_v2_abandoned.mp4`. The v1 cut
+(`renders/moon-material-simulator_240s.mp4`, 3:43) is kept; its review follows below.
+
+## What changed from v1
+
+- **Story:** retargeted to the team's challenge. Two new opening scenes: the machines NASA left on the Moon and Mars
+  (real footage of the app's new Stories section, then NASA photos of Surveyor 3, the Apollo 15 rover and Ingenuity),
+  and what they taught us (Apollo 12 brought Surveyor 3's parts home: nothing had seriously failed; Apollo 17 fixed a
+  fender with maps and tape). The s3 line names the challenge.
+- **Team scene:** real, unaltered photos. Mahdin, Maliha and Lamisa first, then Yousuf and Habibullah last and larger,
+  with their contributions. No facial animation (the team asked for none). The photos are git-ignored
+  (`assets/team/`), so they appear in the video but are not pushed to the public repo.
+- **Voice:** ElevenLabs `eleven_multilingual_v2`, George (story, demo, close) and Alice (product, science, team),
+  generated per scene with the neighbouring scenes as context (`tools/voice_el.py`). Word timings come from ElevenLabs'
+  character alignment, so captions and cues land on the spoken word. Speed 1.12 for Alice's scenes and 1.05 for three of
+  George's, to fit under 240 s. A Whisper read-back of the first take matched the script word for word.
+- **Sound:** fewer, quieter effects (whoosh 0.22, pop 0.2, crack 0.75), music bed 0.12. The score opens with soft
+  pads and a sparse pluck for the stories; the tense drone now starts at the broken wrench.
+- **Accuracy fix:** v1 said physics was "off by up to 230 percent"; 230% is the average error, so v2 says "averaged".
+
+## Measured, looked at, and not checked (v2)
+
+- **Measured:** `hyperframes check`: 0 errors; the only warnings are the kept-on-purpose ones below. Length 238.74 s.
+- **Looked at:** snapshots of every new or changed scene (r1, r2, s3 title, team, s7) at the moments that matter.
+- **Not checked by ear:** nobody has listened to the full mix yet. Play it once with sound before submitting.
+
+---
+
 # Review: Moon-Material Simulator, 240 Seconds of Glory (v1)
 
 Length 223.4 s (3:43), 1920 × 1080, 30 fps. Output: `renders/moon-material-simulator_240s.mp4`.

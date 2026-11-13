@@ -1,296 +1,237 @@
 [
-  {
-    "text": "In",
-    "start": 0.16,
-    "end": 0.24,
-    "id": "w0"
-  },
-  {
-    "text": "2026,",
-    "start": 0.24,
-    "end": 1.78,
-    "id": "w1"
-  },
-  {
-    "text": "NASA",
-    "start": 2.16,
-    "end": 2.38,
-    "id": "w2"
-  },
-  {
-    "text": "Glenn",
-    "start": 2.38,
-    "end": 3,
-    "id": "w3"
-  },
-  {
-    "text": "grew",
-    "start": 3,
-    "end": 3.31,
-    "id": "w4"
-  },
-  {
-    "text": "a",
-    "start": 3.4,
-    "end": 3.41,
-    "id": "w5"
-  },
-  {
-    "text": "plastic",
-    "start": 3.49,
-    "end": 4.09,
-    "id": "w6"
-  },
-  {
-    "text": "inside",
-    "start": 4.09,
-    "end": 4.64,
-    "id": "w7"
-  },
-  {
-    "text": "bacteria",
-    "start": 4.64,
-    "end": 5.4,
-    "id": "w8"
-  },
-  {
-    "text": "and",
-    "start": 5.4,
-    "end": 5.59,
-    "id": "w9"
-  },
-  {
-    "text": "mixed",
-    "start": 5.59,
-    "end": 5.89,
-    "id": "w10"
-  },
-  {
-    "text": "it",
-    "start": 5.96,
-    "end": 6.07,
-    "id": "w11"
-  },
-  {
-    "text": "with",
-    "start": 6.13,
-    "end": 6.35,
-    "id": "w12"
-  },
-  {
-    "text": "simulated",
-    "start": 6.35,
-    "end": 6.96,
-    "id": "w13"
-  },
-  {
-    "text": "moon",
-    "start": 6.96,
-    "end": 7.44,
-    "id": "w14"
-  },
-  {
-    "text": "and",
-    "start": 7.44,
-    "end": 7.68,
-    "id": "w15"
-  },
-  {
-    "text": "Mars",
-    "start": 7.68,
-    "end": 8.17,
-    "id": "w16"
-  },
-  {
-    "text": "dust,",
-    "start": 8.24,
-    "end": 8.42,
-    "id": "w17"
-  },
-  {
-    "text": "a",
-    "start": 8.42,
-    "end": 8.85,
-    "id": "w18"
-  },
-  {
-    "text": "material",
-    "start": 8.85,
-    "end": 9.28,
-    "id": "w19"
-  },
-  {
-    "text": "that",
-    "start": 9.28,
-    "end": 9.59,
-    "id": "w20"
-  },
-  {
-    "text": "could",
-    "start": 9.59,
-    "end": 10.02,
-    "id": "w21"
-  },
-  {
-    "text": "be",
-    "start": 10.02,
-    "end": 10.18,
-    "id": "w22"
-  },
-  {
-    "text": "made",
-    "start": 10.25,
-    "end": 10.53,
-    "id": "w23"
-  },
-  {
-    "text": "on",
-    "start": 10.53,
-    "end": 10.7,
-    "id": "w24"
-  },
-  {
-    "text": "site.",
-    "start": 10.7,
-    "end": 11.36,
-    "id": "w25"
-  },
-  {
-    "text": "But",
-    "start": 11.36,
-    "end": 11.66,
-    "id": "w26"
-  },
-  {
-    "text": "which",
-    "start": 11.66,
-    "end": 12.16,
-    "id": "w27"
-  },
-  {
-    "text": "mix?",
-    "start": 12.16,
-    "end": 12.8,
-    "id": "w28"
-  },
-  {
-    "text": "How",
-    "start": 12.8,
-    "end": 13.17,
-    "id": "w29"
-  },
-  {
-    "text": "much",
-    "start": 13.17,
-    "end": 13.67,
-    "id": "w30"
-  },
-  {
-    "text": "dust",
-    "start": 13.67,
-    "end": 14.17,
-    "id": "w31"
-  },
-  {
-    "text": "which",
-    "start": 14.17,
-    "end": 14.8,
-    "id": "w32"
-  },
-  {
-    "text": "dust",
-    "start": 14.8,
-    "end": 15.35,
-    "id": "w33"
-  },
-  {
-    "text": "and",
-    "start": 15.52,
-    "end": 15.57,
-    "id": "w34"
-  },
-  {
-    "text": "is",
-    "start": 15.57,
-    "end": 15.71,
-    "id": "w35"
-  },
-  {
-    "text": "it",
-    "start": 15.71,
-    "end": 15.85,
-    "id": "w36"
-  },
-  {
-    "text": "strong",
-    "start": 15.85,
-    "end": 16.27,
-    "id": "w37"
-  },
-  {
-    "text": "enough",
-    "start": 16.27,
-    "end": 16.69,
-    "id": "w38"
-  },
-  {
-    "text": "for",
-    "start": 16.69,
-    "end": 16.9,
-    "id": "w39"
-  },
-  {
-    "text": "a",
-    "start": 16.9,
-    "end": 16.94,
-    "id": "w40"
-  },
-  {
-    "text": "wrench?",
-    "start": 17.03,
-    "end": 17.6,
-    "id": "w41"
-  },
-  {
-    "text": "You",
-    "start": 17.6,
-    "end": 17.81,
-    "id": "w42"
-  },
-  {
-    "text": "can't",
-    "start": 17.81,
-    "end": 18.16,
-    "id": "w43"
-  },
-  {
-    "text": "test",
-    "start": 18.16,
-    "end": 18.4,
-    "id": "w44"
-  },
-  {
-    "text": "every",
-    "start": 18.43,
-    "end": 18.77,
-    "id": "w45"
-  },
-  {
-    "text": "combination",
-    "start": 18.85,
-    "end": 19.56,
-    "id": "w46"
-  },
-  {
-    "text": "on",
-    "start": 19.56,
-    "end": 19.7,
-    "id": "w47"
-  },
-  {
-    "text": "Earth.",
-    "start": 19.7,
-    "end": 20.2,
-    "id": "w48"
-  }
+{
+"text": "In",
+"start": 0.0,
+"end": 0.174
+},
+{
+"text": "2026,",
+"start": 0.232,
+"end": 1.173
+},
+{
+"text": "NASA",
+"start": 1.289,
+"end": 1.649
+},
+{
+"text": "Glenn",
+"start": 1.683,
+"end": 1.939
+},
+{
+"text": "grew",
+"start": 1.997,
+"end": 2.159
+},
+{
+"text": "a",
+"start": 2.206,
+"end": 2.229
+},
+{
+"text": "plastic",
+"start": 2.276,
+"end": 2.694
+},
+{
+"text": "inside",
+"start": 2.775,
+"end": 3.216
+},
+{
+"text": "bacteria",
+"start": 3.262,
+"end": 3.901
+},
+{
+"text": "and",
+"start": 4.017,
+"end": 4.18
+},
+{
+"text": "mixed",
+"start": 4.249,
+"end": 4.493
+},
+{
+"text": "it",
+"start": 4.528,
+"end": 4.598
+},
+{
+"text": "with",
+"start": 4.632,
+"end": 4.748
+},
+{
+"text": "simulated",
+"start": 4.783,
+"end": 5.329
+},
+{
+"text": "Moon",
+"start": 5.399,
+"end": 5.654
+},
+{
+"text": "and",
+"start": 5.7,
+"end": 5.77
+},
+{
+"text": "Mars",
+"start": 5.84,
+"end": 6.118
+},
+{
+"text": "dust:",
+"start": 6.177,
+"end": 6.664
+},
+{
+"text": "a",
+"start": 7.024,
+"end": 7.059
+},
+{
+"text": "material",
+"start": 7.14,
+"end": 7.57
+},
+{
+"text": "that",
+"start": 7.616,
+"end": 7.721
+},
+{
+"text": "could",
+"start": 7.755,
+"end": 7.895
+},
+{
+"text": "be",
+"start": 7.93,
+"end": 7.999
+},
+{
+"text": "made",
+"start": 8.046,
+"end": 8.278
+},
+{
+"text": "on",
+"start": 8.313,
+"end": 8.394
+},
+{
+"text": "site.",
+"start": 8.475,
+"end": 8.986
+},
+{
+"text": "But",
+"start": 9.648,
+"end": 9.799
+},
+{
+"text": "which",
+"start": 9.834,
+"end": 10.031
+},
+{
+"text": "mix?",
+"start": 10.112,
+"end": 10.635
+},
+{
+"text": "How",
+"start": 10.774,
+"end": 10.925
+},
+{
+"text": "much",
+"start": 10.971,
+"end": 11.169
+},
+{
+"text": "dust,",
+"start": 11.227,
+"end": 11.714
+},
+{
+"text": "and",
+"start": 11.831,
+"end": 11.97
+},
+{
+"text": "is",
+"start": 12.028,
+"end": 12.098
+},
+{
+"text": "it",
+"start": 12.144,
+"end": 12.225
+},
+{
+"text": "strong",
+"start": 12.272,
+"end": 12.504
+},
+{
+"text": "enough",
+"start": 12.539,
+"end": 12.736
+},
+{
+"text": "for",
+"start": 12.771,
+"end": 12.864
+},
+{
+"text": "a",
+"start": 12.911,
+"end": 12.945
+},
+{
+"text": "wrench?",
+"start": 12.98,
+"end": 13.491
+},
+{
+"text": "You",
+"start": 13.979,
+"end": 14.095
+},
+{
+"text": "can't",
+"start": 14.153,
+"end": 14.362
+},
+{
+"text": "test",
+"start": 14.397,
+"end": 14.675
+},
+{
+"text": "every",
+"start": 14.745,
+"end": 14.977
+},
+{
+"text": "combination",
+"start": 15.035,
+"end": 15.546
+},
+{
+"text": "on",
+"start": 15.592,
+"end": 15.674
+},
+{
+"text": "Earth.",
+"start": 15.755,
+"end": 16.394
+}
 ]

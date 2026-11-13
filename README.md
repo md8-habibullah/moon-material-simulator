@@ -28,6 +28,26 @@
 
 ---
 
+## Our challenge: Abandoned but not Forgotten
+
+NASA Space Apps 2026 asks teams to tell young explorers the stories of the hardware NASA left on the Moon and Mars, and
+the science it made possible. We tell eight of those stories, and then go one step further: every machine left out
+there is a **materials experiment that never ended**. Apollo 12 brought pieces of Surveyor 3 home after 31 months on
+the Moon, and NASA found that, apart from paint darkened by dust and sunlight, nothing had seriously failed. Apollo 17
+fixed a broken rover fender with maps and tape, because there are no spare parts on the Moon.
+
+So each story ends with a **"Try it"** button: rebuild one of that machine's parts from local Moon or Mars dust and
+break it in the simulator, in the conditions it would face.
+
+<p align="center">
+  <img src="docs/assets/readme/app-stories.jpg" alt="Stories section: a Moon globe with markers where NASA machines still sit, and the Surveyor 3 story card with a NASA photo, its story, the materials lesson and a Try it button" width="100%" /><br />
+  <sub><b>Stories.</b> Eight NASA machines on a Moon and Mars globe built from NASA maps. Each card has a NASA photo, what it did, why it is still there, what it taught us, a materials lesson and NASA sources.</sub>
+</p>
+
+| Moon | Mars |
+| --- | --- |
+| Surveyor 3 (1967), the Apollo 11 laser reflector (1969), the Apollo 15 rover (1971), Apollo 17's lander and taped fender (1972) | Viking 1 (1976), Sojourner (1997), Opportunity (2004), Ingenuity (2021) |
+
 ## The problem
 
 One broken tool on the Moon can mean months of waiting and a resupply launch at up to **$1 million per kg**
@@ -54,6 +74,7 @@ An interactive simulator for designing these composites, which runs entirely in 
 
 | Step | What you do | What happens |
 | --- | --- | --- |
+| **Learn** | Spin the Moon or Mars globe and open a machine's story. | A kid-friendly card: NASA photo, what it did, why it is still there, what it taught us about materials, and a "Try it" button that opens the part test with that machine's part, place and local dust. |
 | **Design** | Pick a binder (NASA's bacterial PHB, PLA, PEEK, LDPE, PEI or PPSU), a soil (lunar highlands, lunar mare, Martian) and how the part is made (filament or pellet printing, injection molding, hot pressing, pressed + sintered brick); set regolith % (up to 92.5), basalt fibre %, grain size and operating temperature. | A physics model, corrected by machine learning on **real lab measurements**, predicts **8 properties** live with uncertainty bands. Every value says whether it is lab-backed or a physics estimate, and one click shows the real measurements behind it, down to the table cell in the paper. |
 | **Test** | Fly around the 3D microstructure (drag, zoom, full screen) and watch it print layer by layer; load a wrench, a shelf bracket or a shelter brick until it breaks, in the habitat, at lunar noon or at lunar night; see a polarised-light view styled after NASA's micrographs and property-vs-loading curves with NASA's measured points on top. Optional sound. | The part test colours stress from beam and column formulas on the model's predicted strength and stiffness, and reports the breaking load, the safety factor against a stated design load, and whether the part bends or snaps. Every mix is also checked against six real uses (wrench, bracket, chair, lunar wall panel, Mars shelter block and thruster nozzle) at the temperatures each one must survive. |
 | **Optimize** | Choose a use. | The optimizer tests about 5,000 compositions (every binder, with each process it has lab data for) and ranks the passing ones, most locally sourced first. It says honestly when nothing works: no plastic survives a thruster nozzle. |
@@ -227,7 +248,7 @@ cd ../frontend && npm test           # browser engine matches Python; evidence c
 | [NASA data sources](docs/data_sources.md) | Each NASA source and exactly how it is used |
 | [API reference](docs/api.md) | FastAPI endpoints with examples |
 | [Deployment](docs/deployment.md) | GitHub Pages setup and the CI pipeline |
-| [Demo script](docs/demo_script.md) | A 90-second walkthrough for judges |
+| [Demo script](docs/demo_script.md) | A two-minute walkthrough for judges, starting with the Stories |
 | [240-second video script](video/README.md) | The Space Apps "240 Seconds of Glory" video: second-by-second script, voice-over, shot list, assets and style guide |
 
 ## Tech stack
@@ -265,7 +286,9 @@ moon-material-simulator/
 │   └── tests/                      # API, science-vs-NASA and export-parity tests
 ├── frontend/
 │   ├── src/lib/engine/             # Browser engine: forest, physics, optimizer, mission maths
-│   ├── src/components/             # Simulator, optimizer, comparison, impact, science, research
+│   ├── src/components/             # Stories (relics), simulator, optimizer, comparison, impact, science, research
+│   ├── src/lib/relics.js           # The 8 NASA machines: stories, coordinates, photos, sources, "Try it" tests
+│   ├── public/relics/              # NASA photos and the Moon and Mars maps for the globe
 │   ├── src/generated/              # Model + catalog exported from Python
 │   └── test/                       # Node tests for the engine
 ├── docs/                           # Architecture, science, data, API, deployment, demo
@@ -281,11 +304,13 @@ moon-material-simulator/
 
 ## Team: Dreams of X
 
-- **Mahdin Islam Mukim** (Team Lead)
-- **Yousuf Abdullah** (Data Scientist)
-- **Md. Habibullah Sharif** (Systems Architect)
-- **Maliha Sanjana** (UI/UX Designer)
-- **Lamisa Yeasmin Nakia** (Research & Storytelling Lead)
+| Member | Role | Contribution |
+| --- | --- | --- |
+| **Mahdin Islam Mukim** | Team Lead | Leads the team |
+| **Maliha Sanjana** | UI/UX Designer | Design |
+| **Lamisa Yeasmin Nakia** | Research & Storytelling Lead | Research and storytelling |
+| **Yousuf Abdullah** | AI/ML Researcher · Data Scientist | Research and data analysis, the AI models, the dataset and the source papers. His first extraction pipeline lives in [`research/legacy/`](research/legacy/README.md). |
+| **Md. Habibullah Sharif** | Systems Architect | The architecture and the whole app: UI/UX, the 3D views and part tests, the simulator engine, the evidence pipeline and the backend |
 
 ## License
 

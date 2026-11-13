@@ -2,6 +2,7 @@ import { BookOpen, ChevronDown, GitBranch, Menu, Monitor, Moon, Play, Sun } from
 import { DOCS, REPO_URL, VIDEO_URL, docUrl } from '../lib/catalog';
 
 const LINKS = [
+  { href: '#stories', label: 'Stories' },
   { href: '#simulator', label: 'Simulator' },
   { href: '#optimize', label: 'Optimize' },
   { href: '#compare', label: 'Compare' },

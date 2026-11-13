@@ -4,7 +4,8 @@ Run from video/film after tools/build.py (it reads tools/timing.json for the sec
     ../../backend/.venv/bin/python tools/music.py
 Writes assets/audio/music.mp3, loudness-normalised to -14 LUFS (it plays at 0.14 under the voice).
 
-100 BPM, A minor. Sections follow the story: a tense drone for the broken wrench, the pads open when the
+100 BPM, A minor. Sections follow the story: open, curious pads and a soft pluck for the machines NASA left
+behind, a tense drone for the broken wrench, the pads open when the
 simulator appears, a driving pulse under the data and the science, the harmony tightens on the failing
 wrench, lifts to C major when the optimizer's wrench holds, and resolves under the end card.
 """
@@ -27,6 +28,7 @@ st = T["starts"]
 cue = T["cues"]
 LIFT = st["s6b"] + cue["s6b"]["impact_held"]          # the wrench holds: the music turns major
 SOLUTION = st["s3"]
+PROBLEM = st["s1"]                                   # the story of the machines ends; the problem begins
 DATA = st["s4"]
 DEMO = st["s6a"]
 CLOSE = st["s7"]
@@ -88,7 +90,7 @@ for b in range(bars):
     env[-fade:] *= np.linspace(1, 0, fade)
     pad[s0:s1] += seg * env / (len(notes) * 3)
 # Filter opens with the story: closed at the start, open for the solution, brightest after the lift.
-cut = 500 + 900 * smooth_step(t, SOLUTION - 2, SOLUTION + 2) + 700 * smooth_step(t, LIFT - 1, LIFT + 1) \
+cut = 500 + 700 * (1 - smooth_step(t, PROBLEM - 1.5, PROBLEM + 0.5)) + 900 * smooth_step(t, SOLUTION - 2, SOLUTION + 2) + 700 * smooth_step(t, LIFT - 1, LIFT + 1) \
       - 500 * smooth_step(t, DEMO - 1, DEMO + 1) * (1 - smooth_step(t, LIFT - 1, LIFT + 1))
 pad_lo = lowpass(pad, 400)
 pad_hi = lowpass(pad, 1800)
@@ -108,9 +110,10 @@ bass = np.sin(2 * np.pi * phase) * duck
 arp = np.zeros(N)
 eighth = BEAT / 2
 k = 0
-time = SOLUTION
+time = 0.0
 while time < TOTAL - 1:
-    if not (CLOSE + 8 < time):
+    story = time < PROBLEM - 0.5
+    if (story and k % 2 == 0) or (time >= SOLUTION and not (CLOSE + 8 < time)):
         notes = chord_at(time)
         n = notes[[0, 2, 1, 3, 2, 1, 3, 2][k % 8]] + 12
         s0 = int(time * SR)
@@ -128,7 +131,7 @@ echo[delay:] = arp[:-delay] * 0.38
 echo2 = np.zeros(N)
 echo2[2 * delay:] = arp[:-2 * delay] * 0.15
 arp = lowpass(arp + echo + echo2, 3500)
-arp_gain = 0.2 + 0.8 * smooth_step(t, DATA - 1, DATA + 1)
+arp_gain = 0.2 + 0.8 * smooth_step(t, DATA - 1, DATA + 1) + 0.25 * (1 - smooth_step(t, PROBLEM - 1, PROBLEM))
 arp_gain *= 1 - 0.5 * smooth_step(t, DEMO - 1, DEMO + 1) * (1 - smooth_step(t, LIFT - 0.5, LIFT + 0.5))
 
 # ---- hats: soft filtered-noise ticks on 16ths through the data, science and demo.
@@ -145,7 +148,7 @@ while time < CLOSE:
 hats = hats - lowpass(hats, 6000)
 
 # ---- intro drone: low fifth that holds the tension of the broken wrench.
-drone = (np.sin(2 * np.pi * midi(33) * t) + 0.5 * np.sin(2 * np.pi * midi(40) * t)) * (1 - smooth_step(t, SOLUTION, SOLUTION + 4))
+drone = (np.sin(2 * np.pi * midi(33) * t) + 0.5 * np.sin(2 * np.pi * midi(40) * t)) * smooth_step(t, PROBLEM - 1, PROBLEM + 1) * (1 - smooth_step(t, SOLUTION, SOLUTION + 4))
 
 # ---- master
 out = (0.55 * pad + 0.42 * bass + 0.30 * arp * arp_gain + 0.06 * hats + 0.35 * drone)

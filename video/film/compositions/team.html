@@ -1,0 +1,112 @@
+<template>
+  <style>
+@font-face { font-family: 'Space Grotesk'; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2');
+  font-weight: 300 700; font-display: block; }
+
+#root { position: absolute; inset: 0; overflow: hidden; background: #02040a; color: #e7edf7;
+  font-family: 'Space Grotesk', 'Inter', 'JetBrains Mono', sans-serif; }
+.grp { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.bg { position: absolute; left: -120px; top: -60px; width: 2160px; height: 1215px; object-fit: cover; }
+.kick { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .16em; text-transform: uppercase;
+  color: #7fe3ff; }
+.h0 { font-size: 150px; font-weight: 700; letter-spacing: -.03em; line-height: .95; }
+.h1 { font-size: 96px; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+.h2 { font-size: 64px; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+.h3 { font-size: 44px; font-weight: 600; line-height: 1.15; }
+.body { font-size: 34px; font-weight: 500; color: #c9d6ea; line-height: 1.3; }
+.src { font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #8f9cb2; letter-spacing: .04em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.cyan { color: #7fe3ff; } .orange { color: #ff9a4d; } .green { color: #2fd39b; } .red { color: #ff6b6b; }
+.amber { color: #ffb547; } .muted { color: #8f9cb2; }
+.panel { background: rgba(8, 16, 30, .80); border: 1px solid rgba(127, 227, 255, .28); border-radius: 18px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8), 0 0 40px -14px rgba(127, 227, 255, .35); }
+.shot { display: block; border-radius: 14px; border: 1px solid rgba(127, 227, 255, .25);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); }
+.w { display: inline-block; white-space: pre; }
+.chip { display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 28px; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor;
+  background: rgba(2, 4, 10, .72); }
+.readout { position: absolute; padding: 26px 34px; border-radius: 16px; background: rgba(2, 6, 14, .82);
+  border: 1px solid rgba(127, 227, 255, .3); backdrop-filter: blur(6px); }
+.readout .big { font-size: 84px; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+.readout .lbl { font-family: 'JetBrains Mono', monospace; font-size: 28px; letter-spacing: .12em;
+  text-transform: uppercase; color: #8f9cb2; }
+.vw { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.vw video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+.brk { position: absolute; width: 70px; height: 70px; border-color: rgba(127, 227, 255, .75); border-style: solid; }
+.tag { position: absolute; left: 96px; top: 112px; font-family: 'JetBrains Mono', monospace; font-size: 28px;
+  letter-spacing: .14em; text-transform: uppercase; color: #e7edf7; padding: 8px 16px; border-radius: 8px;
+  background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
+.tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
+  margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+</style>
+  <div id="root" data-composition-id="team" data-width="1920" data-height="1080" data-duration="17.740">
+
+<img id="team-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:0.8" alt="">
+<div id="tm-head" class="abs" style="left:150px;top:118px;display:flex;align-items:center;gap:22px">
+  <div id="tm-logo" style="width:84px;height:84px;border-radius:18px;overflow:hidden;background:#fff"><img src="assets/brand/dreams-of-x-logo.jpeg" style="width:100%;height:100%;object-fit:contain" alt="Dreams of X logo"></div>
+  <div id="tm-title" class="h2">Team <span class="cyan">Dreams of X</span></div></div>
+<div id="tm-three"><div id="tm-s0" class="abs panel" style="left:260px;top:250px;width:400px;padding:12px;text-align:center">
+          <div style="width:376px;height:376px;border-radius:12px;overflow:hidden"><img src="assets/team/mahdin.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="Mahdin Islam Mukim"></div>
+          <div class="h3" style="font-size:34px;margin-top:12px;white-space:nowrap">Mahdin Islam Mukim</div><div class="src" style="color:#7fe3ff">Team Lead</div></div><div id="tm-s1" class="abs panel" style="left:760px;top:250px;width:400px;padding:12px;text-align:center">
+          <div style="width:376px;height:376px;border-radius:12px;overflow:hidden"><img src="assets/team/maliha.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="Maliha Sanjana"></div>
+          <div class="h3" style="font-size:34px;margin-top:12px;white-space:nowrap">Maliha Sanjana</div><div class="src" style="color:#7fe3ff">UI/UX Designer</div></div><div id="tm-s2" class="abs panel" style="left:1260px;top:250px;width:400px;padding:12px;text-align:center">
+          <div style="width:376px;height:376px;border-radius:12px;overflow:hidden"><img src="assets/team/lamisa.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="Lamisa Yeasmin Nakia"></div>
+          <div class="h3" style="font-size:34px;margin-top:12px;white-space:nowrap">Lamisa Yeasmin Nakia</div><div class="src" style="color:#7fe3ff">Research &amp; Storytelling Lead</div></div></div>
+<div id="tm-row"><div id="tm-r0" class="abs panel" style="left:150px;top:140px;width:520px;height:128px;padding:12px;display:flex;gap:18px;align-items:center">
+          <div style="flex:none;width:104px;height:104px;border-radius:10px;overflow:hidden"><img src="assets/team/mahdin.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="Mahdin Islam Mukim"></div>
+          <div><div class="h3" style="font-size:32px;white-space:nowrap">Mahdin Islam Mukim</div><div class="src" style="color:#7fe3ff">Team Lead</div></div></div><div id="tm-r1" class="abs panel" style="left:700px;top:140px;width:520px;height:128px;padding:12px;display:flex;gap:18px;align-items:center">
+          <div style="flex:none;width:104px;height:104px;border-radius:10px;overflow:hidden"><img src="assets/team/maliha.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="Maliha Sanjana"></div>
+          <div><div class="h3" style="font-size:32px;white-space:nowrap">Maliha Sanjana</div><div class="src" style="color:#7fe3ff">UI/UX Designer</div></div></div><div id="tm-r2" class="abs panel" style="left:1250px;top:140px;width:520px;height:128px;padding:12px;display:flex;gap:18px;align-items:center">
+          <div style="flex:none;width:104px;height:104px;border-radius:10px;overflow:hidden"><img src="assets/team/lamisa.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="Lamisa Yeasmin Nakia"></div>
+          <div><div class="h3" style="font-size:32px;white-space:nowrap">Lamisa Yeasmin Nakia</div><div class="src" style="color:#7fe3ff">Research &amp; Storytelling Lead</div></div></div></div>
+<div id="tm-b0" class="abs panel" style="left:150px;top:360px;width:790px;height:330px;padding:16px;display:flex;gap:24px;border-color:#7fe3ff;box-shadow:0 0 50px -10px #7fe3ff">
+          <div style="flex:none;width:298px;height:298px;border-radius:12px;overflow:hidden"><img src="assets/team/yousuf.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="Yousuf Abdullah"></div>
+          <div style="padding-top:10px"><div class="h3" style="font-size:40px">Yousuf Abdullah</div>
+            <div class="src" style="color:#7fe3ff;margin-top:6px">AI/ML Researcher · Data Scientist</div>
+            <div class="body" style="font-size:28px;margin-top:16px">Research and data analysis, the AI models, the dataset and every source paper</div></div></div><div id="tm-b1" class="abs panel" style="left:980px;top:360px;width:790px;height:330px;padding:16px;display:flex;gap:24px;border-color:#ff9a4d;box-shadow:0 0 50px -10px #ff9a4d">
+          <div style="flex:none;width:298px;height:298px;border-radius:12px;overflow:hidden"><img src="assets/team/habibullah.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="Md. Habibullah Sharif"></div>
+          <div style="padding-top:10px"><div class="h3" style="font-size:40px">Md. Habibullah Sharif</div>
+            <div class="src" style="color:#ff9a4d;margin-top:6px">Systems Architect</div>
+            <div class="body" style="font-size:28px;margin-top:16px">Architecture and the whole app: UI/UX, 3D, the simulator engine and the backend</div></div></div>
+
+  </div>
+  <script>
+
+const tl = gsap.timeline({ paused: true });
+const q = (s) => document.querySelector(s);
+const fmtInt = (v) => Math.round(v).toLocaleString('en-US');
+function count(sel, from, to, at, dur, fmt) {
+  const o = { v: from };
+  tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power1.out' }, at);
+  tl.fromTo(o, { v: from }, { v: to, duration: dur, ease: 'power2.out',
+    onUpdate: () => { const el = q(sel); if (el) el.textContent = fmt(o.v); } }, at);
+}
+function words(sel, at, gap) {
+  tl.fromTo(sel + ' .w', { opacity: 0, filter: 'blur(8px)' },
+    { opacity: 1, filter: 'blur(0px)', duration: 0.16, stagger: gap || 0.07, ease: 'power2.out' }, at);
+}
+function land(sel, at, from) {
+  tl.fromTo(sel, Object.assign({ opacity: 0, y: 26, filter: 'blur(6px)' }, from || {}),
+    { opacity: 1, y: 0, x: 0, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, at);
+}
+function out(sel, at) {
+  tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
+}
+
+tl.fromTo('#team-bg', { x: 0 }, { x: -70, duration: 17.740, ease: 'none' }, 0);
+land('#tm-logo', 0.100, { scale: 0.6, y: 0 });
+land('#tm-title', 0.200);
+land('#tm-s0', 1.671, { y: 50 });
+land('#tm-s1', 4.179, { y: 50 });
+land('#tm-s2', 6.036, { y: 50 });
+tl.to('#tm-three', { opacity: 0, y: -40, filter: 'blur(8px)', duration: 0.4, ease: 'power3.in' }, 9.214);
+tl.to('#tm-head', { opacity: 0, duration: 0.3 }, 9.214);
+tl.fromTo('#tm-row .panel', { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'expo.out' }, 9.564);
+land('#tm-b0', 11.013, { y: 60, scale: 0.96 });
+land('#tm-b1', 14.136, { y: 60, scale: 0.96 });
+
+window.__timelines["team"] = tl;
+  </script>
+</template>
