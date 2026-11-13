@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://md8-habibullah.github.io/moon-material-simulator/"><strong>▶ Open the live simulator</strong></a> ·
-  <a href="https://youtu.be/1Gtmq5XUytc">Watch the 4-minute pitch</a> ·
+  <a href="https://youtu.be/Bub3y_H-RUI">Watch the 4-minute pitch</a> ·
   <a href="#documentation">Documentation</a>
 </p>
 
@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <a href="https://youtu.be/1Gtmq5XUytc"><img src="docs/assets/readme/video-thumbnail.jpg" alt="Watch the pitch video: a wrench made of moon-dust plastic breaks under load" width="720" /></a>
+  <a href="https://youtu.be/Bub3y_H-RUI"><img src="docs/assets/readme/video-thumbnail.jpg" alt="Watch the pitch video: what NASA left behind teaches us to build from moon dust" width="720" /></a>
 </p>
 
 ---

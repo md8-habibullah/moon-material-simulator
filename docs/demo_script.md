@@ -1,6 +1,6 @@
 # Demo script
 
-[← Back to README](../README.md) · Pitch video: <https://youtu.be/1Gtmq5XUytc> · Live app:
+[← Back to README](../README.md) · Pitch video: <https://youtu.be/Bub3y_H-RUI> · Live app:
 <https://md8-habibullah.github.io/moon-material-simulator/>
 
 A two-minute walkthrough for NASA Space Apps 2026, challenge **Abandoned but not Forgotten**. Every number below comes

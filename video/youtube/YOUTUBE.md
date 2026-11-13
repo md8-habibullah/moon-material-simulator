@@ -132,15 +132,11 @@ NASA Space Apps, Space Apps 2026, Abandoned but not Forgotten, Moon-Material Sim
 
 ---
 
-## After uploading
+## Published
 
-Swap the old pitch link (`https://youtu.be/1Gtmq5XUytc`, the earlier October video) for the new one in these places:
-
-1. `README.md`, at the top (two links: the text link and the thumbnail)
-2. `docs/demo_script.md`, line 3
-3. `frontend/src/lib/catalog.js`, `VIDEO_URL` (this drives the "Watch the pitch" buttons in the app)
-
-Then put the same link in the Space Apps project page's video field.
+Uploaded 13 November 2026: **https://youtu.be/Bub3y_H-RUI**. The link is in `README.md` (text link and thumbnail),
+`docs/demo_script.md` and `frontend/src/lib/catalog.js` (`VIDEO_URL`, the app's "Watch the pitch" buttons). Put the
+same link in the Space Apps project page's video field.
 
 ## Before you publish, check
 
