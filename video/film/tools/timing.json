@@ -1,32 +1,32 @@
 {
- "total": 238.743,
+ "total": 238.139,
  "starts": {
   "r1": 0.0,
-  "r2": 17.693,
-  "s1": 37.802,
-  "s2": 48.576,
-  "s3": 65.62,
-  "s4": 87.911,
-  "s5": 116.843,
-  "s6a": 152.369,
-  "s6b": 171.224,
-  "s6c": 187.06,
-  "team": 199.924,
-  "s7": 217.664
+  "r2": 18.003,
+  "s1": 38.45,
+  "s2": 50.466,
+  "s3": 67.997,
+  "s4": 89.708,
+  "s5": 117.662,
+  "s6a": 150.187,
+  "s6b": 168.231,
+  "s6c": 184.045,
+  "team": 196.871,
+  "s7": 213.241
  },
  "scenes": {
-  "r1": 17.693,
-  "r2": 20.108,
-  "s1": 10.774,
-  "s2": 17.044,
-  "s3": 22.291,
-  "s4": 28.932,
-  "s5": 35.526,
-  "s6a": 18.854,
-  "s6b": 15.836,
-  "s6c": 12.864,
-  "team": 17.74,
-  "s7": 21.079
+  "r1": 18.003,
+  "r2": 20.447,
+  "s1": 12.016,
+  "s2": 17.531,
+  "s3": 21.711,
+  "s4": 27.954,
+  "s5": 32.525,
+  "s6a": 18.044,
+  "s6b": 15.814,
+  "s6c": 12.826,
+  "team": 16.37,
+  "s7": 24.898
  },
  "voice": {
   "r1": true,
@@ -44,78 +44,102 @@
  },
  "cues": {
   "r1": {
-   "whoosh_cards": 3.989,
-   "pop_72": 10.477,
-   "whoosh_mars": 11.188
+   "whoosh_cards": 4.163,
+   "pop_72": 10.533,
+   "whoosh_mars": 11.146
   },
   "r2": {
-   "pop_ok": 9.653,
-   "whoosh_fender": 11.524000000000001
+   "pop_ok": 10.198,
+   "whoosh_fender": 12.024000000000001
   },
   "s1": {
-   "crack": 1.374,
-   "whoosh_dist": 3.266,
-   "pop_usd": 9.264000000000001
+   "crack": 1.678,
+   "whoosh_dist": 3.585,
+   "pop_usd": 10.407,
+   "gtex_chapter": 0.05
   },
   "s2": {
-   "whoosh_which": 9.798,
-   "pop_cnt": 15.479
+   "whoosh_which": 9.889999999999999,
+   "pop_cnt": 15.889
   },
   "s3": {
-   "whoosh_zoom": 6.458000000000001,
-   "click_hero": 6.308000000000001,
-   "pop_c1": 12.382,
-   "pop_c2": 13.763,
-   "pop_c3": 17.212,
-   "whoosh_print": 18.367
+   "whoosh_zoom": 6.685,
+   "click_hero": 6.534999999999999,
+   "pop_c1": 12.062,
+   "pop_c2": 13.462,
+   "pop_c3": 16.456000000000003,
+   "whoosh_print": 17.544,
+   "gtex_chapter": 0.05
   },
   "s4": {
-   "whoosh_page": 11.647,
-   "whoosh_audit": 17.034,
-   "pop_stamp": 21.422,
-   "pop_zero": 23.02,
-   "pop_181": 25.878,
-   "pop_56": 25.528,
-   "whoosh_out": 28.632
+   "whoosh_page": 11.18,
+   "whoosh_audit": 16.708,
+   "pop_stamp": 20.46,
+   "pop_zero": 22.28,
+   "pop_181": 25.131,
+   "pop_56": 24.781,
+   "whoosh_out": 27.653741,
+   "gtex_chapter": 0.05
   },
   "s5": {
-   "pop_230": 6.541,
-   "whoosh_pipe": 7.8740000000000006,
-   "pop_gp": 9.367,
-   "whoosh_bars": 15.072000000000001,
-   "pop_honest": 24.835,
-   "whoosh_ev": 27.599,
-   "pop_117": 31.044,
-   "pop_119": 34.418
+   "pop_230": 4.703,
+   "whoosh_pipe": 5.880000000000001,
+   "pop_gp": 7.152,
+   "whoosh_bars": 12.395,
+   "pop_honest": 21.864,
+   "whoosh_ev": 24.912,
+   "pop_117": 28.009,
+   "pop_119": 31.067,
+   "gtex_chapter": 0.05
   },
   "s6a": {
-   "crack_habitat": 8.605,
-   "whoosh_noon": 10.227,
-   "whoosh_night": 13.107,
-   "crack_night": 17.094
+   "crack_habitat": 8.088,
+   "whoosh_noon": 9.512,
+   "whoosh_night": 12.456999999999999,
+   "crack_night": 16.124000000000002,
+   "gtex_chapter": 0.05
   },
   "s6b": {
-   "pop_cnt": 3.947,
-   "whoosh_rank": 4.949,
-   "pop_local": 7.394,
-   "impact_held": 11.554,
-   "riser_held": 11.554,
-   "crack_winner": 13.904,
-   "whoosh_out": 15.586
+   "pop_cnt": 4.101,
+   "whoosh_rank": 4.889,
+   "pop_local": 7.285,
+   "impact_held": 11.287,
+   "riser_held": 11.287,
+   "crack_winner": 13.637,
+   "whoosh_out": 15.564
   },
   "s6c": {
-   "pop_stamp": 2.173,
-   "whoosh_kit": 4.74,
-   "pop_kg": 8.697,
-   "pop_usd": 11.703
+   "pop_stamp": 2.194,
+   "whoosh_kit": 4.819,
+   "pop_kg": 8.498,
+   "pop_usd": 11.233
   },
   "team": {
-   "pop_two": 11.213,
-   "pop_hab": 14.336
+   "pop_c0": 4.478,
+   "pop_c1": 6.198,
+   "pop_c2": 7.731,
+   "pop_c3": 9.604,
+   "pop_c4": 10.831,
+   "sparkle_tog": 13.206000000000001,
+   "gtex_chapter": 0.05
   },
   "s7": {
-   "whoosh_base": 5.912,
-   "impact_end": 15.275
+   "glitch_in": 3.8240000000000003,
+   "glitch_c1": 5.274,
+   "glitch_c2": 6.774,
+   "crack_br": 6.274,
+   "bass_br": 6.274,
+   "crack_bk": 7.524,
+   "bass_bk": 7.524,
+   "whoosh_learn": 8.461,
+   "ping_stu": 10.4,
+   "ping_tea": 10.969,
+   "ping_rock": 12.63,
+   "pop_nasa": 13.677,
+   "gtex_mars": 17.509,
+   "impact_end": 19.506,
+   "sparkle_qr": 20.206000000000003,
+   "gtex_chapter": 0.05
   }
  }
 }

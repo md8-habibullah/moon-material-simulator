@@ -2,176 +2,176 @@
 {
 "text": "Ask",
 "start": 0.0,
-"end": 0.29
+"end": 0.25
 },
 {
 "text": "it",
-"start": 0.348,
-"end": 0.406
+"start": 0.296,
+"end": 0.353
 },
 {
 "text": "for",
-"start": 0.453,
-"end": 0.546
+"start": 0.387,
+"end": 0.489
 },
 {
 "text": "a",
-"start": 0.592,
-"end": 0.615
+"start": 0.535,
+"end": 0.569
 },
 {
 "text": "rocket",
-"start": 0.673,
-"end": 0.94
+"start": 0.626,
+"end": 0.911
 },
 {
 "text": "nozzle,",
-"start": 0.987,
-"end": 1.451
+"start": 0.956,
+"end": 1.434
 },
 {
 "text": "and",
-"start": 1.544,
-"end": 1.672
+"start": 1.548,
+"end": 1.684
 },
 {
 "text": "it",
-"start": 1.73,
-"end": 1.788
+"start": 1.741,
+"end": 1.798
 },
 {
 "text": "honestly",
-"start": 1.823,
-"end": 2.183
+"start": 1.844,
+"end": 2.242
 },
 {
 "text": "says",
-"start": 2.241,
-"end": 2.473
+"start": 2.299,
+"end": 2.538
 },
 {
 "text": "no",
-"start": 2.589,
-"end": 2.74
+"start": 2.641,
+"end": 2.812
 },
 {
 "text": "plastic",
-"start": 2.798,
-"end": 3.204
+"start": 2.879,
+"end": 3.267
 },
 {
 "text": "survives.",
-"start": 3.251,
-"end": 3.924
+"start": 3.313,
+"end": 3.995
 },
 {
 "text": "But",
-"start": 4.365,
-"end": 4.505
+"start": 4.436,
+"end": 4.584
 },
 {
 "text": "a",
-"start": 4.54,
-"end": 4.563
+"start": 4.619,
+"end": 4.641
 },
 {
 "text": "kit",
-"start": 4.621,
-"end": 4.807
+"start": 4.709,
+"end": 4.925
 },
 {
 "text": "of",
-"start": 4.853,
-"end": 4.911
+"start": 4.971,
+"end": 5.017
 },
 {
 "text": "25",
-"start": 4.957,
-"end": 5.492
+"start": 5.119,
+"end": 5.609
 },
 {
 "text": "small",
-"start": 5.561,
-"end": 5.817
+"start": 5.676,
+"end": 5.938
 },
 {
 "text": "parts",
-"start": 5.886,
-"end": 6.223
+"start": 6.007,
+"end": 6.291
 },
 {
 "text": "printed",
-"start": 6.293,
-"end": 6.618
+"start": 6.348,
+"end": 6.632
 },
 {
 "text": "on",
-"start": 6.664,
-"end": 6.745
+"start": 6.678,
+"end": 6.758
 },
 {
 "text": "site",
-"start": 6.827,
-"end": 7.314
+"start": 6.826,
+"end": 7.157
 },
 {
 "text": "keeps",
-"start": 7.407,
-"end": 7.663
+"start": 7.202,
+"end": 7.441
 },
 {
 "text": "10",
-"start": 7.697,
-"end": 7.906
+"start": 7.498,
+"end": 7.725
 },
 {
 "text": "kilograms",
-"start": 7.964,
-"end": 8.452
+"start": 7.794,
+"end": 8.295
 },
 {
 "text": "off",
-"start": 8.51,
-"end": 8.661
+"start": 8.34,
+"end": 8.454
 },
 {
 "text": "the",
-"start": 8.696,
-"end": 8.766
+"start": 8.488,
+"end": 8.557
 },
 {
 "text": "launch",
-"start": 8.812,
-"end": 9.067
+"start": 8.59,
+"end": 8.841
 },
 {
 "text": "pad:",
-"start": 9.114,
-"end": 9.555
+"start": 8.886,
+"end": 9.274
 },
 {
 "text": "up",
-"start": 10.066,
-"end": 10.217
+"start": 9.626,
+"end": 9.74
 },
 {
 "text": "to",
-"start": 10.275,
-"end": 10.333
+"start": 9.797,
+"end": 9.854
 },
 {
 "text": "10",
-"start": 10.403,
-"end": 10.577
+"start": 9.933,
+"end": 10.195
 },
 {
 "text": "million",
-"start": 10.635,
-"end": 10.925
+"start": 10.275,
+"end": 10.639
 },
 {
 "text": "dollars.",
-"start": 10.983,
-"end": 12.214
+"start": 10.696,
+"end": 12.176
 }
 ]

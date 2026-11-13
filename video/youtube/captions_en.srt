@@ -1,290 +1,308 @@
 1
-00:00:00,250 --> 00:00:03,799
-On the Moon and on Mars, there are
-machines NASA left behind.
+00:00:00,300 --> 00:00:04,230
+On the Moon and on Mars, there
+are machines NASA left behind.
 
 2
-00:00:04,139 --> 00:00:06,237
+00:00:04,363 --> 00:00:06,432
 A lander from 1967.
 
 3
-00:00:06,276 --> 00:00:08,262
+00:00:06,607 --> 00:00:08,439
 Rovers parked by astronauts.
 
 4
-00:00:08,272 --> 00:00:11,066
+00:00:08,479 --> 00:00:11,172
 A little helicopter that flew 72 times.
 
 5
-00:00:11,338 --> 00:00:14,811
-They're abandoned, but not forgotten: each
-one still tells us
+00:00:11,346 --> 00:00:15,664
+They're abandoned, but not forgotten:
+each one still tells us what those worlds
 
 6
-00:00:14,821 --> 00:00:17,463
-what those worlds do to the things we
-build.
+00:00:15,704 --> 00:00:17,903
+do to the things we build.
 
 7
-00:00:17,943 --> 00:00:22,757
+00:00:18,303 --> 00:00:20,984
 When Apollo 12 landed next to Surveyor 3,
-the crew brought pieces of it home.
 
 8
-00:00:22,819 --> 00:00:26,937
-After 31 months on the Moon, they were
-darkened by dust and sunlight,
+00:00:21,024 --> 00:00:23,140
+the crew brought pieces of it home.
 
 9
-00:00:26,999 --> 00:00:28,956
-but nothing had seriously failed.
+00:00:23,331 --> 00:00:27,781
+After 31 months on the Moon, they
+were darkened by dust and sunlight,
 
 10
-00:00:29,367 --> 00:00:33,606
-Later, Apollo 17's rover lost a fender,
-and the astronauts fixed it
+00:00:27,884 --> 00:00:30,035
+but nothing had seriously failed.
 
 11
-00:00:33,616 --> 00:00:34,924
-with maps and tape.
+00:00:30,227 --> 00:00:34,659
+Later, Apollo 17's rover lost a fender,
+and the astronauts fixed it with maps
 
 12
-00:00:35,172 --> 00:00:37,571
-Up there, there are no spare parts.
+00:00:34,699 --> 00:00:35,519
+and tape.
 
 13
-00:00:38,052 --> 00:00:40,997
-On the Moon, a broken wrench is not a
-small problem.
+00:00:35,710 --> 00:00:38,350
+Up there, there are no spare parts.
 
 14
-00:00:41,268 --> 00:00:45,612
-The next one is 384,000 kilometres away,
-and sending it can cost
+00:00:38,750 --> 00:00:42,110
+On the Moon, a broken wrench
+is not a small problem.
 
 15
-00:00:45,622 --> 00:00:48,346
-up to a million dollars per kilogram.
+00:00:42,285 --> 00:00:48,182
+The next one is 384,000 kilometres away,
+and sending it can cost up to a million
 
 16
-00:00:48,826 --> 00:00:53,448
-In 2026, NASA Glenn grew a plastic inside
-bacteria and mixed it
+00:00:48,222 --> 00:00:50,366
+dollars per kilogram.
 
 17
-00:00:53,458 --> 00:00:57,982
-with simulated Moon and Mars dust: a
-material that could be made on site.
+00:00:50,766 --> 00:00:56,247
+In 2026, NASA Glenn grew a plastic inside
+bacteria and mixed it with simulated
 
 18
-00:00:58,474 --> 00:00:59,590
-But which mix?
+00:00:56,287 --> 00:01:00,315
+Moon and Mars dust: a material
+that could be made on site.
 
 19
-00:00:59,600 --> 00:01:02,487
-How much dust, and is it strong enough for
-a wrench?
+00:01:00,506 --> 00:01:01,632
+But which mix?
 
 20
-00:01:02,805 --> 00:01:05,390
-You can't test every combination on Earth.
+00:01:01,823 --> 00:01:04,964
+How much dust, and is it
+strong enough for a wrench?
 
 21
-00:01:05,870 --> 00:01:08,501
-So, for the Abandoned but not Forgotten
-challenge,
+00:01:05,155 --> 00:01:07,897
+You can't test every combination on Earth.
 
 22
-00:01:08,517 --> 00:01:10,858
-we built the Moon-Material Simulator.
+00:01:08,297 --> 00:01:11,069
+So, for the Abandoned but
+not Forgotten challenge,
 
 23
-00:01:10,978 --> 00:01:15,009
-Pick a binder, a soil, and how the part is
-made. Instantly,
+00:01:11,109 --> 00:01:13,441
+we built the Moon-Material Simulator.
 
 24
-00:01:15,019 --> 00:01:18,945
-a physics model corrected by machine
-learning predicts eight properties,
+00:01:13,632 --> 00:01:16,694
+Pick a binder, a soil,
+and how the part is made.
 
 25
-00:01:18,955 --> 00:01:24,071
-shows how sure it is, and tells you whether
-each number is backed by real lab data.
+00:01:16,885 --> 00:01:21,057
+Instantly, a physics model corrected by
+machine learning predicts eight properties,
 
 26
-00:01:24,237 --> 00:01:27,681
-It runs in any browser, and it's open
-source.
+00:01:21,097 --> 00:01:24,847
+shows how sure it is, and tells you
+whether each number is backed by real lab
 
 27
-00:01:28,161 --> 00:01:33,167
-Our science stands on NASA's own data:
-NASA Glenn's bacterial-plastic reports,
+00:01:24,887 --> 00:01:25,650
+data.
 
 28
-00:01:33,177 --> 00:01:37,636
-NASA Kennedy's regolith-printing studies,
-a 2003 NASA report,
+00:01:25,841 --> 00:01:29,608
+It runs in any browser,
+and it's open source.
 
 29
-00:01:37,646 --> 00:01:39,326
-and peer-reviewed papers.
+00:01:30,008 --> 00:01:34,910
+Our science stands on NASA's own
+data: Glenn's bioplastic reports,
 
 30
-00:01:39,608 --> 00:01:44,457
-We transcribed 1,470 measured values, each
-tied to its page.
+00:01:35,000 --> 00:01:38,881
+Kennedy's regolith-printing
+studies, a 2003 NASA report,
 
 31
-00:01:44,577 --> 00:01:48,915
-Then we built an auditor that finds every
-number again in the original PDF.
+00:01:38,921 --> 00:01:40,814
+and peer-reviewed papers.
 
 32
-00:01:49,035 --> 00:01:50,657
-It never edits data.
+00:01:40,988 --> 00:01:46,046
+We transcribed 1,470 measured
+values, each tied to its page.
 
 33
-00:01:50,881 --> 00:01:56,613
-Zero transcription errors, and 181
-problems inside the papers themselves.
+00:01:46,220 --> 00:01:50,107
+Then we built an auditor that finds
+every number again in the original PDF.
 
 34
-00:01:57,093 --> 00:02:00,363
-Physics alone isn't enough: on real
-samples,
+00:01:50,282 --> 00:01:51,814
+It never edits data.
 
 35
-00:02:00,379 --> 00:02:05,105
-its compressive-strength error averaged
-230 percent. So we kept the
+00:01:51,988 --> 00:01:57,550
+Zero transcription errors, and 181
+problems found in the papers themselves.
 
 36
-00:02:05,115 --> 00:02:10,881
-physics and taught a Gaussian process its
-mistakes, using 152 real measurements.
+00:01:57,962 --> 00:02:03,150
+Physics alone isn't enough: its
+strength error averaged 230 percent.
 
 37
-00:02:11,106 --> 00:02:16,233
-On mixes it never saw, that error drops
-from 230 to 34 percent,
+00:02:03,324 --> 00:02:06,779
+So we kept the physics and taught
+a Gaussian process its mistakes,
 
 38
-00:02:16,307 --> 00:02:22,520
-stiffness from 65 to 19, and density from
-16 to 5. A completely new study
+00:02:06,819 --> 00:02:09,292
+using 152 real measurements.
 
 39
-00:02:22,530 --> 00:02:24,140
-is harder, and we say so.
+00:02:09,467 --> 00:02:14,591
+On mixes it never saw, that error
+drops from 230 to 34 percent,
 
 40
-00:02:24,260 --> 00:02:29,649
-And every prediction links to its
-evidence: we predict 117 megapascals,
+00:02:14,670 --> 00:02:19,170
+stiffness from 65 to 19,
+and density from 16 to 5.
 
 41
-00:02:29,659 --> 00:02:32,139
-and the paper measured 119.
+00:02:19,344 --> 00:02:22,354
+A completely new study
+is harder, and we say so.
 
 42
-00:02:32,619 --> 00:02:37,305
-Back to our wrench: NASA's bioplastic with
-38 percent lunar dust.
+00:02:22,477 --> 00:02:24,556
+And every prediction
+links to its evidence:
 
 43
-00:02:37,449 --> 00:02:42,379
-It breaks at 71 newtons, just short of the
-72 needed to tighten a bolt.
+00:02:24,678 --> 00:02:30,087
+we predict 117 megapascals,
+and the paper measured 119.
 
 44
-00:02:42,696 --> 00:02:45,432
-At lunar noon it softens to a sixth of
-that.
+00:02:30,487 --> 00:02:34,925
+Back to our wrench: NASA's bioplastic
+with 38 percent lunar dust.
 
 45
-00:02:45,576 --> 00:02:48,822
-At lunar night it's almost twice as
-strong, but brittle:
+00:02:35,116 --> 00:02:39,658
+It breaks at 71 newtons, just short
+of the 72 needed to tighten a bolt.
 
 46
-00:02:48,966 --> 00:02:50,993
-it snaps instead of bending.
+00:02:39,849 --> 00:02:42,603
+At lunar noon it softens
+to a sixth of that.
 
 47
-00:02:51,474 --> 00:02:53,165
-So we ask the optimizer.
+00:02:42,794 --> 00:02:44,825
+At lunar night it's
+almost twice as strong,
 
 48
-00:02:53,204 --> 00:02:56,363
-It tests nearly five thousand mixes and
-finds one made
+00:02:44,865 --> 00:02:48,131
+but brittle: it snaps instead of bending.
 
 49
-00:02:56,373 --> 00:03:02,151
-entirely from local resources: 45 percent
-dust and 15 percent basalt fibre.
+00:02:48,531 --> 00:02:50,227
+So we ask the optimizer.
 
 50
-00:03:02,678 --> 00:03:06,830
-Safety factor 1.7, and it bends before it
-breaks.
+00:02:50,402 --> 00:02:55,383
+It tests nearly five thousand mixes and
+finds one made entirely from local resources:
 
 51
-00:03:07,310 --> 00:03:11,404
+00:02:55,516 --> 00:02:59,293
+45 percent dust and 15
+percent basalt fibre.
+
+52
+00:02:59,468 --> 00:03:03,945
+Safety factor 1.7, and it
+bends before it breaks.
+
+53
+00:03:04,345 --> 00:03:08,590
 Ask it for a rocket nozzle, and it
 honestly says no plastic survives.
 
-52
-00:03:11,675 --> 00:03:17,035
-But a kit of 25 small parts printed on site
-keeps 10 kilograms off the launch pad:
-
-53
-00:03:17,376 --> 00:03:19,694
-up to 10 million dollars.
-
 54
-00:03:20,174 --> 00:03:21,621
-We're Dreams of X.
+00:03:08,781 --> 00:03:13,191
+But a kit of 25 small parts printed on
+site keeps 10 kilograms off the launch
 
 55
-00:03:21,695 --> 00:03:24,082
-Mahdin Islam Mukim, team lead.
+00:03:13,231 --> 00:03:16,771
+pad: up to 10 million dollars.
 
 56
-00:03:24,203 --> 00:03:29,168
-Maliha Sanjana, design. Lamisa Yeasmin
-Nakia, research and storytelling.
+00:03:17,171 --> 00:03:21,175
+We're Dreams of X: five friends, one team.
 
 57
-00:03:29,288 --> 00:03:33,916
-And the two who built most of it: Yousuf
-Abdullah, AI and data science,
+00:03:21,349 --> 00:03:26,435
+Mahdin Islam Mukim, Maliha
+Sanjana, Lamisa Yeasmin Nakia,
 
 58
-00:03:33,990 --> 00:03:37,434
-and Habibullah Sharif, the simulator
-itself.
+00:03:26,475 --> 00:03:29,102
+Yousuf Abdullah and Habibullah Sharif.
 
 59
-00:03:37,914 --> 00:03:42,147
-The machines we left behind taught us what
-the Moon does to materials.
+00:03:29,277 --> 00:03:33,141
+We researched, designed,
+built and tested it together.
 
 60
-00:03:42,419 --> 00:03:46,159
-Now our simulator helps engineers choose
-the right mix before
+00:03:33,541 --> 00:03:37,023
+The machines we left behind taught
+us what the Moon does to materials.
 
 61
-00:03:46,169 --> 00:03:50,994
-a single sample is printed, and shows the
-real measurement behind every answer.
+00:03:37,215 --> 00:03:40,794
+Now our simulator helps engineers choose
+the right mix before a single sample
 
 62
-00:03:51,265 --> 00:03:54,663
-The same method works for Mars. Try it
-yourself.
+00:03:40,834 --> 00:03:41,711
+is printed.
+
+63
+00:03:41,902 --> 00:03:44,693
+And it's for learning,
+too: students, teachers,
+
+64
+00:03:44,733 --> 00:03:48,757
+and anyone who loves rockets and space
+can explore NASA's real data and see the
+
+65
+00:03:48,797 --> 00:03:50,709
+measurement behind every answer.
+
+66
+00:03:50,900 --> 00:03:52,807
+The same method works for Mars.
+
+67
+00:03:52,847 --> 00:03:54,189
+Try it yourself.

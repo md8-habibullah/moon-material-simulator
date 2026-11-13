@@ -2,396 +2,381 @@
 {
 "text": "Physics",
 "start": 0.0,
-"end": 0.418
+"end": 0.383
 },
 {
 "text": "alone",
-"start": 0.464,
-"end": 0.964
+"start": 0.427,
+"end": 0.81
 },
 {
 "text": "isn't",
-"start": 1.022,
-"end": 1.312
+"start": 0.876,
+"end": 1.128
 },
 {
 "text": "enough:",
-"start": 1.358,
-"end": 1.834
-},
-{
-"text": "on",
-"start": 2.125,
-"end": 2.276
-},
-{
-"text": "real",
-"start": 2.334,
-"end": 2.519
-},
-{
-"text": "samples,",
-"start": 2.566,
-"end": 3.1
+"start": 1.183,
+"end": 1.687
 },
 {
 "text": "its",
-"start": 3.286,
-"end": 3.448
+"start": 2.111,
+"end": 2.265
 },
 {
-"text": "compressive-strength",
-"start": 3.495,
-"end": 4.389
+"text": "strength",
+"start": 2.308,
+"end": 2.681
 },
 {
 "text": "error",
-"start": 4.447,
-"end": 4.714
+"start": 2.747,
+"end": 2.966
 },
 {
 "text": "averaged",
-"start": 4.795,
-"end": 5.236
+"start": 3.031,
+"end": 3.437
 },
 {
 "text": "230",
-"start": 5.341,
-"end": 6.293
+"start": 3.503,
+"end": 4.225
 },
 {
 "text": "percent.",
-"start": 6.339,
-"end": 6.966
+"start": 4.292,
+"end": 4.938
 },
 {
 "text": "So",
-"start": 7.361,
-"end": 7.488
+"start": 5.362,
+"end": 5.483
 },
 {
 "text": "we",
-"start": 7.535,
-"end": 7.616
+"start": 5.538,
+"end": 5.614
 },
 {
 "text": "kept",
-"start": 7.674,
-"end": 7.872
+"start": 5.68,
+"end": 5.866
 },
 {
 "text": "the",
-"start": 7.906,
-"end": 7.976
+"start": 5.899,
+"end": 5.965
 },
 {
 "text": "physics",
-"start": 8.022,
-"end": 8.452
+"start": 5.998,
+"end": 6.37
 },
 {
 "text": "and",
-"start": 8.499,
-"end": 8.626
+"start": 6.414,
+"end": 6.502
 },
 {
 "text": "taught",
-"start": 8.684,
-"end": 8.916
+"start": 6.545,
+"end": 6.742
 },
 {
 "text": "a",
-"start": 8.963,
-"end": 8.986
+"start": 6.775,
+"end": 6.797
 },
 {
 "text": "Gaussian",
-"start": 9.067,
-"end": 9.451
+"start": 6.852,
+"end": 7.203
 },
 {
 "text": "process",
-"start": 9.532,
-"end": 9.973
+"start": 7.268,
+"end": 7.707
 },
 {
 "text": "its",
-"start": 10.054,
-"end": 10.24
+"start": 7.75,
+"end": 7.859
 },
 {
 "text": "mistakes,",
-"start": 10.298,
-"end": 10.971
+"start": 7.904,
+"end": 8.582
 },
 {
 "text": "using",
-"start": 11.262,
-"end": 11.564
+"start": 8.857,
+"end": 9.097
 },
 {
 "text": "152",
-"start": 11.645,
-"end": 12.597
+"start": 9.174,
+"end": 10.028
 },
 {
 "text": "real",
-"start": 12.701,
-"end": 12.91
+"start": 10.126,
+"end": 10.335
 },
 {
 "text": "measurements.",
-"start": 12.968,
-"end": 13.618
+"start": 10.401,
+"end": 11.08
 },
 {
 "text": "On",
-"start": 14.013,
-"end": 14.175
+"start": 11.505,
+"end": 11.669
 },
 {
 "text": "mixes",
-"start": 14.234,
-"end": 14.686
+"start": 11.724,
+"end": 12.02
 },
 {
 "text": "it",
-"start": 14.744,
-"end": 14.826
+"start": 12.075,
+"end": 12.141
 },
 {
 "text": "never",
-"start": 14.872,
-"end": 15.069
+"start": 12.195,
+"end": 12.403
 },
 {
 "text": "saw,",
-"start": 15.128,
-"end": 15.557
+"start": 12.469,
+"end": 13.027
 },
 {
 "text": "that",
-"start": 15.673,
-"end": 15.847
+"start": 13.225,
+"end": 13.433
 },
 {
 "text": "error",
-"start": 15.905,
-"end": 16.149
+"start": 13.498,
+"end": 13.728
 },
 {
 "text": "drops",
-"start": 16.196,
-"end": 16.439
+"start": 13.772,
+"end": 14.057
 },
 {
 "text": "from",
-"start": 16.486,
-"end": 16.66
+"start": 14.101,
+"end": 14.243
 },
 {
 "text": "230",
-"start": 16.741,
-"end": 17.577
+"start": 14.342,
+"end": 15.097
 },
 {
 "text": "to",
-"start": 17.658,
-"end": 17.809
+"start": 15.175,
+"end": 15.273
 },
 {
 "text": "34",
-"start": 17.914,
-"end": 18.39
+"start": 15.372,
+"end": 15.788
 },
 {
 "text": "percent,",
-"start": 18.436,
-"end": 18.97
+"start": 15.842,
+"end": 16.379
 },
 {
 "text": "stiffness",
-"start": 19.214,
-"end": 19.679
+"start": 16.708,
+"end": 17.135
 },
 {
 "text": "from",
-"start": 19.725,
-"end": 19.876
+"start": 17.168,
+"end": 17.299
 },
 {
 "text": "65",
-"start": 19.957,
-"end": 20.596
+"start": 17.375,
+"end": 17.879
 },
 {
 "text": "to",
-"start": 20.665,
-"end": 20.747
+"start": 17.945,
+"end": 18.0
 },
 {
 "text": "19,",
-"start": 20.828,
-"end": 21.513
+"start": 18.066,
+"end": 18.658
 },
 {
 "text": "and",
-"start": 21.699,
-"end": 21.908
+"start": 18.832,
+"end": 18.975
 },
 {
 "text": "density",
-"start": 22.012,
-"end": 22.453
+"start": 19.041,
+"end": 19.424
 },
 {
 "text": "from",
-"start": 22.5,
-"end": 22.651
+"start": 19.49,
+"end": 19.642
 },
 {
 "text": "16",
-"start": 22.709,
-"end": 23.208
+"start": 19.708,
+"end": 20.234
 },
 {
 "text": "to",
-"start": 23.266,
-"end": 23.359
+"start": 20.3,
+"end": 20.388
 },
 {
 "text": "5.",
-"start": 23.44,
-"end": 23.963
+"start": 20.475,
+"end": 20.958
 },
 {
 "text": "A",
-"start": 24.357,
-"end": 24.427
+"start": 21.382,
+"end": 21.448
 },
 {
 "text": "completely",
-"start": 24.485,
-"end": 24.903
+"start": 21.514,
+"end": 21.974
 },
 {
 "text": "new",
-"start": 24.961,
-"end": 25.077
+"start": 22.04,
+"end": 22.182
 },
 {
 "text": "study",
-"start": 25.124,
-"end": 25.391
+"start": 22.237,
+"end": 22.489
 },
 {
 "text": "is",
-"start": 25.437,
-"end": 25.518
+"start": 22.532,
+"end": 22.598
 },
 {
 "text": "harder,",
-"start": 25.565,
-"end": 25.925
+"start": 22.653,
+"end": 23.069
 },
 {
 "text": "and",
-"start": 25.948,
-"end": 26.111
+"start": 23.201,
+"end": 23.343
 },
 {
 "text": "we",
-"start": 26.169,
-"end": 26.273
+"start": 23.387,
+"end": 23.486
 },
 {
 "text": "say",
-"start": 26.343,
-"end": 26.528
+"start": 23.551,
+"end": 23.705
 },
 {
 "text": "so.",
-"start": 26.575,
-"end": 26.877
+"start": 23.77,
+"end": 24.142
 },
 {
 "text": "And",
-"start": 27.167,
-"end": 27.318
+"start": 24.515,
+"end": 24.668
 },
 {
 "text": "every",
-"start": 27.399,
-"end": 27.701
+"start": 24.712,
+"end": 24.888
 },
 {
 "text": "prediction",
-"start": 27.748,
-"end": 28.189
+"start": 24.931,
+"end": 25.282
 },
 {
 "text": "links",
-"start": 28.258,
-"end": 28.491
+"start": 25.337,
+"end": 25.534
 },
 {
 "text": "to",
-"start": 28.537,
-"end": 28.618
+"start": 25.566,
+"end": 25.621
 },
 {
 "text": "its",
-"start": 28.7,
-"end": 28.827
+"start": 25.676,
+"end": 25.775
 },
 {
 "text": "evidence:",
-"start": 28.885,
-"end": 29.454
+"start": 25.818,
+"end": 26.344
 },
 {
 "text": "we",
-"start": 29.675,
-"end": 29.791
+"start": 26.716,
+"end": 26.837
 },
 {
 "text": "predict",
-"start": 29.849,
-"end": 30.186
+"start": 26.892,
+"end": 27.143
 },
 {
 "text": "117",
-"start": 30.244,
-"end": 31.358
+"start": 27.209,
+"end": 28.031
 },
 {
 "text": "megapascals,",
-"start": 31.44,
-"end": 32.415
+"start": 28.096,
+"end": 28.994
 },
 {
 "text": "and",
-"start": 32.566,
-"end": 32.705
+"start": 29.148,
+"end": 29.279
 },
 {
 "text": "the",
-"start": 32.752,
-"end": 32.821
+"start": 29.324,
+"end": 29.389
 },
 {
 "text": "paper",
-"start": 32.868,
-"end": 33.123
+"start": 29.433,
+"end": 29.718
 },
 {
 "text": "measured",
-"start": 33.17,
-"end": 33.471
+"start": 29.794,
+"end": 30.112
 },
 {
 "text": "119.",
-"start": 33.518,
-"end": 34.876
+"start": 30.167,
+"end": 31.875
 }
 ]

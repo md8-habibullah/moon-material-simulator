@@ -2,256 +2,256 @@
 {
 "text": "Back",
 "start": 0.0,
-"end": 0.267
+"end": 0.193
 },
 {
 "text": "to",
-"start": 0.325,
-"end": 0.383
+"start": 0.239,
+"end": 0.284
 },
 {
 "text": "our",
-"start": 0.464,
-"end": 0.58
+"start": 0.341,
+"end": 0.444
 },
 {
 "text": "wrench:",
-"start": 0.627,
-"end": 1.103
+"start": 0.478,
+"end": 1.002
 },
 {
 "text": "NASA's",
-"start": 1.265,
-"end": 1.649
+"start": 1.355,
+"end": 1.707
 },
 {
 "text": "bioplastic",
-"start": 1.707,
-"end": 2.485
+"start": 1.775,
+"end": 2.436
 },
 {
 "text": "with",
-"start": 2.601,
-"end": 2.786
+"start": 2.481,
+"end": 2.607
 },
 {
 "text": "38",
-"start": 2.833,
-"end": 3.262
+"start": 2.664,
+"end": 3.074
 },
 {
 "text": "percent",
-"start": 3.297,
-"end": 3.646
+"start": 3.096,
+"end": 3.38
 },
 {
 "text": "lunar",
-"start": 3.715,
-"end": 3.994
+"start": 3.426,
+"end": 3.665
 },
 {
 "text": "dust.",
-"start": 4.04,
-"end": 4.516
+"start": 3.722,
+"end": 4.188
 },
 {
 "text": "It",
-"start": 4.83,
-"end": 4.969
+"start": 4.629,
+"end": 4.754
 },
 {
 "text": "breaks",
-"start": 5.004,
-"end": 5.294
+"start": 4.812,
+"end": 5.107
 },
 {
 "text": "at",
-"start": 5.341,
-"end": 5.41
+"start": 5.153,
+"end": 5.221
 },
 {
 "text": "71",
-"start": 5.468,
-"end": 5.933
+"start": 5.301,
+"end": 5.768
 },
 {
 "text": "newtons,",
-"start": 6.049,
-"end": 6.664
+"start": 5.87,
+"end": 6.359
 },
 {
 "text": "just",
-"start": 6.827,
-"end": 7.036
+"start": 6.405,
+"end": 6.587
 },
 {
 "text": "short",
-"start": 7.094,
-"end": 7.349
+"start": 6.621,
+"end": 6.837
 },
 {
 "text": "of",
-"start": 7.396,
-"end": 7.442
+"start": 6.872,
+"end": 6.917
 },
 {
 "text": "the",
-"start": 7.488,
-"end": 7.558
+"start": 6.951,
+"end": 7.02
 },
 {
 "text": "72",
-"start": 7.605,
-"end": 8.15
+"start": 7.088,
+"end": 7.6
 },
 {
 "text": "needed",
-"start": 8.266,
-"end": 8.557
+"start": 7.702,
+"end": 7.941
 },
 {
 "text": "to",
-"start": 8.591,
-"end": 8.649
+"start": 7.975,
+"end": 8.032
 },
 {
 "text": "tighten",
-"start": 8.707,
-"end": 9.009
+"start": 8.101,
+"end": 8.374
 },
 {
 "text": "a",
-"start": 9.044,
-"end": 9.079
+"start": 8.408,
+"end": 8.43
 },
 {
 "text": "bolt.",
-"start": 9.137,
-"end": 9.59
+"start": 8.488,
+"end": 8.921
 },
 {
 "text": "At",
-"start": 10.077,
-"end": 10.217
+"start": 9.362,
+"end": 9.475
 },
 {
 "text": "lunar",
-"start": 10.275,
-"end": 10.565
+"start": 9.532,
+"end": 9.772
 },
 {
 "text": "noon",
-"start": 10.623,
-"end": 10.89
+"start": 9.84,
+"end": 10.113
 },
 {
 "text": "it",
-"start": 10.96,
-"end": 11.053
+"start": 10.17,
+"end": 10.25
 },
 {
 "text": "softens",
-"start": 11.111,
-"end": 11.505
+"start": 10.307,
+"end": 10.693
 },
 {
 "text": "to",
-"start": 11.564,
-"end": 11.622
+"start": 10.739,
+"end": 10.807
 },
 {
 "text": "a",
-"start": 11.691,
-"end": 11.714
+"start": 10.875,
+"end": 10.898
 },
 {
 "text": "sixth",
-"start": 11.784,
-"end": 12.074
+"start": 10.967,
+"end": 11.297
 },
 {
 "text": "of",
-"start": 12.121,
-"end": 12.179
+"start": 11.354,
+"end": 11.422
 },
 {
 "text": "that.",
-"start": 12.237,
-"end": 12.643
+"start": 11.478,
+"end": 11.866
 },
 {
 "text": "At",
-"start": 12.957,
-"end": 13.107
+"start": 12.307,
+"end": 12.421
 },
 {
 "text": "lunar",
-"start": 13.177,
-"end": 13.467
+"start": 12.477,
+"end": 12.717
 },
 {
 "text": "night",
-"start": 13.525,
-"end": 13.758
+"start": 12.774,
+"end": 12.989
 },
 {
 "text": "it's",
-"start": 13.816,
-"end": 13.978
+"start": 13.035,
+"end": 13.172
 },
 {
 "text": "almost",
-"start": 14.001,
-"end": 14.268
+"start": 13.194,
+"end": 13.422
 },
 {
 "text": "twice",
-"start": 14.303,
-"end": 14.617
+"start": 13.456,
+"end": 13.775
 },
 {
 "text": "as",
-"start": 14.652,
-"end": 14.71
+"start": 13.809,
+"end": 13.877
 },
 {
 "text": "strong,",
-"start": 14.756,
-"end": 15.244
+"start": 13.912,
+"end": 14.344
 },
 {
 "text": "but",
-"start": 15.325,
-"end": 15.488
+"start": 14.378,
+"end": 14.515
 },
 {
 "text": "brittle:",
-"start": 15.522,
-"end": 16.033
+"start": 14.572,
+"end": 15.083
 },
 {
 "text": "it",
-"start": 16.347,
-"end": 16.486
+"start": 15.379,
+"end": 15.505
 },
 {
 "text": "snaps",
-"start": 16.544,
-"end": 16.939
+"start": 15.574,
+"end": 15.983
 },
 {
 "text": "instead",
-"start": 16.985,
-"end": 17.299
+"start": 16.028,
+"end": 16.302
 },
 {
 "text": "of",
-"start": 17.334,
-"end": 17.38
+"start": 16.325,
+"end": 16.37
 },
 {
 "text": "bending.",
-"start": 17.438,
-"end": 18.204
+"start": 16.438,
+"end": 17.394
 }
 ]

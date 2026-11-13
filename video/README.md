@@ -2,12 +2,16 @@
 
 [← Back to README](../README.md) · Live app: <https://md8-habibullah.github.io/moon-material-simulator/>
 
-> **Version 2 (13 November 2026), for the challenge "Abandoned but not Forgotten".** The rendered film
-> (`film/renders/moon-material-simulator_v2_abandoned.mp4`, 3:58.7) follows the narration in
-> [`film/tools/vo.json`](film/tools/vo.json): 12 scenes voiced with ElevenLabs (`film/tools/voice_el.py`). It opens
-> with the machines NASA left on the Moon and Mars (Surveyor 3, the Apollo rovers, Ingenuity) and what they taught us
-> about materials, names the challenge, and adds a team scene before the close. The rest of this document is the
-> original v1 script; its verified numbers and evidence rules still apply.
+> **Version 3 (13 November 2026), for the challenge "Abandoned but not Forgotten".** The rendered film
+> (`film/renders/moon-material-simulator_v3_one-team.mp4`, 3:58.1) follows the narration in
+> [`film/tools/vo.json`](film/tools/vo.json): 12 scenes in one young, soft male voice (ElevenLabs "Will",
+> `film/tools/voice_el.py`), fitted to the 240-second limit by `film/tools/fit_voice.py` (pauses over 0.45 s shortened,
+> tempo raised 2 to 6% with pitch kept). It opens with the machines NASA left on the Moon and Mars and what they taught
+> us about materials. The team scene shows all five members equally ("five friends, one team"). The close is a 3D
+> reel of the app (the dust sample, the bracket and brick breaking) and a scroll through the site, for engineers and,
+> just as much, for students, teachers and space fans. Subtitles: `film/tools/srt.py`. Version 2 (two voices, team
+> scene with a "built most of it" line) is replaced. The rest of this document is the original v1 script; its
+> verified numbers and evidence rules still apply.
 
 Team **Dreams of X** · NASA Space Apps Challenge 2026 · script v1, 2026-11-12
 

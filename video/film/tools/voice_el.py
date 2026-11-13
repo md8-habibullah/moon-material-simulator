@@ -25,12 +25,11 @@ OUT = ROOT / "assets" / "voice"
 API = "https://api.elevenlabs.io/v1"
 MODEL = "eleven_multilingual_v2"
 
-GEORGE = "JBFqnCBsd6RMkjVDRZzb"   # warm British storyteller: the story and the demo
-ALICE = "Xb7hH8MSUJpSbSDYk0k2"    # clear British educator: the product, the science, the team
-CAST = {sid: ALICE if sid in {"s3", "s4", "s5", "team"} else GEORGE for sid in ORDER}
-SETTINGS = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.2, "use_speaker_boost": True, "speed": 1.0}
-# Alice reads slower than George, and the film must stay under 240 s: ElevenLabs' own speed control keeps it natural.
-SPEED = {"s3": 1.12, "s4": 1.12, "s5": 1.12, "team": 1.12, "r2": 1.05, "s2": 1.05, "s6a": 1.05}
+WILL = "bIHbv24MWmeRgasZH58o"     # young, soft, relaxed male voice: the whole film, in one voice (v3)
+CAST = {sid: WILL for sid in ORDER}
+SETTINGS = {"stability": 0.55, "similarity_boost": 0.75, "style": 0.1, "use_speaker_boost": True, "speed": 1.0}
+# Per-scene speed (ElevenLabs' own control, 0.7-1.2) keeps the film under 240 s while sounding natural.
+SPEED = {sid: 1.08 for sid in ORDER}
 
 
 def load_key():
@@ -100,7 +99,7 @@ def main():
         words = words_from_alignment(d["alignment"])
         (OUT / f"{sid}.asr.json").write_text(json.dumps(words, indent=0))
         dur = words[-1]["end"] if words else 0
-        print(f"  {sid:5} {CAST[sid] == GEORGE and 'George' or 'Alice':6} {len(words):3} words  {dur:6.2f} s  {len(words) / max(dur, 0.1):.2f} w/s")
+        print(f"  {sid:5} {SPEED.get(sid, 1.0):4.2f}x {len(words):3} words  {dur:6.2f} s  {len(words) / max(dur, 0.1):.2f} w/s")
 
 
 if __name__ == "__main__":

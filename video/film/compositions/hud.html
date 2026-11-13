@@ -48,11 +48,11 @@
   text-transform: uppercase; color: rgba(231,237,247,.75); }
 #root { background: transparent; }
 </style>
-  <div id="root" data-composition-id="hud" data-width="1920" data-height="1080" data-duration="238.743">
+  <div id="root" data-composition-id="hud" data-width="1920" data-height="1080" data-duration="238.139">
 
 <div class="hud-band"></div>
 <div class="hud-top"><span>Dreams of X // Moon-Material Simulator</span><span id="hud-t" class="mono">T+00:00</span></div>
-<div id="hud-c01" class="clip hud-ch" data-start="0.000" data-duration="37.802"><span class="cyan">01</span> · Left behind</div><div id="hud-c02" class="clip hud-ch" data-start="37.802" data-duration="27.818"><span class="cyan">02</span> · The problem</div><div id="hud-c03" class="clip hud-ch" data-start="65.620" data-duration="22.291"><span class="cyan">03</span> · The solution</div><div id="hud-c04" class="clip hud-ch" data-start="87.911" data-duration="28.932"><span class="cyan">04</span> · NASA data</div><div id="hud-c05" class="clip hud-ch" data-start="116.843" data-duration="35.526"><span class="cyan">05</span> · The science</div><div id="hud-c06" class="clip hud-ch" data-start="152.369" data-duration="47.555"><span class="cyan">06</span> · Live demo</div><div id="hud-c07" class="clip hud-ch" data-start="199.924" data-duration="17.740"><span class="cyan">07</span> · The team</div><div id="hud-c08" class="clip hud-ch" data-start="217.664" data-duration="21.079"><span class="cyan">08</span> · Impact</div>
+<div id="hud-c01" class="clip hud-ch" data-start="0.000" data-duration="38.450"><span class="cyan">01</span> · Left behind</div><div id="hud-c02" class="clip hud-ch" data-start="38.450" data-duration="29.547"><span class="cyan">02</span> · The problem</div><div id="hud-c03" class="clip hud-ch" data-start="67.997" data-duration="21.711"><span class="cyan">03</span> · The solution</div><div id="hud-c04" class="clip hud-ch" data-start="89.708" data-duration="27.954"><span class="cyan">04</span> · NASA data</div><div id="hud-c05" class="clip hud-ch" data-start="117.662" data-duration="32.525"><span class="cyan">05</span> · The science</div><div id="hud-c06" class="clip hud-ch" data-start="150.187" data-duration="46.684"><span class="cyan">06</span> · Live demo</div><div id="hud-c07" class="clip hud-ch" data-start="196.871" data-duration="16.370"><span class="cyan">07</span> · The team</div><div id="hud-c08" class="clip hud-ch" data-start="213.241" data-duration="24.898"><span class="cyan">08</span> · Impact</div>
 
   </div>
   <script>
@@ -80,7 +80,7 @@ function out(sel, at) {
 
 
 const clock = { t: 0 };
-tl.fromTo(clock, { t: 0 }, { t: 238.743, duration: 238.743, ease: 'none', onUpdate: () => {
+tl.fromTo(clock, { t: 0 }, { t: 238.139, duration: 238.139, ease: 'none', onUpdate: () => {
   const s = Math.floor(clock.t), el = q('#hud-t');
   if (el) el.textContent = 'T+' + String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); } }, 0);
 

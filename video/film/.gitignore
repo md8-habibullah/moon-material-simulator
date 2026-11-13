@@ -5,3 +5,6 @@ assets/audio/*.wav
 
 # Team photos: personal, kept out of the public repo (they appear in the rendered video only)
 assets/team/
+
+# Untouched ElevenLabs takes; tools/fit_voice.py makes the committed assets/voice/*.wav from them
+assets/voice/raw/

@@ -230,6 +230,11 @@ def stars(sid, dur, opacity=1.0):
 
 # ---------------------------------------------------------------- scenes ----------------------------
 
+TEAM = [("mahdin", "Mahdin Islam Mukim", "Team Lead"), ("maliha", "Maliha Sanjana", "UI/UX Designer"),
+        ("lamisa", "Lamisa Yeasmin Nakia", "Research &amp; Storytelling Lead"),
+        ("yousuf", "Yousuf Abdullah", "AI/ML Researcher · Data Scientist"), ("habibullah", "Md. Habibullah Sharif", "Systems Architect")]
+
+
 def r1():
     """The machines NASA left behind: the app's Stories globe, then three of the machines, then Mars."""
     v, sid = VOICES["r1"], "r1"
@@ -612,7 +617,7 @@ land('#s4-audit .kick', {t_aud:.3f});
 land('#s4-stats', {t_aud + 0.1:.3f});
 land('#s4-card', {t_aud + 0.35:.3f}, {{ scale: 0.94, y: 0 }});
 tl.fromTo('#s4-sweep', {{ y: 0, opacity: 1 }}, {{ y: 500, opacity: 0.2, duration: 1.8, ease: 'power1.inOut' }}, {t_aud + 0.7:.3f});
-tl.fromTo('#s4-stamp', {{ opacity: 0, scale: 1.8, rotation: -4 }}, {{ opacity: 1, scale: 1, rotation: -4, duration: 0.3, ease: 'expo.out' }}, {t_never:.3f});
+tl.fromTo('#s4-stamp', {{ opacity: 0, scale: 1.8, rotation: -4 }}, {{ opacity: 1, scale: 1, rotation: -4, duration: 0.3, ease: 'expo.out' }}, {t_never - 0.35:.3f});
 land('#s4-tiles .kick', {t_zero - 0.1:.3f});
 land('#s4-t0', {t_zero - 0.05:.3f}, {{ scale: 0.8, y: 0 }});
 land('#s4-t1', {t_181 - 0.15:.3f}, {{ x: 40, y: 0 }});
@@ -620,7 +625,7 @@ count('#s4-p', 0, 181, {t_181 - 0.1:.3f}, 1.2, fmtInt);
 land('#s4-t2', {t_181 + 0.6:.3f}, {{ x: 40, y: 0 }});
 tl.to('#s4-tiles', {{ x: -160, filter: 'blur(14px)', opacity: 0, duration: 0.25, ease: 'power3.in' }}, {D - 0.25:.3f});
 """
-    cues = {"whoosh_page": t_trans - 0.1, "whoosh_audit": t_aud - 0.1, "pop_stamp": t_never + 0.05, "pop_zero": t_zero,
+    cues = {"whoosh_page": t_trans - 0.1, "whoosh_audit": t_aud - 0.1, "pop_stamp": t_never - 0.3, "pop_zero": t_zero,
             "pop_181": t_181 + 1.0, "pop_56": t_181 + 0.65, "whoosh_out": D - 0.3}
     return scene_file(sid, D, "", body, js), cues
 
@@ -842,115 +847,162 @@ tl.fromTo('#s6c-flood', {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, ease: 'p
 
 
 def team():
-    """Team Dreams of X: three members first, then the two who built most of it, larger and last."""
+    """Team Dreams of X: five equal cards, one per member, and the work they did together."""
     v, sid = VOICES["team"], "team"
     D = v.scene
-    t_dox, t_mah, t_mal, t_lam = v.at("We're Dreams of X"), v.at("Mahdin"), v.at("Maliha"), v.at("Lamisa")
-    t_two, t_you, t_hab = v.at("And the two"), v.at("Yousuf"), v.at("Habibullah")
+    t_dox, t_five = v.at("We're Dreams of X"), v.at("five friends")
+    t_names = [v.at(n) for n in ("Mahdin", "Maliha", "Lamisa", "Yousuf", "Habibullah")]
+    t_we = v.at("We researched")
     bg, bgjs = stars(sid, D, 0.8)
-    three = [("mahdin", "Mahdin Islam Mukim", "Team Lead"), ("maliha", "Maliha Sanjana", "UI/UX Designer"),
-             ("lamisa", "Lamisa Yeasmin Nakia", "Research &amp; Storytelling Lead")]
-    three_html = ""
-    for i, (img, name, role) in enumerate(three):
-        three_html += f'''<div id="tm-s{i}" class="abs panel" style="left:{260 + i * 500}px;top:250px;width:400px;padding:12px;text-align:center">
-          <div style="width:376px;height:376px;border-radius:12px;overflow:hidden"><img src="assets/team/{img}.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="{name}"></div>
-          <div class="h3" style="font-size:34px;margin-top:12px;white-space:nowrap">{name}</div><div class="src" style="color:#7fe3ff">{role}</div></div>'''
-    two = [("yousuf", "Yousuf Abdullah", "AI/ML Researcher · Data Scientist", "Research and data analysis, the AI models, the dataset and every source paper", "#7fe3ff"),
-           ("habibullah", "Md. Habibullah Sharif", "Systems Architect", "Architecture and the whole app: UI/UX, 3D, the simulator engine and the backend", "#ff9a4d")]
-    two_html = ""
-    for i, (img, name, role, did, col) in enumerate(two):
-        two_html += f'''<div id="tm-b{i}" class="abs panel" style="left:{150 + i * 830}px;top:360px;width:790px;height:330px;padding:16px;display:flex;gap:24px;border-color:{col};box-shadow:0 0 50px -10px {col}">
-          <div style="flex:none;width:298px;height:298px;border-radius:12px;overflow:hidden"><img src="assets/team/{img}.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="{name}"></div>
-          <div style="padding-top:10px"><div class="h3" style="font-size:40px">{name}</div>
-            <div class="src" style="color:{col};margin-top:6px">{role}</div>
-            <div class="body" style="font-size:28px;margin-top:16px">{did}</div></div></div>'''
-    row_html = "".join(f'''<div id="tm-r{i}" class="abs panel" style="left:{150 + i * 550}px;top:140px;width:520px;height:128px;padding:12px;display:flex;gap:18px;align-items:center">
-          <div style="flex:none;width:104px;height:104px;border-radius:10px;overflow:hidden"><img src="assets/team/{img}.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="{name}"></div>
-          <div><div class="h3" style="font-size:32px;white-space:nowrap">{name}</div><div class="src" style="color:#7fe3ff">{role}</div></div></div>'''
-                       for i, (img, name, role) in enumerate(three))
+    cards_html = ""
+    for i, (img, name, role) in enumerate(TEAM):
+        cards_html += f'''<div id="tm-c{i}" class="abs panel" style="left:{122 + i * 340}px;top:290px;width:316px;padding:12px;text-align:center">
+          <div style="width:292px;height:292px;border-radius:12px;overflow:hidden"><img src="assets/team/{img}.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%" alt="{name}"></div>
+          <div class="h3" style="font-size:29px;line-height:1.15;margin-top:14px;height:68px;display:flex;align-items:center;justify-content:center">{name}</div>
+          <div class="src" style="color:#7fe3ff;line-height:1.35;margin-top:6px;height:84px">{role}</div></div>'''
+    verbs = ["Researched", "Designed", "Built", "Tested"]
+    verbs_html = "".join(f'<div class="chip tm-v" style="font-size:28px">{w}</div>' for w in verbs)
     body = f"""
 {bg}
-<div id="tm-head" class="abs" style="left:150px;top:118px;display:flex;align-items:center;gap:22px">
+<div id="tm-head" class="abs" style="left:122px;top:110px;display:flex;align-items:center;gap:22px">
   <div id="tm-logo" style="width:84px;height:84px;border-radius:18px;overflow:hidden;background:#fff"><img src="assets/brand/dreams-of-x-logo.jpeg" style="width:100%;height:100%;object-fit:contain" alt="Dreams of X logo"></div>
-  <div id="tm-title" class="h2">Team <span class="cyan">Dreams of X</span></div></div>
-<div id="tm-three">{three_html}</div>
-<div id="tm-row">{row_html}</div>
-{two_html}
+  <div><div id="tm-title" class="h2">Team <span class="cyan">Dreams of X</span></div>
+  <div id="tm-sub" class="body" style="margin-top:4px">Five friends, <span class="orange">one team.</span></div></div></div>
+{cards_html}
+<div id="tm-verbs" class="abs" style="left:122px;top:840px;width:1676px;display:flex;gap:18px;align-items:center;justify-content:center">
+  {verbs_html}<div id="tm-tog" class="h3" style="font-size:34px;margin-left:8px">together.</div></div>
 """
     js = f"""{bgjs}
 land('#tm-logo', {max(0.1, t_dox - 0.2):.3f}, {{ scale: 0.6, y: 0 }});
 land('#tm-title', {max(0.2, t_dox - 0.1):.3f});
-land('#tm-s0', {t_mah - 0.15:.3f}, {{ y: 50 }});
-land('#tm-s1', {t_mal - 0.15:.3f}, {{ y: 50 }});
-land('#tm-s2', {t_lam - 0.15:.3f}, {{ y: 50 }});
-tl.to('#tm-three', {{ opacity: 0, y: -40, filter: 'blur(8px)', duration: 0.4, ease: 'power3.in' }}, {t_two - 0.2:.3f});
-tl.to('#tm-head', {{ opacity: 0, duration: 0.3 }}, {t_two - 0.2:.3f});
-tl.fromTo('#tm-row .panel', {{ opacity: 0, y: -30 }}, {{ opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'expo.out' }}, {t_two + 0.15:.3f});
-land('#tm-b0', {t_you - 0.2:.3f}, {{ y: 60, scale: 0.96 }});
-land('#tm-b1', {t_hab - 0.2:.3f}, {{ y: 60, scale: 0.96 }});
+land('#tm-sub', {t_five - 0.1:.3f});
+""" + "".join(f"land('#tm-c{i}', {t - 0.15:.3f}, {{ y: 50 }});\n" for i, t in enumerate(t_names)) + f"""
+tl.fromTo('#tm-verbs .tm-v', {{ opacity: 0, y: 24, scale: 0.9 }}, {{ opacity: 1, y: 0, scale: 1, duration: 0.4, stagger: 0.16, ease: 'back.out(1.7)' }}, {t_we - 0.05:.3f});
+land('#tm-tog', {t_we + 0.75:.3f});
 """
-    cues = {"pop_two": t_you, "pop_hab": t_hab}
+    cues = {f"pop_c{i}": t for i, t in enumerate(t_names)}
+    cues["sparkle_tog"] = t_we + 0.8
     return scene_file(sid, D, "", body, js), cues
 
 
 def s7():
+    """Close: what the simulator is for. Engineers get a fast 3D test reel, learners a tour of the site, then Mars and the end card."""
     v, sid = VOICES["s7"], "s7"
     D = v.scene
-    t_eng, t_mars, t_try = v.at("helps engineers"), v.at("works for Mars"), v.at("Try it yourself")
+    t_now, t_learn, t_mars, t_try = v.at("Now our simulator"), v.at("And it's for"), v.at("The same method"), v.at("Try it yourself")
+    t_stu, t_tea, t_rock = v.at("students"), v.at("teachers"), v.at("rockets")
+    t_nasa, t_meas = v.at("explore NASA's"), v.at("measurement")
     bg, bgjs = stars(sid, D)
-    team = [("Mahdin Islam Mukim", "Team Lead"), ("Maliha Sanjana", "UI/UX Designer"), ("Lamisa Yeasmin Nakia", "Research &amp; Storytelling Lead"),
-            ("Yousuf Abdullah", "AI/ML Researcher · Data Scientist"), ("Md. Habibullah Sharif", "Systems Architect")]
-    team_html = "".join(f'<div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">{n}</div>'
-                        f'<div class="src" style="color:#7fe3ff">{r}</div></div>' for n, r in team)
-    end_at = t_try - 0.6
+    end_at = t_try - 0.35
+    # The 3D reel: three shots, hard cuts with a flash. Breaks: bracket and brick both snap 6.25 s into their clips.
+    b0 = t_now - 0.15
+    b1 = b0 + 1.45
+    b2 = b1 + 1.5
+    b3 = t_learn - 0.1
+    brk1, brk2 = b1 + 1.0, b2 + 0.75
+    shots = [("s7-r0", "assets/clips/c02_sample_orbit.mp4", b0, b1, 0.5, "3D dust sample"),
+             ("s7-r1", "assets/clips/c11_bracket.mp4", b1, b2, 6.25 - 1.0, "Shelf bracket test"),
+             ("s7-r2", "assets/clips/c12_brick.mp4", b2, b3, 6.25 - 0.75, "Brick crush test")]
+    reel = ""
+    for cid, src, s0, s1, ms, label in shots:
+        reel += (f"""
+    <div id="{cid}-card" class="abs" style="opacity:0;left:0;top:0;width:1200px;height:675px;border-radius:18px;overflow:hidden;border:1px solid rgba(127,227,255,.45);box-shadow:0 30px 90px -20px rgba(0,0,0,.9),0 0 60px -12px rgba(127,227,255,.5)">
+      {video(cid + '-v', src, s0, s1 - s0, ms)}
+      <div class="abs chip cyan" style="left:24px;bottom:24px;font-size:28px;background:rgba(5,12,24,.85)">{label}</div></div>""")
+    rate = min(1.4, 11.4 / max(t_mars - 0.15 - (t_learn - 0.1), 1.0))
+    t_end_c = t_mars - 0.15
     body = f"""
 {bg}
 <div id="s7-moonwrap" class="abs" style="left:880px;top:40px;width:1000px;height:1000px;-webkit-mask-image:radial-gradient(circle closest-side, #000 98.5%, transparent 100%);mask-image:radial-gradient(circle closest-side, #000 98.5%, transparent 100%)">
-<video id="s7-moon" class="clip" src="assets/clips/moon_spin.mp4" muted playsinline data-start="0" data-duration="{end_at:.3f}" data-media-start="0" style="width:1000px;height:1000px"></video></div>
-{clip('s7-a', 0.0, t_eng - 0.05, '''
+<video id="s7-moon" class="clip" src="assets/clips/moon_spin.mp4" muted playsinline data-start="0" data-duration="{t_now:.3f}" data-media-start="0" style="width:1000px;height:1000px"></video></div>
+{clip('s7-a', 0.0, b0, """
   <div class="abs" style="left:192px;top:330px;width:760px">
     <div id="s7-l1" class="h1">The machines we <span class="cyan">left behind</span></div>
-    <div id="s7-l2" class="h1" style="margin-top:6px">teach us how to <span class="orange">build next.</span></div></div>''')}
+    <div id="s7-l2" class="h1" style="margin-top:6px">teach us how to <span class="orange">build next.</span></div></div>""")}
 <div id="s7-in" class="clip abs" data-start="0" data-duration="0.6" style="left:0;top:0;width:1920px;height:1080px;background:#000"></div>
-{clip('s7-b', t_eng - 0.1, end_at - t_eng + 0.1, '''
-  <div id="s7-base" class="abs" style="left:192px;top:200px;width:880px;height:495px;border-radius:16px;overflow:hidden;border:1px solid rgba(127,227,255,.3)">
-    <img src="assets/nasa/moon-base-artists-concept.jpg" style="width:100%;height:100%;object-fit:cover" alt="NASA artist's concept of a Moon base"></div>
-  <div class="abs src" style="left:192px;top:705px">Concept: NASA</div>
-  <div id="s7-mars" class="abs panel" style="left:192px;top:760px;width:880px;padding:20px 26px">
-    <div class="h3" style="font-size:36px">Same method works for <span class="orange">Mars</span>.</div></div>''')}
-{clip('s7-end', end_at, D - end_at, f'''
-  <div class="abs" style="left:192px;top:150px;width:980px">
+<div class="abs" style="left:360px;top:240px;width:1200px;height:675px;perspective:1700px">{reel}</div>
+{clip('s7-reel', b0, b3 - b0, f"""
+  <div id="s7-rk" class="abs" style="left:150px;top:86px"><div class="kick">For engineers</div>
+    <div class="h3" style="font-size:40px;margin-top:6px">Break it in 3D <span class="orange">before you print it.</span></div></div>
+  <div id="s7-fl" class="abs" style="left:0;top:0;width:1920px;height:1080px;background:radial-gradient(circle at 50% 55%, rgba(220,250,255,.9), rgba(127,227,255,.35) 45%, transparent 75%);opacity:0"></div>""")}
+<div class="abs" style="left:110px;top:150px;width:1120px;height:676px;perspective:1800px">
+    <div id="s7-br" class="abs panel" style="opacity:0;left:0;top:0;width:1120px;height:676px;padding:0;overflow:hidden;border-color:rgba(127,227,255,.5);box-shadow:0 30px 90px -20px rgba(0,0,0,.9),0 0 70px -14px rgba(127,227,255,.45)">
+      <div style="height:46px;display:flex;align-items:center;gap:10px;padding:0 18px;background:rgba(14,26,44,.95);border-bottom:1px solid rgba(127,227,255,.25)">
+        <span style="width:13px;height:13px;border-radius:50%;background:#ff6b6b"></span><span style="width:13px;height:13px;border-radius:50%;background:#ffc861"></span><span style="width:13px;height:13px;border-radius:50%;background:#62d68b"></span>
+        <span class="mono" data-layout-ignore style="margin-left:16px;font-size:19px;color:#cfe0ff">md8-habibullah.github.io/moon-material-simulator</span></div>
+      <div style="position:relative;width:1120px;height:630px;overflow:hidden">
+        {video('s7-scroll', 'assets/clips/c30_scroll.mp4', b3, t_end_c - b3, 0.0, rate, 'width:1120px;height:630px')}</div></div></div>
+{clip('s7-learn', b3, t_end_c - b3, f"""
+  <div class="abs" style="left:1290px;top:170px;width:540px">
+    <div id="s7-lk" class="kick">Made for learning</div>
+    <div id="s7-lh" class="h2" style="font-size:54px;margin-top:8px">Curious about <span class="cyan">space?</span></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:30px">
+      <div id="s7-who0" class="chip cyan" style="font-size:30px">Students</div>
+      <div id="s7-who1" class="chip cyan" style="font-size:30px">Teachers</div>
+      <div id="s7-who2" class="chip orange" style="font-size:30px">Rocket &amp; space fans</div></div>
+    <div id="s7-l3" class="body" style="margin-top:34px">Explore <span class="cyan">NASA's real data</span>,</div>
+    <div id="s7-l4" class="body" style="margin-top:6px">and the measurement behind every answer.</div></div>""")}
+{video('s7-mv', 'assets/clips/c20_stories_mars.mp4', t_end_c, end_at - t_end_c, 1.5)}
+{clip('s7-mars', t_end_c, end_at - t_end_c, f"""
+  <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(90deg, rgba(3,7,15,.92) 0%, rgba(3,7,15,.55) 45%, transparent 75%)"></div>
+  <div id="s7-mt" class="abs" style="left:192px;top:420px;width:900px"><div class="kick">Next stop</div>
+    <div class="h1" style="margin-top:8px">Same method works for <span class="orange">Mars.</span></div></div>""")}
+{clip('s7-end', end_at, D - end_at, f"""
+  <div class="abs" style="left:192px;top:130px;width:980px">
     <div id="s7-logo" style="width:120px;height:120px;border-radius:22px;overflow:hidden;background:#fff;margin-bottom:28px">
       <img src="assets/brand/dreams-of-x-logo.jpeg" style="width:100%;height:100%;object-fit:contain" alt="Dreams of X"></div>
     <div class="h1" style="font-size:88px">Moon-Material<br>Simulator</div>
+    <div id="s7-aud" class="body" style="margin-top:14px;font-size:30px">For engineers, students, teachers and <span class="orange">anyone who loves space.</span></div>
     <div class="body" style="margin-top:18px">Try it yourself:</div>
     <div class="h3 cyan mono" style="font-size:30px;margin-top:8px;white-space:nowrap">md8-habibullah.github.io/moon-material-simulator</div>
     <div class="src" style="margin-top:14px">github.com/md8-habibullah/moon-material-simulator</div>
-    <div style="display:flex;gap:26px;align-items:center;margin-top:30px">
-      <img id="s7-qr" src="assets/brand/qr_live_app.png" style="width:190px;height:190px;border-radius:12px" alt="QR code to the live app">
+    <div style="display:flex;gap:26px;align-items:center;margin-top:26px">
+      <img id="s7-qr" src="assets/brand/qr_live_app.png" style="width:180px;height:180px;border-radius:12px" alt="QR code to the live app">
       <div class="src" data-layout-ignore style="width:620px;font-size:21px;line-height:1.5">Images: NASA (Glenn, LRO / SVS).<br>Data: NASA NTRS reports and peer-reviewed studies (CC BY 4.0).<br>Open source.</div></div></div>
   <div class="abs" style="left:1220px;top:200px">
-    <div class="kick" style="margin-bottom:26px">Team Dreams of X</div>{team_html}</div>''')}
+    <div class="kick" style="margin-bottom:26px">Team Dreams of X</div>{"".join(f'<div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">{n}</div><div class="src" style="color:#7fe3ff">{r}</div></div>' for _, n, r in TEAM)}</div>""")}
 """
     js = f"""{bgjs}
 tl.fromTo('#s7-in', {{ opacity: 1 }}, {{ opacity: 0, duration: 0.5, ease: 'power2.out' }}, 0);
 tl.fromTo('#s7-moonwrap', {{ scale: 0.92, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 1.4, ease: 'expo.out' }}, 0);
-tl.to('#s7-moonwrap', {{ x: 200, opacity: 0, duration: 0.5, ease: 'power3.in' }}, {end_at - 0.5:.3f});
+tl.to('#s7-moonwrap', {{ x: 200, opacity: 0, duration: 0.45, ease: 'power3.in' }}, {b0 - 0.45:.3f});
+tl.to('#s7-a', {{ opacity: 0, x: -60, duration: 0.4, ease: 'power3.in' }}, {b0 - 0.4:.3f});
 land('#s7-l1', 0.4);
 land('#s7-l2', 1.1);
-land('#s7-base', {t_eng:.3f}, {{ x: -60, y: 0 }});
-land('#s7-b .src', {t_eng + 0.5:.3f});
-land('#s7-mars', {min(t_mars - 0.1, t_eng + 3.0):.3f});
+land('#s7-rk', {b0 + 0.05:.3f}, {{ x: -40, y: 0 }});
+tl.fromTo('#s7-r0-card', {{ rotationY: -32, rotationX: 10, scale: 0.86 }}, {{ rotationY: -8, rotationX: 4, scale: 1, duration: {b1 - b0:.3f}, ease: 'power2.out' }}, {b0:.3f});
+tl.fromTo('#s7-r1-card', {{ rotationY: 26, rotationX: -6, scale: 0.9 }}, {{ rotationY: 8, rotationX: 0, scale: 1, duration: {brk1 - b1:.3f}, ease: 'power2.out' }}, {b1:.3f});
+tl.to('#s7-r1-card', {{ scale: 1.14, duration: {b2 - brk1:.3f}, ease: 'expo.out' }}, {brk1:.3f});
+tl.fromTo('#s7-r2-card', {{ rotationX: 22, rotationY: -14, scale: 0.9 }}, {{ rotationX: 4, rotationY: 0, scale: 1, duration: {brk2 - b2:.3f}, ease: 'power2.out' }}, {b2:.3f});
+tl.to('#s7-r2-card', {{ scale: 1.12, duration: {b3 - brk2:.3f}, ease: 'expo.out' }}, {brk2:.3f});
+""" + "".join(f"tl.set('#s7-fl', {{ opacity: 0.75 }}, {t:.3f});\ntl.to('#s7-fl', {{ opacity: 0, duration: 0.22, ease: 'power2.out' }}, {t + 0.001:.3f});\n" for t in (b1, b2, brk1, brk2)) + \
+        "".join(f"tl.set('#{c}-card', {{ opacity: 1 }}, {s0:.3f});\ntl.set('#{c}-card', {{ opacity: 0 }}, {s1:.3f});\n" for c, _, s0, s1, _, _ in shots) + "".join(
+        f"tl.fromTo('#{c}', {{ x: -14 }}, {{ x: 0, duration: 0.3, ease: 'elastic.out(1.2, 0.3)' }}, {t:.3f});\n" for c, t in (("s7-r1-card", brk1), ("s7-r2-card", brk2))) + f"""
+tl.fromTo('#s7-br', {{ rotationY: 22, rotationX: 6, opacity: 0, x: -80 }}, {{ rotationY: 7, rotationX: 2, opacity: 1, x: 0, duration: 0.7, ease: 'expo.out' }}, {b3:.3f});
+tl.to('#s7-br', {{ rotationY: 2, duration: {t_end_c - b3 - 0.7:.3f}, ease: 'none' }}, {b3 + 0.7:.3f});
+land('#s7-lk', {b3 + 0.15:.3f});
+land('#s7-lh', {b3 + 0.35:.3f});
+""" + "".join(f"tl.fromTo('#s7-who{i}', {{ opacity: 0, x: 50, scale: 0.85 }}, {{ opacity: 1, x: 0, scale: 1, duration: 0.4, ease: 'back.out(1.8)' }}, {t - 0.1:.3f});\n"
+                for i, t in enumerate((t_stu, t_tea, t_rock))) + f"""
+land('#s7-l3', {t_nasa - 0.1:.3f});
+land('#s7-l4', {t_meas - 0.1:.3f});
+tl.set('#s7-br', {{ opacity: 0 }}, {t_end_c:.3f});
+land('#s7-mt', {t_end_c + 0.1:.3f}, {{ x: -50, y: 0 }});
 land('#s7-logo', {end_at + 0.1:.3f}, {{ scale: 0.6, y: 0 }});
 tl.fromTo('#s7-end .h1', {{ opacity: 0, filter: 'blur(10px)' }}, {{ opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }}, {end_at + 0.25:.3f});
+land('#s7-aud', {end_at + 0.45:.3f});
 tl.fromTo('#s7-end .s7-m', {{ opacity: 0, x: 40 }}, {{ opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: 'expo.out' }}, {end_at + 0.3:.3f});
-land('#s7-end .body', {t_try - 0.1:.3f});
+land('#s7-end .body:not(#s7-aud)', {t_try - 0.1:.3f});
 land('#s7-end .h3.cyan', {t_try + 0.1:.3f});
 land('#s7-end .src', {t_try + 0.4:.3f});
 land('#s7-qr', {t_try + 0.6:.3f}, {{ scale: 0.7, y: 0 }});
 """
-    cues = {"whoosh_base": t_eng - 0.1, "impact_end": end_at + 0.25}
-    return scene_file(sid, D, "", body, js), cues
+    cues = {"glitch_in": b0, "glitch_c1": b1, "glitch_c2": b2, "crack_br": brk1, "bass_br": brk1, "crack_bk": brk2, "bass_bk": brk2,
+            "whoosh_learn": b3 - 0.1, "ping_stu": t_stu, "ping_tea": t_tea, "ping_rock": t_rock, "pop_nasa": t_nasa,
+            "gtex_mars": t_end_c, "impact_end": end_at + 0.25, "sparkle_qr": t_try + 0.6}
+    css = ("#s7-r0-v, #s7-r1-v, #s7-r2-v { width: 1200px; height: 675px; }\n"
+           "#s7-scroll { width: 1120px; height: 630px; }\n")
+    return scene_file(sid, D, css, body, js), cues
 
 
 BUILDERS = {"r1": r1, "r2": r2, "team": team, "s1": s1, "s2": s2, "s3": s3, "s4": s4, "s5": s5, "s6a": s6a, "s6b": s6b, "s6c": s6c, "s7": s7}
@@ -1051,10 +1103,12 @@ def sound_tags(all_cues):
     takes = {}
     for f in sorted(sfx_dir.glob("*.mp3")) + sorted(sfx_dir.glob("*.wav")):
         takes.setdefault(f.stem.split("_")[0], []).append(f)
-    gains = {"crack": 0.75, "whoosh": 0.22, "pop": 0.2, "impact": 0.6, "click": 0.25, "riser": 0.3}
+    gains = {"crack": 0.75, "whoosh": 0.22, "pop": 0.2, "impact": 0.6, "click": 0.25, "riser": 0.3,
+             "glitch": 0.32, "gtex": 0.22, "ping": 0.22, "bass": 0.5, "sparkle": 0.25}
     # Where each file hits (seconds into it); the hit lands one frame after its picture.
     peaks = {"crack_a": 0.55, "crack_b": 1.95, "impact_a": 2.06, "pop_a": 0.12, "pop_b": 0.33,
-             "whoosh_a": 0.16, "whoosh_b": 0.29, "riser_a": 9.95}
+             "whoosh_a": 0.16, "whoosh_b": 0.29, "riser_a": 9.95,
+             "glitch_a": 0.48, "gtex_a": 0.293, "ping_a": 0.323, "bass_a": 0.052, "sparkle_a": 0.025}
     used = {}
     n = 0
     for sid, cues in all_cues.items():
@@ -1082,6 +1136,9 @@ def main():
         html, cues = BUILDERS[sid]()
         (comp / f"{sid}.html").write_text(html)
         all_cues[sid] = cues
+    # A low digital glitch as each chapter label changes (not on the first frame of the film).
+    for sid, _, _ in CHAPTERS[1:]:
+        all_cues[sid]["gtex_chapter"] = 0.05
     (comp / "hud.html").write_text(hud())
     cap = captions()
     if cap:

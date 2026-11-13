@@ -33,3 +33,7 @@ All files are distributed under the [Pixabay Content License](https://pixabay.co
 - Redistribution as part of derivative works (such as videos rendered with HyperFrames)
 
 without any attribution requirement.
+
+## Added for v3 (from the HyperFrames media-use library, also Pixabay Content License)
+
+- `glitch_a.mp3` (glitch-1), `gtex_a.mp3` (glitch-3), `ping_a.mp3` (ping), `bass_a.mp3` (impact-bass-1), `sparkle_a.mp3` (sparkle)

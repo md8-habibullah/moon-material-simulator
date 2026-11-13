@@ -87,3 +87,12 @@ python3 tools/build.py                          # pick up the new music length
 npx hyperframes check
 npx hyperframes render --workers 2 -o renders/moon-material-simulator_240s.mp4
 ```
+
+## v3 (13 November 2026): one team, one voice, a 3D close
+
+- Render: `renders/moon-material-simulator_v3_one-team.mp4`, 238.17 s, 1920×1080 at 30 fps, -17.9 LUFS integrated, -1.1 dBTP peak.
+- Voice: one young, soft male voice (ElevenLabs "Will") for all 12 scenes; `tools/fit_voice.py` shortens pauses over 0.45 s and raises tempo 2 to 6% (Rubber Band, pitch kept) to fit 240 s.
+- Team scene: five equal cards, "Five friends, one team", "Researched · Designed · Built · Tested · together". No line about who did more.
+- Close: "For engineers" 3D reel (dust sample, bracket snap, brick shatter, tilted cards, flash cuts, glitch + crack + bass hits), then "Made for learning" with a scroll through the live site and Students / Teachers / Rocket & space fans tags, then Mars and the end card ("For engineers, students, teachers and anyone who loves space").
+- Sound: added glitch, low glitch on every chapter change, ping, bass and sparkle (Pixabay licence, `assets/sfx/CREDITS.md`).
+- Check: 0 errors; remaining warnings are the counter-proxy tweens (as in v2) and one reel label measured while its card scales in.

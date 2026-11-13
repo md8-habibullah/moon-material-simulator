@@ -41,9 +41,9 @@
 .tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
   margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
 </style>
-  <div id="root" data-composition-id="r2" data-width="1920" data-height="1080" data-duration="20.108">
+  <div id="root" data-composition-id="r2" data-width="1920" data-height="1080" data-duration="20.447">
 
-<div id="r2-a" class="clip grp" data-start="0.000" data-duration="11.674" style="">
+<div id="r2-a" class="clip grp" data-start="0.000" data-duration="12.174" style="">
   <div id="r2-ph" class="abs" style="left:0;top:0;width:1920px;height:1080px;overflow:hidden">
     <img id="r2-img" src="assets/relics/surveyor3.jpg" style="position:absolute;left:640px;top:-200px;width:1280px;height:1280px;object-fit:cover" alt="Apollo 12 astronaut beside Surveyor 3"></div>
   <div class="abs" style="left:0;top:0;width:1100px;height:1080px;background:linear-gradient(90deg,rgba(2,4,10,.96) 55%,rgba(2,4,10,0))"></div>
@@ -54,7 +54,7 @@
     <div id="r2-ok" class="abs chip green" style="left:0;top:500px;font-size:32px">No serious failures</div>
     <div id="r2-src" class="abs src" style="left:0;top:580px">NASA SP-284 · 1972</div></div>
   <div class="abs src" style="right:96px;top:840px;background:rgba(2,4,10,.75);padding:4px 12px;border-radius:8px">Photo: NASA, AS12-48-7134</div></div>
-<div id="r2-b" class="clip grp" data-start="11.624" data-duration="5.855" style="">
+<div id="r2-b" class="clip grp" data-start="12.124" data-duration="5.533" style="">
   <div id="r2-fp" class="abs panel" style="left:960px;top:150px;width:780px;height:780px;overflow:hidden;padding:0">
     <img id="r2-fimg" src="assets/relics/apollo17-fender.jpg" style="width:100%;height:100%;object-fit:cover" alt="Apollo 17 rover fender rebuilt from maps and clamps">
     <div id="r2-ring" class="abs" style="left:150px;top:300px;width:330px;height:300px;border:4px solid #ff9a4d;border-radius:50%;box-shadow:0 0 30px rgba(255,154,77,.8)"></div></div>
@@ -66,7 +66,7 @@
       <span class="chip orange" style="margin:0 12px 14px 0">Tape</span>
       <span class="chip orange" style="margin:0 12px 14px 0">Clamps</span></div></div>
   <div class="abs src" style="left:960px;top:112px">Photo: NASA, AS17-137-20979</div></div>
-<div id="r2-c" class="clip grp" data-start="17.429" data-duration="2.679" style="">
+<div id="r2-c" class="clip grp" data-start="17.607" data-duration="2.840" style="">
   <div class="abs" style="left:0;top:330px;width:1920px;text-align:center">
     <div class="kick muted">Up there</div>
     <div id="r2-none" class="h0" style="margin-top:20px">There are <span class="orange">no spare parts.</span></div></div></div>
@@ -98,21 +98,21 @@ function out(sel, at) {
 
 
 tl.fromTo('#r2-in', { opacity: 1 }, { opacity: 0, duration: 0.35, ease: 'power2.out' }, 0);
-tl.fromTo('#r2-img', { scale: 1.0, x: 0 }, { scale: 1.12, x: -60, duration: 11.724, ease: 'none' }, 0);
+tl.fromTo('#r2-img', { scale: 1.0, x: 0 }, { scale: 1.12, x: -60, duration: 12.224, ease: 'none' }, 0);
 land('#r2-a .kick', 0.2);
 words('#r2-a .h2', 0.4, 0.1);
-land('#r2-m', 4.976);
-count('#r2-n', 0, 31, 5.076, 1.0, fmtInt);
-tl.fromTo('#r2-ok', { opacity: 0, scale: 1.6, rotation: -3 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.3, ease: 'expo.out' }, 9.553);
-land('#r2-src', 9.953);
-land('#r2-fp', 11.674, { x: 80, y: 0 });
-tl.fromTo('#r2-fimg', { scale: 1.15 }, { scale: 1.0, duration: 5.805, ease: 'power1.out' }, 11.724);
-land('#r2-b .kick', 11.724);
-words('#r2-b .h2', 11.924, 0.08);
-tl.fromTo('#r2-ring', { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'expo.out' }, 15.982);
-tl.fromTo('#r2-chips .chip', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.18, ease: 'expo.out' }, 16.182);
-land('#r2-c .kick', 17.529);
-tl.fromTo('#r2-none', { opacity: 0, scale: 1.08, filter: 'blur(10px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }, 17.629);
+land('#r2-m', 5.128);
+count('#r2-n', 0, 31, 5.228, 1.0, fmtInt);
+tl.fromTo('#r2-ok', { opacity: 0, scale: 1.6, rotation: -3 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.3, ease: 'expo.out' }, 10.098);
+land('#r2-src', 10.498);
+land('#r2-fp', 12.174, { x: 80, y: 0 });
+tl.fromTo('#r2-fimg', { scale: 1.15 }, { scale: 1.0, duration: 5.483, ease: 'power1.out' }, 12.224);
+land('#r2-b .kick', 12.224);
+words('#r2-b .h2', 12.424, 0.08);
+tl.fromTo('#r2-ring', { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'expo.out' }, 16.177);
+tl.fromTo('#r2-chips .chip', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.18, ease: 'expo.out' }, 16.377);
+land('#r2-c .kick', 17.707);
+tl.fromTo('#r2-none', { opacity: 0, scale: 1.08, filter: 'blur(10px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }, 17.807);
 
 window.__timelines["r2"] = tl;
   </script>

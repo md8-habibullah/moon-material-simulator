@@ -2,32 +2,32 @@
 {
 "text": "Our",
 "start": 0.0,
-"end": 0.209
+"end": 0.241
 },
 {
 "text": "science",
-"start": 0.255,
-"end": 0.592
+"start": 0.307,
+"end": 0.646
 },
 {
 "text": "stands",
-"start": 0.615,
-"end": 0.917
+"start": 0.679,
+"end": 1.008
 },
 {
 "text": "on",
-"start": 0.964,
-"end": 1.057
+"start": 1.062,
+"end": 1.15
 },
 {
 "text": "NASA's",
-"start": 1.115,
-"end": 1.509
+"start": 1.216,
+"end": 1.588
 },
 {
 "text": "own",
-"start": 1.614,
-"end": 1.846
+"start": 1.654,
+"end": 1.862
 },
 {
 "text": "data:",
@@ -35,268 +35,263 @@
 "end": 2.508
 },
 {
-"text": "NASA",
-"start": 2.694,
-"end": 2.984
-},
-{
 "text": "Glenn's",
-"start": 3.03,
-"end": 3.309
+"start": 2.933,
+"end": 3.273
 },
 {
-"text": "bacterial-plastic",
-"start": 3.355,
-"end": 4.261
+"text": "bioplastic",
+"start": 3.338,
+"end": 3.962
 },
 {
 "text": "reports,",
-"start": 4.307,
-"end": 4.911
-},
-{
-"text": "NASA",
-"start": 5.016,
-"end": 5.283
+"start": 4.017,
+"end": 4.652
 },
 {
 "text": "Kennedy's",
-"start": 5.329,
-"end": 5.782
+"start": 4.992,
+"end": 5.43
 },
 {
 "text": "regolith-printing",
-"start": 5.921,
-"end": 6.745
+"start": 5.495,
+"end": 6.295
 },
 {
 "text": "studies,",
-"start": 6.803,
-"end": 7.372
+"start": 6.35,
+"end": 6.92
 },
 {
 "text": "a",
-"start": 7.512,
-"end": 7.57
+"start": 7.073,
+"end": 7.139
 },
 {
 "text": "2003",
-"start": 7.651,
-"end": 8.429
+"start": 7.215,
+"end": 7.916
 },
 {
 "text": "NASA",
-"start": 8.545,
-"end": 8.835
+"start": 7.982,
+"end": 8.277
 },
 {
 "text": "report,",
-"start": 8.882,
-"end": 9.334
+"start": 8.322,
+"end": 8.814
 },
 {
 "text": "and",
-"start": 9.485,
-"end": 9.636
+"start": 8.913,
+"end": 9.121
 },
 {
 "text": "peer-reviewed",
-"start": 9.718,
-"end": 10.298
+"start": 9.198,
+"end": 9.866
 },
 {
 "text": "papers.",
-"start": 10.344,
-"end": 10.995
+"start": 9.921,
+"end": 10.556
 },
 {
 "text": "We",
-"start": 11.447,
-"end": 11.575
+"start": 10.98,
+"end": 11.111
 },
 {
 "text": "transcribed",
-"start": 11.622,
-"end": 12.19
+"start": 11.155,
+"end": 11.768
 },
 {
 "text": "1,470",
-"start": 12.26,
-"end": 13.56
+"start": 11.823,
+"end": 13.181
 },
 {
 "text": "measured",
-"start": 13.665,
-"end": 13.99
+"start": 13.28,
+"end": 13.597
 },
 {
 "text": "values,",
-"start": 14.036,
-"end": 14.57
+"start": 13.63,
+"end": 14.2
 },
 {
 "text": "each",
-"start": 14.756,
-"end": 14.965
+"start": 14.353,
+"end": 14.561
 },
 {
 "text": "tied",
-"start": 15.011,
-"end": 15.267
+"start": 14.627,
+"end": 14.911
 },
 {
 "text": "to",
-"start": 15.302,
-"end": 15.36
+"start": 14.944,
+"end": 14.999
 },
 {
 "text": "its",
-"start": 15.429,
-"end": 15.557
+"start": 15.065,
+"end": 15.175
 },
 {
 "text": "page.",
-"start": 15.604,
-"end": 16.126
+"start": 15.218,
+"end": 15.788
 },
 {
 "text": "Then",
-"start": 16.416,
-"end": 16.637
+"start": 16.212,
+"end": 16.366
 },
 {
 "text": "we",
-"start": 16.695,
-"end": 16.788
+"start": 16.399,
+"end": 16.464
 },
 {
 "text": "built",
-"start": 16.834,
-"end": 17.032
+"start": 16.508,
+"end": 16.694
 },
 {
 "text": "an",
-"start": 17.078,
-"end": 17.148
+"start": 16.739,
+"end": 16.793
 },
 {
 "text": "auditor",
-"start": 17.206,
-"end": 17.612
+"start": 16.848,
+"end": 17.188
 },
 {
 "text": "that",
-"start": 17.67,
-"end": 17.798
+"start": 17.231,
+"end": 17.341
 },
 {
 "text": "finds",
-"start": 17.844,
-"end": 18.1
+"start": 17.385,
+"end": 17.604
 },
 {
 "text": "every",
-"start": 18.181,
-"end": 18.483
+"start": 17.67,
+"end": 17.943
 },
 {
 "text": "number",
-"start": 18.541,
-"end": 18.796
+"start": 17.998,
+"end": 18.239
 },
 {
 "text": "again",
-"start": 18.843,
-"end": 19.11
+"start": 18.293,
+"end": 18.524
 },
 {
 "text": "in",
-"start": 19.179,
-"end": 19.272
+"start": 18.568,
+"end": 18.611
 },
 {
 "text": "the",
-"start": 19.307,
-"end": 19.377
+"start": 18.644,
+"end": 18.709
 },
 {
 "text": "original",
-"start": 19.423,
-"end": 19.806
+"start": 18.754,
+"end": 19.093
 },
 {
 "text": "PDF.",
-"start": 19.864,
-"end": 20.584
+"start": 19.158,
+"end": 19.849
 },
 {
 "text": "It",
-"start": 20.874,
-"end": 21.002
+"start": 20.274,
+"end": 20.394
 },
 {
 "text": "never",
-"start": 21.072,
-"end": 21.316
+"start": 20.46,
+"end": 20.679
 },
 {
 "text": "edits",
-"start": 21.397,
-"end": 21.757
+"start": 20.744,
+"end": 21.008
 },
 {
 "text": "data.",
-"start": 21.815,
-"end": 22.326
+"start": 21.062,
+"end": 21.556
 },
 {
 "text": "Zero",
-"start": 22.72,
-"end": 23.046
+"start": 21.98,
+"end": 22.287
 },
 {
 "text": "transcription",
-"start": 23.104,
-"end": 23.731
+"start": 22.352,
+"end": 22.933
 },
 {
 "text": "errors,",
-"start": 23.8,
-"end": 24.253
+"start": 22.988,
+"end": 23.458
 },
 {
 "text": "and",
-"start": 24.369,
-"end": 24.508
+"start": 23.611,
+"end": 23.754
 },
 {
 "text": "181",
-"start": 24.578,
-"end": 25.484
+"start": 23.831,
+"end": 24.564
 },
 {
 "text": "problems",
-"start": 25.588,
-"end": 26.006
+"start": 24.642,
+"end": 25.058
 },
 {
-"text": "inside",
-"start": 26.053,
-"end": 26.424
+"text": "found",
+"start": 25.112,
+"end": 25.298
+},
+{
+"text": "in",
+"start": 25.331,
+"end": 25.375
 },
 {
 "text": "the",
-"start": 26.459,
-"end": 26.529
+"start": 25.408,
+"end": 25.474
 },
 {
 "text": "papers",
-"start": 26.587,
-"end": 26.935
+"start": 25.507,
+"end": 25.813
 },
 {
 "text": "themselves.",
-"start": 26.981,
-"end": 28.282
+"start": 25.846,
+"end": 27.292
 }
 ]

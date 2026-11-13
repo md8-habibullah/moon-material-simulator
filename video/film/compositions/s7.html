@@ -40,33 +40,66 @@
   background: rgba(2, 4, 10, .7); border: 1px solid rgba(127, 227, 255, .35); }
 .tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
   margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
+#s7-r0-v, #s7-r1-v, #s7-r2-v { width: 1200px; height: 675px; }
+#s7-scroll { width: 1120px; height: 630px; }
 </style>
-  <div id="root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="21.079">
+  <div id="root" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="24.898">
 
 <img id="s7-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:1.0" alt="">
 <div id="s7-moonwrap" class="abs" style="left:880px;top:40px;width:1000px;height:1000px;-webkit-mask-image:radial-gradient(circle closest-side, #000 98.5%, transparent 100%);mask-image:radial-gradient(circle closest-side, #000 98.5%, transparent 100%)">
-<video id="s7-moon" class="clip" src="assets/clips/moon_spin.mp4" muted playsinline data-start="0" data-duration="15.025" data-media-start="0" style="width:1000px;height:1000px"></video></div>
-<div id="s7-a" class="clip grp" data-start="0.000" data-duration="5.962" style="">
+<video id="s7-moon" class="clip" src="assets/clips/moon_spin.mp4" muted playsinline data-start="0" data-duration="3.974" data-media-start="0" style="width:1000px;height:1000px"></video></div>
+<div id="s7-a" class="clip grp" data-start="0.000" data-duration="3.824" style="">
   <div class="abs" style="left:192px;top:330px;width:760px">
     <div id="s7-l1" class="h1">The machines we <span class="cyan">left behind</span></div>
     <div id="s7-l2" class="h1" style="margin-top:6px">teach us how to <span class="orange">build next.</span></div></div></div>
 <div id="s7-in" class="clip abs" data-start="0" data-duration="0.6" style="left:0;top:0;width:1920px;height:1080px;background:#000"></div>
-<div id="s7-b" class="clip grp" data-start="5.912" data-duration="9.113" style="">
-  <div id="s7-base" class="abs" style="left:192px;top:200px;width:880px;height:495px;border-radius:16px;overflow:hidden;border:1px solid rgba(127,227,255,.3)">
-    <img src="assets/nasa/moon-base-artists-concept.jpg" style="width:100%;height:100%;object-fit:cover" alt="NASA artist's concept of a Moon base"></div>
-  <div class="abs src" style="left:192px;top:705px">Concept: NASA</div>
-  <div id="s7-mars" class="abs panel" style="left:192px;top:760px;width:880px;padding:20px 26px">
-    <div class="h3" style="font-size:36px">Same method works for <span class="orange">Mars</span>.</div></div></div>
-<div id="s7-end" class="clip grp" data-start="15.025" data-duration="6.054" style="">
-  <div class="abs" style="left:192px;top:150px;width:980px">
+<div class="abs" style="left:360px;top:240px;width:1200px;height:675px;perspective:1700px">
+    <div id="s7-r0-card" class="abs" style="opacity:0;left:0;top:0;width:1200px;height:675px;border-radius:18px;overflow:hidden;border:1px solid rgba(127,227,255,.45);box-shadow:0 30px 90px -20px rgba(0,0,0,.9),0 0 60px -12px rgba(127,227,255,.5)">
+      <div id="s7-r0-v-wrap" class="vw" style=""><video id="s7-r0-v" class="clip" src="assets/clips/c02_sample_orbit.mp4" muted playsinline data-start="3.824" data-duration="1.450" data-media-start="0.500"></video></div>
+      <div class="abs chip cyan" style="left:24px;bottom:24px;font-size:28px;background:rgba(5,12,24,.85)">3D dust sample</div></div>
+    <div id="s7-r1-card" class="abs" style="opacity:0;left:0;top:0;width:1200px;height:675px;border-radius:18px;overflow:hidden;border:1px solid rgba(127,227,255,.45);box-shadow:0 30px 90px -20px rgba(0,0,0,.9),0 0 60px -12px rgba(127,227,255,.5)">
+      <div id="s7-r1-v-wrap" class="vw" style=""><video id="s7-r1-v" class="clip" src="assets/clips/c11_bracket.mp4" muted playsinline data-start="5.274" data-duration="1.500" data-media-start="5.250"></video></div>
+      <div class="abs chip cyan" style="left:24px;bottom:24px;font-size:28px;background:rgba(5,12,24,.85)">Shelf bracket test</div></div>
+    <div id="s7-r2-card" class="abs" style="opacity:0;left:0;top:0;width:1200px;height:675px;border-radius:18px;overflow:hidden;border:1px solid rgba(127,227,255,.45);box-shadow:0 30px 90px -20px rgba(0,0,0,.9),0 0 60px -12px rgba(127,227,255,.5)">
+      <div id="s7-r2-v-wrap" class="vw" style=""><video id="s7-r2-v" class="clip" src="assets/clips/c12_brick.mp4" muted playsinline data-start="6.774" data-duration="1.787" data-media-start="5.500"></video></div>
+      <div class="abs chip cyan" style="left:24px;bottom:24px;font-size:28px;background:rgba(5,12,24,.85)">Brick crush test</div></div></div>
+<div id="s7-reel" class="clip grp" data-start="3.824" data-duration="4.737" style="">
+  <div id="s7-rk" class="abs" style="left:150px;top:86px"><div class="kick">For engineers</div>
+    <div class="h3" style="font-size:40px;margin-top:6px">Break it in 3D <span class="orange">before you print it.</span></div></div>
+  <div id="s7-fl" class="abs" style="left:0;top:0;width:1920px;height:1080px;background:radial-gradient(circle at 50% 55%, rgba(220,250,255,.9), rgba(127,227,255,.35) 45%, transparent 75%);opacity:0"></div></div>
+<div class="abs" style="left:110px;top:150px;width:1120px;height:676px;perspective:1800px">
+    <div id="s7-br" class="abs panel" style="opacity:0;left:0;top:0;width:1120px;height:676px;padding:0;overflow:hidden;border-color:rgba(127,227,255,.5);box-shadow:0 30px 90px -20px rgba(0,0,0,.9),0 0 70px -14px rgba(127,227,255,.45)">
+      <div style="height:46px;display:flex;align-items:center;gap:10px;padding:0 18px;background:rgba(14,26,44,.95);border-bottom:1px solid rgba(127,227,255,.25)">
+        <span style="width:13px;height:13px;border-radius:50%;background:#ff6b6b"></span><span style="width:13px;height:13px;border-radius:50%;background:#ffc861"></span><span style="width:13px;height:13px;border-radius:50%;background:#62d68b"></span>
+        <span class="mono" data-layout-ignore style="margin-left:16px;font-size:19px;color:#cfe0ff">md8-habibullah.github.io/moon-material-simulator</span></div>
+      <div style="position:relative;width:1120px;height:630px;overflow:hidden">
+        <div id="s7-scroll-wrap" class="vw" style="width:1120px;height:630px"><video id="s7-scroll" class="clip" src="assets/clips/c30_scroll.mp4" muted playsinline data-start="8.561" data-duration="8.948" data-media-start="0.000" data-playback-rate="1.274"></video></div></div></div></div>
+<div id="s7-learn" class="clip grp" data-start="8.561" data-duration="8.948" style="">
+  <div class="abs" style="left:1290px;top:170px;width:540px">
+    <div id="s7-lk" class="kick">Made for learning</div>
+    <div id="s7-lh" class="h2" style="font-size:54px;margin-top:8px">Curious about <span class="cyan">space?</span></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:30px">
+      <div id="s7-who0" class="chip cyan" style="font-size:30px">Students</div>
+      <div id="s7-who1" class="chip cyan" style="font-size:30px">Teachers</div>
+      <div id="s7-who2" class="chip orange" style="font-size:30px">Rocket &amp; space fans</div></div>
+    <div id="s7-l3" class="body" style="margin-top:34px">Explore <span class="cyan">NASA's real data</span>,</div>
+    <div id="s7-l4" class="body" style="margin-top:6px">and the measurement behind every answer.</div></div></div>
+<div id="s7-mv-wrap" class="vw" style=""><video id="s7-mv" class="clip" src="assets/clips/c20_stories_mars.mp4" muted playsinline data-start="17.509" data-duration="1.747" data-media-start="1.500"></video></div>
+<div id="s7-mars" class="clip grp" data-start="17.509" data-duration="1.747" style="">
+  <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(90deg, rgba(3,7,15,.92) 0%, rgba(3,7,15,.55) 45%, transparent 75%)"></div>
+  <div id="s7-mt" class="abs" style="left:192px;top:420px;width:900px"><div class="kick">Next stop</div>
+    <div class="h1" style="margin-top:8px">Same method works for <span class="orange">Mars.</span></div></div></div>
+<div id="s7-end" class="clip grp" data-start="19.256" data-duration="5.642" style="">
+  <div class="abs" style="left:192px;top:130px;width:980px">
     <div id="s7-logo" style="width:120px;height:120px;border-radius:22px;overflow:hidden;background:#fff;margin-bottom:28px">
       <img src="assets/brand/dreams-of-x-logo.jpeg" style="width:100%;height:100%;object-fit:contain" alt="Dreams of X"></div>
     <div class="h1" style="font-size:88px">Moon-Material<br>Simulator</div>
+    <div id="s7-aud" class="body" style="margin-top:14px;font-size:30px">For engineers, students, teachers and <span class="orange">anyone who loves space.</span></div>
     <div class="body" style="margin-top:18px">Try it yourself:</div>
     <div class="h3 cyan mono" style="font-size:30px;margin-top:8px;white-space:nowrap">md8-habibullah.github.io/moon-material-simulator</div>
     <div class="src" style="margin-top:14px">github.com/md8-habibullah/moon-material-simulator</div>
-    <div style="display:flex;gap:26px;align-items:center;margin-top:30px">
-      <img id="s7-qr" src="assets/brand/qr_live_app.png" style="width:190px;height:190px;border-radius:12px" alt="QR code to the live app">
+    <div style="display:flex;gap:26px;align-items:center;margin-top:26px">
+      <img id="s7-qr" src="assets/brand/qr_live_app.png" style="width:180px;height:180px;border-radius:12px" alt="QR code to the live app">
       <div class="src" data-layout-ignore style="width:620px;font-size:21px;line-height:1.5">Images: NASA (Glenn, LRO / SVS).<br>Data: NASA NTRS reports and peer-reviewed studies (CC BY 4.0).<br>Open source.</div></div></div>
   <div class="abs" style="left:1220px;top:200px">
     <div class="kick" style="margin-bottom:26px">Team Dreams of X</div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Mahdin Islam Mukim</div><div class="src" style="color:#7fe3ff">Team Lead</div></div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Maliha Sanjana</div><div class="src" style="color:#7fe3ff">UI/UX Designer</div></div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Lamisa Yeasmin Nakia</div><div class="src" style="color:#7fe3ff">Research &amp; Storytelling Lead</div></div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Yousuf Abdullah</div><div class="src" style="color:#7fe3ff">AI/ML Researcher · Data Scientist</div></div><div class="s7-m" style="margin-bottom:22px"><div class="h3" style="font-size:38px">Md. Habibullah Sharif</div><div class="src" style="color:#7fe3ff">Systems Architect</div></div></div></div>
@@ -95,22 +128,56 @@ function out(sel, at) {
   tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
 }
 
-tl.fromTo('#s7-bg', { x: 0 }, { x: -70, duration: 21.079, ease: 'none' }, 0);
+tl.fromTo('#s7-bg', { x: 0 }, { x: -70, duration: 24.898, ease: 'none' }, 0);
 tl.fromTo('#s7-in', { opacity: 1 }, { opacity: 0, duration: 0.5, ease: 'power2.out' }, 0);
 tl.fromTo('#s7-moonwrap', { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4, ease: 'expo.out' }, 0);
-tl.to('#s7-moonwrap', { x: 200, opacity: 0, duration: 0.5, ease: 'power3.in' }, 14.525);
+tl.to('#s7-moonwrap', { x: 200, opacity: 0, duration: 0.45, ease: 'power3.in' }, 3.374);
+tl.to('#s7-a', { opacity: 0, x: -60, duration: 0.4, ease: 'power3.in' }, 3.424);
 land('#s7-l1', 0.4);
 land('#s7-l2', 1.1);
-land('#s7-base', 6.012, { x: -60, y: 0 });
-land('#s7-b .src', 6.512);
-land('#s7-mars', 9.012);
-land('#s7-logo', 15.125, { scale: 0.6, y: 0 });
-tl.fromTo('#s7-end .h1', { opacity: 0, filter: 'blur(10px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }, 15.275);
-tl.fromTo('#s7-end .s7-m', { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: 'expo.out' }, 15.325);
-land('#s7-end .body', 15.525);
-land('#s7-end .h3.cyan', 15.725);
-land('#s7-end .src', 16.025);
-land('#s7-qr', 16.225, { scale: 0.7, y: 0 });
+land('#s7-rk', 3.874, { x: -40, y: 0 });
+tl.fromTo('#s7-r0-card', { rotationY: -32, rotationX: 10, scale: 0.86 }, { rotationY: -8, rotationX: 4, scale: 1, duration: 1.450, ease: 'power2.out' }, 3.824);
+tl.fromTo('#s7-r1-card', { rotationY: 26, rotationX: -6, scale: 0.9 }, { rotationY: 8, rotationX: 0, scale: 1, duration: 1.000, ease: 'power2.out' }, 5.274);
+tl.to('#s7-r1-card', { scale: 1.14, duration: 0.500, ease: 'expo.out' }, 6.274);
+tl.fromTo('#s7-r2-card', { rotationX: 22, rotationY: -14, scale: 0.9 }, { rotationX: 4, rotationY: 0, scale: 1, duration: 0.750, ease: 'power2.out' }, 6.774);
+tl.to('#s7-r2-card', { scale: 1.12, duration: 1.037, ease: 'expo.out' }, 7.524);
+tl.set('#s7-fl', { opacity: 0.75 }, 5.274);
+tl.to('#s7-fl', { opacity: 0, duration: 0.22, ease: 'power2.out' }, 5.275);
+tl.set('#s7-fl', { opacity: 0.75 }, 6.774);
+tl.to('#s7-fl', { opacity: 0, duration: 0.22, ease: 'power2.out' }, 6.775);
+tl.set('#s7-fl', { opacity: 0.75 }, 6.274);
+tl.to('#s7-fl', { opacity: 0, duration: 0.22, ease: 'power2.out' }, 6.275);
+tl.set('#s7-fl', { opacity: 0.75 }, 7.524);
+tl.to('#s7-fl', { opacity: 0, duration: 0.22, ease: 'power2.out' }, 7.525);
+tl.set('#s7-r0-card', { opacity: 1 }, 3.824);
+tl.set('#s7-r0-card', { opacity: 0 }, 5.274);
+tl.set('#s7-r1-card', { opacity: 1 }, 5.274);
+tl.set('#s7-r1-card', { opacity: 0 }, 6.774);
+tl.set('#s7-r2-card', { opacity: 1 }, 6.774);
+tl.set('#s7-r2-card', { opacity: 0 }, 8.561);
+tl.fromTo('#s7-r1-card', { x: -14 }, { x: 0, duration: 0.3, ease: 'elastic.out(1.2, 0.3)' }, 6.274);
+tl.fromTo('#s7-r2-card', { x: -14 }, { x: 0, duration: 0.3, ease: 'elastic.out(1.2, 0.3)' }, 7.524);
+
+tl.fromTo('#s7-br', { rotationY: 22, rotationX: 6, opacity: 0, x: -80 }, { rotationY: 7, rotationX: 2, opacity: 1, x: 0, duration: 0.7, ease: 'expo.out' }, 8.561);
+tl.to('#s7-br', { rotationY: 2, duration: 8.248, ease: 'none' }, 9.261);
+land('#s7-lk', 8.711);
+land('#s7-lh', 8.911);
+tl.fromTo('#s7-who0', { opacity: 0, x: 50, scale: 0.85 }, { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: 'back.out(1.8)' }, 10.300);
+tl.fromTo('#s7-who1', { opacity: 0, x: 50, scale: 0.85 }, { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: 'back.out(1.8)' }, 10.869);
+tl.fromTo('#s7-who2', { opacity: 0, x: 50, scale: 0.85 }, { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: 'back.out(1.8)' }, 12.530);
+
+land('#s7-l3', 13.577);
+land('#s7-l4', 15.456);
+tl.set('#s7-br', { opacity: 0 }, 17.509);
+land('#s7-mt', 17.609, { x: -50, y: 0 });
+land('#s7-logo', 19.356, { scale: 0.6, y: 0 });
+tl.fromTo('#s7-end .h1', { opacity: 0, filter: 'blur(10px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out' }, 19.506);
+land('#s7-aud', 19.706);
+tl.fromTo('#s7-end .s7-m', { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, stagger: 0.12, ease: 'expo.out' }, 19.556);
+land('#s7-end .body:not(#s7-aud)', 19.506);
+land('#s7-end .h3.cyan', 19.706);
+land('#s7-end .src', 20.006);
+land('#s7-qr', 20.206, { scale: 0.7, y: 0 });
 
 window.__timelines["s7"] = tl;
   </script>

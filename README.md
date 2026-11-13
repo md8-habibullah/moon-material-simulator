@@ -85,6 +85,10 @@ An interactive simulator for designing these composites, which runs entirely in 
   <sub><b>Design.</b> Pick the binder, soil, process and loading; eight properties update instantly, each marked lab-backed or physics estimate.</sub>
 </p>
 
+**Who it's for.** Engineers and mission planners who want to choose a mix before a single sample is printed, and just as
+much students, teachers and anyone curious about rockets, NASA and space. It is free, runs in any browser, and every
+number links to the NASA report or paper it comes from, so it works as a classroom tool too.
+
 ### Test it before you print it
 
 <table>
@@ -311,6 +315,8 @@ moon-material-simulator/
 | **Lamisa Yeasmin Nakia** | Research & Storytelling Lead | Research and storytelling |
 | **Yousuf Abdullah** | AI/ML Researcher · Data Scientist | Research and data analysis, the AI models, the dataset and the source papers. His first extraction pipeline lives in [`research/legacy/`](research/legacy/README.md). |
 | **Md. Habibullah Sharif** | Systems Architect | The architecture and the whole app: UI/UX, the 3D views and part tests, the simulator engine, the evidence pipeline and the backend |
+
+Five friends, one team: we researched, designed, built and tested it together.
 
 ## License 
 

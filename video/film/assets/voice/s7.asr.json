@@ -2,226 +2,316 @@
 {
 "text": "The",
 "start": 0.0,
-"end": 0.163
+"end": 0.16
 },
 {
 "text": "machines",
-"start": 0.209,
-"end": 0.627
+"start": 0.193,
+"end": 0.524
 },
 {
 "text": "we",
-"start": 0.673,
-"end": 0.766
+"start": 0.546,
+"end": 0.615
 },
 {
 "text": "left",
-"start": 0.824,
-"end": 1.01
+"start": 0.672,
+"end": 0.831
 },
 {
 "text": "behind",
-"start": 1.068,
-"end": 1.509
+"start": 0.876,
+"end": 1.173
 },
 {
 "text": "taught",
-"start": 1.718,
-"end": 2.009
+"start": 1.229,
+"end": 1.445
 },
 {
 "text": "us",
-"start": 2.055,
-"end": 2.136
+"start": 1.479,
+"end": 1.536
 },
 {
 "text": "what",
-"start": 2.194,
-"end": 2.368
+"start": 1.582,
+"end": 1.696
 },
 {
 "text": "the",
-"start": 2.403,
-"end": 2.473
+"start": 1.73,
+"end": 1.798
 },
 {
 "text": "Moon",
-"start": 2.531,
-"end": 2.752
+"start": 1.867,
+"end": 2.072
 },
 {
 "text": "does",
-"start": 2.81,
-"end": 3.03
+"start": 2.128,
+"end": 2.276
 },
 {
 "text": "to",
-"start": 3.077,
-"end": 3.135
+"start": 2.311,
+"end": 2.356
 },
 {
 "text": "materials.",
-"start": 3.204,
-"end": 4.063
+"start": 2.413,
+"end": 3.232
 },
 {
 "text": "Now",
-"start": 4.505,
-"end": 4.76
+"start": 3.674,
+"end": 3.856
 },
 {
 "text": "our",
-"start": 4.853,
-"end": 5.004
+"start": 3.913,
+"end": 4.016
 },
 {
 "text": "simulator",
-"start": 5.062,
-"end": 5.642
+"start": 4.073,
+"end": 4.527
 },
 {
 "text": "helps",
-"start": 5.712,
-"end": 5.991
+"start": 4.584,
+"end": 4.777
 },
 {
 "text": "engineers",
-"start": 6.06,
-"end": 6.606
+"start": 4.824,
+"end": 5.211
 },
 {
 "text": "choose",
-"start": 6.676,
-"end": 6.966
+"start": 5.268,
+"end": 5.529
 },
 {
 "text": "the",
-"start": 7.001,
-"end": 7.07
+"start": 5.552,
+"end": 5.621
 },
 {
 "text": "right",
-"start": 7.129,
-"end": 7.326
+"start": 5.688,
+"end": 5.893
 },
 {
 "text": "mix",
-"start": 7.396,
-"end": 7.709
+"start": 5.962,
+"end": 6.177
 },
 {
 "text": "before",
-"start": 7.883,
-"end": 8.22
+"start": 6.234,
+"end": 6.485
 },
 {
 "text": "a",
-"start": 8.255,
-"end": 8.278
+"start": 6.52,
+"end": 6.542
 },
 {
 "text": "single",
-"start": 8.336,
-"end": 8.661
+"start": 6.611,
+"end": 6.918
 },
 {
 "text": "sample",
-"start": 8.696,
-"end": 9.056
+"start": 6.952,
+"end": 7.259
 },
 {
 "text": "is",
-"start": 9.091,
-"end": 9.16
+"start": 7.293,
+"end": 7.362
 },
 {
-"text": "printed,",
-"start": 9.218,
-"end": 9.799
+"text": "printed.",
+"start": 7.419,
+"end": 7.92
 },
 {
-"text": "and",
-"start": 10.008,
-"end": 10.17
+"text": "And",
+"start": 8.361,
+"end": 8.509
 },
 {
-"text": "shows",
-"start": 10.24,
-"end": 10.542
-},
-{
-"text": "the",
-"start": 10.6,
-"end": 10.67
-},
-{
-"text": "real",
-"start": 10.739,
-"end": 10.948
-},
-{
-"text": "measurement",
-"start": 11.006,
-"end": 11.435
-},
-{
-"text": "behind",
-"start": 11.493,
-"end": 11.853
-},
-{
-"text": "every",
-"start": 11.946,
-"end": 12.237
-},
-{
-"text": "answer.",
-"start": 12.306,
-"end": 12.91
-},
-{
-"text": "The",
-"start": 13.351,
-"end": 13.479
-},
-{
-"text": "same",
-"start": 13.537,
-"end": 13.781
-},
-{
-"text": "method",
-"start": 13.827,
-"end": 14.129
-},
-{
-"text": "works",
-"start": 14.187,
-"end": 14.442
+"text": "it's",
+"start": 8.554,
+"end": 8.657
 },
 {
 "text": "for",
-"start": 14.477,
-"end": 14.582
+"start": 8.69,
+"end": 8.793
+},
+{
+"text": "learning,",
+"start": 8.85,
+"end": 9.18
+},
+{
+"text": "too:",
+"start": 9.203,
+"end": 9.659
+},
+{
+"text": "students,",
+"start": 10.1,
+"end": 10.612
+},
+{
+"text": "teachers,",
+"start": 10.669,
+"end": 11.158
+},
+{
+"text": "and",
+"start": 11.192,
+"end": 11.328
+},
+{
+"text": "anyone",
+"start": 11.431,
+"end": 11.841
+},
+{
+"text": "who",
+"start": 11.864,
+"end": 11.977
+},
+{
+"text": "loves",
+"start": 12.046,
+"end": 12.274
+},
+{
+"text": "rockets",
+"start": 12.33,
+"end": 12.683
+},
+{
+"text": "and",
+"start": 12.706,
+"end": 12.786
+},
+{
+"text": "space",
+"start": 12.843,
+"end": 13.184
+},
+{
+"text": "can",
+"start": 13.219,
+"end": 13.332
+},
+{
+"text": "explore",
+"start": 13.377,
+"end": 13.753
+},
+{
+"text": "NASA's",
+"start": 13.799,
+"end": 14.175
+},
+{
+"text": "real",
+"start": 14.231,
+"end": 14.425
+},
+{
+"text": "data",
+"start": 14.481,
+"end": 14.743
+},
+{
+"text": "and",
+"start": 14.801,
+"end": 14.891
+},
+{
+"text": "see",
+"start": 14.948,
+"end": 15.085
+},
+{
+"text": "the",
+"start": 15.12,
+"end": 15.187
+},
+{
+"text": "measurement",
+"start": 15.256,
+"end": 15.654
+},
+{
+"text": "behind",
+"start": 15.7,
+"end": 16.007
+},
+{
+"text": "every",
+"start": 16.086,
+"end": 16.337
+},
+{
+"text": "answer.",
+"start": 16.394,
+"end": 16.918
+},
+{
+"text": "The",
+"start": 17.359,
+"end": 17.484
+},
+{
+"text": "same",
+"start": 17.553,
+"end": 17.791
+},
+{
+"text": "method",
+"start": 17.825,
+"end": 18.076
+},
+{
+"text": "works",
+"start": 18.122,
+"end": 18.338
+},
+{
+"text": "for",
+"start": 18.373,
+"end": 18.475
 },
 {
 "text": "Mars.",
-"start": 14.64,
-"end": 15.151
+"start": 18.531,
+"end": 19.089
 },
 {
 "text": "Try",
-"start": 15.325,
-"end": 15.557
+"start": 19.306,
+"end": 19.511
 },
 {
 "text": "it",
-"start": 15.603,
-"end": 15.673
+"start": 19.544,
+"end": 19.59
 },
 {
 "text": "yourself.",
-"start": 15.72,
-"end": 16.579
+"start": 19.625,
+"end": 20.398
 }
 ]

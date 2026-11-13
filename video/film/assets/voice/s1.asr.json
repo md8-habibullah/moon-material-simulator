@@ -2,151 +2,151 @@
 {
 "text": "On",
 "start": 0.0,
-"end": 0.174
+"end": 0.197
 },
 {
 "text": "the",
-"start": 0.209,
-"end": 0.279
+"start": 0.23,
+"end": 0.295
 },
 {
 "text": "Moon,",
-"start": 0.325,
-"end": 0.639
+"start": 0.351,
+"end": 0.8
 },
 {
 "text": "a",
-"start": 0.685,
-"end": 0.755
+"start": 0.986,
+"end": 1.052
 },
 {
 "text": "broken",
-"start": 0.824,
-"end": 1.149
+"start": 1.128,
+"end": 1.457
 },
 {
 "text": "wrench",
-"start": 1.196,
-"end": 1.486
+"start": 1.501,
+"end": 1.775
 },
 {
 "text": "is",
-"start": 1.544,
-"end": 1.625
+"start": 1.818,
+"end": 1.895
 },
 {
 "text": "not",
-"start": 1.683,
-"end": 1.811
+"start": 1.96,
+"end": 2.114
 },
 {
 "text": "a",
-"start": 1.858,
-"end": 1.881
+"start": 2.147,
+"end": 2.169
 },
 {
 "text": "small",
-"start": 1.927,
-"end": 2.183
+"start": 2.212,
+"end": 2.431
 },
 {
 "text": "problem.",
-"start": 2.241,
-"end": 2.775
+"start": 2.486,
+"end": 3.11
 },
 {
 "text": "The",
-"start": 3.216,
-"end": 3.32
+"start": 3.535,
+"end": 3.656
 },
 {
 "text": "next",
-"start": 3.379,
-"end": 3.587
+"start": 3.722,
+"end": 3.941
 },
 {
 "text": "one",
-"start": 3.646,
-"end": 3.796
+"start": 4.006,
+"end": 4.203
 },
 {
 "text": "is",
-"start": 3.831,
-"end": 3.901
+"start": 4.258,
+"end": 4.378
 },
 {
 "text": "384,000",
-"start": 3.971,
-"end": 5.213
+"start": 4.455,
+"end": 6.12
 },
 {
 "text": "kilometres",
-"start": 5.271,
-"end": 5.735
+"start": 6.186,
+"end": 6.668
 },
 {
 "text": "away,",
-"start": 5.782,
-"end": 6.269
+"start": 6.711,
+"end": 7.281
 },
 {
 "text": "and",
-"start": 6.444,
-"end": 6.583
+"start": 7.522,
+"end": 7.675
 },
 {
 "text": "sending",
-"start": 6.653,
-"end": 6.966
+"start": 7.752,
+"end": 8.058
 },
 {
 "text": "it",
-"start": 7.024,
-"end": 7.082
+"start": 8.103,
+"end": 8.168
 },
 {
 "text": "can",
-"start": 7.129,
-"end": 7.233
+"start": 8.223,
+"end": 8.332
 },
 {
 "text": "cost",
-"start": 7.291,
-"end": 7.523
+"start": 8.398,
+"end": 8.65
 },
 {
 "text": "up",
-"start": 7.57,
-"end": 7.651
+"start": 8.705,
+"end": 8.792
 },
 {
 "text": "to",
-"start": 7.697,
-"end": 7.744
+"start": 8.836,
+"end": 8.892
 },
 {
 "text": "a",
-"start": 7.814,
-"end": 7.837
+"start": 8.957,
+"end": 8.978
 },
 {
 "text": "million",
-"start": 7.895,
-"end": 8.162
+"start": 9.077,
+"end": 9.417
 },
 {
 "text": "dollars",
-"start": 8.22,
-"end": 8.557
+"start": 9.472,
+"end": 9.8
 },
 {
 "text": "per",
-"start": 8.626,
-"end": 8.8
+"start": 9.866,
+"end": 9.987
 },
 {
 "text": "kilogram.",
-"start": 8.87,
-"end": 10.124
+"start": 10.042,
+"end": 11.366
 }
 ]
