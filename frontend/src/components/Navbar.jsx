@@ -1,5 +1,5 @@
 import { BookOpen, ChevronDown, GitBranch, Menu, Monitor, Moon, Play, Sun } from 'lucide-react';
-import { DOCS, REPO_URL, VIDEO_URL, docUrl } from '../lib/catalog';
+import { DEMO_URL, DOCS, REPO_URL, VIDEO_URL, docUrl } from '../lib/catalog';
 
 const LINKS = [
   { href: '#stories', label: 'Stories' },
@@ -96,6 +96,9 @@ export default function Navbar({ theme, onTheme }) {
               ))}
               <a role="menuitem" href={VIDEO_URL} target="_blank" rel="noreferrer">
                 <strong>Watch the pitch</strong>
+              </a>
+              <a role="menuitem" href={DEMO_URL} target="_blank" rel="noreferrer">
+                <strong>30-second demo</strong>
               </a>
             </div>
           </details>

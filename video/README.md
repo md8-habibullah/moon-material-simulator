@@ -14,7 +14,7 @@
 > verified numbers and evidence rules still apply.
 
 > **30-second Project Demo (14 November 2026).** The Space Apps 2026 Project Demo must be a video of 30 seconds or
-> less (or at most 7 slides), so the global submission links a separate cut:
+> less (or at most 7 slides), so the global submission links a separate cut, published at <https://youtu.be/kRjf5DvXlKA>:
 > `film/renders/moon-material-simulator_demo30.mp4` (29.5 s). Narration in [`film/tools/vo_demo30.json`](film/tools/vo_demo30.json)
 > (same "Will" voice, `film/tools/voice_demo30.py`); scenes, burned-in captions and sound from
 > `film/tools/build_demo30.py`, which writes `film/demo30.html` and `film/compositions/d30*.html`. Team, challenge,

@@ -1,5 +1,5 @@
 import { GitBranch } from 'lucide-react';
-import catalog, { DOCS, REPO_URL, TEAM, VIDEO_URL, docUrl } from '../lib/catalog';
+import catalog, { DEMO_URL, DOCS, REPO_URL, TEAM, VIDEO_URL, docUrl } from '../lib/catalog';
 import { BrandMark } from './Navbar';
 
 export default function Footer() {
@@ -23,7 +23,10 @@ export default function Footer() {
               <GitBranch size={14} aria-hidden="true" /> Source on GitHub
             </a>
             <a href={VIDEO_URL} target="_blank" rel="noreferrer">
-              Pitch video
+              4-minute pitch
+            </a>
+            <a href={DEMO_URL} target="_blank" rel="noreferrer">
+              30-second demo
             </a>
             <a href={docUrl('LICENSE')} target="_blank" rel="noreferrer">
               MIT License

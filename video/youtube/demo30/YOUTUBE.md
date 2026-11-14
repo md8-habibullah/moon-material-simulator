@@ -157,4 +157,6 @@ Try the app yourself (free, works on your phone): https://md8-habibullah.github.
 
 ## Published
 
-Not uploaded yet. When it is, write the link here.
+Uploaded 14 November 2026: **https://youtu.be/kRjf5DvXlKA**. The link is in `README.md` (top links and under the film thumbnail),
+`docs/demo_script.md`, `video/README.md` and `frontend/src/lib/catalog.js` (`DEMO_URL`: the app's hero, mobile menu
+and footer). It is the **Link to Project Demo** on spaceappschallenge.org.

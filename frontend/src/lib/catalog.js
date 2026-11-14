@@ -3,7 +3,8 @@ import catalog from '../generated/catalog.json';
 export default catalog;
 
 export const REPO_URL = 'https://github.com/md8-habibullah/moon-material-simulator';
-export const VIDEO_URL = 'https://youtu.be/Bub3y_H-RUI';
+export const VIDEO_URL = 'https://youtu.be/Bub3y_H-RUI'; // 4-minute film
+export const DEMO_URL = 'https://youtu.be/kRjf5DvXlKA'; // 30-second demo
 export const docUrl = (path) => `${REPO_URL}/blob/main/${path}`;
 
 export const DOCS = [

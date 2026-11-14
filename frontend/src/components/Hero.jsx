@@ -1,5 +1,5 @@
 import { ArrowRight, Play, Rocket } from 'lucide-react';
-import catalog, { VIDEO_URL } from '../lib/catalog';
+import catalog, { DEMO_URL, VIDEO_URL } from '../lib/catalog';
 
 export default function Hero() {
   const evidence = Object.values(catalog.evidence ?? {});
@@ -37,6 +37,9 @@ export default function Hero() {
           </a>
           <a href={VIDEO_URL} className="button button-ghost" target="_blank" rel="noreferrer">
             <Play size={15} aria-hidden="true" /> Watch the 4-minute pitch
+          </a>
+          <a href={DEMO_URL} className="button button-ghost" target="_blank" rel="noreferrer">
+            <Play size={15} aria-hidden="true" /> 30-second demo
           </a>
         </div>
       </div>
