@@ -21,6 +21,14 @@
 > project, the machines left behind, the app, the 3D part test, the evidence, and the live link, with the AI voice
 > credited on screen and in the file metadata. Render: `npx --yes hyperframes@0.9.39 render -c demo30.html -o renders/moon-material-simulator_demo30.mp4`
 > from `film/` (with `DO_NOT_TRACK=1`).
+>
+> **Cloned-voice version (14 November 2026).** `film/renders/moon-material-simulator_demo30_clone.mp4` (29.5 s)
+> opens with "Hey, I'm Habibullah, and this is my team, Dreams of X." over the team card. The narration is an AI voice
+> cloned from Md. Habibullah Sharif's own voice, with his consent: `film/tools/clone_voice30.py` runs F5-TTS 1.1.22
+> locally (`~/.venvs/f5tts`, CPU) with a 9.7 s reference from his voice note, then `film/tools/voice_human30.py --name
+> d30_clone` fits it to the time (pauses capped at 0.3 s, tempo +2.3%) and aligns the words with local Whisper. His
+> own recording had children audible in the background (the rules bar audio of anyone under 18), so it is not used.
+> Credited on screen and in the file metadata; subtitles `youtube/demo30/captions_en_clone.srt`.
 
 Team **Dreams of X** · NASA Space Apps Challenge 2026 · script v1, 2026-11-12
 

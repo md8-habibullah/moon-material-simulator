@@ -41,7 +41,7 @@
 .tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
   margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
 </style>
-  <div id="root" data-composition-id="d30c" data-width="1920" data-height="1080" data-duration="3.657">
+  <div id="root" data-composition-id="d30c" data-width="1920" data-height="1080" data-duration="4.089">
 <img id="d30c-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:0.6" alt="">
 <div id="c-kick" class="abs kick" style="left:150px;top:170px">Left behind, still teaching</div>
 <div id="c-r0" class="abs panel" style="left:150px;top:300px;width:500px;padding:12px"><div style="width:476px;height:360px;border-radius:12px;overflow:hidden"><img src="assets/relics/surveyor3.jpg" style="width:100%;height:100%;object-fit:cover" alt="Surveyor 3, photo NASA AS12-48-7134"></div><div class="h3" style="font-size:34px;margin-top:14px">Surveyor 3</div><div class="src" style="margin-top:4px">1967 · NASA AS12-48-7134</div></div><div id="c-r1" class="abs panel" style="left:710px;top:300px;width:500px;padding:12px"><div style="width:476px;height:360px;border-radius:12px;overflow:hidden"><img src="assets/relics/apollo15-rover.jpg" style="width:100%;height:100%;object-fit:cover" alt="Apollo 15 rover, photo NASA AS15-86-11603"></div><div class="h3" style="font-size:34px;margin-top:14px">Apollo 15 rover</div><div class="src" style="margin-top:4px">1971 · NASA AS15-86-11603</div></div><div id="c-r2" class="abs panel" style="left:1270px;top:300px;width:500px;padding:12px"><div style="width:476px;height:360px;border-radius:12px;overflow:hidden"><img src="assets/relics/apollo17-fender.jpg" style="width:100%;height:100%;object-fit:cover" alt="Apollo 17 rover fender, photo NASA AS17-137-20979"></div><div class="h3" style="font-size:34px;margin-top:14px">Apollo 17 rover fender</div><div class="src" style="margin-top:4px">1972 · NASA AS17-137-20979</div></div>
@@ -71,10 +71,10 @@ function out(sel, at) {
   tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
 }
 
-tl.fromTo('#d30c-bg', { x: 0 }, { x: -70, duration: 3.657, ease: 'none' }, 0);
+tl.fromTo('#d30c-bg', { x: 0 }, { x: -70, duration: 4.089, ease: 'none' }, 0);
 land('#c-kick', 0.05);
 tl.fromTo('#c-r0, #c-r1, #c-r2', { opacity: 0, y: 40, filter: 'blur(6px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, stagger: 0.28, ease: 'expo.out' }, 0.100);
-land('#c-note', 0.562);
+land('#c-note', 0.539);
 
 window.__timelines["d30c"] = tl;
   </script>

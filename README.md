@@ -326,8 +326,9 @@ Five friends, one team: we researched, designed, built and tested it together.
   auditor), transcribe values from the public NASA reports and open-access papers into CSV files, draft the
   documentation, and build the videos in HyperFrames. Every transcribed value is re-checked against its source PDF by
   the auditor, and we reviewed and tested all code and text.
-- **ElevenLabs** (AI text-to-speech) is the narration voice in both videos, reading our own script. Each video says so
-  in its credits, its description and its file metadata.
+- **ElevenLabs** (AI text-to-speech) is the narration voice in the 4-minute film, reading our own script. The film's
+  YouTube description and file metadata say so. The 30-second demo uses an AI voice cloned from Md. Habibullah
+  Sharif's own voice, with his consent (F5-TTS, run locally); it says so on screen and in its metadata.
 - **Our own models** inside the app: a Random Forest trained on our physics model and a Gaussian-process correction
   trained on 152 real lab measurements.
 - No AI-generated images or music: photos and maps are NASA's, app images are our own screenshots and renders, the music

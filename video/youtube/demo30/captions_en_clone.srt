@@ -1,0 +1,45 @@
+1
+00:00:00,300 --> 00:00:02,082
+Hey, I'm Habibullah,
+
+2
+00:00:02,092 --> 00:00:04,471
+and this is my team, Dreams of X.
+
+3
+00:00:04,900 --> 00:00:07,808
+For NASA's
+Abandoned but not Forgotten challenge,
+
+4
+00:00:07,916 --> 00:00:10,217
+we built the Moon-Material Simulator.
+
+5
+00:00:10,608 --> 00:00:12,544
+The machines left on the Moon
+
+6
+00:00:12,936 --> 00:00:14,687
+show what it does to materials.
+
+7
+00:00:14,697 --> 00:00:17,585
+Our free app predicts
+how NASA's bioplastic
+
+8
+00:00:17,595 --> 00:00:19,918
+mixed with Moon dust will perform.
+
+9
+00:00:20,349 --> 00:00:23,111
+Rebuild a broken part, test it in 3D,
+
+10
+00:00:23,121 --> 00:00:25,441
+and see the evidence behind every number.
+
+11
+00:00:25,451 --> 00:00:27,078
+Next stop: Mars.

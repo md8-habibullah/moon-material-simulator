@@ -1,6 +1,7 @@
 """Write the YouTube subtitle file for the 30-second demo.
 
-Run from video/film:  python3 tools/srt_demo30.py   # writes ../youtube/demo30/captions_en.srt
+Run from video/film:  python3 tools/srt_demo30.py   # writes ../youtube/demo30/captions_en_voice.srt
+                      D30_VOICE=ai python3 tools/srt_demo30.py   # the AI-voice cut: captions_en.srt
 
 Same lines and timings as the captions burned into the video (CAPTION_LINES in tools/build_demo30.py),
 at most two lines of 42 characters per cue.
@@ -9,10 +10,11 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_demo30 import ROOT, caption_cues  # noqa: E402
+from build_demo30 import ROOT, VOICE, caption_cues  # noqa: E402
 from srt import stamp, two_lines  # noqa: E402
 
-OUT = ROOT.parent / "youtube" / "demo30" / "captions_en.srt"
+# The human-voice cut has its own file; captions_en.srt stays the AI-voice upload's subtitles.
+OUT = ROOT.parent / "youtube" / "demo30" / {"human": "captions_en_voice.srt", "clone": "captions_en_clone.srt"}.get(VOICE, "captions_en.srt")
 
 
 KEEP = "Abandoned but not Forgotten"   # never split the challenge name across lines

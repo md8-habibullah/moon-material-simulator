@@ -4,6 +4,11 @@ Everything needed to upload `video/film/renders/moon-material-simulator_demo30.m
 share it. This is the video for the **Project Demo** field on spaceappschallenge.org (the 2026 rules allow 30 seconds at
 most). The full story is the 4-minute film: https://youtu.be/Bub3y_H-RUI ([kit](../YOUTUBE.md)). Copy each block as it is.
 
+> **Voice version.** `../../film/renders/moon-material-simulator_demo30_voice.mp4` is the same demo in Md. Habibullah
+> Sharif's own voice. Upload it with the same title, tags and settings, with two changes: subtitles
+> `captions_en_voice.srt`, and in the description's CREDITS replace the first sentence with
+> `Narration: Md. Habibullah Sharif, in his own voice.` It then goes in the Space Apps **Link to Project Demo** field.
+
 | File | Use it for |
 | --- | --- |
 | `../../film/renders/moon-material-simulator_demo30.mp4` | The video (the narration's AI-voice credit is already in its metadata) |

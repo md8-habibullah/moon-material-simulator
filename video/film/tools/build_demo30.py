@@ -3,22 +3,34 @@
 Space Apps 2026 rule: the Project Demo is a video of 30 seconds or less (or 7 slides at most), in
 English, showing the team, the challenge and the project. The 4-minute film stays the full story.
 
-Run from video/film, after tools/voice_demo30.py:
+Run from video/film, after tools/voice_human30.py (or tools/voice_demo30.py for the AI voice):
     python3 tools/build_demo30.py
     npx --yes hyperframes@0.9.39 render -c demo30.html -o renders/moon-material-simulator_demo30.mp4
 
 Reuses the film's styles, helpers and assets (tools/build.py); the voice take is the clock.
 """
 import json
+import os
+import subprocess
 from pathlib import Path
 
 from build import BASE_CSS, JS_HELPERS, TEAM, brackets, scene_file, stars, video, wspan, FPS
 
 ROOT = Path(__file__).resolve().parent.parent
-WORDS = json.loads((ROOT / "assets" / "voice" / "d30.asr.json").read_text())
-VO_AT = 0.60            # the first word starts here
+# Narration: "clone" = Habibullah's voice cloned with F5-TTS (tools/clone_voice30.py), "human" = his own recording
+# (tools/voice_human30.py), "ai" = the ElevenLabs take (tools/voice_demo30.py). The first that exists is used;
+# override with D30_VOICE=clone|human|ai.
+VOICES = {"clone": ("d30_clone", "Narration: AI voice cloned from Md. Habibullah Sharif's own voice (F5-TTS)"),
+          "human": ("d30_human", "Narration: Md. Habibullah Sharif (Dreams of X)"),
+          "ai": ("d30", "Narration: AI-generated voice (ElevenLabs)")}
+VOICE = os.environ.get("D30_VOICE") or next(v for v in ("clone", "human", "ai")
+                                            if (ROOT / "assets" / "voice" / f"{VOICES[v][0]}.wav").exists())
+VO_FILE, CREDIT = VOICES[VOICE]
+WORDS = json.loads((ROOT / "assets" / "voice" / f"{VO_FILE}.asr.json").read_text())
+VO_AT = 0.35 if VOICE in ("human", "clone") else 0.60   # the first word starts here (the human read is longer)
 TOTAL = 29.50           # under the 30-second limit, with margin
-VO_LEN = 25.96          # length of assets/voice/d30.wav
+VO_LEN = round(float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                              str(ROOT / "assets" / "voice" / f"{VO_FILE}.wav")]).decode()), 3)
 URL = "md8-habibullah.github.io/moon-material-simulator"
 
 
@@ -37,7 +49,7 @@ def end_of(word, n=1):
 
 
 # Scene boundaries: each cut lands just before the sentence it illustrates.
-CUTS = [0.0, at("For") - 0.25, at("The", 2) - 0.2, at("Our") - 0.2, at("Rebuild") - 0.2, at("Next") - 0.2, TOTAL]
+CUTS = [0.0, at("Abandoned") - 0.4, at("The", 2) - 0.2, at("Our") - 0.2, at("Rebuild") - 0.2, at("Next") - 0.2, TOTAL]
 IDS = ["d30a", "d30b", "d30c", "d30d", "d30e", "d30f"]
 START = dict(zip(IDS, CUTS))
 DUR = {sid: round(CUTS[i + 1] - CUTS[i], 3) for i, sid in enumerate(IDS)}
@@ -182,14 +194,14 @@ def d30f():
     <div class="kick">Try it free · open source</div>
     <div class="h3 cyan mono" style="font-size:36px;margin-top:10px;white-space:nowrap">{URL}</div>
     <div class="body" style="font-size:28px;margin-top:16px">Team Dreams of X: Mahdin Islam Mukim · Maliha Sanjana · Lamisa Yeasmin Nakia · Yousuf Abdullah · Md. Habibullah Sharif</div>
-    <div id="f-credit" class="src" style="margin-top:16px">Narration: AI-generated voice (ElevenLabs) · Images: NASA</div>
+    <div id="f-credit" class="src" style="margin-top:16px">{CREDIT} · Images: NASA</div>
   </div></div>
 """
     js = f"""
 land('#f-next', 0.05, {{ scale: 0.94, y: 0 }});
-land('#f-card', 0.55);
+land('#f-card', 0.3);
 """
-    return scene_file(sid, D, "", body, js), {"whoosh_in": 0.0, "impact_mars": t_mars, "sparkle_card": 0.55}
+    return scene_file(sid, D, "", body, js), {"whoosh_in": 0.0, "impact_mars": t_mars, "sparkle_card": 0.3}
 
 
 BUILDERS = {"d30a": d30a, "d30b": d30b, "d30c": d30c, "d30d": d30d, "d30e": d30e, "d30f": d30f}
@@ -199,11 +211,18 @@ BUILDERS = {"d30a": d30a, "d30b": d30b, "d30c": d30c, "d30d": d30d, "d30e": d30e
 
 # Hand-set caption lines (each phrase whole); the word timings place them. Used by the burned-in captions
 # and by tools/srt_demo30.py for the YouTube subtitle file, so both always match.
-CAPTION_LINES = ["We're Dreams of X.", "For NASA's Abandoned but not Forgotten challenge,",
-                 "we built the Moon-Material Simulator.", "The machines left on the Moon",
-                 "show what it does to materials.", "Our free browser app predicts how",
-                 "NASA Glenn's bioplastic mixed with Moon dust", "will perform, from real, audited lab data.",
-                 "Rebuild a broken part, test it in 3D,", "and see the evidence behind every number.", "Next stop: Mars."]
+CAPTION_LINES = {
+    "human": ["Hey, I'm Habibullah,", "and this is my team, Dreams of X.",
+              "For NASA's Abandoned but not Forgotten challenge,", "we built the Moon-Material Simulator.",
+              "The machines left on the Moon", "show what it does to materials.",
+              "Our free app predicts how NASA's bioplastic", "mixed with Moon dust will perform.",
+              "Rebuild a broken part, test it in 3D,", "and see the evidence behind every number.", "Next stop: Mars."],
+    "ai": ["We're Dreams of X.", "For NASA's Abandoned but not Forgotten challenge,",
+           "we built the Moon-Material Simulator.", "The machines left on the Moon",
+           "show what it does to materials.", "Our free browser app predicts how",
+           "NASA Glenn's bioplastic mixed with Moon dust", "will perform, from real, audited lab data.",
+           "Rebuild a broken part, test it in 3D,", "and see the evidence behind every number.", "Next stop: Mars."],
+}["ai" if VOICE == "ai" else "human"]
 
 
 def caption_cues():
@@ -240,7 +259,7 @@ def captions():
 def sound_tags(all_cues):
     tags = [f'<audio id="d30-music" class="clip" src="assets/audio/music.mp3" data-start="0" data-duration="{TOTAL:.3f}" '
             f'data-media-start="60" data-volume="0.12" data-fade-in="0.8" data-fade-out="2.5"></audio>',
-            f'<audio id="d30-vo" class="clip" src="assets/voice/d30.wav" data-start="{VO_AT:.3f}" '
+            f'<audio id="d30-vo" class="clip" src="assets/voice/{VO_FILE}.wav" data-start="{VO_AT:.3f}" '
             f'data-duration="{VO_LEN:.3f}" data-volume="1"></audio>']
     files = {"whoosh": ["whoosh_a", "whoosh_b"], "pop": ["pop_a", "pop_b"], "impact": ["impact_a"], "crack": ["crack_a"],
              "sparkle": ["sparkle_a"]}
@@ -303,7 +322,7 @@ def main():
 </html>
 """
     (ROOT / "demo30.html").write_text(html)
-    print(f"total {TOTAL:.2f} s, voice {VO_AT + WORDS[-1]['end']:.2f} s")
+    print(f"voice: {VOICE} ({VO_FILE}.wav, {VO_LEN:.2f} s); total {TOTAL:.2f} s, last word ends {VO_AT + WORDS[-1]['end']:.2f} s")
     for sid in IDS:
         print(f"  {sid}  start {START[sid]:6.2f}  len {DUR[sid]:5.2f}")
 

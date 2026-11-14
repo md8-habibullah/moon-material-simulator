@@ -41,10 +41,10 @@
 .tag i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;
   margin-right: 12px; box-shadow: 0 0 12px #ff6b6b; vertical-align: 1px; }
 </style>
-  <div id="root" data-composition-id="d30b" data-width="1920" data-height="1080" data-duration="5.379">
+  <div id="root" data-composition-id="d30b" data-width="1920" data-height="1080" data-duration="5.351">
 <img id="d30b-bg" class="bg" src="assets/bg/stars.jpg" style="opacity:0.7" alt="">
 <div id="b-moon" class="abs" style="left:1040px;top:120px;width:840px;height:840px;border-radius:50%;overflow:hidden">
-  <video id="b-moon-v" class="clip" src="assets/clips/moon_spin.mp4" muted playsinline data-start="0" data-duration="5.379" data-media-start="0"
+  <video id="b-moon-v" class="clip" src="assets/clips/moon_spin.mp4" muted playsinline data-start="0" data-duration="5.351" data-media-start="0"
     style="position:absolute;inset:0;width:840px;height:840px;object-fit:cover"></video></div>
 <div id="b-chip" class="abs" style="left:150px;top:250px"><span class="chip cyan">Our challenge</span></div>
 <div id="b-chal" class="abs h2" style="left:150px;top:330px;width:900px"><span class="w ">Abandoned </span><span class="w ">but </span><span class="w ">not </span><span class="w ">Forgotten </span></div>
@@ -76,12 +76,12 @@ function out(sel, at) {
   tl.to(sel, { opacity: 0, filter: 'blur(6px)', duration: 0.22, ease: 'power3.in' }, at);
 }
 
-tl.fromTo('#d30b-bg', { x: 0 }, { x: -70, duration: 5.379, ease: 'none' }, 0);
+tl.fromTo('#d30b-bg', { x: 0 }, { x: -70, duration: 5.351, ease: 'none' }, 0);
 tl.fromTo('#b-moon', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.9, ease: 'expo.out' }, 0.05);
 land('#b-chip', 0.1);
-words('#b-chal', 0.692, 0.09);
-land('#b-built', 3.097);
-land('#b-title', 3.447, { scale: 0.94, y: 0 });
+words('#b-chal', 0.250, 0.09);
+land('#b-built', 3.166);
+land('#b-title', 3.516, { scale: 0.94, y: 0 });
 tl.fromTo('#b-src', { opacity: 0 }, { opacity: 0.8, duration: 0.4 }, 0.6);
 
 window.__timelines["d30b"] = tl;
