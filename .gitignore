@@ -29,3 +29,6 @@ Thumbs.db
 # Research PDFs: large, and some are third-party. Re-download with research/download_sources.py
 research/pdfs/
 research/audit/_cache/
+
+# Private submission material (contains team contact details)
+docs/hide/

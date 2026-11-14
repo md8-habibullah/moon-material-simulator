@@ -13,6 +13,15 @@
 > scene with a "built most of it" line) is replaced. The rest of this document is the original v1 script; its
 > verified numbers and evidence rules still apply.
 
+> **30-second Project Demo (14 November 2026).** The Space Apps 2026 Project Demo must be a video of 30 seconds or
+> less (or at most 7 slides), so the global submission links a separate cut:
+> `film/renders/moon-material-simulator_demo30.mp4` (29.5 s). Narration in [`film/tools/vo_demo30.json`](film/tools/vo_demo30.json)
+> (same "Will" voice, `film/tools/voice_demo30.py`); scenes, burned-in captions and sound from
+> `film/tools/build_demo30.py`, which writes `film/demo30.html` and `film/compositions/d30*.html`. Team, challenge,
+> project, the machines left behind, the app, the 3D part test, the evidence, and the live link, with the AI voice
+> credited on screen and in the file metadata. Render: `npx --yes hyperframes@0.9.39 render -c demo30.html -o renders/moon-material-simulator_demo30.mp4`
+> from `film/` (with `DO_NOT_TRACK=1`).
+
 Team **Dreams of X** · NASA Space Apps Challenge 2026 · script v1, 2026-11-12
 
 This is the production script for both videos: **Video 2 (Local Judging)** is the master, and **Video 1 

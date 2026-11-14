@@ -1,0 +1,45 @@
+1
+00:00:00,550 --> 00:00:02,271
+We're Dreams of X.
+
+2
+00:00:02,431 --> 00:00:05,114
+For NASA's
+Abandoned but not Forgotten challenge,
+
+3
+00:00:05,124 --> 00:00:07,484
+we built the Moon-Material Simulator.
+
+4
+00:00:07,760 --> 00:00:09,178
+The machines left on the Moon
+
+5
+00:00:09,188 --> 00:00:11,060
+show what it does to materials.
+
+6
+00:00:11,417 --> 00:00:13,148
+Our free browser app predicts how
+
+7
+00:00:13,158 --> 00:00:15,552
+NASA Glenn's bioplastic
+mixed with Moon dust
+
+8
+00:00:15,562 --> 00:00:18,665
+will perform, from real, audited lab data.
+
+9
+00:00:18,941 --> 00:00:21,717
+Rebuild a broken part, test it in 3D,
+
+10
+00:00:21,727 --> 00:00:24,063
+and see the evidence behind every number.
+
+11
+00:00:24,513 --> 00:00:26,710
+Next stop: Mars.

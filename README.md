@@ -318,6 +318,19 @@ moon-material-simulator/
 
 Five friends, one team: we researched, designed, built and tested it together.
 
+## Use of AI
+
+- **Claude (Anthropic), through Claude Code**, helped us write and debug the code (frontend, backend, models, evidence
+  auditor), transcribe values from the public NASA reports and open-access papers into CSV files, draft the
+  documentation, and build the videos in HyperFrames. Every transcribed value is re-checked against its source PDF by
+  the auditor, and we reviewed and tested all code and text.
+- **ElevenLabs** (AI text-to-speech) is the narration voice in both videos, reading our own script. Each video says so
+  in its credits, its description and its file metadata.
+- **Our own models** inside the app: a Random Forest trained on our physics model and a Gaussian-process correction
+  trained on 152 real lab measurements.
+- No AI-generated images or music: photos and maps are NASA's, app images are our own screenshots and renders, the music
+  is synthesised by our own code (`video/film/tools/music.py`) and the sound effects come from Pixabay.
+
 ## License 
 
 [MIT](LICENSE). NASA material is used as public-domain U.S. Government work and cited throughout. This project is not

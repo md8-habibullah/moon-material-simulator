@@ -3,6 +3,8 @@
 Everything needed to upload `video/film/renders/moon-material-simulator_v3_one-team.mp4` (3:58.1, 1080p30). Copy each
 block as it is.
 
+The 30-second demo (the Space Apps Project Demo) has its own kit: [`demo30/YOUTUBE.md`](demo30/YOUTUBE.md).
+
 | File | Use it for |
 | --- | --- |
 | `../film/renders/moon-material-simulator_v3_one-team.mp4` | The video |
